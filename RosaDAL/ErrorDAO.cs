@@ -21,6 +21,7 @@ namespace RosaDAL
             writer.WriteLine("Occurence time: " + DateTime.Now.ToString() + " Explanation : " + explanation);
             writer.Close();
             MessageBox.Show(explanation, "Error Occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //test
         }
     }
 }
