@@ -1,0 +1,5 @@
+C:\Users\logoff\Desktop\RosaDAL\RosaModel\bin\Debug\RosaModel.dll
+C:\Users\logoff\Desktop\RosaDAL\RosaModel\bin\Debug\RosaModel.pdb
+C:\Users\logoff\Desktop\RosaDAL\RosaModel\obj\Debug\RosaModel.csprojAssemblyReference.cache
+C:\Users\logoff\Desktop\RosaDAL\RosaModel\obj\Debug\RosaModel.dll
+C:\Users\logoff\Desktop\RosaDAL\RosaModel\obj\Debug\RosaModel.pdb
