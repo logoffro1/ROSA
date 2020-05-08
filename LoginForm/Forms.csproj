@@ -116,5 +116,14 @@
   <ItemGroup>
     <None Include="Resources\Black-Eye-Watch-128.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock-32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

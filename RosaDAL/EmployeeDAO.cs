@@ -17,7 +17,7 @@ namespace RosaDAL
         }
         public List<Employee> Db_Get_AllEmployees()
         {
-            //read employyees from database
+            //read employees from database
             string query = "select employee_id, role_id, employeeName, username, [password] from employee;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
@@ -35,9 +35,7 @@ namespace RosaDAL
                     role = (RolesEnum)(int)dr["role_id"],
                     employeeName = dr["employeeName"].ToString(),
                     username = dr["username"].ToString(),
-                    password = dr["password"].ToString()
-                 
-
+                    password = dr["password"].ToString()                
                 };
               
                 employees.Add(employee);

@@ -23,7 +23,7 @@ namespace LoginForm
         {
      
         }
-        private void CheckCredentials()
+        private void CheckCredentials() //validate the credentials
         {
             Employee_Service employeeService = new Employee_Service();
 
@@ -64,37 +64,35 @@ namespace LoginForm
                     MainForm.Show();
                     this.Hide();
                 }
-
-
             }
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             CheckCredentials();
         }
 
         private void txtUsername_KeyDown(object sender, KeyEventArgs e)
         {
+            //if enter is pressed, call the CheckCredentials() method
             if (e.KeyCode == Keys.Enter)
                 CheckCredentials();
         }
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
-
+            //if enter is pressed, call the CheckCredentials() method
             if (e.KeyCode == Keys.Enter)
                 CheckCredentials();
 
         }
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void eyePic_Click(object sender, EventArgs e)
         {
+            //if the useSystemPasswordChar is true, set it to false.
+            //if it is false, set it to true
+            //that shows or hides the password
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
         }
+
+
     }
 }
