@@ -42,12 +42,14 @@ namespace LoginForm
                 lblError.Visible = false;
 
                 List<Employee> employees = employeeService.GetEmployees();
-                foreach (Employee employee in employees)
+                Employee employee = null;
+                foreach (Employee em in employees)
                 {
-                    if (employee.username == txtUsername.Text && employee.password == txtPassword.Text)
+                    if (em.username == txtUsername.Text && em.password == txtPassword.Text)
                     {
                         //if the user input matches with the database info, set employeeExists to true
                         employeeExists = true;
+                        employee = em;
                         break;
                     }
                 }
@@ -60,7 +62,7 @@ namespace LoginForm
                 else
                 {
                     //if the employee exists, login the user and open the main form
-                    mainForm MainForm = new mainForm();
+                    mainForm MainForm = new mainForm(employee);
                     MainForm.Show();
                     this.Hide();
                 }
@@ -93,6 +95,9 @@ namespace LoginForm
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
         }
 
-
+        private void loginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

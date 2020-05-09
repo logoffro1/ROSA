@@ -11,10 +11,6 @@ namespace RosaDAL
 {
    public class EmployeeDAO : Base
     {
-        public EmployeeDAO() : base()
-        {
-            
-        }
         public List<Employee> Db_Get_AllEmployees()
         {
             //read employees from database
