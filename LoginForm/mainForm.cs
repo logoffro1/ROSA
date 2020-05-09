@@ -14,6 +14,7 @@ namespace LoginForm
     public partial class mainForm : Form
     {
         Employee employee;
+        bool canEditTable = false;
 
         public mainForm(Employee employee)
         {
@@ -36,6 +37,8 @@ namespace LoginForm
         }
         void ShowTableInfo(int tableId) //show the information for the selected table
         {
+            canEditTable = false;
+            btnEdit.Text = "ON";
             //add all the table images in a list
             List<PictureBox> tableImages = new List<PictureBox>();
             tableImages.Add(picTable1);
@@ -154,6 +157,61 @@ namespace LoginForm
             loginForm loginForm = new loginForm();
             loginForm.Show();
             this.Hide();
+        }
+
+        private void lblOccupied_Click(object sender, EventArgs e)
+        {
+
+            if (canEditTable)
+            {
+                if (lblOccupied.Text == "Occupied: Yes")
+                    lblOccupied.Text = "Occupied: No";
+                else
+                    lblOccupied.Text = "Occupied: Yes";
+            }
+         
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            canEditTable = !canEditTable;
+            if (canEditTable)
+                btnEdit.Text = "OFF";
+            else
+                btnEdit.Text = "ON";
+        }
+
+        private void lblOccupied_MouseHover(object sender, EventArgs e)
+        {
+            if(canEditTable)
+            lblOccupied.Cursor = Cursors.Hand;
+        }
+
+        private void lblReserved_MouseHover(object sender, EventArgs e)
+        {
+            if (canEditTable)
+                lblReserved.Cursor = Cursors.Hand;
+        }
+
+        private void lblReserved_Click(object sender, EventArgs e)
+        {
+            if (canEditTable)
+            {
+                if (lblReserved.Text == "Reserved: Yes")
+                    lblReserved.Text = "Reserved: No";
+                else
+                    lblReserved.Text = "Reserved: Yes";
+            }
+        }
+
+        private void lblOccupied_MouseLeave(object sender, EventArgs e)
+        {
+            lblOccupied.Cursor = Cursors.Default;
+        }
+
+        private void lblReserved_MouseLeave(object sender, EventArgs e)
+        {
+            lblReserved.Cursor = Cursors.Default;
         }
     }
 }

@@ -52,6 +52,8 @@
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblSelectTable = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -220,6 +222,8 @@
             // pnlTableInfo
             // 
             this.pnlTableInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTableInfo.Controls.Add(this.label1);
+            this.pnlTableInfo.Controls.Add(this.btnEdit);
             this.pnlTableInfo.Controls.Add(this.btnExitTableInfo);
             this.pnlTableInfo.Controls.Add(this.lblStatus);
             this.pnlTableInfo.Controls.Add(this.lblReserved);
@@ -265,6 +269,9 @@
             this.lblReserved.Size = new System.Drawing.Size(88, 20);
             this.lblReserved.TabIndex = 22;
             this.lblReserved.Text = "Reserved";
+            this.lblReserved.Click += new System.EventHandler(this.lblReserved_Click);
+            this.lblReserved.MouseLeave += new System.EventHandler(this.lblReserved_MouseLeave);
+            this.lblReserved.MouseHover += new System.EventHandler(this.lblReserved_MouseHover);
             // 
             // lblOccupied
             // 
@@ -275,6 +282,9 @@
             this.lblOccupied.Size = new System.Drawing.Size(88, 20);
             this.lblOccupied.TabIndex = 21;
             this.lblOccupied.Text = "Occupied";
+            this.lblOccupied.Click += new System.EventHandler(this.lblOccupied_Click);
+            this.lblOccupied.MouseLeave += new System.EventHandler(this.lblOccupied_MouseLeave);
+            this.lblOccupied.MouseHover += new System.EventHandler(this.lblOccupied_MouseHover);
             // 
             // lblCapacity
             // 
@@ -342,6 +352,27 @@
             this.lblSelectTable.Text = "Select a table for information";
             this.lblSelectTable.Visible = false;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(125, 305);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(48, 26);
+            this.btnEdit.TabIndex = 25;
+            this.btnEdit.Text = "ON";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 308);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 18);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Edit mode:";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -407,5 +438,7 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblLogout;
         private System.Windows.Forms.Label lblSelectTable;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
