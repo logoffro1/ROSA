@@ -42,6 +42,7 @@
             this.picTable1 = new System.Windows.Forms.PictureBox();
             this.picPlaceHolder = new System.Windows.Forms.PictureBox();
             this.pnlTableInfo = new System.Windows.Forms.Panel();
+            this.btnSaveTableInfo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnExitTableInfo = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblSelectTable = new System.Windows.Forms.Label();
             this.pnlTablesView = new System.Windows.Forms.Panel();
-            this.btnSaveTableInfo = new System.Windows.Forms.Button();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -190,6 +190,7 @@
             // 
             // picTable2
             // 
+            this.picTable2.BackColor = System.Drawing.SystemColors.Desktop;
             this.picTable2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable2.Image = global::LoginForm.Properties.Resources.table2;
             this.picTable2.Location = new System.Drawing.Point(345, 19);
@@ -202,6 +203,7 @@
             // 
             // picTable1
             // 
+            this.picTable1.BackColor = System.Drawing.Color.Tomato;
             this.picTable1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable1.Image = global::LoginForm.Properties.Resources.table1;
             this.picTable1.Location = new System.Drawing.Point(103, 19);
@@ -239,6 +241,18 @@
             this.pnlTableInfo.Size = new System.Drawing.Size(285, 358);
             this.pnlTableInfo.TabIndex = 1;
             this.pnlTableInfo.Visible = false;
+            // 
+            // btnSaveTableInfo
+            // 
+            this.btnSaveTableInfo.Enabled = false;
+            this.btnSaveTableInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveTableInfo.Location = new System.Drawing.Point(199, 305);
+            this.btnSaveTableInfo.Name = "btnSaveTableInfo";
+            this.btnSaveTableInfo.Size = new System.Drawing.Size(74, 26);
+            this.btnSaveTableInfo.TabIndex = 27;
+            this.btnSaveTableInfo.Text = "SAVE";
+            this.btnSaveTableInfo.UseVisualStyleBackColor = true;
+            this.btnSaveTableInfo.Click += new System.EventHandler(this.btnSaveTableInfo_Click);
             // 
             // label1
             // 
@@ -397,18 +411,6 @@
             this.pnlTablesView.TabIndex = 26;
             this.pnlTablesView.Visible = false;
             // 
-            // btnSaveTableInfo
-            // 
-            this.btnSaveTableInfo.Enabled = false;
-            this.btnSaveTableInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveTableInfo.Location = new System.Drawing.Point(199, 305);
-            this.btnSaveTableInfo.Name = "btnSaveTableInfo";
-            this.btnSaveTableInfo.Size = new System.Drawing.Size(74, 26);
-            this.btnSaveTableInfo.TabIndex = 27;
-            this.btnSaveTableInfo.Text = "SAVE";
-            this.btnSaveTableInfo.UseVisualStyleBackColor = true;
-            this.btnSaveTableInfo.Click += new System.EventHandler(this.btnSaveTableInfo_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -423,7 +425,7 @@
             this.MaximizeBox = false;
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "mainForm";
+            this.Text = "Chapeau - Main";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.pnlTables.ResumeLayout(false);

@@ -14,36 +14,15 @@ namespace LoginForm
     public partial class mainForm : Form
     {
         Employee employee;
-
+        //create a list for all the table images
+        List<PictureBox> tableImages = new List<PictureBox>();
         bool canEditTable = false; // if the table can be edited
         private Table selectedTable; //the current selected table by the user
         public mainForm(Employee employee)
         {
             InitializeComponent();
-            this.employee = employee;
-        }
 
-        private void mainForm_Load(object sender, EventArgs e)
-        {
-            //split the name into 2 parts, firstName and lastName
-            string[] nameSplit = employee.employeeName.Split(' ');
-            //show a Welcome message, "Welcome, firstName!"
-            lblWelcome.Text = $"Welcome, {nameSplit[0]}!";
-            
-        }
-
-        private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Environment.Exit(0);
-        }
-        void ShowTableInfo(int tableId) //show the information for the selected table
-        {
-            //set the editing/saving options to false by default
-            canEditTable = false;
-            btnSaveTableInfo.Enabled = false;
-            btnEdit.Text = "ON";
-            //add all the table images in a list
-            List<PictureBox> tableImages = new List<PictureBox>();
+            //add all the table images in a list       
             tableImages.Add(picTable1);
             tableImages.Add(picTable2);
             tableImages.Add(picTable3);
@@ -55,6 +34,45 @@ namespace LoginForm
             tableImages.Add(picTable9);
             tableImages.Add(picTable10);
 
+            this.employee = employee;
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {  
+
+            //split the name into 2 parts, firstName and lastName
+            string[] nameSplit = employee.employeeName.Split(' ');
+            //show a Welcome message, "Welcome, firstName!"
+            lblWelcome.Text = $"Welcome, {nameSplit[0]}!";
+            
+        }
+
+        private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+        void ChangeTableImageColor() //change the back color depending on the availability
+        {
+            Table_Service tableService = new Table_Service();
+            List<Table> tables = tableService.GetAllTables(); //return all the tables from the database
+            int count = 0;
+            foreach (PictureBox p in tableImages) // loop through the images list
+            {
+                //if the table is occupied, set the color to green
+                if (!tables[count].isAvailable)
+                    p.BackColor = SystemColors.Desktop;
+                else //if it is not occupied, set it to orange/red
+                    p.BackColor = Color.Salmon;
+
+                count++;
+            }
+        }
+        void ShowTableInfo(int tableId) //show the information for the selected table
+        {
+            //set the editing/saving options to false by default
+            canEditTable = false;
+            btnSaveTableInfo.Enabled = false;
+            btnEdit.Text = "ON";
 
             string[] tableStatus = new string[2] { "Order taken", "Order served"};
             Random rnd = new Random();
@@ -81,7 +99,7 @@ namespace LoginForm
                 lblStatus.Text = "Status: None";
             }
 
-            //show the info panel
+            //show the table info panel
             pnlTableInfo.Show();
         }
         private void picTable1_Click(object sender, EventArgs e)
@@ -136,6 +154,8 @@ namespace LoginForm
         private void tablesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlTablesView.Show();
+            ChangeTableImageColor();
+            pnlTableInfo.Hide();
         }
 
         private void btnExitTableInfo_Click(object sender, EventArgs e)
@@ -267,6 +287,7 @@ namespace LoginForm
                 isAvailable = false;
 
             tableService.UpdateTable(selectedTable, isAvailable, isReserved); // update table
+            ChangeTableImageColor();
         }
     }
 }
