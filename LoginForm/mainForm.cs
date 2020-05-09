@@ -14,8 +14,9 @@ namespace LoginForm
     public partial class mainForm : Form
     {
         Employee employee;
-        bool canEditTable = false;
 
+        bool canEditTable = false; // if the table can be edited
+        private Table selectedTable; //the current selected table by the user
         public mainForm(Employee employee)
         {
             InitializeComponent();
@@ -37,7 +38,9 @@ namespace LoginForm
         }
         void ShowTableInfo(int tableId) //show the information for the selected table
         {
+            //set the editing/saving options to false by default
             canEditTable = false;
+            btnSaveTableInfo.Enabled = false;
             btnEdit.Text = "ON";
             //add all the table images in a list
             List<PictureBox> tableImages = new List<PictureBox>();
@@ -57,17 +60,17 @@ namespace LoginForm
             Random rnd = new Random();
 
             Table_Service tableService = new Table_Service();
-            Table table = tableService.GetById(tableId);
+            selectedTable = tableService.GetById(tableId);
 
             //set the placeholder image to the corresponding table image from the list
             picPlaceHolder.Image = tableImages[tableId - 1].Image;     
             //set the labels to the right values from the database
-            lblCapacity.Text = "Capacity: " + table.capacity.ToString();
-            if(table.isReserved) lblReserved.Text = "Reserved: Yes";
+            lblCapacity.Text = "Capacity: " + selectedTable.capacity.ToString();
+            if(selectedTable.isReserved) lblReserved.Text = "Reserved: Yes";
             else lblReserved.Text = "Reserved: No";
 
             //if the table is occupied, show that on the screen, and set a random status from the tableStatus array
-            if (table.isAvailable)
+            if (selectedTable.isAvailable)
             {
                 lblOccupied.Text = "Occupied: Yes";
                 lblStatus.Text = "Status: " + tableStatus[rnd.Next(tableStatus.Length)];
@@ -132,8 +135,7 @@ namespace LoginForm
         }
         private void tablesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlTables.Show();
-            lblSelectTable.Show();
+            pnlTablesView.Show();
         }
 
         private void btnExitTableInfo_Click(object sender, EventArgs e)
@@ -162,7 +164,7 @@ namespace LoginForm
         private void lblOccupied_Click(object sender, EventArgs e)
         {
 
-            if (canEditTable)
+            if (canEditTable) // if you can edit the table, change the occupied status
             {
                 if (lblOccupied.Text == "Occupied: Yes")
                     lblOccupied.Text = "Occupied: No";
@@ -175,21 +177,29 @@ namespace LoginForm
         private void btnEdit_Click(object sender, EventArgs e)
         {
             canEditTable = !canEditTable;
-            if (canEditTable)
+            if (canEditTable) //when pressing on the ON/OFF button, change the text and enable/disable the save option
+            {
                 btnEdit.Text = "OFF";
+                btnSaveTableInfo.Enabled = true;
+            }
+               
             else
+            {
                 btnEdit.Text = "ON";
+                btnSaveTableInfo.Enabled = false;
+            }
+             
         }
 
         private void lblOccupied_MouseHover(object sender, EventArgs e)
         {
-            if(canEditTable)
+            if(canEditTable) //if  you can edit the table, change the cursor when hovering over label
             lblOccupied.Cursor = Cursors.Hand;
         }
 
         private void lblReserved_MouseHover(object sender, EventArgs e)
         {
-            if (canEditTable)
+            if (canEditTable) //if  you can edit the table, change the cursor when hovering over label
                 lblReserved.Cursor = Cursors.Hand;
         }
 
@@ -206,12 +216,57 @@ namespace LoginForm
 
         private void lblOccupied_MouseLeave(object sender, EventArgs e)
         {
-            lblOccupied.Cursor = Cursors.Default;
+            lblOccupied.Cursor = Cursors.Default; //change the cursor to default when not hovering over label
         }
 
         private void lblReserved_MouseLeave(object sender, EventArgs e)
         {
             lblReserved.Cursor = Cursors.Default;
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlTablesView.Hide();
+        }
+
+        private void lblStatus_MouseHover(object sender, EventArgs e)
+        {
+            if (canEditTable)
+                lblStatus.Cursor = Cursors.Hand;
+            else
+                lblStatus.Cursor = Cursors.Default;
+        }
+
+        private void lblStatus_Click(object sender, EventArgs e)
+        {
+            if(canEditTable)
+            {
+                if (lblStatus.Text == "Status: Order taken")
+                    lblStatus.Text = "Status: Order served";
+                else if (lblStatus.Text == "Status: Order served")
+                    lblStatus.Text = "Status: Order taken";
+
+            }
+        }
+
+
+        private void btnSaveTableInfo_Click(object sender, EventArgs e)
+        {
+            Table_Service tableService = new Table_Service();
+            //depending on what the label text is, set isAvailable and isReserved
+            bool isAvailable;
+            bool isReserved;
+            if (lblReserved.Text == "Reserved: Yes")
+                isReserved = true;
+            else
+                isReserved = false;
+
+            if (lblOccupied.Text == "Occupied: Yes")
+                isAvailable = true;
+            else
+                isAvailable = false;
+
+            tableService.UpdateTable(selectedTable, isAvailable, isReserved); // update table
         }
     }
 }

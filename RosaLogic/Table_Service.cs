@@ -23,6 +23,18 @@ namespace RosaLogic
             }
             
         }
+        public void UpdateTable(Table table, bool isAvailable, bool isReserved)
+        {
+            try
+            {
+                tableDAO.UpdateTable(table, isAvailable, isReserved);
+            }
+            catch
+            {
+                ErrorDAO error = new ErrorDAO("Couldn't update Table to the database");
+            }
+          
+        }
         public Table GetById(int id)
         {
             try

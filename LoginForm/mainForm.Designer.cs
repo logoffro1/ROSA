@@ -42,18 +42,21 @@
             this.picTable1 = new System.Windows.Forms.PictureBox();
             this.picPlaceHolder = new System.Windows.Forms.PictureBox();
             this.pnlTableInfo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnExitTableInfo = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblReserved = new System.Windows.Forms.Label();
             this.lblOccupied = new System.Windows.Forms.Label();
             this.lblCapacity = new System.Windows.Forms.Label();
             this.navbar = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblSelectTable = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pnlTablesView = new System.Windows.Forms.Panel();
+            this.btnSaveTableInfo = new System.Windows.Forms.Button();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -68,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlaceHolder)).BeginInit();
             this.pnlTableInfo.SuspendLayout();
             this.navbar.SuspendLayout();
+            this.pnlTablesView.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTables
@@ -83,11 +87,10 @@
             this.pnlTables.Controls.Add(this.picTable3);
             this.pnlTables.Controls.Add(this.picTable2);
             this.pnlTables.Controls.Add(this.picTable1);
-            this.pnlTables.Location = new System.Drawing.Point(12, 98);
+            this.pnlTables.Location = new System.Drawing.Point(12, 23);
             this.pnlTables.Name = "pnlTables";
             this.pnlTables.Size = new System.Drawing.Size(583, 604);
             this.pnlTables.TabIndex = 0;
-            this.pnlTables.Visible = false;
             // 
             // picTable10
             // 
@@ -222,6 +225,7 @@
             // pnlTableInfo
             // 
             this.pnlTableInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTableInfo.Controls.Add(this.btnSaveTableInfo);
             this.pnlTableInfo.Controls.Add(this.label1);
             this.pnlTableInfo.Controls.Add(this.btnEdit);
             this.pnlTableInfo.Controls.Add(this.btnExitTableInfo);
@@ -230,11 +234,32 @@
             this.pnlTableInfo.Controls.Add(this.lblOccupied);
             this.pnlTableInfo.Controls.Add(this.lblCapacity);
             this.pnlTableInfo.Controls.Add(this.picPlaceHolder);
-            this.pnlTableInfo.Location = new System.Drawing.Point(694, 98);
+            this.pnlTableInfo.Location = new System.Drawing.Point(693, 23);
             this.pnlTableInfo.Name = "pnlTableInfo";
             this.pnlTableInfo.Size = new System.Drawing.Size(285, 358);
             this.pnlTableInfo.TabIndex = 1;
             this.pnlTableInfo.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 308);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 18);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Edit mode:";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(118, 305);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(48, 26);
+            this.btnEdit.TabIndex = 25;
+            this.btnEdit.Text = "ON";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnExitTableInfo
             // 
@@ -259,6 +284,8 @@
             this.lblStatus.Size = new System.Drawing.Size(63, 20);
             this.lblStatus.TabIndex = 23;
             this.lblStatus.Text = "Status";
+            this.lblStatus.Click += new System.EventHandler(this.lblStatus_Click);
+            this.lblStatus.MouseHover += new System.EventHandler(this.lblStatus_MouseHover);
             // 
             // lblReserved
             // 
@@ -302,12 +329,20 @@
             this.navbar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navbar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
             this.tablesToolStripMenuItem});
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
             this.navbar.Size = new System.Drawing.Size(1006, 36);
             this.navbar.TabIndex = 2;
             this.navbar.Text = "menuStrip1";
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // tablesToolStripMenuItem
             // 
@@ -345,44 +380,43 @@
             // 
             this.lblSelectTable.AutoSize = true;
             this.lblSelectTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectTable.Location = new System.Drawing.Point(166, 75);
+            this.lblSelectTable.Location = new System.Drawing.Point(159, 0);
             this.lblSelectTable.Name = "lblSelectTable";
             this.lblSelectTable.Size = new System.Drawing.Size(254, 20);
             this.lblSelectTable.TabIndex = 25;
             this.lblSelectTable.Text = "Select a table for information";
-            this.lblSelectTable.Visible = false;
             // 
-            // btnEdit
+            // pnlTablesView
             // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(125, 305);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(48, 26);
-            this.btnEdit.TabIndex = 25;
-            this.btnEdit.Text = "ON";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.pnlTablesView.Controls.Add(this.lblSelectTable);
+            this.pnlTablesView.Controls.Add(this.pnlTables);
+            this.pnlTablesView.Controls.Add(this.pnlTableInfo);
+            this.pnlTablesView.Location = new System.Drawing.Point(12, 76);
+            this.pnlTablesView.Name = "pnlTablesView";
+            this.pnlTablesView.Size = new System.Drawing.Size(981, 633);
+            this.pnlTablesView.TabIndex = 26;
+            this.pnlTablesView.Visible = false;
             // 
-            // label1
+            // btnSaveTableInfo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 308);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 18);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Edit mode:";
+            this.btnSaveTableInfo.Enabled = false;
+            this.btnSaveTableInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveTableInfo.Location = new System.Drawing.Point(199, 305);
+            this.btnSaveTableInfo.Name = "btnSaveTableInfo";
+            this.btnSaveTableInfo.Size = new System.Drawing.Size(74, 26);
+            this.btnSaveTableInfo.TabIndex = 27;
+            this.btnSaveTableInfo.Text = "SAVE";
+            this.btnSaveTableInfo.UseVisualStyleBackColor = true;
+            this.btnSaveTableInfo.Click += new System.EventHandler(this.btnSaveTableInfo_Click);
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 721);
-            this.Controls.Add(this.lblSelectTable);
+            this.Controls.Add(this.pnlTablesView);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.lblWelcome);
-            this.Controls.Add(this.pnlTableInfo);
-            this.Controls.Add(this.pnlTables);
             this.Controls.Add(this.navbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -408,6 +442,8 @@
             this.pnlTableInfo.PerformLayout();
             this.navbar.ResumeLayout(false);
             this.navbar.PerformLayout();
+            this.pnlTablesView.ResumeLayout(false);
+            this.pnlTablesView.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,5 +476,8 @@
         private System.Windows.Forms.Label lblSelectTable;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlTablesView;
+        private System.Windows.Forms.Button btnSaveTableInfo;
     }
 }

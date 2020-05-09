@@ -29,6 +29,30 @@ namespace RosaDAL
             }
             return table;
         }
+        public void UpdateTable(Table table, bool isAvailable, bool isReserved)
+        {
+            int availableTemp;
+            int reservedTemp;
+            if (isAvailable)
+                availableTemp = 1;
+            else
+                availableTemp = 0;
+
+            if (isReserved)
+                reservedTemp = 1;
+            else
+                reservedTemp = 0;
+
+            SqlCommand cmd = new SqlCommand("update [table] set isAvailable = @isAvailable, isReserved = @isReserved where table_id = @Id; ", conn);
+
+            cmd.Parameters.AddWithValue("@isAvailable", availableTemp);
+            cmd.Parameters.AddWithValue("@Id", table.tableId);
+            cmd.Parameters.AddWithValue("@isReserved", reservedTemp);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+
+        }
         private Table ReadTable(SqlDataReader reader)
         {
             Table table = new Table()
