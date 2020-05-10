@@ -40,7 +40,6 @@
             this.picTable3 = new System.Windows.Forms.PictureBox();
             this.picTable2 = new System.Windows.Forms.PictureBox();
             this.picTable1 = new System.Windows.Forms.PictureBox();
-            this.picPlaceHolder = new System.Windows.Forms.PictureBox();
             this.pnlTableInfo = new System.Windows.Forms.Panel();
             this.btnSaveTableInfo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.lblReserved = new System.Windows.Forms.Label();
             this.lblOccupied = new System.Windows.Forms.Label();
             this.lblCapacity = new System.Windows.Forms.Label();
+            this.picPlaceHolder = new System.Windows.Forms.PictureBox();
             this.navbar = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +57,13 @@
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblSelectTable = new System.Windows.Forms.Label();
             this.pnlTablesView = new System.Windows.Forms.Panel();
+            this.pnlHome = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.picTest1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -68,10 +75,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlaceHolder)).BeginInit();
             this.pnlTableInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlaceHolder)).BeginInit();
             this.navbar.SuspendLayout();
             this.pnlTablesView.SuspendLayout();
+            this.pnlHome.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTest1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTables
@@ -214,16 +226,6 @@
             this.picTable1.TabStop = false;
             this.picTable1.Click += new System.EventHandler(this.picTable1_Click);
             // 
-            // picPlaceHolder
-            // 
-            this.picPlaceHolder.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picPlaceHolder.Location = new System.Drawing.Point(78, 20);
-            this.picPlaceHolder.Name = "picPlaceHolder";
-            this.picPlaceHolder.Size = new System.Drawing.Size(130, 98);
-            this.picPlaceHolder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPlaceHolder.TabIndex = 19;
-            this.picPlaceHolder.TabStop = false;
-            // 
             // pnlTableInfo
             // 
             this.pnlTableInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -337,6 +339,16 @@
             this.lblCapacity.TabIndex = 20;
             this.lblCapacity.Text = "Capacity";
             // 
+            // picPlaceHolder
+            // 
+            this.picPlaceHolder.Cursor = System.Windows.Forms.Cursors.Default;
+            this.picPlaceHolder.Location = new System.Drawing.Point(78, 20);
+            this.picPlaceHolder.Name = "picPlaceHolder";
+            this.picPlaceHolder.Size = new System.Drawing.Size(130, 98);
+            this.picPlaceHolder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPlaceHolder.TabIndex = 19;
+            this.picPlaceHolder.TabStop = false;
+            // 
             // navbar
             // 
             this.navbar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -369,7 +381,7 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(793, 47);
+            this.lblWelcome.Location = new System.Drawing.Point(793, 43);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(110, 18);
             this.lblWelcome.TabIndex = 3;
@@ -381,7 +393,7 @@
             this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogout.ForeColor = System.Drawing.Color.Black;
-            this.lblLogout.Location = new System.Drawing.Point(929, 47);
+            this.lblLogout.Location = new System.Drawing.Point(929, 43);
             this.lblLogout.Name = "lblLogout";
             this.lblLogout.Size = new System.Drawing.Size(65, 18);
             this.lblLogout.TabIndex = 4;
@@ -394,32 +406,108 @@
             // 
             this.lblSelectTable.AutoSize = true;
             this.lblSelectTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectTable.Location = new System.Drawing.Point(159, 0);
+            this.lblSelectTable.Location = new System.Drawing.Point(155, 0);
             this.lblSelectTable.Name = "lblSelectTable";
-            this.lblSelectTable.Size = new System.Drawing.Size(254, 20);
+            this.lblSelectTable.Size = new System.Drawing.Size(302, 20);
             this.lblSelectTable.TabIndex = 25;
-            this.lblSelectTable.Text = "Select a table for information";
+            this.lblSelectTable.Text = "Select a table for more information";
             // 
             // pnlTablesView
             // 
             this.pnlTablesView.Controls.Add(this.lblSelectTable);
-            this.pnlTablesView.Controls.Add(this.pnlTables);
             this.pnlTablesView.Controls.Add(this.pnlTableInfo);
+            this.pnlTablesView.Controls.Add(this.pnlTables);
             this.pnlTablesView.Location = new System.Drawing.Point(12, 76);
             this.pnlTablesView.Name = "pnlTablesView";
             this.pnlTablesView.Size = new System.Drawing.Size(981, 633);
             this.pnlTablesView.TabIndex = 26;
             this.pnlTablesView.Visible = false;
             // 
+            // pnlHome
+            // 
+            this.pnlHome.Controls.Add(this.button2);
+            this.pnlHome.Controls.Add(this.panel1);
+            this.pnlHome.Controls.Add(this.button1);
+            this.pnlHome.Controls.Add(this.picTest1);
+            this.pnlHome.Controls.Add(this.pictureBox1);
+            this.pnlHome.Location = new System.Drawing.Point(16, 73);
+            this.pnlHome.Name = "pnlHome";
+            this.pnlHome.Size = new System.Drawing.Size(980, 630);
+            this.pnlHome.TabIndex = 26;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(12, 21);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(245, 515);
+            this.panel1.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 24);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(217, 168);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(904, 419);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 40);
+            this.button1.TabIndex = 2;
+            this.button1.Text = ">";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // picTest1
+            // 
+            this.picTest1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picTest1.Location = new System.Drawing.Point(424, 369);
+            this.picTest1.Name = "picTest1";
+            this.picTest1.Size = new System.Drawing.Size(421, 167);
+            this.picTest1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTest1.TabIndex = 1;
+            this.picTest1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::LoginForm.Properties.Resources.chapeau;
+            this.pictureBox1.Location = new System.Drawing.Point(424, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(524, 305);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(851, 419);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(47, 40);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "<";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 721);
-            this.Controls.Add(this.pnlTablesView);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.navbar);
+            this.Controls.Add(this.pnlHome);
+            this.Controls.Add(this.pnlTablesView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -439,13 +527,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlaceHolder)).EndInit();
             this.pnlTableInfo.ResumeLayout(false);
             this.pnlTableInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlaceHolder)).EndInit();
             this.navbar.ResumeLayout(false);
             this.navbar.PerformLayout();
             this.pnlTablesView.ResumeLayout(false);
             this.pnlTablesView.PerformLayout();
+            this.pnlHome.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTest1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,5 +574,12 @@
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.Panel pnlTablesView;
         private System.Windows.Forms.Button btnSaveTableInfo;
+        private System.Windows.Forms.Panel pnlHome;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox picTest1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -36,12 +36,12 @@ namespace LoginForm
                 lblError.Text = "Username and Password required!";
 
             }
-            else
-            {
-                //if they are not empty, read the employees from the database and compare them with the input from the user
-                lblError.Visible = false;
+            else //if they are not empty, read the employees from the database and compare them with the input from the user
 
+            {
+                lblError.Visible = false;
                 List<Employee> employees = employeeService.GetEmployees();
+
                 Employee employee = null;
                 foreach (Employee em in employees)
                 {
@@ -49,7 +49,7 @@ namespace LoginForm
                     {
                         //if the user input matches with the database info, set employeeExists to true
                         employeeExists = true;
-                        employee = em;
+                        employee = em; //store the employee to pass it in the main form
                         break;
                     }
                 }
@@ -66,6 +66,7 @@ namespace LoginForm
                     MainForm.Show();
                     this.Hide();
                 }
+
             }
         }
         private void btnLogin_Click(object sender, EventArgs e)
