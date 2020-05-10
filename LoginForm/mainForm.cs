@@ -312,9 +312,5 @@ namespace LoginForm
            
         }
 
-        private void lblCapacity_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
