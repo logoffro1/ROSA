@@ -311,5 +311,12 @@ namespace LoginForm
            
         }
 
+        private void managementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlManagementView.Show();
+            pnlManagementInfo.Hide();
+            pnlHome.Hide();
+
+        }
     }
 }
