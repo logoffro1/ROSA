@@ -8,3 +8,9 @@ C:\Users\logoff\source\repos\ROSA\RosaModel\bin\Debug\RosaModel.pdb
 C:\Users\logoff\source\repos\ROSA\RosaModel\obj\Debug\RosaModel.csprojAssemblyReference.cache
 C:\Users\logoff\source\repos\ROSA\RosaModel\obj\Debug\RosaModel.dll
 C:\Users\logoff\source\repos\ROSA\RosaModel\obj\Debug\RosaModel.pdb
+D:\VS Repository\ROSA\RosaModel\bin\Debug\RosaModel.dll
+D:\VS Repository\ROSA\RosaModel\bin\Debug\RosaModel.pdb
+D:\VS Repository\ROSA\RosaModel\obj\Debug\RosaModel.csprojAssemblyReference.cache
+D:\VS Repository\ROSA\RosaModel\obj\Debug\RosaModel.csproj.CoreCompileInputs.cache
+D:\VS Repository\ROSA\RosaModel\obj\Debug\RosaModel.dll
+D:\VS Repository\ROSA\RosaModel\obj\Debug\RosaModel.pdb
