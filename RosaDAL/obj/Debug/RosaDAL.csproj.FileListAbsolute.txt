@@ -16,3 +16,13 @@ C:\Users\logoff\source\repos\ROSA\RosaDAL\obj\Debug\RosaDAL.csprojAssemblyRefere
 C:\Users\logoff\source\repos\ROSA\RosaDAL\obj\Debug\RosaDAL.csproj.CopyComplete
 C:\Users\logoff\source\repos\ROSA\RosaDAL\obj\Debug\RosaDAL.dll
 C:\Users\logoff\source\repos\ROSA\RosaDAL\obj\Debug\RosaDAL.pdb
+C:\Users\Eigenaar\Source\Repos\ROSA\RosaDAL\bin\Debug\RosaDAL.dll.config
+C:\Users\Eigenaar\Source\Repos\ROSA\RosaDAL\bin\Debug\RosaDAL.dll
+C:\Users\Eigenaar\Source\Repos\ROSA\RosaDAL\bin\Debug\RosaDAL.pdb
+C:\Users\Eigenaar\Source\Repos\ROSA\RosaDAL\bin\Debug\RosaModel.dll
+C:\Users\Eigenaar\Source\Repos\ROSA\RosaDAL\bin\Debug\RosaModel.pdb
+C:\Users\Eigenaar\Source\Repos\ROSA\RosaDAL\obj\Debug\RosaDAL.csprojAssemblyReference.cache
+C:\Users\Eigenaar\Source\Repos\ROSA\RosaDAL\obj\Debug\RosaDAL.csproj.CoreCompileInputs.cache
+C:\Users\Eigenaar\Source\Repos\ROSA\RosaDAL\obj\Debug\RosaDAL.csproj.CopyComplete
+C:\Users\Eigenaar\Source\Repos\ROSA\RosaDAL\obj\Debug\RosaDAL.dll
+C:\Users\Eigenaar\Source\Repos\ROSA\RosaDAL\obj\Debug\RosaDAL.pdb
