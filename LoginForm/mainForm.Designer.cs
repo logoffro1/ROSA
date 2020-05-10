@@ -53,6 +53,7 @@
             this.navbar = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblSelectTable = new System.Windows.Forms.Label();
@@ -64,7 +65,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.picTest1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -374,7 +375,8 @@
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.tablesToolStripMenuItem,
-            this.orderToolStripMenuItem});
+            this.orderToolStripMenuItem,
+            this.managementToolStripMenuItem});
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
             this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -395,6 +397,12 @@
             this.tablesToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
             this.tablesToolStripMenuItem.Text = "Tables";
             this.tablesToolStripMenuItem.Click += new System.EventHandler(this.tablesToolStripMenuItem_Click);
+            // 
+            // orderToolStripMenuItem
+            // 
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(78, 32);
+            this.orderToolStripMenuItem.Text = "Order";
             // 
             // lblWelcome
             // 
@@ -525,11 +533,12 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // orderToolStripMenuItem
+            // managementToolStripMenuItem
             // 
-            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(78, 32);
-            this.orderToolStripMenuItem.Text = "Order";
+            this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(147, 32);
+            this.managementToolStripMenuItem.Text = "Management";
+            this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -616,5 +625,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
     }
 }
