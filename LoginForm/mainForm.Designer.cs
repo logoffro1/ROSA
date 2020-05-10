@@ -53,6 +53,7 @@
             this.navbar = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblSelectTable = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.picTest1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -396,6 +396,12 @@
             this.tablesToolStripMenuItem.Text = "Tables";
             this.tablesToolStripMenuItem.Click += new System.EventHandler(this.tablesToolStripMenuItem_Click);
             // 
+            // orderToolStripMenuItem
+            // 
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(78, 32);
+            this.orderToolStripMenuItem.Text = "Order";
+            // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
@@ -414,9 +420,9 @@
             this.lblLogout.ForeColor = System.Drawing.Color.Black;
             this.lblLogout.Location = new System.Drawing.Point(929, 43);
             this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(65, 18);
+            this.lblLogout.Size = new System.Drawing.Size(68, 18);
             this.lblLogout.TabIndex = 4;
-            this.lblLogout.Text = "Log out";
+            this.lblLogout.Text = "Log Out";
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             this.lblLogout.MouseLeave += new System.EventHandler(this.lblLogout_MouseLeave);
             this.lblLogout.MouseHover += new System.EventHandler(this.lblLogout_MouseHover);
@@ -525,12 +531,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // orderToolStripMenuItem
-            // 
-            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(78, 32);
-            this.orderToolStripMenuItem.Text = "Order";
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -539,8 +539,8 @@
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.navbar);
-            this.Controls.Add(this.pnlTablesView);
             this.Controls.Add(this.pnlHome);
+            this.Controls.Add(this.pnlTablesView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
