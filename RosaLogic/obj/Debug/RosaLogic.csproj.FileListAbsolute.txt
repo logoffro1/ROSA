@@ -31,3 +31,15 @@ C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaLogic\obj\Debug\RosaL
 C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaLogic\obj\Debug\RosaLogic.csproj.CopyComplete
 C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaLogic\obj\Debug\RosaLogic.dll
 C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaLogic\obj\Debug\RosaLogic.pdb
+D:\VS Repository\ROSA\RosaLogic\bin\Debug\RosaLogic.dll
+D:\VS Repository\ROSA\RosaLogic\bin\Debug\RosaLogic.pdb
+D:\VS Repository\ROSA\RosaLogic\bin\Debug\RosaDAL.dll
+D:\VS Repository\ROSA\RosaLogic\bin\Debug\RosaModel.dll
+D:\VS Repository\ROSA\RosaLogic\bin\Debug\RosaDAL.pdb
+D:\VS Repository\ROSA\RosaLogic\bin\Debug\RosaDAL.dll.config
+D:\VS Repository\ROSA\RosaLogic\bin\Debug\RosaModel.pdb
+D:\VS Repository\ROSA\RosaLogic\obj\Debug\RosaLogic.csprojAssemblyReference.cache
+D:\VS Repository\ROSA\RosaLogic\obj\Debug\RosaLogic.csproj.CoreCompileInputs.cache
+D:\VS Repository\ROSA\RosaLogic\obj\Debug\RosaLogic.csproj.CopyComplete
+D:\VS Repository\ROSA\RosaLogic\obj\Debug\RosaLogic.dll
+D:\VS Repository\ROSA\RosaLogic\obj\Debug\RosaLogic.pdb
