@@ -269,10 +269,9 @@ namespace LoginForm
 
             }
         }
-
-
         private void btnSaveTableInfo_Click(object sender, EventArgs e)
         {
+            employee.role = RolesEnum.Manager;
             Table_Service tableService = new Table_Service();
             //depending on what the label text is, set isAvailable and isReserved
             bool isAvailable;

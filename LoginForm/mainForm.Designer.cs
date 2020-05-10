@@ -65,7 +65,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.picTest1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -375,8 +374,7 @@
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.tablesToolStripMenuItem,
-            this.orderToolStripMenuItem,
-            this.managementToolStripMenuItem});
+            this.orderToolStripMenuItem});
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
             this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -422,9 +420,9 @@
             this.lblLogout.ForeColor = System.Drawing.Color.Black;
             this.lblLogout.Location = new System.Drawing.Point(929, 43);
             this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(65, 18);
+            this.lblLogout.Size = new System.Drawing.Size(68, 18);
             this.lblLogout.TabIndex = 4;
-            this.lblLogout.Text = "Log out";
+            this.lblLogout.Text = "Log Out";
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             this.lblLogout.MouseLeave += new System.EventHandler(this.lblLogout_MouseLeave);
             this.lblLogout.MouseHover += new System.EventHandler(this.lblLogout_MouseHover);
@@ -533,13 +531,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // managementToolStripMenuItem
-            // 
-            this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(147, 32);
-            this.managementToolStripMenuItem.Text = "Management";
-            this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -548,8 +539,8 @@
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.navbar);
-            this.Controls.Add(this.pnlTablesView);
             this.Controls.Add(this.pnlHome);
+            this.Controls.Add(this.pnlTablesView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -625,6 +616,5 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
     }
 }
