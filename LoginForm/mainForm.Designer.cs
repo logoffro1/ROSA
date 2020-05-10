@@ -185,7 +185,7 @@
             // 
             // picTable4
             // 
-            this.picTable4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.picTable4.BackColor = System.Drawing.SystemColors.Control;
             this.picTable4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable4.Image = global::LoginForm.Properties.Resources.table4;
             this.picTable4.Location = new System.Drawing.Point(345, 137);
