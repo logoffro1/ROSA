@@ -18,6 +18,7 @@ namespace LoginForm
         List<PictureBox> tableImages = new List<PictureBox>();
         bool canEditTable = false; // if the table can be edited
         private Table selectedTable; //the current selected table by the user
+        int currentPic = -1;
         public mainForm(Employee employee)
         {
             InitializeComponent();
@@ -38,18 +39,16 @@ namespace LoginForm
         }
 
         private void mainForm_Load(object sender, EventArgs e)
-        {  
-
+        {             
             //split the name into 2 parts, firstName and lastName
             string[] nameSplit = employee.employeeName.Split(' ');
             //show a Welcome message, "Welcome, firstName!"
-            lblWelcome.Text = $"Welcome, {nameSplit[0]}!";
-            
+            lblWelcome.Text = $"Welcome, {nameSplit[0]}!";            
         }
 
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Environment.Exit(0);
+            Application.Exit();
         }
         void ChangeTableImageColor() //change the back color depending on the availability
         {
@@ -156,6 +155,7 @@ namespace LoginForm
             pnlTablesView.Show();
             ChangeTableImageColor();
             pnlTableInfo.Hide();
+            pnlHome.Hide();
         }
 
         private void btnExitTableInfo_Click(object sender, EventArgs e)
@@ -247,6 +247,7 @@ namespace LoginForm
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlTablesView.Hide();
+            pnlHome.Show();
         }
 
         private void lblStatus_MouseHover(object sender, EventArgs e)
@@ -289,5 +290,27 @@ namespace LoginForm
             tableService.UpdateTable(selectedTable, isAvailable, isReserved); // update table
             ChangeTableImageColor();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            //test ( prototype)
+            currentPic++;
+            if (currentPic == tableImages.Count)
+                currentPic = 0;
+            picTest1.Image = tableImages[currentPic].Image;
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //test ( prototype)
+            currentPic--;
+            if (currentPic <= -1)
+                currentPic = 9;
+            picTest1.Image = tableImages[currentPic].Image;
+           
+        }
+
     }
 }

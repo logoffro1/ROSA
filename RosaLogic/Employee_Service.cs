@@ -18,7 +18,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read the employee DB");
+                ErrorDAO error = new ErrorDAO("Couldn't read the employee Database");
                 return null;
             }
           

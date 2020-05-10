@@ -16,3 +16,12 @@ C:\Users\logoff\source\repos\ROSA\RosaDAL\obj\Debug\RosaDAL.csprojAssemblyRefere
 C:\Users\logoff\source\repos\ROSA\RosaDAL\obj\Debug\RosaDAL.csproj.CopyComplete
 C:\Users\logoff\source\repos\ROSA\RosaDAL\obj\Debug\RosaDAL.dll
 C:\Users\logoff\source\repos\ROSA\RosaDAL\obj\Debug\RosaDAL.pdb
+C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaDAL\bin\Debug\RosaDAL.dll.config
+C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaDAL\bin\Debug\RosaDAL.dll
+C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaDAL\bin\Debug\RosaDAL.pdb
+C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaDAL\bin\Debug\RosaModel.dll
+C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaDAL\bin\Debug\RosaModel.pdb
+C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaDAL\obj\Debug\RosaDAL.csprojAssemblyReference.cache
+C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaDAL\obj\Debug\RosaDAL.csproj.CopyComplete
+C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaDAL\obj\Debug\RosaDAL.dll
+C:\Users\MEDION\Documents\School\Inholland\Term 4\ROSA\RosaDAL\obj\Debug\RosaDAL.pdb
