@@ -27,9 +27,9 @@ namespace LoginForm
         {
             Employee_Service employeeService = new Employee_Service();
 
-            bool employeeExists = false;
+            bool employeeExists;
 
-            if (txtUsername.Text == "" || txtPassword.Text == "")
+            if (string.IsNullOrWhiteSpace(txtUsername.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 //if the textboxes are empty, give error message
                 lblError.Visible = true;
@@ -37,22 +37,18 @@ namespace LoginForm
 
             }
             else //if they are not empty, read the employees from the database and compare them with the input from the user
-
             {
                 lblError.Visible = false;
-                List<Employee> employees = employeeService.GetEmployees();
 
-                Employee employee = null;
-                foreach (Employee em in employees)
-                {
-                    if (em.username == txtUsername.Text && em.password == txtPassword.Text)
-                    {
-                        //if the user input matches with the database info, set employeeExists to true
-                        employeeExists = true;
-                        employee = em; //store the employee to pass it in the main form
-                        break;
-                    }
-                }
+                //return from the database only the employee that matches those credentials
+               Employee employee = employeeService.GetAccount(txtUsername.Text,txtPassword.Text);
+
+                //if the employee exists, set the boolean to 'true'
+                if (employee != null)
+                    employeeExists = true;
+                else
+                    employeeExists = false;
+
                 if (!employeeExists)
                 {
                     //if the employee doesn't exist, give error message
@@ -90,15 +86,14 @@ namespace LoginForm
         }
         private void eyePic_Click(object sender, EventArgs e)
         {
-            //if the useSystemPasswordChar is true, set it to false.
-            //if it is false, set it to true
+            //if the useSystemPasswordChar is true, set it to false and the other way around
             //that shows or hides the password
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
         }
 
         private void loginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Environment.Exit(0);
+            Application.Exit();
         }
     }
 }

@@ -18,7 +18,34 @@ namespace RosaDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
+        public Employee GetAccount(string username, string password)
+        {
+            SqlCommand cmd = new SqlCommand("select employee_id, role_id, employeeName, username, [password] FROM employee where username = @username AND [password] = @password;", conn);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+            SqlDataReader reader = cmd.ExecuteReader();
+            Employee employee = null;
+            if (reader.Read())
+            {
+                employee = ReadTable(reader);
+            }
+            return employee;
+        }
+        private Employee ReadTable(SqlDataReader reader)
+        {
+            Employee employee = new Employee()
+            {
+                employeeId = (int)reader["employee_id"],
+                employeeName = reader["employeeName"].ToString(),
+                username = reader["username"].ToString(),
+                password = reader["password"].ToString(),
+                role = (RolesEnum)reader["role_id"]
 
+            };
+
+            return employee;
+
+        }
         private List<Employee> ReadTables(DataTable dataTable)
         {
             List<Employee> employees = new List<Employee>();

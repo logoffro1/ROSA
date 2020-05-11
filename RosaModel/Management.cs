@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace RosaModel
 {
     public class Management
-    {
-        
+    {      
         
     }
 }

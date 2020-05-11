@@ -23,5 +23,9 @@ namespace RosaLogic
             }
           
         }
+        public Employee GetAccount(string username, string password)
+        {
+            return employeeDAO.GetAccount(username, password);
+        }
     }
 }

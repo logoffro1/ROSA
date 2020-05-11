@@ -461,6 +461,7 @@
             this.pnlHome.Name = "pnlHome";
             this.pnlHome.Size = new System.Drawing.Size(980, 630);
             this.pnlHome.TabIndex = 26;
+            this.pnlHome.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHome_Paint);
             // 
             // button2
             // 

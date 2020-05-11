@@ -52,6 +52,7 @@ namespace LoginForm
         }
         void ChangeTableImageColor() //change the back color depending on the availability
         {
+            //minimize this
             Table_Service tableService = new Table_Service();
             List<Table> tables = tableService.GetAllTables(); //return all the tables from the database
             int count = 0;
@@ -313,9 +314,14 @@ namespace LoginForm
 
         private void managementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlManagementView.Show();
-            pnlManagementInfo.Hide();
+            //pnlManagementView.Show();
+           // pnlManagementInfo.Hide();
             pnlHome.Hide();
+
+        }
+
+        private void pnlHome_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
