@@ -65,6 +65,7 @@
             this.lblSelectTable = new System.Windows.Forms.Label();
             this.pnlTablesView = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -394,6 +395,7 @@
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem1,
             this.tablesToolStripMenuItem1,
+            this.orderToolStripMenuItem1,
             this.barToolStripMenuItem,
             this.kitchenToolStripMenuItem});
             this.navbar.Location = new System.Drawing.Point(0, 0);
@@ -509,6 +511,12 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // orderToolStripMenuItem1
+            // 
+            this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
+            this.orderToolStripMenuItem1.Size = new System.Drawing.Size(78, 32);
+            this.orderToolStripMenuItem1.Text = "Order";
+            // 
             // tableViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -592,5 +600,6 @@
         private System.Windows.Forms.ToolStripMenuItem kitchenToolStripMenuItem;
         private System.Windows.Forms.Label lblWaitTimeText;
         private System.Windows.Forms.Label lblWaitTime;
+        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem1;
     }
 }

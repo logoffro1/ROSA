@@ -97,3 +97,5 @@ C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Numerics.Vectors.dl
 C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Buffers.dll
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.MenuItemForm.resources
+C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.OrderTemp.resources
+C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.paymentForm.resources

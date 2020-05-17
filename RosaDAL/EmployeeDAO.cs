@@ -68,7 +68,6 @@ namespace RosaDAL
                 role = (Roles)reader["role_id"]              
             };
             return employee;
-
         }
         private List<Employee> ReadEmployees(DataTable dataTable)
         {

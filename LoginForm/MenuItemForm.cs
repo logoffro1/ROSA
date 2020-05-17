@@ -201,5 +201,12 @@ namespace LoginForm
         {
             Application.Exit();
         }
+
+        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OrderTemp ot = new OrderTemp(employee);
+            ot.Show();
+            this.Hide();
+        }
     }
 }

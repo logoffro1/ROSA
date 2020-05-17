@@ -61,6 +61,18 @@
     <Compile Include="MenuItemForm.Designer.cs">
       <DependentUpon>MenuItemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderTemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderTemp.Designer.cs">
+      <DependentUpon>OrderTemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paymentForm.Designer.cs">
+      <DependentUpon>paymentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +97,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuItemForm.resx">
       <DependentUpon>MenuItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderTemp.resx">
+      <DependentUpon>OrderTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paymentForm.resx">
+      <DependentUpon>paymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tableViewForm.resx">
       <DependentUpon>tableViewForm.cs</DependentUpon>

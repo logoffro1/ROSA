@@ -31,6 +31,7 @@
             this.navbar = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BarView = new System.Windows.Forms.ToolStripMenuItem();
             this.kitchenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Bar = new System.Windows.Forms.Panel();
@@ -70,6 +71,7 @@
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.tablesToolStripMenuItem,
+            this.orderToolStripMenuItem,
             this.BarView,
             this.kitchenToolStripMenuItem});
             this.navbar.Location = new System.Drawing.Point(0, 0);
@@ -92,6 +94,13 @@
             this.tablesToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
             this.tablesToolStripMenuItem.Text = "Tables";
             this.tablesToolStripMenuItem.Click += new System.EventHandler(this.tablesToolStripMenuItem_Click);
+            // 
+            // orderToolStripMenuItem
+            // 
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(78, 32);
+            this.orderToolStripMenuItem.Text = "Order";
+            this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // BarView
             // 
@@ -368,5 +377,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel_Kitchen;
+        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
     }
 }

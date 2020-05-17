@@ -145,5 +145,12 @@ namespace LoginForm
             this.Hide();
             menuItemForm.Show();
         }
+
+        private void orderToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OrderTemp ot = new OrderTemp(employee);
+            ot.Show();
+            this.Hide();
+        }
     }
 }
