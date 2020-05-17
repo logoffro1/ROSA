@@ -118,55 +118,118 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tablePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tablePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="waiterProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\waiterProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infoBoxWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infoBoxWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chefProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chefProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_LOGINPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_LOGINPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Lock-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lock-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="backgroundImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backgroundImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chapeau" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chapeau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Table3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WhiteOpacity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WhiteOpacity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Black-Eye-Watch-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Black-Eye-Watch-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="circleGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circleGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="infoBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infoBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Button_RIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_RIGHT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Box_LogIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Box_LogIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Table9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tablePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tablePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="helpTablesView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helpTablesView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="box2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\box2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Button_LEFT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_LEFT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chapeau1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chapeau1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loginButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Table10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Table4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circleGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circleGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HOME_BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HOME_BG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Black-Eye-Watch-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Black-Eye-Watch-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="managerProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\managerProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bartenderProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bartenderProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Available_Occupied Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Available_Occupied Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_TABLESPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_TABLESPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chapeau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chapeau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chapeau2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chapeau2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_LogIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_LogIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

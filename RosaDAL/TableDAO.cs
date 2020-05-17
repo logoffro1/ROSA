@@ -13,13 +13,13 @@ namespace RosaDAL
         public List<Table> Db_Get_AllTables()
         {
             //read employees from database
-            string query = "select table_id, capacity, isAvailable, isReserved from [table]";
+            string query = "select [table].table_id, capacity, isAvailable, isReserved,[order].[orderDate], [order].[status] FROM [table] LEFT JOIN [order] ON [order].table_id=[table].table_id;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
         public Table GetById(int id)
         {
-            SqlCommand cmd = new SqlCommand("SELECT table_id, capacity, isAvailable, isReserved FROM [table] WHERE table_id = @table_id", conn);
+            SqlCommand cmd = new SqlCommand("select [table].table_id, capacity, isAvailable, isReserved, [order].[status] FROM [table] LEFT JOIN [order] ON [order].table_id=[table].table_id WHERE [table].table_id = @table_id;", conn);
             cmd.Parameters.AddWithValue("@table_id", id);
             SqlDataReader reader = cmd.ExecuteReader();
             Table table = null;
@@ -31,27 +31,11 @@ namespace RosaDAL
         }
         public void UpdateTable(Table table, bool isAvailable, bool isReserved)
         {
-            int availableTemp;
-            int reservedTemp;
-            if (isAvailable)
-                availableTemp = 1;
-            else
-                availableTemp = 0;
-
-            if (isReserved)
-                reservedTemp = 1;
-            else
-                reservedTemp = 0;
-
             SqlCommand cmd = new SqlCommand("update [table] set isAvailable = @isAvailable, isReserved = @isReserved where table_id = @Id; ", conn);
-
-            cmd.Parameters.AddWithValue("@isAvailable", availableTemp);
+            cmd.Parameters.AddWithValue("@isAvailable", Convert.ToInt32(isAvailable));
             cmd.Parameters.AddWithValue("@Id", table.tableId);
-            cmd.Parameters.AddWithValue("@isReserved", reservedTemp);
-
-            SqlDataReader reader = cmd.ExecuteReader();
-
-
+            cmd.Parameters.AddWithValue("@isReserved", Convert.ToInt32(isReserved));
+            cmd.ExecuteReader();
         }
         private Table ReadTable(SqlDataReader reader)
         {
@@ -61,9 +45,15 @@ namespace RosaDAL
                 capacity = (int)reader["capacity"],
                 isAvailable = (bool)reader["isAvailable"],
                 isReserved = (bool)reader["isReserved"]
-
             };
+            //check if the column with the index 5(status) is null and set table.status accordingly
+            if (reader.IsDBNull(5))
+                table.status = 0;
+            else
+                table.status = (int)reader["status"];
 
+            if (!reader.IsDBNull(4))
+                table.orderdate = (DateTime)reader["orderDate"];
             return table;
 
         }
@@ -80,7 +70,13 @@ namespace RosaDAL
                     isAvailable = (bool)dr["isAvailable"],
                     isReserved = (bool)dr["isReserved"]
                 };
+                if (dr.IsNull("status")) //check if the status is null and set table.status accordingly
+                    table.status = 0;
+                else
+                    table.status = (int)dr["status"];
 
+                if (!dr.IsNull("orderDate"))
+                    table.orderdate = (DateTime)dr["orderDate"];
                 tables.Add(table);
             }
             return tables;

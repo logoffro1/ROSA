@@ -28,7 +28,6 @@ C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\RosaDAL.pdb
 C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\RosaDAL.dll.config
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\Forms.csprojAssemblyReference.cache
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.loginForm.resources
-C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.mainForm.resources
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.Properties.Resources.resources
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\Forms.csproj.GenerateResource.cache
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\Forms.csproj.CopyComplete
@@ -90,3 +89,11 @@ C:\Users\Eigenaar\Source\Repos\ROSA\LoginForm\obj\Debug\Forms.csproj.CoreCompile
 C:\Users\Eigenaar\Source\Repos\ROSA\LoginForm\obj\Debug\Forms.csproj.CopyComplete
 C:\Users\Eigenaar\Source\Repos\ROSA\LoginForm\obj\Debug\LoginForm.exe
 C:\Users\Eigenaar\Source\Repos\ROSA\LoginForm\obj\Debug\LoginForm.pdb
+C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.homeForm.resources
+C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.tableViewForm.resources
+C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Resources.Extensions.dll
+C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Memory.dll
+C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Buffers.dll
+C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.MenuItemForm.resources

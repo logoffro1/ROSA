@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace RosaModel
 {
-    public class Management
-    {      
-        
-    }
+  public enum Roles
+    {
+        Waiter = 1,Bartender, Manager, Chef
+    } 
 }

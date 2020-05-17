@@ -36,6 +36,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Resources.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,19 +55,42 @@
     <Compile Include="loginForm.Designer.cs">
       <DependentUpon>loginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainForm.cs">
+    <Compile Include="MenuItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainForm.Designer.cs">
-      <DependentUpon>mainForm.cs</DependentUpon>
+    <Compile Include="MenuItemForm.Designer.cs">
+      <DependentUpon>MenuItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="tableViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tableViewForm.Designer.cs">
+      <DependentUpon>tableViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="homeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="homeForm.Designer.cs">
+      <DependentUpon>homeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainForm.resx">
-      <DependentUpon>mainForm.cs</DependentUpon>
+    <EmbeddedResource Include="MenuItemForm.resx">
+      <DependentUpon>MenuItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tableViewForm.resx">
+      <DependentUpon>tableViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="homeForm.resx">
+      <DependentUpon>homeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,11 +101,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -117,40 +136,94 @@
     <None Include="Resources\User_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Lock-32.png" />
+    <None Include="Resources\chapeau1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tablePic.png" />
+    <None Include="Resources\infoBoxWhite.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\table1.png" />
+    <None Include="Resources\chapeau2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\table2.png" />
+    <None Include="Resources\backgroundImg.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\table3.png" />
+    <None Include="Resources\WhiteOpacity.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\table4.png" />
+    <None Include="Resources\helpTablesView.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\table5.png" />
+    <None Include="Resources\circleGreen.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\table6.png" />
+    <None Include="Resources\circleGrey.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\table7.png" />
+    <None Include="Resources\Button_LEFT.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\table9.png" />
+    <None Include="Resources\Button_RIGHT.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\table8.png" />
+    <None Include="Resources\bartenderProfile.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\table10.png" />
+    <None Include="Resources\chefProfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\managerProfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waiterProfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Available_Occupied Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_LOGINPAGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Box_LogIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_TABLESPAGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HOME_BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_LogIn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
