@@ -52,6 +52,7 @@ namespace LoginForm
         }
         void ChangeTableImageColor() //change the back color depending on the availability
         {
+            //minimize this
             Table_Service tableService = new Table_Service();
             List<Table> tables = tableService.GetAllTables(); //return all the tables from the database
             int count = 0;
@@ -269,10 +270,9 @@ namespace LoginForm
 
             }
         }
-
-
         private void btnSaveTableInfo_Click(object sender, EventArgs e)
         {
+            employee.role = RolesEnum.Manager;
             Table_Service tableService = new Table_Service();
             //depending on what the label text is, set isAvailable and isReserved
             bool isAvailable;
@@ -312,7 +312,15 @@ namespace LoginForm
            
         }
 
-        private void lblCapacity_Click(object sender, EventArgs e)
+        private void managementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //pnlManagementView.Show();
+           // pnlManagementInfo.Hide();
+            pnlHome.Hide();
+
+        }
+
+        private void pnlHome_Paint(object sender, PaintEventArgs e)
         {
 
         }
