@@ -61,11 +61,7 @@ namespace RosaDAL
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                string tempNote = "No notes";
-                if ((dr)["notes"] != DBNull.Value)
-                {
-                    tempNote = (string)(dr)["notes"];
-                }
+
                 MenuItem temp = new MenuItem()
                 {
                     TableId = (int)dr["table_id"],
@@ -75,9 +71,13 @@ namespace RosaDAL
                     Status = (StatusEnum)(int)dr["status"],
                     menuCat = (int)dr["menuCategory_id"],
                     Quantity = (int)dr["amount"],
-                    orderID = (int)dr["order_id"],
-                    Note = tempNote
+                    orderID = (int)dr["order_id"]
+
             };
+                if (dr.IsNull("notes"))
+                    temp.Note = "No notes";
+                else
+                    temp.Note = (string)dr["notes"];
 
                 menuItem.Add(temp);
             }

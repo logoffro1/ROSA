@@ -129,11 +129,13 @@ namespace LoginForm
             }
             //show the table info panel
             pnlTableInfo.Show();
+            paymentForm pf = new paymentForm(employee);
+            pf.Location = new Point(pf.Location.X, pf.Location.Y + 30);
         }
 
         private void TimerWaitTime_Tick(object sender, EventArgs e)
         {
-            ChangeLabelWaitTime(); ;
+            ChangeLabelWaitTime(); 
         }
 
         private void ChangeLabelWaitTime()
@@ -150,6 +152,7 @@ namespace LoginForm
                     lblWaitTime.BackColor = Color.Yellow;
                 else
                     lblWaitTime.BackColor = Color.PaleVioletRed;
+
                 lblWaitTime.Text = $"{waitTimeMinutes.ToString("00")}:{waitTimeSeconds.ToString("00")}";
             }
             else
