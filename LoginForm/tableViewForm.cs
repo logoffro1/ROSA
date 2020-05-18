@@ -310,7 +310,7 @@ namespace LoginForm
 
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuItemForm menuItemForm = new MenuItemForm(employee);
+            MenuItemForm menuItemForm = new MenuItemForm(employee,"bar");
             this.Hide();
             menuItemForm.Show();
         }

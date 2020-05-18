@@ -16,23 +16,22 @@ namespace LoginForm
     public partial class MenuItemForm : Form
     {
         private Employee employee;
-        public MenuItemForm()
+
+        public MenuItemForm(Employee employee,string name)
         {
-            InitializeComponent();
-        }
-        public MenuItemForm(Employee employee)
-        {
+           
             this.employee = employee;
             InitializeComponent();
+            KitcheOrBarView(name);
         }
         private void BarView_Click(object sender, EventArgs e)
         {
-            KitcheOrBarView(sender, e);
+            KitcheOrBarView("bar");
             return;
         }
         private void RefreshDatabase(object sender, EventArgs e)
         {
-            KitcheOrBarView(sender, e);
+            KitcheOrBarView("kitchen");
         }
         private Color checkStatus(RosaModel.MenuItem b) // Presents the color based on the (Enum)status 
         {
@@ -53,11 +52,11 @@ namespace LoginForm
                     return Color.White;
             }
         }
-        private void KitcheOrBarView(object sender, EventArgs e) //Displays the overview of both the Bar and Kitchen View
+        private void KitcheOrBarView(string name) //Displays the overview of both the Bar and Kitchen View
         {
             MenuItem_Service BarService = new MenuItem_Service();
             List<RosaModel.MenuItem> barLIst = BarService.GetMenuItem();
-            if (sender == BarView) //Displays the overview of the Bar View
+            if (name == "bar") //Displays the overview of the Bar View
             {
                 panel_Bar.Show();
                 panel_Kitchen.Hide();
@@ -83,7 +82,7 @@ namespace LoginForm
                     listKitchenView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                 }
             }
-            else if (sender == kitchenToolStripMenuItem) //Displays the overview of the Kitchen View
+            else if (name =="kitchen") //Displays the overview of the Kitchen View
             {
                 panel_Bar.Hide();
                 panel_Kitchen.Show();
@@ -111,7 +110,7 @@ namespace LoginForm
                 }
             }
         }
-        private void Bottons(object sender, EventArgs e)
+        private void Bottons() //what buttons?
         {
             // When you click on button you want to update the status of the certain order
             MenuItem_Service tableService = new MenuItem_Service();
@@ -129,12 +128,12 @@ namespace LoginForm
                    int.Parse(listBarView.SelectedItems[0].SubItems[7].Text), // OrderID from the KitchenBarView in this case it is the 8th column from the add list
                    DateTime.Parse(listBarView.SelectedItems[0].SubItems[0].Text), // Date and Time from the KitchenBarView in this case it is the 1st column from the add list
                    listBarView.SelectedItems[0].SubItems[6].Text); // Note from the KitchenBarView in this case it is the 7th column from the add list
-
+                 
                 if (temp.Status == StatusEnum.Ready || temp.Status == StatusEnum.Waiting || temp.Status == StatusEnum.Ordered)
                 {
                     tableService.UpdateTableOrder(temp, status); // updates table
                     MessageBox.Show("Order Send!");
-                    KitcheOrBarView(sender, e);
+                    KitcheOrBarView("bar");
                 }
                 else
                 {
@@ -154,11 +153,11 @@ namespace LoginForm
                   DateTime.Parse(listKitchenView.SelectedItems[0].SubItems[0].Text),  // Date and Time from the KitchenBarView in this case it is the 1st column from the add list
                   listKitchenView.SelectedItems[0].SubItems[6].Text); // Note from the KitchenBarView in this case it is the 7th column from the add list
 
-                if (temp.Status == StatusEnum.Ready || temp.Status == StatusEnum.Waiting || temp.Status == StatusEnum.Ordered)
+                if (temp.Status != StatusEnum.Billed || temp.Status != StatusEnum.Served)
                 {
                     tableService.UpdateTableOrder(temp, status); // update table
                     MessageBox.Show("Order Send!");
-                    KitcheOrBarView(sender, e);
+                    KitcheOrBarView("kitchen");
                 }
                 else
                 {
@@ -170,21 +169,20 @@ namespace LoginForm
                 MessageBox.Show("Item Was Not Selected!");
             }
         }
-        private void button3_Click(object sender, EventArgs e)
+      
+        private void btnReady_Click(object sender, EventArgs e)
         {
-            Bottons(sender, e);
+            Bottons();
         }
-        private void button6_Click(object sender, EventArgs e)
+        private void btnReadyKitchen_Click(object sender, EventArgs e)
         {
-            Bottons(sender, e);
+            Bottons();
         }
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            KitcheOrBarView(sender, e);
+            KitcheOrBarView("kitchen");
         }
-        private void MenuItemForm_Load(object sender, EventArgs e)
-        {
-        }
+
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             homeForm homeForm = new homeForm(employee);
@@ -201,13 +199,10 @@ namespace LoginForm
         {
             Application.Exit();
         }
-        public void ShowBar(EventArgs e)
+
+        private void MenuItemForm_Load(object sender, EventArgs e)
         {
-            KitcheOrBarView(BarView, e);
-        }
-        public void ShowKitchen(EventArgs e)
-        {
-            KitcheOrBarView(kitchenToolStripMenuItem, e);
+
         }
     }
 }

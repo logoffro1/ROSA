@@ -36,7 +36,7 @@
             this.kitchenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Bar = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnReady = new System.Windows.Forms.Button();
             this.listBarView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -55,7 +55,7 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnReadyKitchen = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel_Kitchen = new System.Windows.Forms.Panel();
             this.navbar.SuspendLayout();
@@ -100,7 +100,6 @@
             this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
             this.orderToolStripMenuItem.Size = new System.Drawing.Size(78, 32);
             this.orderToolStripMenuItem.Text = "Order";
-
             // 
             // BarView
             // 
@@ -121,7 +120,7 @@
             this.panel_Bar.BackColor = System.Drawing.Color.Transparent;
             this.panel_Bar.BackgroundImage = global::LoginForm.Properties.Resources.WhiteOpacity;
             this.panel_Bar.Controls.Add(this.label6);
-            this.panel_Bar.Controls.Add(this.button3);
+            this.panel_Bar.Controls.Add(this.btnReady);
             this.panel_Bar.Controls.Add(this.listBarView);
             this.panel_Bar.Controls.Add(this.label2);
             this.panel_Bar.Location = new System.Drawing.Point(12, 68);
@@ -141,16 +140,16 @@
             this.label6.TabIndex = 34;
             this.label6.Text = "Note: press on DateSold to delete certain order!";
             // 
-            // button3
+            // btnReady
             // 
-            this.button3.Location = new System.Drawing.Point(696, 53);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(176, 25);
-            this.button3.TabIndex = 31;
-            this.button3.Text = "Mark As Ready";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnReady.Location = new System.Drawing.Point(696, 53);
+            this.btnReady.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReady.Name = "btnReady";
+            this.btnReady.Size = new System.Drawing.Size(176, 25);
+            this.btnReady.TabIndex = 31;
+            this.btnReady.Text = "Mark As Ready";
+            this.btnReady.UseVisualStyleBackColor = true;
+            this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
             // 
             // listBarView
             // 
@@ -280,16 +279,16 @@
             this.columnHeader14.Text = "Notes";
             this.columnHeader14.Width = 260;
             // 
-            // button6
+            // btnReadyKitchen
             // 
-            this.button6.Location = new System.Drawing.Point(696, 48);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(193, 28);
-            this.button6.TabIndex = 31;
-            this.button6.Text = "Mark As Ready";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnReadyKitchen.Location = new System.Drawing.Point(696, 48);
+            this.btnReadyKitchen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReadyKitchen.Name = "btnReadyKitchen";
+            this.btnReadyKitchen.Size = new System.Drawing.Size(193, 28);
+            this.btnReadyKitchen.TabIndex = 31;
+            this.btnReadyKitchen.Text = "Mark As Ready";
+            this.btnReadyKitchen.UseVisualStyleBackColor = true;
+            this.btnReadyKitchen.Click += new System.EventHandler(this.btnReadyKitchen_Click);
             // 
             // label9
             // 
@@ -306,7 +305,7 @@
             this.panel_Kitchen.BackColor = System.Drawing.Color.Transparent;
             this.panel_Kitchen.BackgroundImage = global::LoginForm.Properties.Resources.WhiteOpacity;
             this.panel_Kitchen.Controls.Add(this.label9);
-            this.panel_Kitchen.Controls.Add(this.button6);
+            this.panel_Kitchen.Controls.Add(this.btnReadyKitchen);
             this.panel_Kitchen.Controls.Add(this.listKitchenView);
             this.panel_Kitchen.Controls.Add(this.label11);
             this.panel_Kitchen.Location = new System.Drawing.Point(12, 66);
@@ -324,8 +323,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1012, 733);
             this.Controls.Add(this.navbar);
-            this.Controls.Add(this.panel_Bar);
             this.Controls.Add(this.panel_Kitchen);
+            this.Controls.Add(this.panel_Bar);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -355,7 +354,7 @@
         private System.Windows.Forms.ToolStripMenuItem tablesToolStripMenuItem;
         private System.Windows.Forms.Panel panel_Bar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnReady;
         private System.Windows.Forms.ListView listBarView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -374,7 +373,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader14;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnReadyKitchen;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel_Kitchen;
         private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;

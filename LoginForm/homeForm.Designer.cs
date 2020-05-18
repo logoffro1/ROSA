@@ -123,6 +123,7 @@
             this.kitchenToolStripMenuItem.Name = "kitchenToolStripMenuItem";
             this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
             this.kitchenToolStripMenuItem.Text = "Kitchen";
+            this.kitchenToolStripMenuItem.Click += new System.EventHandler(this.kitchenToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 

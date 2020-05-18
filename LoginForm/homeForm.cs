@@ -141,7 +141,7 @@ namespace LoginForm
 
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuItemForm menuItemForm = new MenuItemForm(employee);
+            MenuItemForm menuItemForm = new MenuItemForm(employee,"bar");
             this.Hide();
             menuItemForm.Show();
         }
@@ -151,6 +151,13 @@ namespace LoginForm
             OrderTemp ot = new OrderTemp(employee);
             ot.Show();
             this.Hide();
+        }
+
+        private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuItemForm menuItemForm = new MenuItemForm(employee, "kitchen");
+            this.Hide();
+            menuItemForm.Show();
         }
     }
 }
