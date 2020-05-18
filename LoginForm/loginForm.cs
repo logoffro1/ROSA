@@ -13,21 +13,18 @@ namespace LoginForm
 {
     public partial class loginForm : Form
     {
-      
         public loginForm()
         {
             InitializeComponent();
         }
 
-        private void loginForm_Load(object sender, EventArgs e)
+        private void loginFormV2_Load(object sender, EventArgs e)
         {
      
         }
         private void CheckCredentials() //validate the credentials
         {
             Employee_Service employeeService = new Employee_Service();
-
-            bool employeeExists;
 
             if (string.IsNullOrWhiteSpace(txtUsername.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
             {
@@ -43,13 +40,7 @@ namespace LoginForm
                 //return from the database only the employee that matches those credentials
                Employee employee = employeeService.GetAccount(txtUsername.Text,txtPassword.Text);
 
-                //if the employee exists, set the boolean to 'true'
-                if (employee != null)
-                    employeeExists = true;
-                else
-                    employeeExists = false;
-
-                if (!employeeExists)
+                if (employee == null)
                 {
                     //if the employee doesn't exist, give error message
                     lblError.Visible = true;
@@ -58,8 +49,8 @@ namespace LoginForm
                 else
                 {
                     //if the employee exists, login the user and open the main form
-                    mainForm MainForm = new mainForm(employee);
-                    MainForm.Show();
+                    homeForm HomeForm = new homeForm(employee);
+                    HomeForm.Show();
                     this.Hide();
                 }
 
@@ -91,7 +82,7 @@ namespace LoginForm
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
         }
 
-        private void loginForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void loginFormV2_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

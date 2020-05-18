@@ -46,7 +46,9 @@
     <Compile Include="Base.cs" />
     <Compile Include="EmployeeDAO.cs" />
     <Compile Include="ErrorDAO.cs" />
-    <Compile Include="ManagementDAO.cs" />
+    <Compile Include="MenuItemDAO.cs" />
+    <Compile Include="OrderItemDAO.cs" />
+    <Compile Include="PaymentDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableDAO.cs" />
   </ItemGroup>

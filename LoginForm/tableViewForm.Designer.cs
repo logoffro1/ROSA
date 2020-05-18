@@ -1,6 +1,6 @@
 ﻿namespace LoginForm
 {
-    partial class mainForm
+    partial class tableViewForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tableViewForm));
             this.pnlTables = new System.Windows.Forms.Panel();
             this.picTable10 = new System.Windows.Forms.PictureBox();
             this.picTable9 = new System.Windows.Forms.PictureBox();
@@ -41,6 +41,8 @@
             this.picTable2 = new System.Windows.Forms.PictureBox();
             this.picTable1 = new System.Windows.Forms.PictureBox();
             this.pnlTableInfo = new System.Windows.Forms.Panel();
+            this.lblWaitTime = new System.Windows.Forms.Label();
+            this.lblWaitTimeText = new System.Windows.Forms.Label();
             this.btnSaveTableInfo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -51,6 +53,10 @@
             this.lblCapacity = new System.Windows.Forms.Label();
             this.picPlaceHolder = new System.Windows.Forms.PictureBox();
             this.navbar = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tablesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.barToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kitchenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,13 +64,8 @@
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblSelectTable = new System.Windows.Forms.Label();
             this.pnlTablesView = new System.Windows.Forms.Panel();
-            this.pnlHome = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.picTest1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -80,16 +81,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlaceHolder)).BeginInit();
             this.navbar.SuspendLayout();
             this.pnlTablesView.SuspendLayout();
-            this.pnlHome.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTest1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTables
             // 
-            this.pnlTables.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTables.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTables.BackgroundImage = global::LoginForm.Properties.Resources.WhiteOpacity;
             this.pnlTables.Controls.Add(this.picTable10);
             this.pnlTables.Controls.Add(this.picTable9);
             this.pnlTables.Controls.Add(this.picTable8);
@@ -109,7 +107,7 @@
             // picTable10
             // 
             this.picTable10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTable10.Image = global::LoginForm.Properties.Resources.table10;
+            this.picTable10.Image = global::LoginForm.Properties.Resources.Table10;
             this.picTable10.Location = new System.Drawing.Point(345, 497);
             this.picTable10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTable10.Name = "picTable10";
@@ -122,7 +120,7 @@
             // picTable9
             // 
             this.picTable9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTable9.Image = global::LoginForm.Properties.Resources.table9;
+            this.picTable9.Image = global::LoginForm.Properties.Resources.Table9;
             this.picTable9.Location = new System.Drawing.Point(103, 497);
             this.picTable9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTable9.Name = "picTable9";
@@ -135,7 +133,7 @@
             // picTable8
             // 
             this.picTable8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTable8.Image = global::LoginForm.Properties.Resources.table8;
+            this.picTable8.Image = global::LoginForm.Properties.Resources.Table8;
             this.picTable8.Location = new System.Drawing.Point(345, 377);
             this.picTable8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTable8.Name = "picTable8";
@@ -148,7 +146,7 @@
             // picTable7
             // 
             this.picTable7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTable7.Image = global::LoginForm.Properties.Resources.table7;
+            this.picTable7.Image = global::LoginForm.Properties.Resources.Table7;
             this.picTable7.Location = new System.Drawing.Point(103, 377);
             this.picTable7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTable7.Name = "picTable7";
@@ -161,7 +159,7 @@
             // picTable6
             // 
             this.picTable6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTable6.Image = global::LoginForm.Properties.Resources.table6;
+            this.picTable6.Image = global::LoginForm.Properties.Resources.Table6;
             this.picTable6.Location = new System.Drawing.Point(345, 258);
             this.picTable6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTable6.Name = "picTable6";
@@ -174,7 +172,7 @@
             // picTable5
             // 
             this.picTable5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTable5.Image = global::LoginForm.Properties.Resources.table5;
+            this.picTable5.Image = global::LoginForm.Properties.Resources.Table5;
             this.picTable5.Location = new System.Drawing.Point(103, 258);
             this.picTable5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTable5.Name = "picTable5";
@@ -186,9 +184,9 @@
             // 
             // picTable4
             // 
-            this.picTable4.BackColor = System.Drawing.SystemColors.Control;
+            this.picTable4.BackColor = System.Drawing.Color.Transparent;
             this.picTable4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTable4.Image = global::LoginForm.Properties.Resources.table4;
+            this.picTable4.Image = global::LoginForm.Properties.Resources.Table4;
             this.picTable4.Location = new System.Drawing.Point(345, 137);
             this.picTable4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTable4.Name = "picTable4";
@@ -201,7 +199,7 @@
             // picTable3
             // 
             this.picTable3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTable3.Image = global::LoginForm.Properties.Resources.table3;
+            this.picTable3.Image = global::LoginForm.Properties.Resources.Table3;
             this.picTable3.Location = new System.Drawing.Point(103, 137);
             this.picTable3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTable3.Name = "picTable3";
@@ -215,7 +213,7 @@
             // 
             this.picTable2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.picTable2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTable2.Image = global::LoginForm.Properties.Resources.table2;
+            this.picTable2.Image = global::LoginForm.Properties.Resources.Table2;
             this.picTable2.Location = new System.Drawing.Point(345, 18);
             this.picTable2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTable2.Name = "picTable2";
@@ -228,8 +226,9 @@
             // picTable1
             // 
             this.picTable1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.picTable1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picTable1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTable1.Image = global::LoginForm.Properties.Resources.table1;
+            this.picTable1.Image = global::LoginForm.Properties.Resources.Table1;
             this.picTable1.Location = new System.Drawing.Point(103, 18);
             this.picTable1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTable1.Name = "picTable1";
@@ -241,7 +240,10 @@
             // 
             // pnlTableInfo
             // 
+            this.pnlTableInfo.BackColor = System.Drawing.SystemColors.Control;
             this.pnlTableInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTableInfo.Controls.Add(this.lblWaitTime);
+            this.pnlTableInfo.Controls.Add(this.lblWaitTimeText);
             this.pnlTableInfo.Controls.Add(this.btnSaveTableInfo);
             this.pnlTableInfo.Controls.Add(this.label1);
             this.pnlTableInfo.Controls.Add(this.btnEdit);
@@ -251,18 +253,39 @@
             this.pnlTableInfo.Controls.Add(this.lblOccupied);
             this.pnlTableInfo.Controls.Add(this.lblCapacity);
             this.pnlTableInfo.Controls.Add(this.picPlaceHolder);
-            this.pnlTableInfo.Location = new System.Drawing.Point(693, 23);
+            this.pnlTableInfo.Location = new System.Drawing.Point(696, 23);
             this.pnlTableInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTableInfo.Name = "pnlTableInfo";
             this.pnlTableInfo.Size = new System.Drawing.Size(285, 358);
             this.pnlTableInfo.TabIndex = 1;
             this.pnlTableInfo.Visible = false;
+            this.pnlTableInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTableInfo_Paint);
+            // 
+            // lblWaitTime
+            // 
+            this.lblWaitTime.AutoSize = true;
+            this.lblWaitTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWaitTime.Location = new System.Drawing.Point(125, 286);
+            this.lblWaitTime.Name = "lblWaitTime";
+            this.lblWaitTime.Size = new System.Drawing.Size(55, 20);
+            this.lblWaitTime.TabIndex = 29;
+            this.lblWaitTime.Text = "00:00";
+            // 
+            // lblWaitTimeText
+            // 
+            this.lblWaitTimeText.AutoSize = true;
+            this.lblWaitTimeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWaitTimeText.Location = new System.Drawing.Point(29, 286);
+            this.lblWaitTimeText.Name = "lblWaitTimeText";
+            this.lblWaitTimeText.Size = new System.Drawing.Size(101, 20);
+            this.lblWaitTimeText.TabIndex = 28;
+            this.lblWaitTimeText.Text = "Wait time: ";
             // 
             // btnSaveTableInfo
             // 
             this.btnSaveTableInfo.Enabled = false;
             this.btnSaveTableInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveTableInfo.Location = new System.Drawing.Point(199, 305);
+            this.btnSaveTableInfo.Location = new System.Drawing.Point(199, 319);
             this.btnSaveTableInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveTableInfo.Name = "btnSaveTableInfo";
             this.btnSaveTableInfo.Size = new System.Drawing.Size(75, 26);
@@ -275,7 +298,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 308);
+            this.label1.Location = new System.Drawing.Point(29, 322);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 18);
             this.label1.TabIndex = 26;
@@ -284,7 +307,7 @@
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(117, 305);
+            this.btnEdit.Location = new System.Drawing.Point(117, 319);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(48, 26);
@@ -316,8 +339,6 @@
             this.lblStatus.Size = new System.Drawing.Size(63, 20);
             this.lblStatus.TabIndex = 23;
             this.lblStatus.Text = "Status";
-            this.lblStatus.Click += new System.EventHandler(this.lblStatus_Click);
-            this.lblStatus.MouseHover += new System.EventHandler(this.lblStatus_MouseHover);
             // 
             // lblReserved
             // 
@@ -329,8 +350,8 @@
             this.lblReserved.TabIndex = 22;
             this.lblReserved.Text = "Reserved";
             this.lblReserved.Click += new System.EventHandler(this.lblReserved_Click);
+            this.lblReserved.MouseEnter += new System.EventHandler(this.lblReserved_MouseEnter);
             this.lblReserved.MouseLeave += new System.EventHandler(this.lblReserved_MouseLeave);
-            this.lblReserved.MouseHover += new System.EventHandler(this.lblReserved_MouseHover);
             // 
             // lblOccupied
             // 
@@ -342,8 +363,8 @@
             this.lblOccupied.TabIndex = 21;
             this.lblOccupied.Text = "Occupied";
             this.lblOccupied.Click += new System.EventHandler(this.lblOccupied_Click);
+            this.lblOccupied.MouseEnter += new System.EventHandler(this.lblOccupied_MouseEnter);
             this.lblOccupied.MouseLeave += new System.EventHandler(this.lblOccupied_MouseLeave);
-            this.lblOccupied.MouseHover += new System.EventHandler(this.lblOccupied_MouseHover);
             // 
             // lblCapacity
             // 
@@ -372,29 +393,57 @@
             this.navbar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navbar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem,
-            this.tablesToolStripMenuItem,
-            this.orderToolStripMenuItem});
+            this.homeToolStripMenuItem1,
+            this.tablesToolStripMenuItem1,
+            this.orderToolStripMenuItem1,
+            this.barToolStripMenuItem,
+            this.kitchenToolStripMenuItem});
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
             this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.navbar.Size = new System.Drawing.Size(1005, 36);
             this.navbar.TabIndex = 2;
-            this.navbar.Text = "menuStrip1";
+            this.navbar.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.navbar_ItemClicked);
+            // 
+            // homeToolStripMenuItem1
+            // 
+            this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
+            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
+            this.homeToolStripMenuItem1.Text = "Home";
+            this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem1_Click);
+            // 
+            // tablesToolStripMenuItem1
+            // 
+            this.tablesToolStripMenuItem1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tablesToolStripMenuItem1.Name = "tablesToolStripMenuItem1";
+            this.tablesToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
+            this.tablesToolStripMenuItem1.Text = "Tables";
+            this.tablesToolStripMenuItem1.Click += new System.EventHandler(this.tablesToolStripMenuItem1_Click);
+            // 
+            // barToolStripMenuItem
+            // 
+            this.barToolStripMenuItem.Name = "barToolStripMenuItem";
+            this.barToolStripMenuItem.Size = new System.Drawing.Size(55, 32);
+            this.barToolStripMenuItem.Text = "Bar";
+            this.barToolStripMenuItem.Click += new System.EventHandler(this.barToolStripMenuItem_Click);
+            // 
+            // kitchenToolStripMenuItem
+            // 
+            this.kitchenToolStripMenuItem.Name = "kitchenToolStripMenuItem";
+            this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
+            this.kitchenToolStripMenuItem.Text = "Kitchen";
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
             this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // tablesToolStripMenuItem
             // 
             this.tablesToolStripMenuItem.Name = "tablesToolStripMenuItem";
             this.tablesToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
             this.tablesToolStripMenuItem.Text = "Tables";
-            this.tablesToolStripMenuItem.Click += new System.EventHandler(this.tablesToolStripMenuItem_Click);
             // 
             // orderToolStripMenuItem
             // 
@@ -405,22 +454,24 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(793, 43);
+            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.Font = new System.Drawing.Font("Tw Cen MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(733, 39);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(110, 18);
+            this.lblWelcome.Size = new System.Drawing.Size(131, 22);
             this.lblWelcome.TabIndex = 3;
             this.lblWelcome.Text = "Welcome, Alex!";
             // 
             // lblLogout
             // 
             this.lblLogout.AutoSize = true;
+            this.lblLogout.BackColor = System.Drawing.Color.Transparent;
             this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.Font = new System.Drawing.Font("Tw Cen MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogout.ForeColor = System.Drawing.Color.Black;
-            this.lblLogout.Location = new System.Drawing.Point(929, 43);
+            this.lblLogout.Location = new System.Drawing.Point(917, 39);
             this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(68, 18);
+            this.lblLogout.Size = new System.Drawing.Size(72, 22);
             this.lblLogout.TabIndex = 4;
             this.lblLogout.Text = "Log Out";
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
@@ -430,7 +481,7 @@
             // lblSelectTable
             // 
             this.lblSelectTable.AutoSize = true;
-            this.lblSelectTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelectTable.Location = new System.Drawing.Point(155, 0);
             this.lblSelectTable.Name = "lblSelectTable";
             this.lblSelectTable.Size = new System.Drawing.Size(302, 20);
@@ -439,6 +490,8 @@
             // 
             // pnlTablesView
             // 
+            this.pnlTablesView.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTablesView.Controls.Add(this.pictureBox1);
             this.pnlTablesView.Controls.Add(this.lblSelectTable);
             this.pnlTablesView.Controls.Add(this.pnlTableInfo);
             this.pnlTablesView.Controls.Add(this.pnlTables);
@@ -447,110 +500,44 @@
             this.pnlTablesView.Name = "pnlTablesView";
             this.pnlTablesView.Size = new System.Drawing.Size(981, 633);
             this.pnlTablesView.TabIndex = 26;
-            this.pnlTablesView.Visible = false;
-            // 
-            // pnlHome
-            // 
-            this.pnlHome.Controls.Add(this.button2);
-            this.pnlHome.Controls.Add(this.panel1);
-            this.pnlHome.Controls.Add(this.button1);
-            this.pnlHome.Controls.Add(this.picTest1);
-            this.pnlHome.Controls.Add(this.pictureBox1);
-            this.pnlHome.Location = new System.Drawing.Point(16, 73);
-            this.pnlHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(980, 630);
-            this.pnlHome.TabIndex = 26;
-            this.pnlHome.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHome_Paint);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(851, 418);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(47, 39);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "<";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(12, 21);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 515);
-            this.panel1.TabIndex = 3;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 25);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(217, 168);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(904, 418);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 39);
-            this.button1.TabIndex = 2;
-            this.button1.Text = ">";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // picTest1
-            // 
-            this.picTest1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picTest1.Location = new System.Drawing.Point(424, 369);
-            this.picTest1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picTest1.Name = "picTest1";
-            this.picTest1.Size = new System.Drawing.Size(421, 167);
-            this.picTest1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTest1.TabIndex = 1;
-            this.picTest1.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::LoginForm.Properties.Resources.chapeau;
-            this.pictureBox1.Location = new System.Drawing.Point(424, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Image = global::LoginForm.Properties.Resources.Available_Occupied_Icon;
+            this.pictureBox1.Location = new System.Drawing.Point(626, 520);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(525, 305);
+            this.pictureBox1.Size = new System.Drawing.Size(174, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // mainForm
+            // orderToolStripMenuItem1
+            // 
+            this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
+            this.orderToolStripMenuItem1.Size = new System.Drawing.Size(78, 32);
+            this.orderToolStripMenuItem1.Text = "Order";
+            // 
+            // tableViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::LoginForm.Properties.Resources.HOME_BG;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.Controls.Add(this.navbar);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.lblWelcome);
-            this.Controls.Add(this.navbar);
-            this.Controls.Add(this.pnlHome);
             this.Controls.Add(this.pnlTablesView);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.Name = "mainForm";
+            this.Name = "tableViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chapeau - Main";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
-            this.Load += new System.EventHandler(this.mainForm_Load);
+            this.Text = "Chapeau - Tables View";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.tableViewForm_FormClosing);
+            this.Load += new System.EventHandler(this.tableViewForm_Load);
             this.pnlTables.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).EndInit();
@@ -569,10 +556,6 @@
             this.navbar.PerformLayout();
             this.pnlTablesView.ResumeLayout(false);
             this.pnlTablesView.PerformLayout();
-            this.pnlHome.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTest1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -609,13 +592,14 @@
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.Panel pnlTablesView;
         private System.Windows.Forms.Button btnSaveTableInfo;
-        private System.Windows.Forms.Panel pnlHome;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox picTest1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tablesToolStripMenuItem1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem barToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kitchenToolStripMenuItem;
+        private System.Windows.Forms.Label lblWaitTimeText;
+        private System.Windows.Forms.Label lblWaitTime;
+        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem1;
     }
 }

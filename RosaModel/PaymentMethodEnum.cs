@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace RosaModel
 {
-  public enum RolesEnum
+    public enum PaymentMethodEnum
     {
-        Waiter = 1,Bartender = 2,Chef = 4,Manager = 3
-    } 
+        Cash = 1, Pin, VISA, AMEX
+    }
 }
