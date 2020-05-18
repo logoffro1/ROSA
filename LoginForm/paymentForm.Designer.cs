@@ -74,19 +74,17 @@
             this.pnl_payment.Controls.Add(this.lbl_date);
             this.pnl_payment.Controls.Add(this.lbl_order);
             this.pnl_payment.Controls.Add(this.lbl_billSuccess);
-            this.pnl_payment.Location = new System.Drawing.Point(16, 15);
-            this.pnl_payment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_payment.Location = new System.Drawing.Point(12, 12);
             this.pnl_payment.Name = "pnl_payment";
-            this.pnl_payment.Size = new System.Drawing.Size(981, 636);
+            this.pnl_payment.Size = new System.Drawing.Size(736, 517);
             this.pnl_payment.TabIndex = 1;
             // 
             // lbl_orderId
             // 
             this.lbl_orderId.AutoSize = true;
-            this.lbl_orderId.Location = new System.Drawing.Point(244, 586);
-            this.lbl_orderId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_orderId.Location = new System.Drawing.Point(183, 476);
             this.lbl_orderId.Name = "lbl_orderId";
-            this.lbl_orderId.Size = new System.Drawing.Size(46, 17);
+            this.lbl_orderId.Size = new System.Drawing.Size(35, 13);
             this.lbl_orderId.TabIndex = 36;
             this.lbl_orderId.Text = "label3";
             this.lbl_orderId.Visible = false;
@@ -94,57 +92,51 @@
             // lbl_paymentMethodWarning
             // 
             this.lbl_paymentMethodWarning.ForeColor = System.Drawing.Color.Red;
-            this.lbl_paymentMethodWarning.Location = new System.Drawing.Point(684, 320);
-            this.lbl_paymentMethodWarning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_paymentMethodWarning.Location = new System.Drawing.Point(513, 260);
             this.lbl_paymentMethodWarning.Name = "lbl_paymentMethodWarning";
-            this.lbl_paymentMethodWarning.Size = new System.Drawing.Size(251, 28);
+            this.lbl_paymentMethodWarning.Size = new System.Drawing.Size(188, 23);
             this.lbl_paymentMethodWarning.TabIndex = 35;
             // 
             // lbl_PaymentMethod
             // 
             this.lbl_PaymentMethod.AutoSize = true;
-            this.lbl_PaymentMethod.Location = new System.Drawing.Point(673, 187);
-            this.lbl_PaymentMethod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_PaymentMethod.Location = new System.Drawing.Point(505, 152);
             this.lbl_PaymentMethod.Name = "lbl_PaymentMethod";
-            this.lbl_PaymentMethod.Size = new System.Drawing.Size(114, 17);
+            this.lbl_PaymentMethod.Size = new System.Drawing.Size(87, 13);
             this.lbl_PaymentMethod.TabIndex = 34;
             this.lbl_PaymentMethod.Text = "Payment Method";
             // 
             // lbl_tip
             // 
             this.lbl_tip.AutoSize = true;
-            this.lbl_tip.Location = new System.Drawing.Point(671, 369);
-            this.lbl_tip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_tip.Location = new System.Drawing.Point(503, 300);
             this.lbl_tip.Name = "lbl_tip";
-            this.lbl_tip.Size = new System.Drawing.Size(28, 17);
+            this.lbl_tip.Size = new System.Drawing.Size(22, 13);
             this.lbl_tip.TabIndex = 33;
             this.lbl_tip.Text = "Tip";
             // 
             // textBox_tip
             // 
-            this.textBox_tip.Location = new System.Drawing.Point(727, 366);
-            this.textBox_tip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_tip.Location = new System.Drawing.Point(545, 297);
             this.textBox_tip.Name = "textBox_tip";
-            this.textBox_tip.Size = new System.Drawing.Size(207, 22);
+            this.textBox_tip.Size = new System.Drawing.Size(156, 20);
             this.textBox_tip.TabIndex = 32;
             // 
             // lbl_vat
             // 
             this.lbl_vat.AutoSize = true;
-            this.lbl_vat.Location = new System.Drawing.Point(677, 108);
-            this.lbl_vat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_vat.Location = new System.Drawing.Point(508, 88);
             this.lbl_vat.Name = "lbl_vat";
-            this.lbl_vat.Size = new System.Drawing.Size(35, 17);
+            this.lbl_vat.Size = new System.Drawing.Size(28, 13);
             this.lbl_vat.TabIndex = 27;
             this.lbl_vat.Text = "VAT";
             // 
             // rbtn_credit
             // 
             this.rbtn_credit.AutoSize = true;
-            this.rbtn_credit.Location = new System.Drawing.Point(677, 286);
-            this.rbtn_credit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn_credit.Location = new System.Drawing.Point(508, 232);
             this.rbtn_credit.Name = "rbtn_credit";
-            this.rbtn_credit.Size = new System.Drawing.Size(100, 21);
+            this.rbtn_credit.Size = new System.Drawing.Size(77, 17);
             this.rbtn_credit.TabIndex = 30;
             this.rbtn_credit.TabStop = true;
             this.rbtn_credit.Text = "Credit Card";
@@ -153,10 +145,9 @@
             // rbtn_pin
             // 
             this.rbtn_pin.AutoSize = true;
-            this.rbtn_pin.Location = new System.Drawing.Point(677, 254);
-            this.rbtn_pin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn_pin.Location = new System.Drawing.Point(508, 206);
             this.rbtn_pin.Name = "rbtn_pin";
-            this.rbtn_pin.Size = new System.Drawing.Size(49, 21);
+            this.rbtn_pin.Size = new System.Drawing.Size(40, 17);
             this.rbtn_pin.TabIndex = 29;
             this.rbtn_pin.TabStop = true;
             this.rbtn_pin.Text = "Pin";
@@ -165,10 +156,9 @@
             // rbtn_cash
             // 
             this.rbtn_cash.AutoSize = true;
-            this.rbtn_cash.Location = new System.Drawing.Point(677, 225);
-            this.rbtn_cash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn_cash.Location = new System.Drawing.Point(508, 183);
             this.rbtn_cash.Name = "rbtn_cash";
-            this.rbtn_cash.Size = new System.Drawing.Size(61, 21);
+            this.rbtn_cash.Size = new System.Drawing.Size(49, 17);
             this.rbtn_cash.TabIndex = 28;
             this.rbtn_cash.TabStop = true;
             this.rbtn_cash.Text = "Cash";
@@ -176,10 +166,9 @@
             // 
             // btn_bill
             // 
-            this.btn_bill.Location = new System.Drawing.Point(785, 574);
-            this.btn_bill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_bill.Location = new System.Drawing.Point(589, 466);
             this.btn_bill.Name = "btn_bill";
-            this.btn_bill.Size = new System.Drawing.Size(149, 28);
+            this.btn_bill.Size = new System.Drawing.Size(112, 23);
             this.btn_bill.TabIndex = 27;
             this.btn_bill.Text = "Pay and Print Bill";
             this.btn_bill.UseVisualStyleBackColor = true;
@@ -187,30 +176,27 @@
             // 
             // btn_return
             // 
-            this.btn_return.Location = new System.Drawing.Point(39, 575);
-            this.btn_return.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_return.Location = new System.Drawing.Point(29, 467);
             this.btn_return.Name = "btn_return";
-            this.btn_return.Size = new System.Drawing.Size(100, 28);
+            this.btn_return.Size = new System.Drawing.Size(75, 23);
             this.btn_return.TabIndex = 6;
             this.btn_return.Text = "Return";
             this.btn_return.UseVisualStyleBackColor = true;
             // 
             // textBox_comments
             // 
-            this.textBox_comments.Location = new System.Drawing.Point(39, 430);
-            this.textBox_comments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_comments.Location = new System.Drawing.Point(29, 349);
             this.textBox_comments.Multiline = true;
             this.textBox_comments.Name = "textBox_comments";
-            this.textBox_comments.Size = new System.Drawing.Size(895, 101);
+            this.textBox_comments.Size = new System.Drawing.Size(672, 83);
             this.textBox_comments.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 405);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(38, 327);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 17);
+            this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Comments";
             // 
@@ -221,10 +207,9 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listView_payments.HideSelection = false;
-            this.listView_payments.Location = new System.Drawing.Point(39, 63);
-            this.listView_payments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listView_payments.Location = new System.Drawing.Point(29, 51);
             this.listView_payments.Name = "listView_payments";
-            this.listView_payments.Size = new System.Drawing.Size(584, 335);
+            this.listView_payments.Size = new System.Drawing.Size(439, 273);
             this.listView_payments.TabIndex = 3;
             this.listView_payments.UseCompatibleStateImageBehavior = false;
             this.listView_payments.View = System.Windows.Forms.View.Details;
@@ -245,50 +230,45 @@
             // lbl_totalPrice
             // 
             this.lbl_totalPrice.AutoSize = true;
-            this.lbl_totalPrice.Location = new System.Drawing.Point(673, 63);
-            this.lbl_totalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_totalPrice.Location = new System.Drawing.Point(505, 51);
             this.lbl_totalPrice.Name = "lbl_totalPrice";
-            this.lbl_totalPrice.Size = new System.Drawing.Size(76, 17);
+            this.lbl_totalPrice.Size = new System.Drawing.Size(58, 13);
             this.lbl_totalPrice.TabIndex = 2;
             this.lbl_totalPrice.Text = "Total Price";
             // 
             // lbl_date
             // 
             this.lbl_date.AutoSize = true;
-            this.lbl_date.Location = new System.Drawing.Point(313, 27);
-            this.lbl_date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_date.Location = new System.Drawing.Point(235, 22);
             this.lbl_date.Name = "lbl_date";
-            this.lbl_date.Size = new System.Drawing.Size(38, 17);
+            this.lbl_date.Size = new System.Drawing.Size(30, 13);
             this.lbl_date.TabIndex = 1;
             this.lbl_date.Text = "Date";
             // 
             // lbl_order
             // 
             this.lbl_order.AutoSize = true;
-            this.lbl_order.Location = new System.Drawing.Point(51, 28);
-            this.lbl_order.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_order.Location = new System.Drawing.Point(38, 23);
             this.lbl_order.Name = "lbl_order";
-            this.lbl_order.Size = new System.Drawing.Size(44, 17);
+            this.lbl_order.Size = new System.Drawing.Size(34, 13);
             this.lbl_order.TabIndex = 0;
             this.lbl_order.Text = "Table";
             // 
             // lbl_billSuccess
             // 
             this.lbl_billSuccess.AutoSize = true;
-            this.lbl_billSuccess.Location = new System.Drawing.Point(808, 581);
-            this.lbl_billSuccess.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_billSuccess.Location = new System.Drawing.Point(606, 472);
             this.lbl_billSuccess.Name = "lbl_billSuccess";
-            this.lbl_billSuccess.Size = new System.Drawing.Size(98, 17);
+            this.lbl_billSuccess.Size = new System.Drawing.Size(75, 13);
             this.lbl_billSuccess.TabIndex = 27;
             this.lbl_billSuccess.Text = "Bill Successful";
             this.lbl_billSuccess.Visible = false;
             // 
             // btn_reset
             // 
-            this.btn_reset.Location = new System.Drawing.Point(1028, 43);
-            this.btn_reset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_reset.Location = new System.Drawing.Point(771, 35);
             this.btn_reset.Name = "btn_reset";
-            this.btn_reset.Size = new System.Drawing.Size(100, 28);
+            this.btn_reset.Size = new System.Drawing.Size(75, 23);
             this.btn_reset.TabIndex = 2;
             this.btn_reset.Text = "Reset";
             this.btn_reset.UseVisualStyleBackColor = true;
@@ -296,13 +276,12 @@
             // 
             // paymentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1141, 683);
+            this.ClientSize = new System.Drawing.Size(856, 555);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.pnl_payment);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "paymentForm";
             this.Text = "paymentForm";
