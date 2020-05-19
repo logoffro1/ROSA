@@ -259,7 +259,6 @@
             this.pnlTableInfo.Size = new System.Drawing.Size(285, 358);
             this.pnlTableInfo.TabIndex = 1;
             this.pnlTableInfo.Visible = false;
-            this.pnlTableInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTableInfo_Paint);
             // 
             // lblWaitTime
             // 
@@ -402,8 +401,7 @@
             this.navbar.Name = "navbar";
             this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.navbar.Size = new System.Drawing.Size(1005, 36);
-            this.navbar.TabIndex = 2;
-            this.navbar.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.navbar_ItemClicked);
+            this.navbar.TabIndex = 2;         
             // 
             // homeToolStripMenuItem1
             // 

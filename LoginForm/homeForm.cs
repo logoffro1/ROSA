@@ -22,7 +22,7 @@ namespace LoginForm
         {
             InitializeComponent();
             this.employee = employee;
-            AddImagesToLists();
+      
         }
         void AddImagesToLists()
         {
@@ -43,6 +43,8 @@ namespace LoginForm
         }
         private void mainForm_Load(object sender, EventArgs e)
         {
+            AddImagesToLists();
+
             //split the name into 2 parts, firstName and lastName
             string[] nameSplit = employee.employeeName.Split(' ');
             //show a Welcome message, "Welcome, firstName!"
