@@ -283,8 +283,8 @@
             this.Controls.Add(this.pnl_payment);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "paymentForm";
-            this.Text = "paymentForm";
+            this.Name = "Payment";
+            this.Text = "Payment";
             this.Load += new System.EventHandler(this.paymentForm_Load);
             this.pnl_payment.ResumeLayout(false);
             this.pnl_payment.PerformLayout();
