@@ -129,8 +129,6 @@ namespace LoginForm
             }
             //show the table info panel
             pnlTableInfo.Show();
-            paymentForm pf = new paymentForm(employee);
-            pf.Location = new Point(pf.Location.X, pf.Location.Y + 30);
         }
 
         private void TimerWaitTime_Tick(object sender, EventArgs e)
@@ -279,7 +277,7 @@ namespace LoginForm
         {
             Table_Service tableService = new Table_Service();
 
-            ChangeTableImageColor(tableImages[selectedTable.tableId - 1]);
+            ChangeTableImageColor(tableImages[selectedTable.tableId-1]);
             tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved); // update table       
         }
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -303,21 +301,11 @@ namespace LoginForm
                 lblReserved.Cursor = Cursors.Hand;
         }
 
-        private void navbar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuItemForm menuItemForm = new MenuItemForm(employee);
+            MenuItemForm menuItemForm = new MenuItemForm(employee,"bar");
             this.Hide();
             menuItemForm.Show();
-        }
-
-        private void pnlTableInfo_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

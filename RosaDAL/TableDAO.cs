@@ -12,14 +12,14 @@ namespace RosaDAL
     {
         public List<Table> Db_Get_AllTables()
         {
-            //read employees from database
-            string query = "select [table].table_id, capacity, isAvailable, isReserved,[order].[orderDate], [order].[status] FROM [table] LEFT JOIN [order] ON [order].table_id=[table].table_id;";
+            //read tables from database
+            string query = "select [table].table_id, capacity, isAvailable, isReserved,[order].[orderDate], [order].[status] FROM [table] LEFT JOIN [order] ON [order].table_id=[table].table_id ORDER BY table_id,orderDate DESC;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
         public Table GetById(int id)
         {
-            SqlCommand cmd = new SqlCommand("select [table].table_id, capacity, isAvailable, isReserved, [order].[status] FROM [table] LEFT JOIN [order] ON [order].table_id=[table].table_id WHERE [table].table_id = @table_id;", conn);
+            SqlCommand cmd = new SqlCommand("select TOP 1 [table].table_id, capacity, isAvailable, isReserved, [order].[status], orderDate FROM [table] LEFT JOIN[order] ON [order].table_id =[table].table_id WHERE[table].table_id = @table_id ORDER BY  orderDate DESC; ", conn);
             cmd.Parameters.AddWithValue("@table_id", id);
             SqlDataReader reader = cmd.ExecuteReader();
             Table table = null;
@@ -33,8 +33,9 @@ namespace RosaDAL
         {
             SqlCommand cmd = new SqlCommand("update [table] set isAvailable = @isAvailable, isReserved = @isReserved where table_id = @Id; ", conn);
             cmd.Parameters.AddWithValue("@isAvailable", Convert.ToInt32(isAvailable));
-            cmd.Parameters.AddWithValue("@Id", table.tableId);
             cmd.Parameters.AddWithValue("@isReserved", Convert.ToInt32(isReserved));
+            cmd.Parameters.AddWithValue("@Id", table.tableId);
+
             cmd.ExecuteReader();
         }
         private Table ReadTable(SqlDataReader reader)
@@ -59,8 +60,8 @@ namespace RosaDAL
         }
         private List<Table> ReadTables(DataTable dataTable)
         {
+            List<Table> tablesTemp = new List<Table>();
             List<Table> tables = new List<Table>();
-
             foreach (DataRow dr in dataTable.Rows)
             {
                 Table table = new Table()
@@ -77,7 +78,17 @@ namespace RosaDAL
 
                 if (!dr.IsNull("orderDate"))
                     table.orderdate = (DateTime)dr["orderDate"];
-                tables.Add(table);
+                tablesTemp.Add(table);
+            }
+
+      
+            List<int> tableId = new List<int>();
+            foreach (Table t in tablesTemp)
+            {
+                if (tableId.Contains(t.tableId))
+                    continue;
+                tableId.Add(t.tableId);
+                tables.Add(t);
             }
             return tables;
         }

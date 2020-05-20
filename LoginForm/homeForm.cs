@@ -22,7 +22,7 @@ namespace LoginForm
         {
             InitializeComponent();
             this.employee = employee;
-            AddImagesToLists();
+      
         }
         void AddImagesToLists()
         {
@@ -43,6 +43,8 @@ namespace LoginForm
         }
         private void mainForm_Load(object sender, EventArgs e)
         {
+            AddImagesToLists();
+
             //split the name into 2 parts, firstName and lastName
             string[] nameSplit = employee.employeeName.Split(' ');
             //show a Welcome message, "Welcome, firstName!"
@@ -141,7 +143,7 @@ namespace LoginForm
 
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuItemForm menuItemForm = new MenuItemForm(employee);
+            MenuItemForm menuItemForm = new MenuItemForm(employee,"bar");
             this.Hide();
             menuItemForm.Show();
         }
@@ -151,6 +153,13 @@ namespace LoginForm
             OrderTemp ot = new OrderTemp(employee);
             ot.Show();
             this.Hide();
+        }
+
+        private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuItemForm menuItemForm = new MenuItemForm(employee, "kitchen");
+            this.Hide();
+            menuItemForm.Show();
         }
     }
 }
