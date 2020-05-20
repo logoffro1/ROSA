@@ -51,7 +51,8 @@ namespace LoginForm
             lblWelcome.Text = $"Welcome, {nameSplit[0]}!";
             lblName.Text = employee.employeeName;
             lblRole.Text = employee.role.ToString();
-   
+   //5 ah
+   //6:10
             
             lblTime.Text = $"{DateTime.Now.DayOfWeek} - {DateTime.Now.Hour.ToString("00")}:{DateTime.Now.Minute.ToString("00")}";
            

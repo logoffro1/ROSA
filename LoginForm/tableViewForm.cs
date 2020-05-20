@@ -85,23 +85,6 @@ namespace LoginForm
             btnEdit.Text = "ON";
             selectedTable = tables[tableId - 1];
 
-            string status;
-            if (selectedTable.status == 1)
-                status = "Waiting";
-            else if (selectedTable.status == 2)
-                status = "Ordered";
-            else if (selectedTable.status == 3)
-                status = "Ready";
-            else if (selectedTable.status == 4)
-                status = "Served";
-            else if (selectedTable.status == 5)
-                status = "Billed";
-            else
-                status = "None";
-
-            if (selectedTable.isAvailable)
-                status = "None";
-
             //set the placeholder image to the corresponding table image from the list
             picPlaceHolder.Image = tableImages[tableId - 1].Image;
             //set the labels to the right values from the database
@@ -117,11 +100,11 @@ namespace LoginForm
             else //if the table is not ocuppied
                 lblOccupied.Text = "Occupied: No";
 
-            lblStatus.Text = "Status: " + status;
+            lblStatus.Text = "Status: " + selectedTable.status.ToString();
 
             ChangeLabelWaitTime();
           
-            if (selectedTable.status < 4)
+            if (selectedTable.status == TableStatus.Ordered)
             {
                 timerWaitTime.Tick += TimerWaitTime_Tick;
                 timerWaitTime.Interval = 1000;
