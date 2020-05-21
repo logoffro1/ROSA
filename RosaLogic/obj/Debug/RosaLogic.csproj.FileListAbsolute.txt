@@ -54,3 +54,15 @@ C:\Users\MEDION\Documents\School\ROSA\RosaLogic\obj\Debug\RosaLogic.csprojAssemb
 C:\Users\MEDION\Documents\School\ROSA\RosaLogic\obj\Debug\RosaLogic.csproj.CopyComplete
 C:\Users\MEDION\Documents\School\ROSA\RosaLogic\obj\Debug\RosaLogic.dll
 C:\Users\MEDION\Documents\School\ROSA\RosaLogic\obj\Debug\RosaLogic.pdb
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\bin\Debug\RosaLogic.dll
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\bin\Debug\RosaLogic.pdb
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\bin\Debug\RosaDAL.dll
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\bin\Debug\RosaModel.dll
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\bin\Debug\RosaDAL.pdb
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\bin\Debug\RosaDAL.dll.config
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\bin\Debug\RosaModel.pdb
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\obj\Debug\RosaLogic.csprojAssemblyReference.cache
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\obj\Debug\RosaLogic.csproj.CoreCompileInputs.cache
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\obj\Debug\RosaLogic.csproj.CopyComplete
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\obj\Debug\RosaLogic.dll
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaLogic\obj\Debug\RosaLogic.pdb

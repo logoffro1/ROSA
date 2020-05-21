@@ -51,6 +51,7 @@
     <Compile Include="OrderItemDAO.cs" />
     <Compile Include="PaymentDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RevenueDAO.cs" />
     <Compile Include="TableDAO.cs" />
   </ItemGroup>
   <ItemGroup>
