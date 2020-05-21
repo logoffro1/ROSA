@@ -32,7 +32,7 @@
             this.OrderView = new System.Windows.Forms.ListView();
             this.OrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Table = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Refresh = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Editbutton = new System.Windows.Forms.Button();
             this.AddOrder = new System.Windows.Forms.Button();
@@ -48,10 +48,10 @@
             // PayButton
             // 
             this.PayButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PayButton.Location = new System.Drawing.Point(467, 321);
-            this.PayButton.Margin = new System.Windows.Forms.Padding(2);
+            this.PayButton.Location = new System.Drawing.Point(623, 395);
+            this.PayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PayButton.Name = "PayButton";
-            this.PayButton.Size = new System.Drawing.Size(122, 34);
+            this.PayButton.Size = new System.Drawing.Size(163, 42);
             this.PayButton.TabIndex = 0;
             this.PayButton.Text = "Pay order";
             this.PayButton.UseVisualStyleBackColor = true;
@@ -63,9 +63,10 @@
             this.OrderID,
             this.Table});
             this.OrderView.HideSelection = false;
-            this.OrderView.Location = new System.Drawing.Point(12, 62);
+            this.OrderView.Location = new System.Drawing.Point(16, 76);
+            this.OrderView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OrderView.Name = "OrderView";
-            this.OrderView.Size = new System.Drawing.Size(365, 192);
+            this.OrderView.Size = new System.Drawing.Size(485, 235);
             this.OrderView.TabIndex = 1;
             this.OrderView.UseCompatibleStateImageBehavior = false;
             this.OrderView.View = System.Windows.Forms.View.Details;
@@ -80,21 +81,23 @@
             this.Table.Text = "Table";
             this.Table.Width = 127;
             // 
-            // Refresh
+            // btnRefresh
             // 
-            this.Refresh.Location = new System.Drawing.Point(386, 231);
-            this.Refresh.Name = "Refresh";
-            this.Refresh.Size = new System.Drawing.Size(191, 23);
-            this.Refresh.TabIndex = 2;
-            this.Refresh.Text = "Refresh order list";
-            this.Refresh.UseVisualStyleBackColor = true;
-            this.Refresh.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnRefresh.Location = new System.Drawing.Point(515, 284);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(255, 28);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "Refresh order list";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(16, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 23);
+            this.button1.Size = new System.Drawing.Size(195, 28);
             this.button1.TabIndex = 3;
             this.button1.Text = "Back to main";
             this.button1.UseVisualStyleBackColor = true;
@@ -102,9 +105,10 @@
             // 
             // Editbutton
             // 
-            this.Editbutton.Location = new System.Drawing.Point(12, 320);
+            this.Editbutton.Location = new System.Drawing.Point(16, 394);
+            this.Editbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Editbutton.Name = "Editbutton";
-            this.Editbutton.Size = new System.Drawing.Size(105, 34);
+            this.Editbutton.Size = new System.Drawing.Size(140, 42);
             this.Editbutton.TabIndex = 4;
             this.Editbutton.Text = "Edit order";
             this.Editbutton.UseVisualStyleBackColor = true;
@@ -112,9 +116,10 @@
             // 
             // AddOrder
             // 
-            this.AddOrder.Location = new System.Drawing.Point(386, 139);
+            this.AddOrder.Location = new System.Drawing.Point(515, 171);
+            this.AddOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddOrder.Name = "AddOrder";
-            this.AddOrder.Size = new System.Drawing.Size(75, 23);
+            this.AddOrder.Size = new System.Drawing.Size(100, 28);
             this.AddOrder.TabIndex = 5;
             this.AddOrder.Text = "AddOrder";
             this.AddOrder.UseVisualStyleBackColor = true;
@@ -122,57 +127,64 @@
             // 
             // OrderIDbox
             // 
-            this.OrderIDbox.Location = new System.Drawing.Point(235, 280);
+            this.OrderIDbox.Location = new System.Drawing.Point(313, 345);
+            this.OrderIDbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OrderIDbox.Name = "OrderIDbox";
-            this.OrderIDbox.Size = new System.Drawing.Size(100, 20);
+            this.OrderIDbox.Size = new System.Drawing.Size(132, 22);
             this.OrderIDbox.TabIndex = 6;
             // 
             // TableIDbox
             // 
-            this.TableIDbox.Location = new System.Drawing.Point(467, 55);
+            this.TableIDbox.Location = new System.Drawing.Point(623, 68);
+            this.TableIDbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TableIDbox.Name = "TableIDbox";
-            this.TableIDbox.Size = new System.Drawing.Size(100, 20);
+            this.TableIDbox.Size = new System.Drawing.Size(132, 22);
             this.TableIDbox.TabIndex = 7;
             // 
             // EmployeeIDbox
             // 
-            this.EmployeeIDbox.Location = new System.Drawing.Point(467, 94);
+            this.EmployeeIDbox.Location = new System.Drawing.Point(623, 116);
+            this.EmployeeIDbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EmployeeIDbox.Name = "EmployeeIDbox";
-            this.EmployeeIDbox.Size = new System.Drawing.Size(100, 20);
+            this.EmployeeIDbox.Size = new System.Drawing.Size(132, 22);
             this.EmployeeIDbox.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 287);
+            this.label1.Location = new System.Drawing.Point(239, 353);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Order ID:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(383, 62);
+            this.label2.Location = new System.Drawing.Point(511, 76);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Table ID:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(383, 101);
+            this.label3.Location = new System.Drawing.Point(511, 124);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.Size = new System.Drawing.Size(91, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "Employee ID:";
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(12, 277);
+            this.RemoveButton.Location = new System.Drawing.Point(16, 341);
+            this.RemoveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(131, 23);
+            this.RemoveButton.Size = new System.Drawing.Size(175, 28);
             this.RemoveButton.TabIndex = 12;
             this.RemoveButton.Text = "Remove Order";
             this.RemoveButton.UseVisualStyleBackColor = true;
@@ -180,9 +192,9 @@
             // 
             // OrderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -193,10 +205,10 @@
             this.Controls.Add(this.AddOrder);
             this.Controls.Add(this.Editbutton);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.Refresh);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.OrderView);
             this.Controls.Add(this.PayButton);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "OrderForm";
             this.Text = "Order";
             this.ResumeLayout(false);
@@ -210,7 +222,7 @@
         private System.Windows.Forms.ListView OrderView;
         private System.Windows.Forms.ColumnHeader OrderID;
         private System.Windows.Forms.ColumnHeader Table;
-        private System.Windows.Forms.Button Refresh;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Editbutton;
         private System.Windows.Forms.Button AddOrder;
