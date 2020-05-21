@@ -97,7 +97,6 @@ C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Numerics.Vectors.dl
 C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Buffers.dll
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.MenuItemForm.resources
-C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.OrderTemp.resources
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.paymentForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\bin\Debug\LoginForm.exe.config
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\bin\Debug\LoginForm.exe
@@ -126,3 +125,5 @@ C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\Forms.csproj.GenerateR
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\Forms.csproj.CopyComplete
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.exe
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.pdb
+C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.EditForm.resources
+C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.OrderForm.resources
