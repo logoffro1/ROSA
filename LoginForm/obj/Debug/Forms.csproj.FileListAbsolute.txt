@@ -126,3 +126,9 @@ C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\Forms.csproj.GenerateR
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\Forms.csproj.CopyComplete
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.exe
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.pdb
+D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.EditForm.resources
+D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.MenuItemForm.resources
+D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.OrderForm.resources
+D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.paymentForm.resources
+D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.tableViewForm.resources
+D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.homeForm.resources
