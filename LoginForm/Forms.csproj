@@ -49,11 +49,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmployeeOverview.cs">
+    <Compile Include="EditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeOverview.Designer.cs">
-      <DependentUpon>EmployeeOverview.cs</DependentUpon>
+    <Compile Include="EditForm.Designer.cs">
+      <DependentUpon>EditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
@@ -67,11 +67,11 @@
     <Compile Include="MenuItemForm.Designer.cs">
       <DependentUpon>MenuItemForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderTemp.cs">
+    <Compile Include="OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderTemp.Designer.cs">
-      <DependentUpon>OrderTemp.cs</DependentUpon>
+    <Compile Include="OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="paymentForm.cs">
       <SubType>Form</SubType>
@@ -84,17 +84,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Revenue.cs">
+    <Compile Include="TableForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Revenue.Designer.cs">
-      <DependentUpon>Revenue.cs</DependentUpon>
-    </Compile>
-    <Compile Include="tableViewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="tableViewForm.Designer.cs">
-      <DependentUpon>tableViewForm.cs</DependentUpon>
+    <Compile Include="TableForm.Designer.cs">
+      <DependentUpon>TableForm.cs</DependentUpon>
     </Compile>
     <Compile Include="homeForm.cs">
       <SubType>Form</SubType>
@@ -104,8 +98,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EmployeeOverview.resx">
-      <DependentUpon>EmployeeOverview.cs</DependentUpon>
+    <EmbeddedResource Include="EditForm.resx">
+      <DependentUpon>EditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
@@ -113,17 +107,14 @@
     <EmbeddedResource Include="MenuItemForm.resx">
       <DependentUpon>MenuItemForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderTemp.resx">
-      <DependentUpon>OrderTemp.cs</DependentUpon>
+    <EmbeddedResource Include="OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="paymentForm.resx">
       <DependentUpon>paymentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Revenue.resx">
-      <DependentUpon>Revenue.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="tableViewForm.resx">
-      <DependentUpon>tableViewForm.cs</DependentUpon>
+    <EmbeddedResource Include="TableForm.resx">
+      <DependentUpon>TableForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="homeForm.resx">
       <DependentUpon>homeForm.cs</DependentUpon>
@@ -133,6 +124,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

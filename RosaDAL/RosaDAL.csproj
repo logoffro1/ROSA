@@ -47,6 +47,7 @@
     <Compile Include="EmployeeDAO.cs" />
     <Compile Include="ErrorDAO.cs" />
     <Compile Include="MenuItemDAO.cs" />
+    <Compile Include="OrderDAO.cs" />
     <Compile Include="OrderItemDAO.cs" />
     <Compile Include="PaymentDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
