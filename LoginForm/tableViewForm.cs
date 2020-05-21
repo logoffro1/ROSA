@@ -40,6 +40,7 @@ namespace LoginForm
             tableImages.Add(picTable9);
             tableImages.Add(picTable10);
         }
+
         private void tableViewForm_Load(object sender, EventArgs e)
         {
             //split the name into 2 parts, firstName and lastName
@@ -75,7 +76,9 @@ namespace LoginForm
                 tableImage.BackColor = Color.FromArgb(255, 128, 128); //red-ish color
             else
                 tableImage.BackColor = Color.FromArgb(102, 210, 105); //green-ish color
+
         }
+
         void ShowTableInfo(int tableId) //show the information for the selected table
         {
             timerWaitTime.Stop();
@@ -289,6 +292,11 @@ namespace LoginForm
             MenuItemForm menuItemForm = new MenuItemForm(employee,"bar");
             this.Hide();
             menuItemForm.Show();
+        }
+
+        private void navbar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
