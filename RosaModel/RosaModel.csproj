@@ -49,6 +49,7 @@
     <Compile Include="Payment.cs" />
     <Compile Include="PaymentMethodEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RevenueItem.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="Table.cs" />
