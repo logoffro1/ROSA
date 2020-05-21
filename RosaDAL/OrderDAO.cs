@@ -43,7 +43,7 @@ namespace RosaDAL
            // string comment = "note";
 
             //string query = $"INSERT INTO [order](orderDate, table_id, employee_id, notes) VALUES ({datetime},{tableID},{employeeID},{comment}";
-            string query = $"INSERT INTO [order](table_id,employee_id) VALUES ({tableID},{employeeID}";
+            string query = $"INSERT INTO [order](table_id,employee_id) VALUES ({tableID},{employeeID})";
 
 
             SqlParameter[] sqlParameters = new SqlParameter[0];
