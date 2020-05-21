@@ -40,6 +40,7 @@ namespace LoginForm
             tableImages.Add(picTable9);
             tableImages.Add(picTable10);
         }
+
         private void tableViewForm_Load(object sender, EventArgs e)
         {
             //split the name into 2 parts, firstName and lastName
@@ -75,7 +76,9 @@ namespace LoginForm
                 tableImage.BackColor = Color.FromArgb(255, 128, 128); //red-ish color
             else
                 tableImage.BackColor = Color.FromArgb(102, 210, 105); //green-ish color
+
         }
+
         void ShowTableInfo(int tableId) //show the information for the selected table
         {
             timerWaitTime.Stop();
@@ -84,23 +87,6 @@ namespace LoginForm
             btnSaveTableInfo.Enabled = false;
             btnEdit.Text = "ON";
             selectedTable = tables[tableId - 1];
-
-            string status;
-            if (selectedTable.status == 1)
-                status = "Waiting";
-            else if (selectedTable.status == 2)
-                status = "Ordered";
-            else if (selectedTable.status == 3)
-                status = "Ready";
-            else if (selectedTable.status == 4)
-                status = "Served";
-            else if (selectedTable.status == 5)
-                status = "Billed";
-            else
-                status = "None";
-
-            if (selectedTable.isAvailable)
-                status = "None";
 
             //set the placeholder image to the corresponding table image from the list
             picPlaceHolder.Image = tableImages[tableId - 1].Image;
@@ -117,11 +103,11 @@ namespace LoginForm
             else //if the table is not ocuppied
                 lblOccupied.Text = "Occupied: No";
 
-            lblStatus.Text = "Status: " + status;
+            lblStatus.Text = "Status: " + selectedTable.status.ToString();
 
             ChangeLabelWaitTime();
           
-            if (selectedTable.status < 4)
+            if (selectedTable.status == TableStatus.Ordered)
             {
                 timerWaitTime.Tick += TimerWaitTime_Tick;
                 timerWaitTime.Interval = 1000;
@@ -133,7 +119,7 @@ namespace LoginForm
 
         private void TimerWaitTime_Tick(object sender, EventArgs e)
         {
-            ChangeLabelWaitTime(); ;
+            ChangeLabelWaitTime(); 
         }
 
         private void ChangeLabelWaitTime()
@@ -150,6 +136,7 @@ namespace LoginForm
                     lblWaitTime.BackColor = Color.Yellow;
                 else
                     lblWaitTime.BackColor = Color.PaleVioletRed;
+
                 lblWaitTime.Text = $"{waitTimeMinutes.ToString("00")}:{waitTimeSeconds.ToString("00")}";
             }
             else
@@ -276,7 +263,7 @@ namespace LoginForm
         {
             Table_Service tableService = new Table_Service();
 
-            ChangeTableImageColor(tableImages[selectedTable.tableId - 1]);
+            ChangeTableImageColor(tableImages[selectedTable.tableId-1]);
             tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved); // update table       
         }
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -300,19 +287,14 @@ namespace LoginForm
                 lblReserved.Cursor = Cursors.Hand;
         }
 
-        private void navbar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuItemForm menuItemForm = new MenuItemForm(employee);
+            MenuItemForm menuItemForm = new MenuItemForm(employee,"bar");
             this.Hide();
             menuItemForm.Show();
         }
 
-        private void pnlTableInfo_Paint(object sender, PaintEventArgs e)
+        private void navbar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

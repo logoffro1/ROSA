@@ -12,7 +12,7 @@ namespace RosaModel
         public int capacity { get; set; }
         public bool isAvailable { get; set; }
         public bool isReserved { get; set; }
-        public int status { get; set; }
+        public TableStatus status { get; set; }
         public DateTime orderdate { get; set; }
 
     }

@@ -71,7 +71,9 @@
             // 
             // navbar
             // 
-            this.navbar.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.navbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.navbar.BackgroundImage = global::LoginForm.Properties.Resources.BG_TABLESPAGE;
+            this.navbar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.navbar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navbar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -89,7 +91,7 @@
             // 
             // homeToolStripMenuItem1
             // 
-            this.homeToolStripMenuItem1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.homeToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
             this.homeToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
             this.homeToolStripMenuItem1.Text = "Home";
@@ -121,6 +123,7 @@
             this.kitchenToolStripMenuItem.Name = "kitchenToolStripMenuItem";
             this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
             this.kitchenToolStripMenuItem.Text = "Kitchen";
+            this.kitchenToolStripMenuItem.Click += new System.EventHandler(this.kitchenToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 

@@ -20,13 +20,14 @@ namespace LoginForm
         public paymentForm(Employee employee)
         {
             this.employee = employee;
-            InitializeComponent();
 
+            InitializeComponent();
+            
         }
 
         private void resetForm()
         {
-            pnl_payment.Show();
+            //pnl_payment.Show();
 
             btn_bill.Visible = true;
             lbl_billSuccess.Visible = false;
@@ -34,12 +35,8 @@ namespace LoginForm
 
             textBox_comments.Text = "";
             textBox_tip.Text = "";
-            if (rbtn_cash.Checked == true)
-                rbtn_cash.Checked = false;
-            else if (rbtn_pin.Checked == true)
-                rbtn_pin.Checked = false;
-            else if (rbtn_credit.Checked == true)
-                rbtn_credit.Checked = false;
+            rbtn_pin.Checked = true;
+
         }
 
 
@@ -60,11 +57,13 @@ namespace LoginForm
             listView_payments.Items.Clear();
 
             //Adds records of data to the listview
-            lbl_order.Text = "Table: " + payment.order.table.ToString();
-            lbl_date.Text = "Date: " + payment.order.dateTime.ToString("dd/MM/yyyy HH:mm:ss");
-            lbl_totalPrice.Text = "Total price: " + payment.totalPrice.ToString();
-            lbl_vat.Text = "VAT: " + payment.totalVAT.ToString();
+            lbl_paymentTable.Text = payment.order.table.ToString();
+            lbl_date.Text =  payment.order.dateTime.ToString("dd/MM/yyyy HH:mm:ss");
+            lbl_orderPrice.Text =  payment.totalPrice.ToString("€ 0.00");
+            lbl_vat.Text = payment.totalVAT.ToString("€ 0.00");
             //textBox_comments.Text = payment.comments.ToString();
+            textBox_tip.Text = "0.00";
+            textBox_totalPrice.Text = (payment.totalPrice).ToString("0.00");
 
 
             foreach (OrderItem item in orderItems)
@@ -90,8 +89,8 @@ namespace LoginForm
                 return;
             }
 
-            payment.totalPrice = decimal.Parse(lbl_totalPrice.Text.Split(' ')[2]);
-            payment.totalVAT = decimal.Parse(lbl_vat.Text.Split(' ')[1]);
+            payment.totalPrice = decimal.Parse(lbl_orderPrice_static.Text.Split(' ')[2]);
+            payment.totalVAT = decimal.Parse(lbl_vat_static.Text.Split(' ')[1]);
 
             //if incorrect format, just sets tip to 0
             try
@@ -121,9 +120,61 @@ namespace LoginForm
 
         }
 
-        private void listView_payments_SelectedIndexChanged(object sender, EventArgs e)
+        private void lbl_totalPrice_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lbl_orderPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_tip_TextChanged(object sender, EventArgs e)
+        {
+            float temp1;
+
+            try
+            {
+                if (textBox_tip.Text == "")
+                    temp1 = 0;
+                else 
+                    temp1 = float.Parse(textBox_tip.Text);
+
+                float temp2 = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);
+                textBox_totalPrice.Text = (temp1 + temp2).ToString("0.00");
+
+                lbl_paymentMethodWarning.Text = "";
+            }
+            catch(Exception)
+            {
+                lbl_paymentMethodWarning.Text = "Input a decimal number in the tip box please.";
+            }
+        }
+
+        private void textBox_totalPrice_TextChanged(object sender, EventArgs e)
+        {
+            float temp1;
+
+            try
+            {
+                if (textBox_totalPrice.Text == "" || float.Parse(textBox_totalPrice.Text) < float.Parse(lbl_orderPrice.Text.Split(' ')[1]))
+                {
+                    lbl_paymentMethodWarning.Text = "Insert a value bigger or equal than the order price";
+                    return;
+                }
+                else
+                    temp1 = float.Parse(textBox_totalPrice.Text);
+
+                float temp2 = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);
+                textBox_tip.Text = (temp1 - temp2).ToString("0.00");
+
+                lbl_paymentMethodWarning.Text = "";
+            }
+            catch (Exception)
+            {
+                lbl_paymentMethodWarning.Text = "Input a decimal number in the tip box please.";
+            }
         }
     }
 }

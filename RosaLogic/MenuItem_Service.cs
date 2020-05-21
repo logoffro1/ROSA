@@ -19,9 +19,9 @@ namespace RosaLogic
             }
             catch
             {
-                List<MenuItem> menuitem = new List<MenuItem>();
-                MenuItem a = new MenuItem();
-                return menuitem;
+                return null;
+         
+               
             }
         }
         public void UpdateTableOrder(MenuItem table, int status)
@@ -32,8 +32,7 @@ namespace RosaLogic
             }
             catch
             {
-                List<MenuItem> menuitem = new List<MenuItem>();
-                MenuItem a = new MenuItem();
+                throw new Exception("Could not update TableOrder");
             }
         }
         public MenuItem GetFromTableTheStatus(int status)
@@ -45,9 +44,7 @@ namespace RosaLogic
 
             catch
             {
-                List<MenuItem> menuitem = new List<MenuItem>();
-                MenuItem a = new MenuItem();
-                return a;
+                return null;
             }
         }
     }

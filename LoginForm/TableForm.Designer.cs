@@ -55,6 +55,7 @@
             this.navbar = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.barToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitchenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +66,6 @@
             this.lblSelectTable = new System.Windows.Forms.Label();
             this.pnlTablesView = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -259,7 +259,6 @@
             this.pnlTableInfo.Size = new System.Drawing.Size(285, 358);
             this.pnlTableInfo.TabIndex = 1;
             this.pnlTableInfo.Visible = false;
-            this.pnlTableInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTableInfo_Paint);
             // 
             // lblWaitTime
             // 
@@ -420,6 +419,12 @@
             this.tablesToolStripMenuItem1.Text = "Tables";
             this.tablesToolStripMenuItem1.Click += new System.EventHandler(this.tablesToolStripMenuItem1_Click);
             // 
+            // orderToolStripMenuItem1
+            // 
+            this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
+            this.orderToolStripMenuItem1.Size = new System.Drawing.Size(78, 32);
+            this.orderToolStripMenuItem1.Text = "Order";
+            // 
             // barToolStripMenuItem
             // 
             this.barToolStripMenuItem.Name = "barToolStripMenuItem";
@@ -510,12 +515,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            // 
-            // orderToolStripMenuItem1
-            // 
-            this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
-            this.orderToolStripMenuItem1.Size = new System.Drawing.Size(78, 32);
-            this.orderToolStripMenuItem1.Text = "Order";
             // 
             // tableViewForm
             // 

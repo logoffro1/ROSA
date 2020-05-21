@@ -35,3 +35,12 @@ D:\VS Repository\ROSA\RosaDAL\obj\Debug\RosaDAL.csproj.CoreCompileInputs.cache
 D:\VS Repository\ROSA\RosaDAL\obj\Debug\RosaDAL.csproj.CopyComplete
 D:\VS Repository\ROSA\RosaDAL\obj\Debug\RosaDAL.dll
 D:\VS Repository\ROSA\RosaDAL\obj\Debug\RosaDAL.pdb
+C:\Users\MEDION\Documents\School\ROSA\RosaDAL\bin\Debug\RosaDAL.dll.config
+C:\Users\MEDION\Documents\School\ROSA\RosaDAL\bin\Debug\RosaDAL.dll
+C:\Users\MEDION\Documents\School\ROSA\RosaDAL\bin\Debug\RosaDAL.pdb
+C:\Users\MEDION\Documents\School\ROSA\RosaDAL\bin\Debug\RosaModel.dll
+C:\Users\MEDION\Documents\School\ROSA\RosaDAL\bin\Debug\RosaModel.pdb
+C:\Users\MEDION\Documents\School\ROSA\RosaDAL\obj\Debug\RosaDAL.csprojAssemblyReference.cache
+C:\Users\MEDION\Documents\School\ROSA\RosaDAL\obj\Debug\RosaDAL.csproj.CopyComplete
+C:\Users\MEDION\Documents\School\ROSA\RosaDAL\obj\Debug\RosaDAL.dll
+C:\Users\MEDION\Documents\School\ROSA\RosaDAL\obj\Debug\RosaDAL.pdb
