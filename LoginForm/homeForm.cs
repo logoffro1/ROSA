@@ -137,9 +137,10 @@ namespace LoginForm
 
         private void tablesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            EditForm tableForm = new EditForm(employee);
+            tableViewForm tableForm = new tableViewForm(employee);
             tableForm.Show();
             this.Hide();
+
         }
 
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
