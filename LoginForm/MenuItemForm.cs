@@ -192,7 +192,7 @@ namespace LoginForm
 
         private void tablesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tableViewForm tableViewForm = new tableViewForm(employee);          
+            EditForm tableViewForm = new EditForm(employee);          
             tableViewForm.Show();
             this.Hide();
         }
@@ -204,9 +204,14 @@ namespace LoginForm
 
         private void orderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OrderTemp ot = new OrderTemp(employee);
+            OrderForm ot = new OrderForm(employee);
             ot.Show();
             this.Hide();
+        }
+
+        private void listBarView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

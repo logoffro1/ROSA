@@ -30,8 +30,6 @@ namespace RosaDAL
 
             return orderItems;
         }
-
-
         private OrderItem ReadRecord(SqlDataReader reader)
         {
             OrderItem orderItem = new OrderItem()
@@ -42,13 +40,41 @@ namespace RosaDAL
                     Price = (decimal)reader["price"]
                 },
                 amount = (int)reader["amount"],
-                //status = (StatusEnum)(int)reader["status"]
+                status = (StatusEnum)(int)reader["status"]
             };
 
             return orderItem;
-        }
+        } 
 
+
+
+
+        public List<OrderItem> ReadTables(DataTable dataTable)
+        {
+            SqlCommand cmd = new SqlCommand(
+                "SELECT orderItems_id,order_id,menuitem_id,amount" +
+                "FROM orderItems AS OT " +
+                "WHERE order_id = @order_id; ", conn);
+
+            List<OrderItem> OrderItems = new List<OrderItem>();
+
+                foreach (DataRow dr in dataTable.Rows)
+                {
+                    OrderItem orderitem = new OrderItem()
+                    {
+                        orderItems_id = (int)dr["orderItems_id"],
+                        orderID = (int)dr["order_id"],
+                        amount = (int)dr["amount"],
+                        menuItem = (MenuItem)dr["menuItem_id"]
+                    };
+
+                    OrderItems.Add(orderitem);
+                }
+                return OrderItems;
+        }
     }
+
 }
+
 
 

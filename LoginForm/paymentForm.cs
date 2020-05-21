@@ -120,5 +120,10 @@ namespace LoginForm
         {
 
         }
+
+        private void listView_payments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

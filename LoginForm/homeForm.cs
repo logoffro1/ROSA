@@ -134,7 +134,7 @@ namespace LoginForm
 
         private void tablesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            tableViewForm tableForm = new tableViewForm(employee);
+            EditForm tableForm = new EditForm(employee);
             tableForm.Show();
             this.Hide();
         }
@@ -148,7 +148,7 @@ namespace LoginForm
 
         private void orderToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            OrderTemp ot = new OrderTemp(employee);
+            OrderForm ot = new OrderForm(employee);
             ot.Show();
             this.Hide();
         }

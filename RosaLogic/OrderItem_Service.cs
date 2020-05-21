@@ -24,5 +24,17 @@ namespace RosaLogic
                 return null;
             }
         }
+        //public List<OrderItem> GetItemsById(int order_id)
+       // {
+            //try
+           // {
+              //  return orderItemDAO.ReadTables();
+          //  }
+           // catch
+           // {
+              //  ErrorDAO error = new ErrorDAO("Couldn't read the Order Item from the Database!");
+             //   return null;
+           // }
+        //}
     }
 }
