@@ -8,6 +8,6 @@ namespace RosaModel
 {
    public enum TableStatus
     {
-        Empty = 1, Waiting, Ordered, Paid
+        Empty = 1, Waiting, Ordered
     }
 }

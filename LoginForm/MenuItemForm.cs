@@ -17,9 +17,9 @@ namespace LoginForm
     {
         private Employee employee;
 
-        public MenuItemForm(Employee employee,string name)
+        public MenuItemForm(Employee employee, string name)
         {
-           
+
             this.employee = employee;
             InitializeComponent();
             KitcheOrBarView(name);
@@ -38,16 +38,16 @@ namespace LoginForm
             switch (b.Status)
             {
                 case StatusEnum.Ordered:
-                    return Color.Yellow;
-                case StatusEnum.Ready:
-                    return Color.Green;
-                case StatusEnum.Waiting:
                     if (b.dateSold.AddMinutes(15) < DateTime.Now)
                     { return Color.Red; }
                     else
                     {
-                        return Color.Blue;
+                        return Color.Yellow;
                     }
+                case StatusEnum.Ready:
+                    return Color.Green;
+                case StatusEnum.Served:
+                    return Color.Green;
                 default:
                     return Color.White;
             }
@@ -78,17 +78,17 @@ namespace LoginForm
                     if (barLIst[i].menuCat >= 25) // it is more than 24 because all drinks has number above 24
                     {
                         listBarView.Items.Add(stucust);
-                    }                  
+                    }
                     listKitchenView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                 }
             }
-            else if (name =="kitchen") //Displays the overview of the Kitchen View
+            else if (name == "kitchen") //Displays the overview of the Kitchen View
             {
                 panel_Bar.Hide();
                 panel_Kitchen.Show();
 
                 listKitchenView.Items.Clear();
-                
+
                 for (int i = 0; i < barLIst.Count; i++)
                 {
                     ListViewItem stucust = new ListViewItem(barLIst[i].dateSold.Date.ToString());
@@ -114,7 +114,7 @@ namespace LoginForm
         {
             // When you click on button you want to update the status of the certain order
             MenuItem_Service tableService = new MenuItem_Service();
-            int status = 3;
+            int status = 2; // to which one it goes from order status to ready status
 
             if (listBarView.SelectedItems.Count > 0)
             {
@@ -128,10 +128,10 @@ namespace LoginForm
                    int.Parse(listBarView.SelectedItems[0].SubItems[7].Text), // OrderID from the KitchenBarView in this case it is the 8th column from the add list
                    DateTime.Parse(listBarView.SelectedItems[0].SubItems[0].Text), // Date and Time from the KitchenBarView in this case it is the 1st column from the add list
                    listBarView.SelectedItems[0].SubItems[6].Text); // Note from the KitchenBarView in this case it is the 7th column from the add list
-                 
-                if (temp.Status == StatusEnum.Ready || temp.Status == StatusEnum.Waiting || temp.Status == StatusEnum.Ordered)
+
+                if (temp.Status == StatusEnum.Ordered)
                 {
-                    tableService.UpdateTableOrder(temp, status); // updates table
+                    tableService.UpdateTableOrder(temp, status); // updates table 
                     MessageBox.Show("Order Send!");
                     KitcheOrBarView("bar");
                 }
@@ -153,7 +153,7 @@ namespace LoginForm
                   DateTime.Parse(listKitchenView.SelectedItems[0].SubItems[0].Text),  // Date and Time from the KitchenBarView in this case it is the 1st column from the add list
                   listKitchenView.SelectedItems[0].SubItems[6].Text); // Note from the KitchenBarView in this case it is the 7th column from the add list
 
-                if (temp.Status != StatusEnum.Billed || temp.Status != StatusEnum.Served)
+                if (temp.Status == StatusEnum.Ordered)
                 {
                     tableService.UpdateTableOrder(temp, status); // update table
                     MessageBox.Show("Order Send!");
@@ -169,7 +169,7 @@ namespace LoginForm
                 MessageBox.Show("Item Was Not Selected!");
             }
         }
-      
+
         private void btnReady_Click(object sender, EventArgs e)
         {
             Bottons();
