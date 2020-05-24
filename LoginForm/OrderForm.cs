@@ -21,9 +21,18 @@ namespace LoginForm
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            paymentForm payment = new paymentForm(employee);
-            this.Hide();
-            payment.Show();
+            try
+            {
+                int orderId = int.Parse(OrderView.SelectedItems[0].Text);
+                paymentForm payment = new paymentForm(orderId, employee);
+                this.Hide();
+                payment.Show();
+            }
+            catch(Exception)
+            {
+                lbl_orderWarning.Text = "This order does not have any items! Please put items before paying!";
+            }
+
 
         }
         private void button1_Click_1(object sender, EventArgs e)

@@ -12,60 +12,54 @@ using RosaModel;
 
 namespace LoginForm
 {
+    /// <summary>
+    /// UI Form for the UI
+    /// By Dewi Becu
+    /// </summary>
     public partial class paymentForm : Form
     {
-
-        private int currentOrderId;
+        //Employee field for the home page and the pass the employee that is using the application
         private Employee employee;
-        public paymentForm(Employee employee)
+        //The order that this payment is about
+        private int currentOrderId;
+        //Current payment
+        private Payment currentPayment;
+
+        //Loads the form with all approriate data
+        public paymentForm(int orderID, Employee employee)
         {
+            currentOrderId = orderID;
             this.employee = employee;
-
             InitializeComponent();
-            
+
+            ShowData();
         }
 
-        private void resetForm()
+        //Accesses DB to get all nesessary information for the OrderId that was passed from the Order screen
+        private void ShowData()
         {
-            //pnl_payment.Show();
-
-            btn_bill.Visible = true;
-            lbl_billSuccess.Visible = false;
-            lbl_paymentMethodWarning.Text = "";
-
-            textBox_comments.Text = "";
-            textBox_tip.Text = "";
-            rbtn_pin.Checked = true;
-
-        }
-
-
-        private void btn_reset_Click(object sender, EventArgs e)
-        {
-
-            resetForm();
-
-            //change so that it's passed
-            currentOrderId = 5;
-
+            //Accesses the data for the database
             Payment_Service paymentService = new Payment_Service();
             Payment payment = paymentService.GetPayment(currentOrderId);
 
             OrderItem_Service orderItemService = new OrderItem_Service();
             List<OrderItem> orderItems = orderItemService.GetById(currentOrderId);
 
+            //Clears items in case it was not from a previous payment viewing
             listView_payments.Items.Clear();
 
+            //Makes the database payment the currentPayment object
+            currentPayment = payment;
+
             //Adds records of data to the listview
-            lbl_paymentTable.Text = payment.order.table.ToString();
-            lbl_date.Text =  payment.order.dateTime.ToString("dd/MM/yyyy HH:mm:ss");
-            lbl_orderPrice.Text =  payment.totalPrice.ToString("€ 0.00");
-            lbl_vat.Text = payment.totalVAT.ToString("€ 0.00");
-            //textBox_comments.Text = payment.comments.ToString();
+            lbl_paymentTable.Text = payment.Order.table.ToString();
+            lbl_date.Text = payment.Order.dateTime.ToString("dd/MM/yyyy HH:mm:ss");
+            lbl_orderPrice.Text = payment.TotalPrice.ToString("€ 0.00");
+            lbl_vat.Text = payment.TotalVAT.ToString("€ 0.00");
             textBox_tip.Text = "0.00";
-            textBox_totalPrice.Text = (payment.totalPrice).ToString("0.00");
+            textBox_totalPrice.Text = (payment.TotalPrice).ToString("0.00");
 
-
+            //Adds each order item to the listview
             foreach (OrderItem item in orderItems)
             {
                 string[] row = { item.menuItem.Name, item.amount.ToString(), item.menuItem.Price.ToString(), item.status.ToString() };
@@ -73,69 +67,56 @@ namespace LoginForm
             }
         }
 
+        //The payment button when a waiter/waitress wants to bill a customer/table
         private void btn_bill_Click(object sender, EventArgs e)
         {
-            Payment payment = new Payment();
 
+            //Checks which payment method is used, else they are warned 
             if (rbtn_cash.Checked)
-                payment.paymentMethod = PaymentMethodEnum.Cash;
+                currentPayment.PaymentMethod = PaymentMethodEnum.Cash;
             else if (rbtn_pin.Checked)
-                payment.paymentMethod = PaymentMethodEnum.Pin;
+                currentPayment.PaymentMethod = PaymentMethodEnum.Pin;
             else if (rbtn_credit.Checked)
-                payment.paymentMethod = PaymentMethodEnum.VISA;     //change to credit card?? YES
+                currentPayment.PaymentMethod = PaymentMethodEnum.Credit;     //change to credit card?? YES
             else
             {
                 lbl_paymentMethodWarning.Text = "Select a payment method";
                 return;
             }
 
-            payment.totalPrice = decimal.Parse(lbl_orderPrice_static.Text.Split(' ')[2]);
-            payment.totalVAT = decimal.Parse(lbl_vat_static.Text.Split(' ')[1]);
-
-            //if incorrect format, just sets tip to 0
+            //If incorrect format, just sets tip to 0
             try
             {
-                payment.tipAmount = decimal.Parse(textBox_tip.Text);
+                currentPayment.TipAmount = decimal.Parse(textBox_tip.Text);
             }
             catch (Exception)
             {
-                payment.tipAmount = 0;
+                currentPayment.TipAmount = 0;
             }
 
-            payment.comments = textBox_comments.Text;
-            payment.orderId = currentOrderId;
+            //Puts remaining data in the payment object
+            currentPayment.Feedback = textBox_comments.Text;
+            currentPayment.OrderId = currentOrderId;
 
-
+            //Puts new payment/bill in the database and sets order to paid
             Payment_Service paymentService = new Payment_Service();
-            paymentService.PayBill(payment);
+            paymentService.PayBill(currentPayment);
 
+            //UI to help show user that bill is paid
             btn_bill.Visible = false;
             lbl_billSuccess.Visible = true;
 
 
         }
 
-        private void paymentForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_totalPrice_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_orderPrice_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //total price textbox changes amount according to what is in the rip textbox
         private void textBox_tip_TextChanged(object sender, EventArgs e)
         {
             float temp1;
 
             try
             {
+                //If there's no value in the textbox, just set it to 0
                 if (textBox_tip.Text == "")
                     temp1 = 0;
                 else 
@@ -152,12 +133,15 @@ namespace LoginForm
             }
         }
 
+
+        //Tip textbox changes amount according to what is in the total price textbox
         private void textBox_totalPrice_TextChanged(object sender, EventArgs e)
         {
             float temp1;
 
             try
             {
+                //If there's nothing in the total price text box OR if the total price is less than what is should be, put a warning
                 if (textBox_totalPrice.Text == "" || float.Parse(textBox_totalPrice.Text) < float.Parse(lbl_orderPrice.Text.Split(' ')[1]))
                 {
                     lbl_paymentMethodWarning.Text = "Insert a value bigger or equal than the order price";
@@ -175,6 +159,14 @@ namespace LoginForm
             {
                 lbl_paymentMethodWarning.Text = "Input a decimal number in the tip box please.";
             }
+        }
+
+        //Returns to the order screen
+        private void btn_return_Click(object sender, EventArgs e)
+        {
+            OrderForm orderForm = new OrderForm(employee);
+            this.Hide();
+            orderForm.Show();
         }
     }
 }

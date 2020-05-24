@@ -8,6 +8,6 @@ namespace RosaModel
 {
     public enum PaymentMethodEnum
     {
-        Cash = 1, Pin, VISA, AMEX
+        Cash = 1, Pin, Credit
     }
 }
