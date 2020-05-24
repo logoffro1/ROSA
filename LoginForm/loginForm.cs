@@ -36,7 +36,7 @@ namespace LoginForm
             else //if they are not empty, read the employees from the database and compare them with the input from the user
             {
                 lblError.Visible = false;
-
+                lblError.Show();
                 //return from the database only the employee that matches those credentials
                Employee employee = employeeService.GetAccount(txtUsername.Text,txtPassword.Text);
 

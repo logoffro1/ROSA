@@ -90,11 +90,11 @@
     <Compile Include="Revenue.Designer.cs">
       <DependentUpon>Revenue.cs</DependentUpon>
     </Compile>
-    <Compile Include="TableForm.cs">
+    <Compile Include="tableViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TableForm.Designer.cs">
-      <DependentUpon>TableForm.cs</DependentUpon>
+    <Compile Include="tableViewForm.Designer.cs">
+      <DependentUpon>tableViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="homeForm.cs">
       <SubType>Form</SubType>
@@ -122,8 +122,8 @@
     <EmbeddedResource Include="Revenue.resx">
       <DependentUpon>Revenue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TableForm.resx">
-      <DependentUpon>TableForm.cs</DependentUpon>
+    <EmbeddedResource Include="tableViewForm.resx">
+      <DependentUpon>tableViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="homeForm.resx">
       <DependentUpon>homeForm.cs</DependentUpon>

@@ -39,9 +39,10 @@
             // 
             // Backbuttonedit
             // 
-            this.Backbuttonedit.Location = new System.Drawing.Point(12, 12);
+            this.Backbuttonedit.Location = new System.Drawing.Point(16, 15);
+            this.Backbuttonedit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Backbuttonedit.Name = "Backbuttonedit";
-            this.Backbuttonedit.Size = new System.Drawing.Size(141, 39);
+            this.Backbuttonedit.Size = new System.Drawing.Size(188, 48);
             this.Backbuttonedit.TabIndex = 0;
             this.Backbuttonedit.Text = "Back to orders";
             this.Backbuttonedit.UseVisualStyleBackColor = true;
@@ -56,9 +57,10 @@
             this.columnHeader4,
             this.columnHeader5});
             this.EditView.HideSelection = false;
-            this.EditView.Location = new System.Drawing.Point(483, 12);
+            this.EditView.Location = new System.Drawing.Point(644, 15);
+            this.EditView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EditView.Name = "EditView";
-            this.EditView.Size = new System.Drawing.Size(305, 154);
+            this.EditView.Size = new System.Drawing.Size(405, 189);
             this.EditView.TabIndex = 1;
             this.EditView.UseCompatibleStateImageBehavior = false;
             this.EditView.View = System.Windows.Forms.View.Details;
@@ -71,13 +73,18 @@
             // 
             this.columnHeader4.Text = "Amount";
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Width = 75;
+            // 
             // EditForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.EditView);
             this.Controls.Add(this.Backbuttonedit);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditForm";
             this.Text = "Edit form";
             this.Load += new System.EventHandler(this.Form1_Load);

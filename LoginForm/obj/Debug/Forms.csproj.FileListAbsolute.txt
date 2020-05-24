@@ -137,3 +137,4 @@ D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.OrderForm.resources
 D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.paymentForm.resources
 D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.tableViewForm.resources
 D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.homeForm.resources
+C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.Revenue.resources

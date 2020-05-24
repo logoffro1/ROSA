@@ -43,17 +43,14 @@ namespace LoginForm
         }
         private void mainForm_Load(object sender, EventArgs e)
         {
-            AddImagesToLists();
-
+            AddImagesToLists();    
             //split the name into 2 parts, firstName and lastName
             string[] nameSplit = employee.employeeName.Split(' ');
             //show a Welcome message, "Welcome, firstName!"
             lblWelcome.Text = $"Welcome, {nameSplit[0]}!";
             lblName.Text = employee.employeeName;
             lblRole.Text = employee.role.ToString();
-   //5 ah
-   //6:10
-            
+
             lblTime.Text = $"{DateTime.Now.DayOfWeek} - {DateTime.Now.Hour.ToString("00")}:{DateTime.Now.Minute.ToString("00")}";
            
 
