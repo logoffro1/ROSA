@@ -50,6 +50,10 @@
             this.picCircle2 = new System.Windows.Forms.PictureBox();
             this.picCircle1 = new System.Windows.Forms.PictureBox();
             this.pnlInfoUser = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Label();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.txtNotes = new System.Windows.Forms.RichTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
@@ -64,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCircle2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCircle1)).BeginInit();
             this.pnlInfoUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,9 +76,9 @@
             // 
             // navbar
             // 
-            this.navbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.navbar.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.navbar.BackgroundImage = global::LoginForm.Properties.Resources.BG_TABLESPAGE;
-            this.navbar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.navbar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.navbar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navbar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -91,7 +96,7 @@
             // 
             // homeToolStripMenuItem1
             // 
-            this.homeToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.homeToolStripMenuItem1.BackColor = System.Drawing.Color.Transparent;
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
             this.homeToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
             this.homeToolStripMenuItem1.Text = "Home";
@@ -277,6 +282,10 @@
             // 
             this.pnlInfoUser.BackgroundImage = global::LoginForm.Properties.Resources.infoBoxWhite;
             this.pnlInfoUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlInfoUser.Controls.Add(this.btnSave);
+            this.pnlInfoUser.Controls.Add(this.lblNotes);
+            this.pnlInfoUser.Controls.Add(this.txtNotes);
+            this.pnlInfoUser.Controls.Add(this.pictureBox2);
             this.pnlInfoUser.Controls.Add(this.lblTime);
             this.pnlInfoUser.Controls.Add(this.lblName);
             this.pnlInfoUser.Controls.Add(this.lblRole);
@@ -287,11 +296,53 @@
             this.pnlInfoUser.Size = new System.Drawing.Size(285, 526);
             this.pnlInfoUser.TabIndex = 3;
             // 
+            // btnSave
+            // 
+            this.btnSave.AutoSize = true;
+            this.btnSave.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(32, 433);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(57, 23);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Font = new System.Drawing.Font("Tw Cen MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotes.Location = new System.Drawing.Point(109, 268);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(54, 22);
+            this.lblNotes.TabIndex = 6;
+            this.lblNotes.Text = "Notes";
+            // 
+            // txtNotes
+            // 
+            this.txtNotes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNotes.Font = new System.Drawing.Font("Tw Cen MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNotes.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtNotes.Location = new System.Drawing.Point(32, 291);
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(213, 138);
+            this.txtNotes.TabIndex = 5;
+            this.txtNotes.Text = "";
+            this.txtNotes.TextChanged += new System.EventHandler(this.txtNotes_TextChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::LoginForm.Properties.Resources.note3;
+            this.pictureBox2.Location = new System.Drawing.Point(22, 247);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(263, 230);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Tw Cen MT", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(58, 477);
+            this.lblTime.Location = new System.Drawing.Point(58, 478);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(119, 25);
             this.lblTime.TabIndex = 3;
@@ -385,6 +436,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCircle1)).EndInit();
             this.pnlInfoUser.ResumeLayout(false);
             this.pnlInfoUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -421,5 +473,9 @@
         private System.Windows.Forms.ToolStripMenuItem kitchenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.RichTextBox txtNotes;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.Label btnSave;
     }
 }
