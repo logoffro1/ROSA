@@ -187,7 +187,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chapeau - Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.loginFormV2_FormClosing);
-            this.Load += new System.EventHandler(this.loginFormV2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.eyePic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgChapeauLogo)).EndInit();

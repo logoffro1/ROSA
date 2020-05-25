@@ -9,12 +9,19 @@ using RosaModel;
 
 namespace RosaDAL
 {
+    /// <summary>
+    /// Class that retrieves all data needed from the order item table,
+    /// or that retrives data needed for the order item class
+    /// </summary>
     public class OrderItemDAO : Base
     {
+
+        //Gets the list of order items from an order, through the order id
+        //By Dewi
         public List<OrderItem> GetById(int order_id)
         {
             SqlCommand cmd = new SqlCommand(
-                "SELECT OT.order_ID, M.itemName, OT.amount, (M.price * OT.amount) AS price " +
+                "SELECT OT.order_ID, M.itemName, OT.amount, OT.[status], (M.price * OT.amount) AS price " +
                 "FROM orderItems AS OT " +
                 "JOIN menuItem AS M ON OT.menuItem_id = M.menuItem_id " +
                 "WHERE Ot.order_id = @order_id; ", conn);
@@ -30,6 +37,9 @@ namespace RosaDAL
 
             return orderItems;
         }
+
+        //Reads the order item record from the database
+        //By Dewi
         private OrderItem ReadRecord(SqlDataReader reader)
         {
             OrderItem orderItem = new OrderItem()
@@ -45,33 +55,6 @@ namespace RosaDAL
 
             return orderItem;
         } 
-
-
-
-
-        public List<OrderItem> ReadTables(DataTable dataTable)
-        {
-            SqlCommand cmd = new SqlCommand(
-                "SELECT orderItems_id,order_id,menuitem_id,amount" +
-                "FROM orderItems AS OT " +
-                "WHERE order_id = @order_id; ", conn);
-
-            List<OrderItem> OrderItems = new List<OrderItem>();
-
-                foreach (DataRow dr in dataTable.Rows)
-                {
-                    OrderItem orderitem = new OrderItem()
-                    {
-                        orderItems_id = (int)dr["orderItems_id"],
-                        orderID = (int)dr["order_id"],
-                        amount = (int)dr["amount"],
-                        menuItem = (MenuItem)dr["menuItem_id"]
-                    };
-
-                    OrderItems.Add(orderitem);
-                }
-                return OrderItems;
-        }
     }
 
 }

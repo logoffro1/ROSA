@@ -402,7 +402,6 @@
             this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.navbar.Size = new System.Drawing.Size(1005, 36);
             this.navbar.TabIndex = 2;
-            this.navbar.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.navbar_ItemClicked);
             // 
             // homeToolStripMenuItem1
             // 

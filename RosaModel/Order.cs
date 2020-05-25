@@ -14,7 +14,8 @@ namespace RosaModel
         public string notes { get; set; }
         public DateTime dateTime { get; set; }
         public int table { get; set; }
-        public List<MenuItem> listMenuItems { get; set; }
+        public List<OrderItem> listOrderItems { get; set; }
+
     }
 }
           

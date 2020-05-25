@@ -115,7 +115,6 @@ C:\Users\MEDION\Documents\School\ROSA\LoginForm\bin\Debug\RosaDAL.dll.config
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\Forms.csprojAssemblyReference.cache
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.loginForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.MenuItemForm.resources
-C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.OrderTemp.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.paymentForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.tableViewForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.homeForm.resources
@@ -138,4 +137,6 @@ D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.paymentForm.resources
 D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.tableViewForm.resources
 D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.homeForm.resources
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.Revenue.resources
-D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.Revenue.resources
+C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.EditForm.resources
+C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.OrderForm.resources
+C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.Revenue.resources

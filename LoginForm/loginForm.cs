@@ -17,11 +17,6 @@ namespace LoginForm
         {
             InitializeComponent();
         }
-
-        private void loginFormV2_Load(object sender, EventArgs e)
-        {
-     
-        }
         private void CheckCredentials() //validate the credentials
         {
             Employee_Service employeeService = new Employee_Service();
@@ -60,20 +55,17 @@ namespace LoginForm
         {
             CheckCredentials();
         }
-
         private void txtUsername_KeyDown(object sender, KeyEventArgs e)
         {
             //if enter is pressed, call the CheckCredentials() method
             if (e.KeyCode == Keys.Enter)
                 CheckCredentials();
         }
-
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             //if enter is pressed, call the CheckCredentials() method
             if (e.KeyCode == Keys.Enter)
                 CheckCredentials();
-
         }
         private void eyePic_Click(object sender, EventArgs e)
         {
@@ -81,7 +73,6 @@ namespace LoginForm
             //that shows or hides the password
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
         }
-
         private void loginFormV2_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

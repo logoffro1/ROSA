@@ -26,8 +26,6 @@ namespace LoginForm
             this.employee = employee;
 
         }
-
-
         private void tableViewForm_Load(object sender, EventArgs e)
         {
             //split the name into 2 parts, firstName and lastName
@@ -49,7 +47,7 @@ namespace LoginForm
         }
         void ChangeTableImageColor() //change the back color depending on the availability for all the tables
         {
-            int count = 0;
+            int count = 0; //to keep track of the table number
           
             foreach (PictureBox p in tableImages) // loop through the images list
             {
@@ -70,7 +68,6 @@ namespace LoginForm
                 tableImage.BackColor = Color.FromArgb(102, 210, 105); //green-ish color
 
         }
-
         void ShowTableInfo(int tableId) //show the information for the selected table
         {
             timerWaitTime.Stop();
@@ -108,17 +105,14 @@ namespace LoginForm
            
             pnlTableInfo.Show();  //show the table info panel
         }
-
         private void TimerWaitTime_Tick(object sender, EventArgs e)
         {
             ChangeLabelWaitTime(); 
         }
         private void ChangeLabelWaitTime()
-        {
-           
+        {    
             if (selectedTable.CheckStatus() == TableStatus.Ordered)
             {
-
                    int waitTimetotalSeconds = (int)(DateTime.Now - selectedTable.order.dateTime).TotalSeconds;
                 
                 if(waitTimetotalSeconds > 0)
@@ -151,17 +145,14 @@ namespace LoginForm
         {
             pnlTableInfo.Hide();
         }
-
         private void lblLogout_MouseHover(object sender, EventArgs e)
         {
             lblLogout.ForeColor = Color.Blue;
         }
-
         private void lblLogout_MouseLeave(object sender, EventArgs e)
         {
             lblLogout.ForeColor = Color.Black;
         }
-
         private void lblLogout_Click(object sender, EventArgs e)
         {
             //return to the login form
@@ -169,7 +160,6 @@ namespace LoginForm
             loginForm.Show();
             this.Hide();
         }
-
         private void lblOccupied_Click(object sender, EventArgs e)
         {
             if (canEditTable) // if you can edit the table, change the occupied status
@@ -226,7 +216,7 @@ namespace LoginForm
                 // update table  
                 tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved);
             } else
-                MessageBox.Show("Can't change info if there is a running order","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Can't change info if there is a running order(PLACEHOLDER)","Placeholder",MessageBoxButtons.OK,MessageBoxIcon.Warning);
 
         }
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -249,17 +239,11 @@ namespace LoginForm
             if (canEditTable) //if  you can edit the table, change the cursor when hovering over label
                 lblReserved.Cursor = Cursors.Hand;
         }
-
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MenuItemForm menuItemForm = new MenuItemForm(employee,"bar");
             this.Hide();
             menuItemForm.Show();
-        }
-
-        private void navbar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }
