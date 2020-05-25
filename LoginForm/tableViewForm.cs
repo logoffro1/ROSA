@@ -13,6 +13,7 @@ namespace LoginForm
 {
     public partial class tableViewForm : Form
     {
+        //have icons and drink/food preparation
         private Employee employee;
 
         private List<PictureBox> tableImages;   //create a list for all the table images
@@ -72,7 +73,7 @@ namespace LoginForm
         {
             timerWaitTime.Stop();
             //set the editing/saving options to false by default
-            canEditTable = false;
+            canEditTable = false; //a bit unclear
             btnSaveTableInfo.Enabled = false;
             btnEdit.Text = "ON";
             selectedTable = tables[tableId - 1];
@@ -138,7 +139,7 @@ namespace LoginForm
         private void TableClick(object sender, EventArgs e) //event handler
         {
             PictureBox tablePic = (PictureBox)sender; //store the clicked table
-            string[] tableSplit = tablePic.Name.Split('e'); //split the name from the number
+            string[] tableSplit = tablePic.Name.Split('e'); //split the name from the number -> kinda dangerous, eg. do getTable, getIndex
             ShowTableInfo(int.Parse(tableSplit[1])); //pass the number to ShowTableInfo     
         }
         private void btnExitTableInfo_Click(object sender, EventArgs e)

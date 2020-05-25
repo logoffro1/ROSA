@@ -13,13 +13,12 @@ using RosaModel;
 
 namespace LoginForm
 {
-    public partial class MenuItemForm : Form
+    public partial class MenuItemForm : Form //change class name
     {
         private Employee employee;
 
-        public MenuItemForm(Employee employee, string name)
+        public MenuItemForm(Employee employee, string name)     //just need employee to decide if it's kitchen (chef) or bar (bartender) 
         {
-
             this.employee = employee;
             InitializeComponent();
             KitcheOrBarView(name);
@@ -35,7 +34,7 @@ namespace LoginForm
         }
         private Color checkStatus(RosaModel.MenuItem b) // Presents the color based on the (Enum)status 
         {
-            switch (b.Status)
+            switch (b.Status)  //change varaible name b, eg. menuItem
             {
                 case StatusEnum.Ordered:
                     if (b.dateSold.AddMinutes(15) < DateTime.Now)
@@ -54,6 +53,8 @@ namespace LoginForm
         }
         private void KitcheOrBarView(string name) //Displays the overview of both the Bar and Kitchen View
         {
+            //Work with order items, not with menu items
+
             MenuItem_Service BarService = new MenuItem_Service();
             List<RosaModel.MenuItem> barLIst = BarService.GetMenuItem();
             if (name == "bar") //Displays the overview of the Bar View

@@ -12,6 +12,10 @@ namespace LoginForm
 {
     public partial class OrderForm : Form
     {
+        //add order from menu card -> menu catergory -> menu items
+        //
+
+
         private Employee employee;
         public OrderForm(Employee employee)
         {
@@ -19,13 +23,13 @@ namespace LoginForm
             InitializeComponent();
             LoadOrders();
         }
-        private void Button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)      //change event handler method name
         {
             try
             {
                 int orderId = int.Parse(OrderView.SelectedItems[0].Text);
                 paymentForm payment = new paymentForm(orderId, employee);
-                this.Hide();
+                this.Hide();    //dont use this.Hide, or else there's a lot of hidden forms (theryre not gone)
                 payment.Show();
             }
             catch(Exception)

@@ -28,7 +28,7 @@ namespace LoginForm
         //Loads the form with all approriate data
         public paymentForm(int orderID, Employee employee)
         {
-            currentOrderId = orderID;
+            currentOrderId = orderID; //might want to first go through table
             this.employee = employee;
             InitializeComponent();
 
@@ -36,14 +36,15 @@ namespace LoginForm
         }
 
         //Accesses DB to get all nesessary information for the OrderId that was passed from the Order screen
-        private void ShowData()
+        private void ShowData()//get passed the whole order & pass order as a parameter, use the whole running order instead of orderItem
+            //show also get tableID
         {
             //Accesses the data for the database
             Payment_Service paymentService = new Payment_Service();
             Payment payment = paymentService.GetPayment(currentOrderId);
 
             OrderItem_Service orderItemService = new OrderItem_Service();
-            List<OrderItem> orderItems = orderItemService.GetById(currentOrderId);
+            List<OrderItem> orderItems = orderItemService.GetById(currentOrderId);      //get total price from here
 
             //Clears items in case it was not from a previous payment viewing
             listView_payments.Items.Clear();
@@ -100,7 +101,7 @@ namespace LoginForm
 
             //Puts new payment/bill in the database and sets order to paid
             Payment_Service paymentService = new Payment_Service();
-            paymentService.PayBill(currentPayment);
+            paymentService.PayBill(currentPayment);  
 
             //UI to help show user that bill is paid
             btn_bill.Visible = false;
@@ -112,7 +113,7 @@ namespace LoginForm
         //total price textbox changes amount according to what is in the rip textbox
         private void textBox_tip_TextChanged(object sender, EventArgs e)
         {
-            float temp1;
+            float temp1; //meaningful name!!
 
             try
             {
@@ -137,7 +138,7 @@ namespace LoginForm
         //Tip textbox changes amount according to what is in the total price textbox
         private void textBox_totalPrice_TextChanged(object sender, EventArgs e)
         {
-            float temp1;
+            float temp1; //meaningful name!!
 
             try
             {

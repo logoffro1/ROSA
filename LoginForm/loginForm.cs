@@ -44,7 +44,7 @@ namespace LoginForm
                 else
                 {
                     //if the employee exists, login the user and open the main form
-                    homeForm HomeForm = new homeForm(employee);
+                    homeForm HomeForm = new homeForm(employee);  //Switch for going to manager/waiter/chef/etc
                     HomeForm.Show();
                     this.Hide();
                 }

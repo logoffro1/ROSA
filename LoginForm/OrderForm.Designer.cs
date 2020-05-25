@@ -187,10 +187,10 @@
             // 
             // lbl_orderWarning
             // 
-            this.lbl_orderWarning.AutoSize = true;
-            this.lbl_orderWarning.Location = new System.Drawing.Point(280, 548);
+            this.lbl_orderWarning.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_orderWarning.Location = new System.Drawing.Point(245, 532);
             this.lbl_orderWarning.Name = "lbl_orderWarning";
-            this.lbl_orderWarning.Size = new System.Drawing.Size(0, 13);
+            this.lbl_orderWarning.Size = new System.Drawing.Size(357, 42);
             this.lbl_orderWarning.TabIndex = 13;
             this.lbl_orderWarning.Click += new System.EventHandler(this.lbl_orderWarning_Click);
             // 
