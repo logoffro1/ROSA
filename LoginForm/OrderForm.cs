@@ -19,7 +19,7 @@ namespace LoginForm
             InitializeComponent();
             LoadOrders();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace LoginForm
             }
             catch(Exception)
             {
-                lbl_orderWarning.Text = "This order does not have any items! Please put items before paying!";
+               lbl_orderWarning.Text = "This order does not have any items! Please put items before paying!";
             }
 
 
@@ -122,6 +122,11 @@ namespace LoginForm
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_orderWarning_Click(object sender, EventArgs e)
         {
 
         }

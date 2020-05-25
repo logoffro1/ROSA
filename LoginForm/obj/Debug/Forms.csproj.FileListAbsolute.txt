@@ -140,3 +140,4 @@ C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.Revenue.resource
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.EditForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.OrderForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.Revenue.resources
+D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.Revenue.resources

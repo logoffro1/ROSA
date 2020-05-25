@@ -43,6 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.RemoveButton = new System.Windows.Forms.Button();
+            this.lbl_orderWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // PayButton
@@ -55,7 +56,7 @@
             this.PayButton.TabIndex = 0;
             this.PayButton.Text = "Pay order";
             this.PayButton.UseVisualStyleBackColor = true;
-            this.PayButton.Click += new System.EventHandler(this.button1_Click);
+            this.PayButton.Click += new System.EventHandler(this.Button1_Click);
             // 
             // OrderView
             // 
@@ -184,12 +185,22 @@
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
+            // lbl_orderWarning
+            // 
+            this.lbl_orderWarning.AutoSize = true;
+            this.lbl_orderWarning.Location = new System.Drawing.Point(280, 548);
+            this.lbl_orderWarning.Name = "lbl_orderWarning";
+            this.lbl_orderWarning.Size = new System.Drawing.Size(0, 13);
+            this.lbl_orderWarning.TabIndex = 13;
+            this.lbl_orderWarning.Click += new System.EventHandler(this.lbl_orderWarning_Click);
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LoginForm.Properties.Resources.BG_TABLESPAGE;
             this.ClientSize = new System.Drawing.Size(754, 586);
+            this.Controls.Add(this.lbl_orderWarning);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -228,5 +239,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button RemoveButton;
+        private System.Windows.Forms.Label lbl_orderWarning;
     }
 }
