@@ -216,7 +216,7 @@ namespace LoginForm
                 // update table  
                 tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved);
             } else
-                MessageBox.Show("Can't change info if there is a running order","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Can't change info if there is a running order(PLACEHOLDER)","Placeholder",MessageBoxButtons.OK,MessageBoxIcon.Warning);
 
         }
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)

@@ -173,7 +173,6 @@ namespace LoginForm
                 txtNotes.Text += sr.ReadLine();
                 txtNotes.Text += Environment.NewLine;
             }
-
             sr.Close();
         }
         private void WriteNotes(string filename)
