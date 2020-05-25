@@ -86,5 +86,35 @@ namespace LoginForm
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
             orderserv.RemoveOrder(int.Parse(OrderIDbox.Text));
         }
+
+        private void EmployeeIDbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TableIDbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrderIDbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
