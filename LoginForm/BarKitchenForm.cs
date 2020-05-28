@@ -66,7 +66,7 @@ namespace LoginForm
                 stucust.SubItems.Add(barLIst[i].Name);
                 stucust.SubItems.Add(barLIst[i].orderItem.status.ToString());
                 stucust.SubItems.Add(barLIst[i].order.notes.ToString());
-                stucust.SubItems.Add(barLIst[i].order.orderID.ToString());
+                stucust.SubItems.Add(barLIst[i].orderItem.orderID.ToString());
                 stucust.BackColor = checkStatus(barLIst[i]);
                 stucustList.Add(stucust);
 
@@ -129,34 +129,30 @@ namespace LoginForm
             MenuItem_Service tableService = new MenuItem_Service();
             int status = 2; // to which one it goes from order status to ready status
 
-            OrderItem temp = new OrderItem(
-            int.Parse(listBarView.SelectedItems[0].SubItems[6].Text),  // orderId
-            (StatusEnum)Enum.Parse(typeof(StatusEnum), listBarView.SelectedItems[0].SubItems[4].Text)); // Status
-
             if (listBarView.SelectedItems.Count > 0)
             {
+                OrderItem temp = new OrderItem(
+                 int.Parse(listBarView.SelectedItems[0].SubItems[6].Text),  // orderId
+                 (StatusEnum)Enum.Parse(typeof(StatusEnum), listBarView.SelectedItems[0].SubItems[4].Text)); // Status
+
                 if (temp.status == StatusEnum.Ordered)
                 {
                     tableService.UpdateTableOrder(temp.orderID, status); // updates table                     
                     MessageBox.Show("Order Send!");
                     KitcheOrBarView("bar");
                 }
-                else
-                {
-                    MessageBox.Show("Selected Item IS Not For Update!");
-                }
             }
             else if (listKitchenView.SelectedItems.Count > 0)
             {
+                OrderItem temp = new OrderItem(
+                int.Parse(listKitchenView.SelectedItems[0].SubItems[6].Text),  // orderId
+                (StatusEnum)Enum.Parse(typeof(StatusEnum), listKitchenView.SelectedItems[0].SubItems[4].Text)); // Status
+
                 if (temp.status == StatusEnum.Ordered)
                 {
                     tableService.UpdateTableOrder(temp.orderID, status); // update table
                     MessageBox.Show("Order Send!");
                     KitcheOrBarView("kitchen");
-                }
-                else
-                {
-                    MessageBox.Show("Selected Item IS Not For Update!");
                 }
             }
             else
