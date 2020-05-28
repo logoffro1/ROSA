@@ -71,7 +71,7 @@ namespace LoginForm
                 stucustList.Add(stucust);
 
             }
-            if (name == "bar" || employee.role != Roles.Chef) //Displays the overview of the Bar View for the Bartender and Manager
+            if (name == "bar") //Displays the overview of the Bar View for the Bartender and Manager
             {
                 panel_Bar.Show();
                 panel_Kitchen.Hide();
@@ -96,7 +96,7 @@ namespace LoginForm
                     listBarView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                 }
             }
-            else if (name == "kitchen" || employee.role != Roles.Bartender) //Displays the overview of the Kitchen View for the Chef and Manager
+            else if (name == "kitchen" ) //Displays the overview of the Kitchen View for the Chef and Manager
             {
                 panel_Bar.Hide();
                 panel_Kitchen.Show();
