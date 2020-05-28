@@ -11,6 +11,11 @@ using RosaLogic;
 using RosaModel;
 namespace LoginForm
 {
+    /// <summary>
+    /// LOGIN FORM
+    /// Made by Cosmin Ilie 
+    /// Student number: 645976
+    /// </summary>
     public partial class loginForm : Form
     {
         public loginForm()
@@ -24,32 +29,52 @@ namespace LoginForm
             if (string.IsNullOrWhiteSpace(txtUsername.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 //if the textboxes are empty, give error message
-                lblError.Visible = true;
+                lblError.Show();
                 lblError.Text = "Username and Password required!";
 
             }
             else //if they are not empty, read the employees from the database and compare them with the input from the user
             {
-                lblError.Visible = false;
-                lblError.Show();
+                lblError.Hide();
                 //return from the database only the employee that matches those credentials
                Employee employee = employeeService.GetAccount(txtUsername.Text,txtPassword.Text);
 
                 if (employee == null)
                 {
                     //if the employee doesn't exist, give error message
-                    lblError.Visible = true;
+                    lblError.Show();
                     lblError.Text = "Username or Password incorrect!";
                 }
                 else
                 {
-                    //if the employee exists, login the user and open the main form
-                    homeForm HomeForm = new homeForm(employee);  //Switch for going to manager/waiter/chef/etc
-                    HomeForm.Show();
-                    this.Hide();
+                    //if the employee exists, login the user and open the correct form
+                    switch (employee.role)
+                    {
+                        case Roles.Waiter:
+                            OpenForm(new tableViewForm(employee));
+                            break;
+                        case Roles.Bartender:
+                            OpenForm(new MenuItemForm(employee, "bar"));
+                            break;
+                        case Roles.Chef:
+                            OpenForm(new MenuItemForm(employee, "kitchen"));
+                            break;
+                        case Roles.Manager:
+                            OpenForm(new homeForm(employee));
+                            break;
+                        default:
+                            OpenForm(new homeForm(employee));
+                            break;
+                            
+                    }
                 }
 
             }
+        }
+        void OpenForm(Form formToOpen)
+        {
+            formToOpen.Show();
+            this.Hide();
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -76,6 +101,11 @@ namespace LoginForm
         private void loginFormV2_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void loginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

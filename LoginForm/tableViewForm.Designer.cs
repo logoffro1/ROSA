@@ -41,11 +41,13 @@
             this.picTable2 = new System.Windows.Forms.PictureBox();
             this.picTable1 = new System.Windows.Forms.PictureBox();
             this.pnlTableInfo = new System.Windows.Forms.Panel();
+            this.btnReservedYes = new System.Windows.Forms.CheckBox();
+            this.btnReservedNo = new System.Windows.Forms.CheckBox();
+            this.btnOccupiedYes = new System.Windows.Forms.RadioButton();
+            this.btnOccupiedNo = new System.Windows.Forms.RadioButton();
             this.lblWaitTime = new System.Windows.Forms.Label();
             this.lblWaitTimeText = new System.Windows.Forms.Label();
             this.btnSaveTableInfo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnExitTableInfo = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblReserved = new System.Windows.Forms.Label();
@@ -242,11 +244,13 @@
             // 
             this.pnlTableInfo.BackColor = System.Drawing.SystemColors.Control;
             this.pnlTableInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTableInfo.Controls.Add(this.btnReservedYes);
+            this.pnlTableInfo.Controls.Add(this.btnReservedNo);
+            this.pnlTableInfo.Controls.Add(this.btnOccupiedYes);
+            this.pnlTableInfo.Controls.Add(this.btnOccupiedNo);
             this.pnlTableInfo.Controls.Add(this.lblWaitTime);
             this.pnlTableInfo.Controls.Add(this.lblWaitTimeText);
             this.pnlTableInfo.Controls.Add(this.btnSaveTableInfo);
-            this.pnlTableInfo.Controls.Add(this.label1);
-            this.pnlTableInfo.Controls.Add(this.btnEdit);
             this.pnlTableInfo.Controls.Add(this.btnExitTableInfo);
             this.pnlTableInfo.Controls.Add(this.lblStatus);
             this.pnlTableInfo.Controls.Add(this.lblReserved);
@@ -259,6 +263,52 @@
             this.pnlTableInfo.Size = new System.Drawing.Size(285, 358);
             this.pnlTableInfo.TabIndex = 1;
             this.pnlTableInfo.Visible = false;
+            // 
+            // btnReservedYes
+            // 
+            this.btnReservedYes.AutoSize = true;
+            this.btnReservedYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservedYes.Location = new System.Drawing.Point(173, 218);
+            this.btnReservedYes.Name = "btnReservedYes";
+            this.btnReservedYes.Size = new System.Drawing.Size(57, 21);
+            this.btnReservedYes.TabIndex = 32;
+            this.btnReservedYes.Text = "Yes";
+            this.btnReservedYes.UseVisualStyleBackColor = true;
+            this.btnReservedYes.CheckedChanged += new System.EventHandler(this.btnReservedYes_CheckedChanged);
+            // 
+            // btnReservedNo
+            // 
+            this.btnReservedNo.AutoSize = true;
+            this.btnReservedNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservedNo.Location = new System.Drawing.Point(119, 218);
+            this.btnReservedNo.Name = "btnReservedNo";
+            this.btnReservedNo.Size = new System.Drawing.Size(50, 21);
+            this.btnReservedNo.TabIndex = 26;
+            this.btnReservedNo.Text = "No";
+            this.btnReservedNo.UseVisualStyleBackColor = true;
+            this.btnReservedNo.CheckedChanged += new System.EventHandler(this.btnReservedNo_CheckedChanged);
+            // 
+            // btnOccupiedYes
+            // 
+            this.btnOccupiedYes.AutoSize = true;
+            this.btnOccupiedYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOccupiedYes.Location = new System.Drawing.Point(174, 179);
+            this.btnOccupiedYes.Name = "btnOccupiedYes";
+            this.btnOccupiedYes.Size = new System.Drawing.Size(56, 21);
+            this.btnOccupiedYes.TabIndex = 31;
+            this.btnOccupiedYes.Text = "Yes";
+            this.btnOccupiedYes.UseVisualStyleBackColor = true;
+            // 
+            // btnOccupiedNo
+            // 
+            this.btnOccupiedNo.AutoSize = true;
+            this.btnOccupiedNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOccupiedNo.Location = new System.Drawing.Point(119, 179);
+            this.btnOccupiedNo.Name = "btnOccupiedNo";
+            this.btnOccupiedNo.Size = new System.Drawing.Size(49, 21);
+            this.btnOccupiedNo.TabIndex = 30;
+            this.btnOccupiedNo.Text = "No";
+            this.btnOccupiedNo.UseVisualStyleBackColor = true;
             // 
             // lblWaitTime
             // 
@@ -282,7 +332,6 @@
             // 
             // btnSaveTableInfo
             // 
-            this.btnSaveTableInfo.Enabled = false;
             this.btnSaveTableInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveTableInfo.Location = new System.Drawing.Point(199, 319);
             this.btnSaveTableInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -292,28 +341,6 @@
             this.btnSaveTableInfo.Text = "SAVE";
             this.btnSaveTableInfo.UseVisualStyleBackColor = true;
             this.btnSaveTableInfo.Click += new System.EventHandler(this.btnSaveTableInfo_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 322);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 18);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Edit mode:";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(117, 319);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(48, 26);
-            this.btnEdit.TabIndex = 25;
-            this.btnEdit.Text = "ON";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnExitTableInfo
             // 
@@ -348,9 +375,6 @@
             this.lblReserved.Size = new System.Drawing.Size(88, 20);
             this.lblReserved.TabIndex = 22;
             this.lblReserved.Text = "Reserved";
-            this.lblReserved.Click += new System.EventHandler(this.lblReserved_Click);
-            this.lblReserved.MouseEnter += new System.EventHandler(this.lblReserved_MouseEnter);
-            this.lblReserved.MouseLeave += new System.EventHandler(this.lblReserved_MouseLeave);
             // 
             // lblOccupied
             // 
@@ -361,9 +385,6 @@
             this.lblOccupied.Size = new System.Drawing.Size(88, 20);
             this.lblOccupied.TabIndex = 21;
             this.lblOccupied.Text = "Occupied";
-            this.lblOccupied.Click += new System.EventHandler(this.lblOccupied_Click);
-            this.lblOccupied.MouseEnter += new System.EventHandler(this.lblOccupied_MouseEnter);
-            this.lblOccupied.MouseLeave += new System.EventHandler(this.lblOccupied_MouseLeave);
             // 
             // lblCapacity
             // 
@@ -585,8 +606,6 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblLogout;
         private System.Windows.Forms.Label lblSelectTable;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.Panel pnlTablesView;
         private System.Windows.Forms.Button btnSaveTableInfo;
@@ -599,5 +618,9 @@
         private System.Windows.Forms.Label lblWaitTimeText;
         private System.Windows.Forms.Label lblWaitTime;
         private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem1;
+        private System.Windows.Forms.RadioButton btnOccupiedYes;
+        private System.Windows.Forms.RadioButton btnOccupiedNo;
+        private System.Windows.Forms.CheckBox btnReservedYes;
+        private System.Windows.Forms.CheckBox btnReservedNo;
     }
 }
