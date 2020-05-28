@@ -49,7 +49,7 @@ namespace RosaDAL
             {
                 order = ReadOrder(reader);
             }
-            return order;
+            return order;          
         }
         private Order ReadOrder(SqlDataReader reader)
         {
@@ -95,6 +95,7 @@ namespace RosaDAL
             List<Table> tables = new List<Table>();
             foreach (DataRow dr in dataTable.Rows)
             {
+                OrderItemDAO orderItemDAO = new OrderItemDAO();
                 Table table = new Table()
                 {
                     tableId = (int)dr["table_id"],
@@ -109,6 +110,8 @@ namespace RosaDAL
                 {
                     if (!order.isPaid)
                         table.order = order;
+
+                    order.listOrderItems = orderItemDAO.GetOrderItemsById(order.orderID);
                 }
                 else
                     table.order = null;

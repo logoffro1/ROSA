@@ -54,10 +54,10 @@ namespace LoginForm
                             OpenForm(new tableViewForm(employee));
                             break;
                         case Roles.Bartender:
-                            OpenForm(new MenuItemForm(employee, "bar"));
+                            OpenForm(new BarKitchenForm(employee, "bar"));
                             break;
                         case Roles.Chef:
-                            OpenForm(new MenuItemForm(employee, "kitchen"));
+                            OpenForm(new BarKitchenForm(employee, "kitchen"));
                             break;
                         case Roles.Manager:
                             OpenForm(new homeForm(employee));

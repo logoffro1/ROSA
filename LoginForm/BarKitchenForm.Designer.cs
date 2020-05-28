@@ -1,6 +1,6 @@
 ﻿namespace LoginForm
 {
-    partial class MenuItemForm
+    partial class BarKitchenForm
     {
         /// <summary>
         /// Required designer variable.

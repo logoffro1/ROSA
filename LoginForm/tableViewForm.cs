@@ -29,6 +29,8 @@ namespace LoginForm
         {
             InitializeComponent();
             this.employee = employee;
+            if (employee.role == Roles.Waiter)
+                return;
 
         }
         private void tableViewForm_Load(object sender, EventArgs e)
@@ -54,15 +56,18 @@ namespace LoginForm
         {
 
 
+            int sizeX = tableImages[table.tableId - 1].Height / 4;
+            int sizeY = sizeX;
             if (table.isReserved)
             {
                 PictureBox reservedIcon = new PictureBox()
                 {
 
-                    Size = new Size(32, 32),
-                    Location = new Point(tableImages[table.tableId - 1].Location.X - 34, tableImages[table.tableId - 1].Location.Y),
+                    Size = new Size(sizeX, sizeY),
+                    Location = new Point(tableImages[table.tableId - 1].Location.X - sizeX+2, tableImages[table.tableId - 1].Location.Y),
                     BackgroundImage = Properties.Resources.Addressbook_32,
-                    BackColor = Color.Transparent
+                    BackColor = Color.Transparent,
+                    BackgroundImageLayout = ImageLayout.Stretch
                 };
 
                 pnlTables.Controls.Add(reservedIcon);
@@ -76,12 +81,20 @@ namespace LoginForm
                     PictureBox clockIcon = new PictureBox()
                     {
 
-                        Size = new Size(32, 32),
-                        Location = new Point(tableImages[table.tableId - 1].Location.X - 34, tableImages[table.tableId - 1].Location.Y + tableImages[table.tableId-1].Height-32),
+                        Size = new Size(sizeX, sizeY),
+                        Location = new Point(tableImages[table.tableId - 1].Location.X - sizeX+2, tableImages[table.tableId - 1].Location.Y + tableImages[table.tableId-1].Height-sizeX),
                         BackgroundImage = Properties.Resources.Alert_Clock_32,
-                        BackColor = Color.Transparent
+                        BackColor = Color.Transparent,
+                        BackgroundImageLayout = ImageLayout.Stretch
                     };
                     pnlTables.Controls.Add(clockIcon);
+                }
+                if(table.order.listOrderItems != null)
+                {
+                    foreach(OrderItem OI in table.order.listOrderItems)
+                    {
+                        
+                    }
                 }
             }
         }
@@ -233,7 +246,7 @@ namespace LoginForm
         }
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuItemForm menuItemForm = new MenuItemForm(employee, "bar");
+            BarKitchenForm menuItemForm = new BarKitchenForm(employee, "bar");
             this.Hide();
             menuItemForm.Show();
         }

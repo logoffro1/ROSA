@@ -95,7 +95,6 @@ C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Memory.dll
 C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\logoff\source\repos\ROSA\LoginForm\bin\Debug\System.Buffers.dll
-C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.MenuItemForm.resources
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.paymentForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\bin\Debug\LoginForm.exe.config
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\bin\Debug\LoginForm.exe
@@ -141,3 +140,4 @@ C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.EditForm.res
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.OrderForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.Revenue.resources
 D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.Revenue.resources
+C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.BarKitchenForm.resources

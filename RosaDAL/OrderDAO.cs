@@ -21,8 +21,8 @@ namespace RosaDAL
 
         public List<Order> ReadTables(DataTable dataTable)
         {
+     
             List<Order> Orders = new List<Order>();
-
             foreach (DataRow dr in dataTable.Rows)
             {
                 Order order = new Order()
@@ -32,7 +32,6 @@ namespace RosaDAL
                     //notes = (string)dr["notes"],
                     table = (int)dr["table_id"]
                 };
-
                 Orders.Add(order);
             }
             return Orders;

@@ -13,11 +13,11 @@ using RosaModel;
 
 namespace LoginForm
 {
-    public partial class MenuItemForm : Form //change class name
+    public partial class BarKitchenForm : Form //change class name
     {
         private Employee employee;
 
-        public MenuItemForm(Employee employee, string name)     //just need employee to decide if it's kitchen (chef) or bar (bartender) 
+        public BarKitchenForm(Employee employee, string name)     //just need employee to decide if it's kitchen (chef) or bar (bartender) 
         {
             this.employee = employee;
             InitializeComponent();
