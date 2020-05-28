@@ -8,7 +8,9 @@ namespace RosaModel
 {
     public class MenuItem
     {
+        //should only have: name, quantity, price, vat
 
+        public decimal Vat { get; set; }
         public int TableId { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
