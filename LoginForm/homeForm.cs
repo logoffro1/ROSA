@@ -11,7 +11,12 @@ using RosaLogic;
 using RosaModel;
 using System.IO;
 namespace LoginForm
-{
+{   
+     /// <summary>
+     /// HOME FORM
+     /// Made by Cosmin Ilie 
+     /// Student number: 645976
+     /// </summary>
     public partial class homeForm : Form
     {
         private Employee employee;
@@ -19,12 +24,12 @@ namespace LoginForm
         private List<Image> helpImages = new List<Image>(); //create list for the help images
         private List<PictureBox> circleImages = new List<PictureBox>(); //create list for the circle picture boxes
         private int currentPic = 0; // the current selected help picture
-        private string filename;
         public homeForm(Employee employee)
         {
+            Employee_Service es = new Employee_Service();
             InitializeComponent();
             this.employee = employee;
-            filename = employee.username + "Notes.txt";
+            this.employee.personalNotes = es.GetNotes(employee);
         }
         void AddImagesToLists()
         {
@@ -47,11 +52,9 @@ namespace LoginForm
         {
             InitNotes();
             AddImagesToLists();    
-            //split the name into 2 parts, firstName and lastName
-            string[] nameSplit = employee.employeeName.Split(' ');
             //show a Welcome message, "Welcome, firstName!"
-            lblWelcome.Text = $"Welcome, {nameSplit[0]}!";
-            lblName.Text = employee.employeeName;
+            lblWelcome.Text = $"Welcome, {employee.firstName}!";
+            lblName.Text = employee.firstName+" "+employee.lastName;
             lblRole.Text = employee.role.ToString();
 
             lblTime.Text = $"{DateTime.Now.DayOfWeek} - {DateTime.Now.Hour.ToString("00")}:{DateTime.Now.Minute.ToString("00")}";
@@ -72,9 +75,8 @@ namespace LoginForm
             txtNotes.BackColor = Color.FromArgb(255, 255, 128);
             lblNotes.BackColor = Color.FromArgb(255, 255, 128);
             btnSave.BackColor = Color.FromArgb(255, 255, 128);
-
-            if(File.Exists(filename))
-            ReadNotes(filename);
+            foreach(string s in employee.personalNotes)
+                txtNotes.Text += s + Environment.NewLine;               
         }
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -139,7 +141,8 @@ namespace LoginForm
         {
             tableViewForm tableForm = new tableViewForm(employee);
             tableForm.Show();
-            this.Hide();
+            this.Dispose();
+            
 
         }
             private void barToolStripMenuItem_Click(object sender, EventArgs e)
@@ -162,31 +165,20 @@ namespace LoginForm
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            WriteNotes(filename);
+            WriteNotes();
             btnSave.Text = "SAVED...";
         }
-        private void ReadNotes(string filename)
+        private void WriteNotes()
         {
-            StreamReader sr = new StreamReader(filename);
-            while (!sr.EndOfStream)
-            {
-                txtNotes.Text += sr.ReadLine();
-                txtNotes.Text += Environment.NewLine;
-            }
-            sr.Close();
-        }
-        private void WriteNotes(string filename)
-        {
-            using (StreamWriter sr = new StreamWriter(filename)) 
-            {
+            Employee_Service es = new Employee_Service();
                 //get each new line into a separate string 
                 string[] txtLines = txtNotes.Text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
+                string formattedLines = "";
                 foreach (string s in txtLines)
-                    sr.WriteLine(s);
+                    formattedLines+=s+";";
 
-                sr.Close();
-            }    
+            es.EditAccount(employee.username, formattedLines);
         }
         private void txtNotes_TextChanged(object sender, EventArgs e)
         {

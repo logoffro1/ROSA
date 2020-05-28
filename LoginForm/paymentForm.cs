@@ -169,5 +169,10 @@ namespace LoginForm
             this.Hide();
             orderForm.Show();
         }
+
+        private void paymentForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

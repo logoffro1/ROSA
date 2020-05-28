@@ -268,5 +268,26 @@
   <ItemGroup>
     <None Include="Resources\note3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alert-Clock-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alert-Clock-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Addressbook-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coffee-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food-32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
