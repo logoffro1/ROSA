@@ -52,24 +52,22 @@ namespace LoginForm
 
         private void ShowTableIcons(Table table)
         {
-            PictureBox reservedIcon = new PictureBox()
-            {
 
-                Size = new Size(32, 32),
-                Location = new Point(tableImages[table.tableId - 1].Location.X - 34, tableImages[table.tableId - 1].Location.Y),
-                BackgroundImage = Properties.Resources.Addressbook_32,
-                BackColor = Color.Transparent
-            };
-            pnlTables.Controls.Add(reservedIcon);
+
             if (table.isReserved)
-                reservedIcon.Show();
-            else
             {
-                reservedIcon.Hide();
-                reservedIcon.Dispose();
+                PictureBox reservedIcon = new PictureBox()
+                {
+
+                    Size = new Size(32, 32),
+                    Location = new Point(tableImages[table.tableId - 1].Location.X - 34, tableImages[table.tableId - 1].Location.Y),
+                    BackgroundImage = Properties.Resources.Addressbook_32,
+                    BackColor = Color.Transparent
+                };
+
+                pnlTables.Controls.Add(reservedIcon);
             }
-                
-            if (table.order != null)
+                if (table.order != null)
             {
                 //loop through the order items, see if it has food and drinks that are not ready
                 ChangeLabelWaitTime(table);
@@ -79,7 +77,7 @@ namespace LoginForm
                     {
 
                         Size = new Size(32, 32),
-                        Location = new Point(tableImages[table.tableId - 1].Location.X - 34, tableImages[table.tableId - 1].Location.Y + 64),
+                        Location = new Point(tableImages[table.tableId - 1].Location.X - 34, tableImages[table.tableId - 1].Location.Y + tableImages[table.tableId-1].Height-32),
                         BackgroundImage = Properties.Resources.Alert_Clock_32,
                         BackColor = Color.Transparent
                     };

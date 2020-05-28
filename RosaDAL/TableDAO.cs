@@ -41,7 +41,7 @@ namespace RosaDAL
         public Order GetOrderByTable(int table_id)
         {
             OpenConnection();
-            SqlCommand cmd = new SqlCommand("select TOP 1 order_id, table_id, employee_id, orderDate, notes, isPaid FROM [order] WHERE table_id = @table_id ORDER BY orderDate DESC; ", conn);
+            SqlCommand cmd = new SqlCommand("select TOP 1 order_id, table_id, orderDate, notes, isPaid FROM [order] WHERE table_id = @table_id ORDER BY orderDate DESC; ", conn);
             cmd.Parameters.AddWithValue("@table_id", table_id);
             SqlDataReader reader = cmd.ExecuteReader();
             Order order = null;
@@ -65,7 +65,7 @@ namespace RosaDAL
                     dateTime = (DateTime)reader["orderDate"],
                     table = (int)reader["table_id"]
                 };
-                if (!reader.IsDBNull(5))
+                if (!reader.IsDBNull(4))
                     order.isPaid = (bool)reader["isPaid"];
                 else
                     order.isPaid = false;
