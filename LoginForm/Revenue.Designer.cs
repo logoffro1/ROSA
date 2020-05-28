@@ -1,4 +1,4 @@
-﻿namespace LoginForm
+﻿/*namespace LoginForm
 {
     partial class Revenue
     {
@@ -179,3 +179,4 @@
         private System.Windows.Forms.ColumnHeader colturnover;
     }
 }
+*/

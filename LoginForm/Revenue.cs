@@ -1,4 +1,4 @@
-﻿using RosaLogic;
+﻿/*using RosaLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +37,7 @@ namespace LoginForm
                 {
                     string[] items = new string[] {
                         item.orderItems,
+                        item.menuItems,
                         item.sales.ToString(),
                         item.Turnover.ToString("0.00 €"), // format the turnover to a currency format
                         item.boughtByCustomer.ToString()
@@ -121,3 +122,4 @@ namespace LoginForm
         }
     }
 }
+*/
