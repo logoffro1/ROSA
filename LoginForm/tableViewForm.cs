@@ -33,7 +33,7 @@ namespace LoginForm
         }
         private void tableViewForm_Load(object sender, EventArgs e)
         {
-            
+
             //show a Welcome message, "Welcome, firstName!"
             lblWelcome.Text = $"Welcome, {employee.firstName}!";
 
@@ -41,7 +41,7 @@ namespace LoginForm
             tables = tableService.GetAllTables(); //return all the tables from the database
 
             //add all the table images in a list 
-            tableImages = new List<PictureBox>() { picTable1, picTable2, picTable3, picTable4, picTable5, picTable6, picTable7, picTable8, picTable9,picTable10 };
+            tableImages = new List<PictureBox>() { picTable1, picTable2, picTable3, picTable4, picTable5, picTable6, picTable7, picTable8, picTable9, picTable10 };
 
             ChangeTableColor();
         }
@@ -49,21 +49,27 @@ namespace LoginForm
         {
             Application.Exit();
         }
+
         private void ShowTableIcons(Table table)
         {
-            if (table.isReserved)
+            PictureBox reservedIcon = new PictureBox()
             {
-                PictureBox reservedIcon = new PictureBox()
-                {
 
-                    Size = new Size(32, 32),
-                    Location = new Point(tableImages[table.tableId - 1].Location.X - 34, tableImages[table.tableId - 1].Location.Y),
-                    BackgroundImage = Properties.Resources.Addressbook_32,
-                    BackColor = Color.Transparent
-                };
-                pnlTables.Controls.Add(reservedIcon);
+                Size = new Size(32, 32),
+                Location = new Point(tableImages[table.tableId - 1].Location.X - 34, tableImages[table.tableId - 1].Location.Y),
+                BackgroundImage = Properties.Resources.Addressbook_32,
+                BackColor = Color.Transparent
+            };
+            pnlTables.Controls.Add(reservedIcon);
+            if (table.isReserved)
+                reservedIcon.Show();
+            else
+            {
+                reservedIcon.Hide();
+                reservedIcon.Dispose();
             }
-            if(table.order != null)
+                
+            if (table.order != null)
             {
                 //loop through the order items, see if it has food and drinks that are not ready
                 ChangeLabelWaitTime(table);
@@ -79,16 +85,12 @@ namespace LoginForm
                     };
                     pnlTables.Controls.Add(clockIcon);
                 }
-                   
-
             }
-           
-           
         }
         void ChangeTableColor() //change the back color depending on the availability for all the tables
         {
             int count = 0; //to keep track of the table number
-          
+
             foreach (PictureBox p in tableImages) // loop through the table images list
             {
                 //if the table is occupied, set the color to green
@@ -133,30 +135,30 @@ namespace LoginForm
             lblStatus.Text = "Status: " + selectedTable.CheckStatus().ToString();
 
             ChangeLabelWaitTime(selectedTable);
-          
+
             if (selectedTable.CheckStatus() == TableStatus.Ordered)
             {
                 timerWaitTime.Tick += TimerWaitTime_Tick;
                 timerWaitTime.Interval = 1000;
                 timerWaitTime.Start();
             }
-           
+
             pnlTableInfo.Show();  //show the table info panel
         }
-      
+
         private void TimerWaitTime_Tick(object sender, EventArgs e)
         {
-            ChangeLabelWaitTime(selectedTable); 
+            ChangeLabelWaitTime(selectedTable);
         }
         private void ChangeLabelWaitTime(Table table)
-        {    
+        {
             if (table.CheckStatus() == TableStatus.Ordered)
             {
-                   int waitTimetotalSeconds = (int)(DateTime.Now - table.order.dateTime).TotalSeconds;
-                
-                if(waitTimetotalSeconds > 0)
+                int waitTimetotalSeconds = (int)(DateTime.Now - table.order.dateTime).TotalSeconds;
+
+                if (waitTimetotalSeconds > 0)
                 {
-                     waitTimeMinutes = waitTimetotalSeconds / 60;
+                    waitTimeMinutes = waitTimetotalSeconds / 60;
                     int waitTimeSeconds = waitTimetotalSeconds % 60;
                     if (waitTimeMinutes < 5)
                         lblWaitTime.BackColor = Color.LightGreen;
@@ -166,7 +168,7 @@ namespace LoginForm
                         lblWaitTime.BackColor = Color.PaleVioletRed;
 
                     lblWaitTime.Text = $"{waitTimeMinutes.ToString("00")}:{waitTimeSeconds.ToString("00")}";
-                }        
+                }
             }
             else
             {
@@ -177,8 +179,8 @@ namespace LoginForm
         private void TableClick(object sender, EventArgs e) //event handler
         {
             PictureBox tablePic = (PictureBox)sender; //store the clicked table
-            int tableId = int.Parse(tablePic.Name.Remove(0,8)); 
-           // string[] tableSplit = tablePic.Name.Split('e'); //split the name from the number -> kinda dangerous, eg. do getTable, getIndex
+            int tableId = int.Parse(tablePic.Name.Remove(0, 8));
+            // string[] tableSplit = tablePic.Name.Split('e'); //split the name from the number -> kinda dangerous, eg. do getTable, getIndex
             ShowTableInfo(tableId); //pass the number to ShowTableInfo     
         }
         private void btnExitTableInfo_Click(object sender, EventArgs e)
@@ -203,7 +205,8 @@ namespace LoginForm
         private void btnSaveTableInfo_Click(object sender, EventArgs e)
         {
             Table_Service tableService = new Table_Service();
-            if(selectedTable.CheckStatus() != TableStatus.Ordered)
+           
+            if (selectedTable.CheckStatus() != TableStatus.Ordered)
             {
                 if (btnOccupiedYes.Checked)
                     selectedTable.isAvailable = false;
@@ -214,9 +217,11 @@ namespace LoginForm
                 ShowTableInfo(selectedTable.tableId);
                 // update table  
                 tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved);
-            } else
-                MessageBox.Show("Can't change info if there is a running order(PLACEHOLDER)","Placeholder",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+            else
+                MessageBox.Show("Can't change info if there is a running order(PLACEHOLDER)", "Placeholder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+            ShowTableIcons(selectedTable);
         }
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -230,7 +235,7 @@ namespace LoginForm
         }
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuItemForm menuItemForm = new MenuItemForm(employee,"bar");
+            MenuItemForm menuItemForm = new MenuItemForm(employee, "bar");
             this.Hide();
             menuItemForm.Show();
         }
@@ -244,7 +249,7 @@ namespace LoginForm
                 btnReservedNo.Enabled = true;
                 btnReservedNo.Checked = false;
             }
-             
+
         }
 
         private void btnReservedNo_CheckedChanged(object sender, EventArgs e)
@@ -256,7 +261,7 @@ namespace LoginForm
                 btnReservedYes.Enabled = true;
                 btnReservedYes.Checked = false;
             }
-             
+
 
         }
     }
