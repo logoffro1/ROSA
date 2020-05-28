@@ -19,7 +19,6 @@ namespace LoginForm
     public partial class tableViewForm : Form
     {
         private Employee employee;
-
         private List<PictureBox> tableImages;   //create a list for all the table images
         private List<Table> tables = new List<Table>();
         private Table selectedTable; //the current selected table by the user
@@ -31,20 +30,15 @@ namespace LoginForm
             this.employee = employee;
             if (employee.role == Roles.Waiter)
                 return;
-
         }
         private void tableViewForm_Load(object sender, EventArgs e)
         {
-
             //show a Welcome message, "Welcome, firstName!"
             lblWelcome.Text = $"Welcome, {employee.firstName}!";
-
             Table_Service tableService = new Table_Service();
             tables = tableService.GetAllTables(); //return all the tables from the database
-
             //add all the table images in a list 
-            tableImages = new List<PictureBox>() { picTable1, picTable2, picTable3, picTable4, picTable5, picTable6, picTable7, picTable8, picTable9, picTable10 };
-
+            tableImages = new List<PictureBox>() {picTable1, picTable2, picTable3, picTable4, picTable5, picTable6, picTable7, picTable8, picTable9, picTable10};
             ChangeTableColor();
         }
         private void tableViewForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -54,22 +48,18 @@ namespace LoginForm
 
         private void ShowTableIcons(Table table)
         {
-
-
             int sizeX = tableImages[table.tableId - 1].Height / 4;
             int sizeY = sizeX;
             if (table.isReserved)
             {
                 PictureBox reservedIcon = new PictureBox()
                 {
-
                     Size = new Size(sizeX, sizeY),
                     Location = new Point(tableImages[table.tableId - 1].Location.X - sizeX+2, tableImages[table.tableId - 1].Location.Y),
                     BackgroundImage = Properties.Resources.Addressbook_32,
                     BackColor = Color.Transparent,
                     BackgroundImageLayout = ImageLayout.Stretch
                 };
-
                 pnlTables.Controls.Add(reservedIcon);
             }
                 if (table.order != null)
@@ -92,8 +82,7 @@ namespace LoginForm
                 if(table.order.listOrderItems != null)
                 {
                     foreach(OrderItem OI in table.order.listOrderItems)
-                    {
-                        
+                    {                        
                     }
                 }
             }
@@ -101,7 +90,6 @@ namespace LoginForm
         void ChangeTableColor() //change the back color depending on the availability for all the tables
         {
             int count = 0; //to keep track of the table number
-
             foreach (PictureBox p in tableImages) // loop through the table images list
             {
                 //if the table is occupied, set the color to green
@@ -109,7 +97,6 @@ namespace LoginForm
                     p.BackColor = Color.FromArgb(102, 210, 105); //green-ish color
                 else //if it is not occupied, set it to red
                     p.BackColor = Color.FromArgb(255, 128, 128); //red-ish color
-
                 ShowTableIcons(tables[count]);
                 count++;
             }
@@ -120,14 +107,11 @@ namespace LoginForm
                 tableImage.BackColor = Color.FromArgb(255, 128, 128); //red-ish color
             else
                 tableImage.BackColor = Color.FromArgb(102, 210, 105); //green-ish color
-
         }
         void ShowTableInfo(int tableId) //show the information for the selected table
         {
             timerWaitTime.Stop();
-
             selectedTable = tables[tableId - 1]; //set the current selected table
-
             //set the placeholder image to the corresponding table image from the list
             picPlaceHolder.Image = tableImages[tableId - 1].Image;
             //set the labels to the right values from the database
@@ -136,27 +120,21 @@ namespace LoginForm
                 btnReservedYes.Checked = true;
             else
                 btnReservedNo.Checked = true;
-
             //if the table is occupied, show that on the screen
             if (!selectedTable.isAvailable)
                 btnOccupiedYes.Checked = true;
             else //if the table is not ocuppied
                 btnOccupiedNo.Checked = true;
-
             lblStatus.Text = "Status: " + selectedTable.CheckStatus().ToString();
-
             ChangeLabelWaitTime(selectedTable);
-
             if (selectedTable.CheckStatus() == TableStatus.Ordered)
             {
                 timerWaitTime.Tick += TimerWaitTime_Tick;
                 timerWaitTime.Interval = 1000;
                 timerWaitTime.Start();
             }
-
             pnlTableInfo.Show();  //show the table info panel
         }
-
         private void TimerWaitTime_Tick(object sender, EventArgs e)
         {
             ChangeLabelWaitTime(selectedTable);
@@ -166,7 +144,6 @@ namespace LoginForm
             if (table.CheckStatus() == TableStatus.Ordered)
             {
                 int waitTimetotalSeconds = (int)(DateTime.Now - table.order.dateTime).TotalSeconds;
-
                 if (waitTimetotalSeconds > 0)
                 {
                     waitTimeMinutes = waitTimetotalSeconds / 60;
@@ -215,15 +192,13 @@ namespace LoginForm
         }
         private void btnSaveTableInfo_Click(object sender, EventArgs e)
         {
-            Table_Service tableService = new Table_Service();
-           
+            Table_Service tableService = new Table_Service();           
             if (selectedTable.CheckStatus() != TableStatus.Ordered)
             {
                 if (btnOccupiedYes.Checked)
                     selectedTable.isAvailable = false;
                 else
                     selectedTable.isAvailable = true;
-
                 ChangeTableImageColor(tableImages[selectedTable.tableId - 1]);
                 ShowTableInfo(selectedTable.tableId);
                 // update table  
@@ -260,7 +235,6 @@ namespace LoginForm
                 btnReservedNo.Enabled = true;
                 btnReservedNo.Checked = false;
             }
-
         }
 
         private void btnReservedNo_CheckedChanged(object sender, EventArgs e)
@@ -272,8 +246,6 @@ namespace LoginForm
                 btnReservedYes.Enabled = true;
                 btnReservedYes.Checked = false;
             }
-
-
         }
     }
 }

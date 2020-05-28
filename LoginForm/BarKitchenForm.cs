@@ -13,11 +13,12 @@ using RosaModel;
 
 namespace LoginForm
 {
-    public partial class BarKitchenForm : Form //change class name
+    public partial class BarKitchenForm : Form 
     {
         private Employee employee;
+        ListViewItem stucust;
 
-        public BarKitchenForm(Employee employee, string name)     //just need employee to decide if it's kitchen (chef) or bar (bartender) 
+        public BarKitchenForm(Employee employee, string name)     
         {
             this.employee = employee;
             InitializeComponent();
@@ -32,12 +33,12 @@ namespace LoginForm
         {
             KitcheOrBarView("kitchen");
         }
-        private Color checkStatus(RosaModel.MenuItem b) // Presents the color based on the (Enum)status 
+        private Color checkStatus(RosaModel.MenuItem menuItem) // Presents the color based on the (Enum)status 
         {
-            switch (b.Status)  //change varaible name b, eg. menuItem
+            switch (menuItem.orderItem.status)
             {
                 case StatusEnum.Ordered:
-                    if (b.dateSold.AddMinutes(15) < DateTime.Now)
+                    if (menuItem.order.dateTime.AddMinutes(15) < DateTime.Now)
                     { return Color.Red; }
                     else
                     {
@@ -53,86 +54,90 @@ namespace LoginForm
         }
         private void KitcheOrBarView(string name) //Displays the overview of both the Bar and Kitchen View
         {
-            //Work with order items, not with menu items
-
             MenuItem_Service BarService = new MenuItem_Service();
-            List<RosaModel.MenuItem> barLIst = BarService.GetMenuItem();
-            if (name == "bar") //Displays the overview of the Bar View
+            OrderItem orderitems = new OrderItem();
+            List<RosaModel.MenuItem> barLIst = BarService.GetOrderItem();
+            List<ListViewItem> stucustList = new List<ListViewItem>();
+            for (int i = 0; i < barLIst.Count; i++)
+            {
+                stucust = new ListViewItem(barLIst[i].order.dateTime.ToString("HH:mm:ss"));
+                stucust.SubItems.Add(barLIst[i].order.table.ToString());
+                stucust.SubItems.Add(barLIst[i].orderItem.amount.ToString());
+                stucust.SubItems.Add(barLIst[i].Name);
+                stucust.SubItems.Add(barLIst[i].orderItem.status.ToString());
+                stucust.SubItems.Add(barLIst[i].order.notes.ToString());
+                stucust.SubItems.Add(barLIst[i].order.orderID.ToString());
+                stucust.BackColor = checkStatus(barLIst[i]);
+                stucustList.Add(stucust);
+
+            }
+            if (name == "bar" || employee.role != Roles.Chef) //Displays the overview of the Bar View for the Bartender and Manager
             {
                 panel_Bar.Show();
                 panel_Kitchen.Hide();
 
                 listBarView.Items.Clear();
+                listBarView1.Items.Clear();
 
-                for (int i = 0; i < barLIst.Count; i++)
+                for (int i = 0; i < stucustList.Count; i++)
                 {
-                    ListViewItem stucust = new ListViewItem(barLIst[i].dateSold.Date.ToString());
-                    stucust.SubItems.Add(barLIst[i].TableId.ToString());
-                    stucust.SubItems.Add(barLIst[i].Price.ToString());
-                    stucust.SubItems.Add(barLIst[i].Quantity.ToString());
-                    stucust.SubItems.Add(barLIst[i].Name);
-                    stucust.SubItems.Add(barLIst[i].Status.ToString());
-                    stucust.SubItems.Add(barLIst[i].Note.ToString());
-                    stucust.SubItems.Add(barLIst[i].orderID.ToString());
-                    stucust.BackColor = checkStatus(barLIst[i]);
-
                     if (barLIst[i].menuCat >= 25) // it is more than 24 because all drinks has number above 24
                     {
-                        listBarView.Items.Add(stucust);
+                        if (barLIst[i].orderItem.status == (StatusEnum)Enum.Parse(typeof(StatusEnum), StatusEnum.Ordered.ToString()))
+                        {
+                            listBarView.Items.Add(stucustList[i]); //  ordered
+                        }
+                        else
+                        {
+                            listBarView1.Items.Add(stucustList[i]); // served and ready
+                        }
                     }
-                    listKitchenView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    listBarView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    listBarView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                 }
             }
-            else if (name == "kitchen") //Displays the overview of the Kitchen View
+            else if (name == "kitchen" || employee.role != Roles.Bartender) //Displays the overview of the Kitchen View for the Chef and Manager
             {
                 panel_Bar.Hide();
                 panel_Kitchen.Show();
 
                 listKitchenView.Items.Clear();
-
-                for (int i = 0; i < barLIst.Count; i++)
+                listKitchenView1.Items.Clear();
+                for (int i = 0; i < stucustList.Count; i++)
                 {
-                    ListViewItem stucust = new ListViewItem(barLIst[i].dateSold.Date.ToString());
-                    stucust.SubItems.Add(barLIst[i].TableId.ToString());
-                    stucust.SubItems.Add(barLIst[i].Price.ToString());
-                    stucust.SubItems.Add(barLIst[i].Quantity.ToString());
-                    stucust.SubItems.Add(barLIst[i].Name);
-                    stucust.SubItems.Add(barLIst[i].Status.ToString());
-                    stucust.SubItems.Add(barLIst[i].Note.ToString());
-                    stucust.SubItems.Add(barLIst[i].orderID.ToString());
-                    stucust.BackColor = checkStatus(barLIst[i]);
 
-                    if (barLIst[i].menuCat <= 24) // it is less than 25 because all dishes has number below 25
+                    if (barLIst[i].menuCat <= 24) // it is laess than 25 because all dishes has number below 25
                     {
 
-                        listKitchenView.Items.Add(stucust);
+                        if (barLIst[i].orderItem.status == (StatusEnum)Enum.Parse(typeof(StatusEnum), StatusEnum.Ordered.ToString()))
+                        {
+                            listKitchenView.Items.Add(stucustList[i]); //  ordered
+                        }
+                        else
+                        {
+                            listKitchenView1.Items.Add(stucustList[i]); // served and ready
+                        }
                     }
+
                     listKitchenView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    listKitchenView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                 }
             }
         }
-        private void Bottons() //what buttons?
+        private void UpdateButtons() // When you click on button you want to update the status of the certain order
         {
-            // When you click on button you want to update the status of the certain order
             MenuItem_Service tableService = new MenuItem_Service();
             int status = 2; // to which one it goes from order status to ready status
 
+            OrderItem temp = new OrderItem(
+            int.Parse(listBarView.SelectedItems[0].SubItems[6].Text),  // orderId
+            (StatusEnum)Enum.Parse(typeof(StatusEnum), listBarView.SelectedItems[0].SubItems[4].Text)); // Status
+
             if (listBarView.SelectedItems.Count > 0)
             {
-                // the numbers of order in ths MenuItem temp is based from the constructor method from class MenuItem.cs
-                RosaModel.MenuItem temp = new RosaModel.MenuItem(
-                   Convert.ToInt32(listBarView.SelectedItems[0].SubItems[1].Text), // Table from the KitchenBarView in this case it is the 2nd column from the add list
-                   listBarView.SelectedItems[0].SubItems[4].Text, // Name from the KitchenBarView in this case it is the 5th column from the add list
-                   Convert.ToInt32(listBarView.SelectedItems[0].SubItems[3].Text), // Quantity from the KitchenBarView in this case it is the 4rd column from the add list
-                   Convert.ToDecimal(listBarView.SelectedItems[0].SubItems[2].Text), // Price from the KitchenBarView in this case it is the 3rd column from the add list
-                   (StatusEnum)Enum.Parse(typeof(StatusEnum), listBarView.SelectedItems[0].SubItems[5].Text),// Status from the KitchenBarView in this case it is the 6th column from the add list
-                   int.Parse(listBarView.SelectedItems[0].SubItems[7].Text), // OrderID from the KitchenBarView in this case it is the 8th column from the add list
-                   DateTime.Parse(listBarView.SelectedItems[0].SubItems[0].Text), // Date and Time from the KitchenBarView in this case it is the 1st column from the add list
-                   listBarView.SelectedItems[0].SubItems[6].Text); // Note from the KitchenBarView in this case it is the 7th column from the add list
-
-                if (temp.Status == StatusEnum.Ordered)
+                if (temp.status == StatusEnum.Ordered)
                 {
-                    tableService.UpdateTableOrder(temp, status); // updates table 
+                    tableService.UpdateTableOrder(temp.orderID, status); // updates table                     
                     MessageBox.Show("Order Send!");
                     KitcheOrBarView("bar");
                 }
@@ -143,20 +148,9 @@ namespace LoginForm
             }
             else if (listKitchenView.SelectedItems.Count > 0)
             {
-                // the numbers of order in ths MenuItem temp is based from the constructor method from class MenuItem.cs
-                RosaModel.MenuItem temp = new RosaModel.MenuItem(
-                  Convert.ToInt32(listKitchenView.SelectedItems[0].SubItems[1].Text), // Table from the KitchenBarView in this case it is the 2nd column from the add list
-                  listKitchenView.SelectedItems[0].SubItems[4].Text, // Name from the KitchenBarView in this case it is the 5th column from the add list 
-                  Convert.ToInt32(listKitchenView.SelectedItems[0].SubItems[3].Text), // Quantity from the KitchenBarView in this case it is the 4rd column from the add list 
-                  Convert.ToDecimal(listKitchenView.SelectedItems[0].SubItems[2].Text), // Price from the KitchenBarView in this case it is the 3rd column from the add list 
-                  (StatusEnum)Enum.Parse(typeof(StatusEnum), listKitchenView.SelectedItems[0].SubItems[5].Text), // Status from the KitchenBarView in this case it is the 6th column from the add list
-                  int.Parse(listKitchenView.SelectedItems[0].SubItems[7].Text), // OrderID from the KitchenBarView in this case it is the 8th column from the add list
-                  DateTime.Parse(listKitchenView.SelectedItems[0].SubItems[0].Text),  // Date and Time from the KitchenBarView in this case it is the 1st column from the add list
-                  listKitchenView.SelectedItems[0].SubItems[6].Text); // Note from the KitchenBarView in this case it is the 7th column from the add list
-
-                if (temp.Status == StatusEnum.Ordered)
+                if (temp.status == StatusEnum.Ordered)
                 {
-                    tableService.UpdateTableOrder(temp, status); // update table
+                    tableService.UpdateTableOrder(temp.orderID, status); // update table
                     MessageBox.Show("Order Send!");
                     KitcheOrBarView("kitchen");
                 }
@@ -173,11 +167,11 @@ namespace LoginForm
 
         private void btnReady_Click(object sender, EventArgs e)
         {
-            Bottons();
+            UpdateButtons();
         }
         private void btnReadyKitchen_Click(object sender, EventArgs e)
         {
-            Bottons();
+            UpdateButtons();
         }
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -202,6 +196,11 @@ namespace LoginForm
         }
 
         private void MenuItemForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_Kitchen_Paint(object sender, PaintEventArgs e)
         {
 
         }

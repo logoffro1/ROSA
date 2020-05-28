@@ -10,11 +10,11 @@ namespace RosaLogic
     public class MenuItem_Service
     {
         MenuItemDAO menuItemDAO = new MenuItemDAO();
-        public List<MenuItem> GetMenuItem()
+        public List<MenuItem> GetOrderItem()
         {
             try
             {
-                List<MenuItem> bars = menuItemDAO.Db_Get_All_MenuItem();
+                List<MenuItem> bars = menuItemDAO.Db_Get_AllOrders();
                 return bars;
             }
             catch
@@ -24,11 +24,11 @@ namespace RosaLogic
                
             }
         }
-        public void UpdateTableOrder(MenuItem table, int status)
+        public void UpdateTableOrder(int id, int status)
         {
             try
             {
-                menuItemDAO.UpdateTableOrder(table, status);
+                menuItemDAO.UpdateTableOrder(id, status);
             }
             catch
             {

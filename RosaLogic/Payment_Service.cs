@@ -43,7 +43,7 @@ namespace RosaLogic
                 foreach(OrderItem item in order.listOrderItems)
                 {
                     payment.TotalPrice += item.menuItem.Price;
-                    payment.TotalVAT += item.menuItem.Vat;
+                    payment.TotalVAT += item.menuItem.VAT;
                 }
 
                 return payment;

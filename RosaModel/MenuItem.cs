@@ -9,28 +9,23 @@ namespace RosaModel
     public class MenuItem
     {
         //should only have: name, quantity, price, vat
-
-        public decimal Vat { get; set; }
-        public int TableId { get; set; }
         public string Name { get; set; }
-        public int Quantity { get; set; }
         public decimal Price { get; set; }
-        public StatusEnum Status { get; set; }
         public int menuCat { get; set; }
-        public int orderID { get; set; }
-        public string Note { get; set; } 
-        public DateTime dateSold;
-        public MenuItem(int tableId, string name, int quantity, decimal price, StatusEnum status, int orderID, DateTime dateSold, string note)
+        public decimal VAT { get; set; }
+        public OrderItem orderItem { get; set; }
+        public Order order { get; set; }
+
+        public MenuItem(string name, decimal price, int menuCat, decimal vAT, OrderItem orderItem, Order order)
         {
-            TableId = tableId;
-            Name = name ?? throw new ArgumentNullException(nameof(name));            
-            Quantity = quantity;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
             Price = price;
-            Status = status;
-            this.orderID = orderID;
-            this.dateSold = dateSold;
-            Note = note ?? throw new ArgumentNullException(nameof(note));
+            this.menuCat = menuCat;
+            VAT = vAT;
+            this.orderItem = orderItem ?? throw new ArgumentNullException(nameof(orderItem));
+            this.order = order ?? throw new ArgumentNullException(nameof(order));
         }
+
         public MenuItem()
         {
         }
