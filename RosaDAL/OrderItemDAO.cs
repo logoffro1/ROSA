@@ -18,7 +18,7 @@ namespace RosaDAL
 
         //Gets the list of order items from an order, through the order id
         //By Dewi
-        public List<OrderItem> GetById(int order_id)
+        public List<OrderItem> GetOrderItemsById(int order_id)
         {
             SqlCommand cmd = new SqlCommand(
                 "SELECT OT.order_ID, M.itemName, OT.amount, OT.[status], (M.price * OT.amount) AS price " +
@@ -29,10 +29,9 @@ namespace RosaDAL
             cmd.Parameters.AddWithValue("@order_id", order_id);
             SqlDataReader reader = cmd.ExecuteReader();
             List<OrderItem> orderItems = new List<OrderItem>();
-
-            while (reader.Read())
+                    while (reader.Read())
             {
-                orderItems.Add(ReadRecord(reader));
+                orderItems.Add(ReadOrderItemRecord(reader));
             }
 
             return orderItems;
@@ -40,7 +39,7 @@ namespace RosaDAL
 
         //Reads the order item record from the database
         //By Dewi
-        private OrderItem ReadRecord(SqlDataReader reader)
+        private OrderItem ReadOrderItemRecord(SqlDataReader reader)
         {
             OrderItem orderItem = new OrderItem()
             {
@@ -52,8 +51,7 @@ namespace RosaDAL
                 amount = (int)reader["amount"],
                 status = (StatusEnum)(int)reader["status"]
             };
-
-            return orderItem;
+                   return orderItem;
         } 
     }
 

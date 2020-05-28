@@ -56,7 +56,7 @@
             this.PayButton.TabIndex = 0;
             this.PayButton.Text = "Pay order";
             this.PayButton.UseVisualStyleBackColor = true;
-            this.PayButton.Click += new System.EventHandler(this.Button1_Click);
+            this.PayButton.Click += new System.EventHandler(this.PayButton_Click);
             // 
             // OrderView
             // 

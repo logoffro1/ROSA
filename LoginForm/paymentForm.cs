@@ -13,7 +13,7 @@ using RosaModel;
 namespace LoginForm
 {
     /// <summary>
-    /// UI Form for the UI
+    /// UI Form for the payment UI
     /// By Dewi Becu
     /// </summary>
     public partial class paymentForm : Form
@@ -36,15 +36,13 @@ namespace LoginForm
         }
 
         //Accesses DB to get all nesessary information for the OrderId that was passed from the Order screen
-        private void ShowData()//get passed the whole order & pass order as a parameter, use the whole running order instead of orderItem
-            //show also get tableID
+        //------------------------------get passed the whole order & pass order as a parameter, use the whole running order instead of orderItem
+        //^ cant cause gabrian still hasnt done his part, and the order id or order object will have to be passed by his implementation
+        private void ShowData() //------------------------------get passed the whole order & pass order as a parameter, use the whole running order instead of orderItem
         {
             //Accesses the data for the database
             Payment_Service paymentService = new Payment_Service();
             Payment payment = paymentService.GetPayment(currentOrderId);
-
-            OrderItem_Service orderItemService = new OrderItem_Service();
-            List<OrderItem> orderItems = orderItemService.GetById(currentOrderId);      //get total price from here
 
             //Clears items in case it was not from a previous payment viewing
             listView_payments.Items.Clear();
@@ -61,7 +59,7 @@ namespace LoginForm
             textBox_totalPrice.Text = (payment.TotalPrice).ToString("0.00");
 
             //Adds each order item to the listview
-            foreach (OrderItem item in orderItems)
+            foreach (OrderItem item in payment.Order.listOrderItems)
             {
                 string[] row = { item.menuItem.Name, item.amount.ToString(), item.menuItem.Price.ToString(), item.status.ToString() };
                 listView_payments.Items.Add(new ListViewItem(row));
@@ -78,7 +76,7 @@ namespace LoginForm
             else if (rbtn_pin.Checked)
                 currentPayment.PaymentMethod = PaymentMethodEnum.Pin;
             else if (rbtn_credit.Checked)
-                currentPayment.PaymentMethod = PaymentMethodEnum.Credit;     //change to credit card?? YES
+                currentPayment.PaymentMethod = PaymentMethodEnum.Credit;    
             else
             {
                 lbl_paymentMethodWarning.Text = "Select a payment method";
@@ -97,7 +95,7 @@ namespace LoginForm
 
             //Puts remaining data in the payment object
             currentPayment.Feedback = textBox_comments.Text;
-            currentPayment.OrderId = currentOrderId;
+            currentPayment.OrderId = currentOrderId;                //-----------NEEDED?
 
             //Puts new payment/bill in the database and sets order to paid
             Payment_Service paymentService = new Payment_Service();
@@ -106,25 +104,23 @@ namespace LoginForm
             //UI to help show user that bill is paid
             btn_bill.Visible = false;
             lbl_billSuccess.Visible = true;
-
-
         }
 
         //total price textbox changes amount according to what is in the rip textbox
         private void textBox_tip_TextChanged(object sender, EventArgs e)
         {
-            float temp1; //meaningful name!!
+            float tempTip;
 
             try
             {
                 //If there's no value in the textbox, just set it to 0
                 if (textBox_tip.Text == "")
-                    temp1 = 0;
-                else 
-                    temp1 = float.Parse(textBox_tip.Text);
+                    tempTip = 0;
+                else
+                    tempTip = float.Parse(textBox_tip.Text);                                
 
-                float temp2 = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);
-                textBox_totalPrice.Text = (temp1 + temp2).ToString("0.00");
+                float tempOrderPrice = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);      //-----------CHANGE!
+                textBox_totalPrice.Text = (tempTip + tempOrderPrice).ToString("0.00");      
 
                 lbl_paymentMethodWarning.Text = "";
             }
@@ -138,7 +134,7 @@ namespace LoginForm
         //Tip textbox changes amount according to what is in the total price textbox
         private void textBox_totalPrice_TextChanged(object sender, EventArgs e)
         {
-            float temp1; //meaningful name!!
+            float tempOrderPrice; 
 
             try
             {
@@ -149,10 +145,10 @@ namespace LoginForm
                     return;
                 }
                 else
-                    temp1 = float.Parse(textBox_totalPrice.Text);
+                    tempOrderPrice = float.Parse(textBox_totalPrice.Text);
 
-                float temp2 = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);
-                textBox_tip.Text = (temp1 - temp2).ToString("0.00");
+                float tempTip = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);//-----------CHANGE!
+                textBox_tip.Text = (tempOrderPrice - tempTip).ToString("0.00");
 
                 lbl_paymentMethodWarning.Text = "";
             }
@@ -166,7 +162,7 @@ namespace LoginForm
         private void btn_return_Click(object sender, EventArgs e)
         {
             OrderForm orderForm = new OrderForm(employee);
-            this.Hide();
+            this.Close();       
             orderForm.Show();
         }
     }

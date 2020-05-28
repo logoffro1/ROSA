@@ -16,7 +16,7 @@ namespace RosaLogic
         {
             try
             {
-                return orderItemDAO.GetById(order_id);
+                return orderItemDAO.GetOrderItemsById(order_id);
             }
             catch
             {
