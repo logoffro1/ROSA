@@ -14,6 +14,15 @@ namespace RosaModel
         public StatusEnum status;
         public int amount;
 
+        public OrderItem(int orderID, StatusEnum status) // for the Bar and Kitchen View
+        {
+            this.orderID = orderID; // because it is unque 
+            this.status = status; // beacuse it needs to be updated
+        }
 
+        public OrderItem()
+        {
+
+        }
     }
 }

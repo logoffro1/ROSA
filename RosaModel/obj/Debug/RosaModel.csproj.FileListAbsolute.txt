@@ -19,3 +19,8 @@ C:\Users\MEDION\Documents\School\ROSA\RosaModel\bin\Debug\RosaModel.pdb
 C:\Users\MEDION\Documents\School\ROSA\RosaModel\obj\Debug\RosaModel.csprojAssemblyReference.cache
 C:\Users\MEDION\Documents\School\ROSA\RosaModel\obj\Debug\RosaModel.dll
 C:\Users\MEDION\Documents\School\ROSA\RosaModel\obj\Debug\RosaModel.pdb
+C:\Users\31620\Desktop\new\RosaModel\bin\Debug\RosaModel.dll
+C:\Users\31620\Desktop\new\RosaModel\bin\Debug\RosaModel.pdb
+C:\Users\31620\Desktop\new\RosaModel\obj\Debug\RosaModel.csprojAssemblyReference.cache
+C:\Users\31620\Desktop\new\RosaModel\obj\Debug\RosaModel.dll
+C:\Users\31620\Desktop\new\RosaModel\obj\Debug\RosaModel.pdb

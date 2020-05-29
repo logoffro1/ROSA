@@ -93,7 +93,7 @@ namespace RosaDAL
                 {
                     Name = reader["itemName"].ToString(),
                     Price = (decimal)reader["price"],
-                    Vat = (decimal)reader["vat"]
+                    VAT = (decimal)reader["vat"]
                 },
                 amount = (int)reader["amount"],
                 status = (StatusEnum)(int)reader["status"]
