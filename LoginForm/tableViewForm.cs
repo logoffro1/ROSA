@@ -25,13 +25,15 @@ namespace LoginForm
         private Table selectedTable; //the current selected table by the user
         private Timer timerWaitTime = new Timer();
         private int waitTimeMinutes; //for the order
+
+        PictureBox reservedIcon;
+        PictureBox clockIcon;
+        PictureBox foodIcon;
+        PictureBox drinkIcon;
         public tableViewForm(Employee employee)
         {
             InitializeComponent();
             this.employee = employee;
-            if (employee.role == Roles.Waiter)
-                return;
-
         }
         private void tableViewForm_Load(object sender, EventArgs e)
         {
@@ -51,27 +53,31 @@ namespace LoginForm
         {
             Application.Exit();
         }
-
         private void ShowTableIcons(Table table)
         {
-
-
-            int sizeX = tableImages[table.tableId - 1].Height / 4;
+            if(reservedIcon != null)
+            reservedIcon.Dispose();
+            int sizeX = tableImages[table.tableId - 1].Height / 3;
             int sizeY = sizeX;
+
+            
+
+        
             if (table.isReserved)
             {
-                PictureBox reservedIcon = new PictureBox()
+                reservedIcon = new PictureBox()
                 {
 
                     Size = new Size(sizeX, sizeY),
-                    Location = new Point(tableImages[table.tableId - 1].Location.X - sizeX+2, tableImages[table.tableId - 1].Location.Y),
+                    Location = new Point(tableImages[table.tableId - 1].Location.X - sizeX + 2, tableImages[table.tableId - 1].Location.Y),
                     BackgroundImage = Properties.Resources.Addressbook_32,
                     BackColor = Color.Transparent,
                     BackgroundImageLayout = ImageLayout.Stretch
                 };
-
                 pnlTables.Controls.Add(reservedIcon);
             }
+            else
+                reservedIcon.Hide();
                 if (table.order != null)
             {
                 //loop through the order items, see if it has food and drinks that are not ready

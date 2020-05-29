@@ -68,6 +68,7 @@
             this.lblSelectTable = new System.Windows.Forms.Label();
             this.pnlTablesView = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnOrder = new System.Windows.Forms.Button();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -244,6 +245,7 @@
             // 
             this.pnlTableInfo.BackColor = System.Drawing.SystemColors.Control;
             this.pnlTableInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTableInfo.Controls.Add(this.btnOrder);
             this.pnlTableInfo.Controls.Add(this.btnReservedYes);
             this.pnlTableInfo.Controls.Add(this.btnReservedNo);
             this.pnlTableInfo.Controls.Add(this.btnOccupiedYes);
@@ -536,6 +538,17 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // btnOrder
+            // 
+            this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.Location = new System.Drawing.Point(28, 319);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(88, 26);
+            this.btnOrder.TabIndex = 33;
+            this.btnOrder.Text = "ORDER";
+            this.btnOrder.UseVisualStyleBackColor = true;
+            // 
             // tableViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -622,5 +635,6 @@
         private System.Windows.Forms.RadioButton btnOccupiedNo;
         private System.Windows.Forms.CheckBox btnReservedYes;
         private System.Windows.Forms.CheckBox btnReservedNo;
+        private System.Windows.Forms.Button btnOrder;
     }
 }

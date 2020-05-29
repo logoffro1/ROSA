@@ -48,17 +48,18 @@ namespace LoginForm
             circleImages.Add(picCircle4);
             circleImages.Add(picCircle5);
         }
+  
         private void mainForm_Load(object sender, EventArgs e)
         {
             InitNotes();
-            AddImagesToLists();    
+            AddImagesToLists();
             //show a Welcome message, "Welcome, firstName!"
             lblWelcome.Text = $"Welcome, {employee.firstName}!";
-            lblName.Text = employee.firstName+" "+employee.lastName;
+            lblName.Text = employee.firstName + " " + employee.lastName;
             lblRole.Text = employee.role.ToString();
 
             lblTime.Text = $"{DateTime.Now.DayOfWeek} - {DateTime.Now.Hour.ToString("00")}:{DateTime.Now.Minute.ToString("00")}";
-           
+
             //set the profile picture based on the employee role
             if (employee.role == Roles.Manager)
                 profilePicture.Image = Properties.Resources.managerProfile;
@@ -132,10 +133,6 @@ namespace LoginForm
         private void btnSlideRight_Click(object sender, EventArgs e)
         {
             ChangeHelpPicture(true);
-        }
-        private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            this.Refresh();
         }
         private void tablesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
