@@ -21,9 +21,10 @@ namespace RosaDAL
         public List<OrderItem> GetOrderItemsById(int order_id)
         {
             SqlCommand cmd = new SqlCommand(
-                "SELECT OT.order_ID, M.itemName, OT.amount, OT.[status], (M.price * OT.amount) AS price " +
+                "SELECT OT.order_ID, M.itemName, OT.amount, OT.[status], (M.price * OT.amount) AS price, MC.menuCategory_id " +
                 "FROM orderItems AS OT " +
                 "JOIN menuItem AS M ON OT.menuItem_id = M.menuItem_id " +
+                "JOIN menuCategory AS MC ON M.menuCategory_id = MC.menuCategory_id" +
                 "WHERE Ot.order_id = @order_id; ", conn);
 
             cmd.Parameters.AddWithValue("@order_id", order_id);
@@ -46,7 +47,8 @@ namespace RosaDAL
                 menuItem = new MenuItem()
                 {
                     Name = reader["itemName"].ToString(),
-                    Price = (decimal)reader["price"]
+                    Price = (decimal)reader["price"], 
+                    menuCat = (int)reader["menuCategory_id"]
                 },
                 amount = (int)reader["amount"],
                 status = (StatusEnum)(int)reader["status"]

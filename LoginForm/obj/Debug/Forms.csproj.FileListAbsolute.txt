@@ -113,7 +113,6 @@ C:\Users\MEDION\Documents\School\ROSA\LoginForm\bin\Debug\RosaDAL.pdb
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\bin\Debug\RosaDAL.dll.config
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\Forms.csprojAssemblyReference.cache
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.loginForm.resources
-C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.MenuItemForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.paymentForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.tableViewForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.homeForm.resources
@@ -170,3 +169,4 @@ C:\Users\31620\Desktop\new\LoginForm\bin\Debug\RosaModel.pdb
 C:\Users\31620\Desktop\new\LoginForm\bin\Debug\RosaDAL.pdb
 C:\Users\31620\Desktop\new\LoginForm\bin\Debug\RosaDAL.dll.config
 C:\Users\31620\Desktop\new\LoginForm\obj\Debug\Forms.csproj.CopyComplete
+C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.BarKitchenForm.resources
