@@ -8,7 +8,7 @@ namespace RosaModel
     /// </summary>
     public class Payment 
     {
-
+       
         //All properties of the Payment
         public int OrderId { get; set; }     
         public Order Order { get; set; }
@@ -33,7 +33,7 @@ namespace RosaModel
         //Constuctor
         public Payment()
         {
-
+            
         }
     }
 }

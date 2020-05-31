@@ -103,9 +103,9 @@ namespace RosaDAL
                     isAvailable = (bool)dr["isAvailable"],
                     isReserved = (bool)dr["isReserved"]                
                 };
-                Order order = null;
-                  order = GetOrderByTable(table.tableId);
 
+                Order order = GetOrderByTable(table.tableId);
+                
                 if (order != null)
                 {
                     if (!order.isPaid)

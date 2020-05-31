@@ -24,12 +24,7 @@ namespace LoginForm
         private List<Table> tables = new List<Table>();
         private Table selectedTable; //the current selected table by the user
         private Timer timerWaitTime = new Timer();
-        private int waitTimeMinutes; //for the order
 
-        PictureBox reservedIcon;
-        PictureBox clockIcon;
-        PictureBox foodIcon;
-        PictureBox drinkIcon;
         public tableViewForm(Employee employee)
         {
             InitializeComponent();
@@ -37,7 +32,23 @@ namespace LoginForm
         }
         private void tableViewForm_Load(object sender, EventArgs e)
         {
-
+            switch (employee.role)
+            {
+                case Roles.Waiter:
+                    tablesToolStripMenuItem1.Visible = true;                 
+                    break;
+                case Roles.Bartender:
+                    barToolStripMenuItem.Visible = true;
+                    break;
+                case Roles.Chef:
+                    kitchenToolStripMenuItem.Visible = true;
+                    break;
+                case Roles.Manager:
+                    tablesToolStripMenuItem1.Visible = true;
+                    barToolStripMenuItem.Visible = true;
+                    kitchenToolStripMenuItem.Visible = true;
+                    break;
+            }
             //show a Welcome message, "Welcome, firstName!"
             lblWelcome.Text = $"Welcome, {employee.firstName}!";
 
@@ -55,19 +66,15 @@ namespace LoginForm
         }
         private void ShowTableIcons(Table table)
         {
-            if(reservedIcon != null)
-            reservedIcon.Dispose();
+
+
             int sizeX = tableImages[table.tableId - 1].Height / 3;
             int sizeY = sizeX;
-
-            
-
-        
             if (table.isReserved)
             {
-                reservedIcon = new PictureBox()
+                PictureBox reservedIcon = new PictureBox()
                 {
-
+                    Name = "reservedIcon",
                     Size = new Size(sizeX, sizeY),
                     Location = new Point(tableImages[table.tableId - 1].Location.X - sizeX + 2, tableImages[table.tableId - 1].Location.Y),
                     BackgroundImage = Properties.Resources.Addressbook_32,
@@ -76,38 +83,41 @@ namespace LoginForm
                 };
                 pnlTables.Controls.Add(reservedIcon);
             }
-            else
-                reservedIcon.Hide();
-                if (table.order != null)
+            if (table.order != null)
             {
                 //loop through the order items, see if it has food and drinks that are not ready
-                ChangeLabelWaitTime(table);
-                if (waitTimeMinutes >= 15)
+                if (WaitTimeMinutes((int)(DateTime.Now-table.order.dateTime).TotalSeconds) >= 15)
                 {
                     PictureBox clockIcon = new PictureBox()
                     {
-
+                        Name = "clockIcon",
                         Size = new Size(sizeX, sizeY),
-                        Location = new Point(tableImages[table.tableId - 1].Location.X - sizeX+2, tableImages[table.tableId - 1].Location.Y + tableImages[table.tableId-1].Height-sizeX),
+                        Location = new Point(tableImages[table.tableId - 1].Location.X - sizeX + 2, tableImages[table.tableId - 1].Location.Y + tableImages[table.tableId - 1].Height - sizeX),
                         BackgroundImage = Properties.Resources.Alert_Clock_32,
                         BackColor = Color.Transparent,
                         BackgroundImageLayout = ImageLayout.Stretch
                     };
                     pnlTables.Controls.Add(clockIcon);
                 }
-                if(table.order.listOrderItems != null)
+                if (table.order.listOrderItems != null)
                 {
-                    foreach(OrderItem OI in table.order.listOrderItems)
+                    foreach (OrderItem OI in table.order.listOrderItems)
                     {
-                        
+                       
                     }
                 }
             }
         }
         void ChangeTableColor() //change the back color depending on the availability for all the tables
         {
+            foreach (Control c in pnlTables.Controls)
+                if (c.Name.Contains("reservedIcon"))
+                {
+         
+                    c.Dispose();
+                }
+                   
             int count = 0; //to keep track of the table number
-
             foreach (PictureBox p in tableImages) // loop through the table images list
             {
                 //if the table is occupied, set the color to green
@@ -155,6 +165,7 @@ namespace LoginForm
 
             if (selectedTable.CheckStatus() == TableStatus.Ordered)
             {
+               
                 timerWaitTime.Tick += TimerWaitTime_Tick;
                 timerWaitTime.Interval = 1000;
                 timerWaitTime.Start();
@@ -167,6 +178,10 @@ namespace LoginForm
         {
             ChangeLabelWaitTime(selectedTable);
         }
+        private int WaitTimeMinutes(int waitTimeTotalSeconds)
+        {
+            return waitTimeTotalSeconds / 60;
+        }
         private void ChangeLabelWaitTime(Table table)
         {
             if (table.CheckStatus() == TableStatus.Ordered)
@@ -175,7 +190,7 @@ namespace LoginForm
 
                 if (waitTimetotalSeconds > 0)
                 {
-                    waitTimeMinutes = waitTimetotalSeconds / 60;
+                   int waitTimeMinutes = WaitTimeMinutes(waitTimetotalSeconds);
                     int waitTimeSeconds = waitTimetotalSeconds % 60;
                     if (waitTimeMinutes < 5)
                         lblWaitTime.BackColor = Color.LightGreen;
@@ -222,7 +237,7 @@ namespace LoginForm
         private void btnSaveTableInfo_Click(object sender, EventArgs e)
         {
             Table_Service tableService = new Table_Service();
-           
+
             if (selectedTable.CheckStatus() != TableStatus.Ordered)
             {
                 if (btnOccupiedYes.Checked)
@@ -230,15 +245,15 @@ namespace LoginForm
                 else
                     selectedTable.isAvailable = true;
 
-                ChangeTableImageColor(tableImages[selectedTable.tableId - 1]);
                 ShowTableInfo(selectedTable.tableId);
                 // update table  
-                tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved);
             }
             else
                 MessageBox.Show("Can't change info if there is a running order(PLACEHOLDER)", "Placeholder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            ShowTableIcons(selectedTable);
+          
+            tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved);
+            ChangeTableColor();
+        
         }
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
