@@ -41,7 +41,7 @@ namespace RosaDAL
         public Order GetOrderByTable(int table_id)
         {
             OpenConnection();
-            SqlCommand cmd = new SqlCommand("select TOP 1 order_id, table_id, employee_id, orderDate, notes, isPaid FROM [order] WHERE table_id = @table_id ORDER BY orderDate DESC; ", conn);
+            SqlCommand cmd = new SqlCommand("select TOP 1 order_id, table_id, orderDate, notes, isPaid FROM [order] WHERE table_id = @table_id ORDER BY orderDate DESC; ", conn);
             cmd.Parameters.AddWithValue("@table_id", table_id);
             SqlDataReader reader = cmd.ExecuteReader();
             Order order = null;
@@ -49,7 +49,7 @@ namespace RosaDAL
             {
                 order = ReadOrder(reader);
             }
-            return order;
+            return order;          
         }
         private Order ReadOrder(SqlDataReader reader)
         {
@@ -65,7 +65,7 @@ namespace RosaDAL
                     dateTime = (DateTime)reader["orderDate"],
                     table = (int)reader["table_id"]
                 };
-                if (!reader.IsDBNull(5))
+                if (!reader.IsDBNull(4))
                     order.isPaid = (bool)reader["isPaid"];
                 else
                     order.isPaid = false;
@@ -95,6 +95,7 @@ namespace RosaDAL
             List<Table> tables = new List<Table>();
             foreach (DataRow dr in dataTable.Rows)
             {
+                OrderItemDAO orderItemDAO = new OrderItemDAO();
                 Table table = new Table()
                 {
                     tableId = (int)dr["table_id"],
@@ -102,13 +103,15 @@ namespace RosaDAL
                     isAvailable = (bool)dr["isAvailable"],
                     isReserved = (bool)dr["isReserved"]                
                 };
-                Order order = null;
-                  order = GetOrderByTable(table.tableId);
 
+                Order order = GetOrderByTable(table.tableId);
+                
                 if (order != null)
                 {
                     if (!order.isPaid)
                         table.order = order;
+
+                    order.listOrderItems = orderItemDAO.GetOrderItemsById(order.orderID);
                 }
                 else
                     table.order = null;

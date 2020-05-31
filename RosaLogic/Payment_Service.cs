@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RosaDAL;
+﻿using RosaDAL;
 using RosaModel;
+using System;
 
 namespace RosaLogic
 {
@@ -18,37 +14,61 @@ namespace RosaLogic
         PaymentDAO paymentDAO = new PaymentDAO();
 
 
-        //Passes orderID to return a payment object, all of it's fields except for the feedback and tip
+        //Passes orderID to return a payment object, all of it's fields except for the feedback, paymentMethod, tip, Order's isPaid, Order's notes
+
+            //Rather get ORDER from DB
+            //Create payment object and fill with order
+            //Send payment back with tip/paymentmethod
+
         public Payment GetPayment(int order_id)
         {
             try
             {
-                Payment payment = paymentDAO.GetById(order_id);
-                paymentDAO.GetPriceVATById(order_id, out decimal outTotalPrice, out decimal outVATPrice);
+                //meantime keep in PAYMENTDAO
 
-                payment.TotalPrice = outTotalPrice;
-                payment.TotalVAT = outVATPrice;
+                //Gets order object from DB
+                Order order = paymentDAO.GetOrderById(order_id);
+
+                //Make a payment object which contains order
+                Payment payment = new Payment()
+                {
+                    OrderId = order_id,
+                    Order = order
+                };
+
+                //Go through the order's orderitems to get the total price and total vat of the order
+                payment.TotalPrice = 0;
+                payment.TotalVAT = 0;
+
+                foreach(OrderItem item in order.listOrderItems)
+                {
+                    payment.TotalPrice += item.menuItem.Price;
+                    payment.TotalVAT += item.menuItem.VAT;
+                }
 
                 return payment;
             }
-            catch
+            catch(Exception e)
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read the Payment from the Database!");
+                ErrorDAO error = new ErrorDAO($"Couldn't read the Payment from the Database! ({e.Message})");
                 return null;
             }
         }
 
-        //Inserts a new payment/bill in the database, and changes the status of the order to 'paid'
+        //Inserts a new payment/bill in the database, and changes the status of the order to 'paid', and changes the table to available
         public void PayBill(Payment payment)
         {
             try
             {
-                paymentDAO.UpdateStatusToBilled(payment.OrderId);
+                //Use DB transaction - when one thing goes bad, all tyransacions goes back to original state
+                
+                paymentDAO.UpdateOrderStatusToPaid(payment.OrderId);
+                paymentDAO.UpdateToAvailableTable(payment.Order.table);
                 paymentDAO.InsertNewBill(payment);
             }
-            catch
+            catch(Exception e)
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read the Payment from the Database!");
+                ErrorDAO error = new ErrorDAO($"Couldn't read the Payment from the Database! ({e.Message})");
             }
         }
     }

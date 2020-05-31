@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RosaModel
 {
@@ -12,8 +8,8 @@ namespace RosaModel
     /// </summary>
     public class Payment 
     {
-
-        //All propertyies of the Payment
+       
+        //All properties of the Payment
         public int OrderId { get; set; }     
         public Order Order { get; set; }
         public decimal TotalPrice { get; set; }
@@ -37,7 +33,7 @@ namespace RosaModel
         //Constuctor
         public Payment()
         {
-
+            
         }
     }
 }

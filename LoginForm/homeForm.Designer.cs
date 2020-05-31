@@ -100,7 +100,6 @@
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
             this.homeToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
             this.homeToolStripMenuItem1.Text = "Home";
-            this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem1_Click);
             // 
             // tablesToolStripMenuItem1
             // 
@@ -323,6 +322,7 @@
             this.txtNotes.Font = new System.Drawing.Font("Tw Cen MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNotes.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNotes.Location = new System.Drawing.Point(32, 291);
+            this.txtNotes.MaxLength = 200;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(213, 138);
             this.txtNotes.TabIndex = 5;
@@ -332,6 +332,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::LoginForm.Properties.Resources.note3;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(22, 247);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(263, 230);

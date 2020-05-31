@@ -10,9 +10,12 @@ namespace RosaModel
     {
         public int employeeId { get; set; }
         public Roles role { get; set; }
-        public string employeeName { get; set; } //full name
+        public string firstName { get; set; }
+        public string lastName { get; set; }
         public string username { get; set; } //used for login
         public string password { get; set; } //used for login
+
+        public string[] personalNotes { get; set; }
       
     }
 }

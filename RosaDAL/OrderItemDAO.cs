@@ -18,21 +18,21 @@ namespace RosaDAL
 
         //Gets the list of order items from an order, through the order id
         //By Dewi
-        public List<OrderItem> GetById(int order_id)
+        public List<OrderItem> GetOrderItemsById(int order_id)
         {
             SqlCommand cmd = new SqlCommand(
-                "SELECT OT.order_ID, M.itemName, OT.amount, OT.[status], (M.price * OT.amount) AS price " +
+                "SELECT OT.order_ID, M.itemName, OT.amount, OT.[status], (M.price * OT.amount) AS price, MC.menuCategory_id " +
                 "FROM orderItems AS OT " +
                 "JOIN menuItem AS M ON OT.menuItem_id = M.menuItem_id " +
+                "JOIN menuCategory AS MC ON M.menuCategory_id = MC.menuCategory_id" +
                 "WHERE Ot.order_id = @order_id; ", conn);
 
             cmd.Parameters.AddWithValue("@order_id", order_id);
             SqlDataReader reader = cmd.ExecuteReader();
             List<OrderItem> orderItems = new List<OrderItem>();
-
-            while (reader.Read())
+                    while (reader.Read())
             {
-                orderItems.Add(ReadRecord(reader));
+                orderItems.Add(ReadOrderItemRecord(reader));
             }
 
             return orderItems;
@@ -40,20 +40,20 @@ namespace RosaDAL
 
         //Reads the order item record from the database
         //By Dewi
-        private OrderItem ReadRecord(SqlDataReader reader)
+        private OrderItem ReadOrderItemRecord(SqlDataReader reader)
         {
             OrderItem orderItem = new OrderItem()
             {
                 menuItem = new MenuItem()
                 {
                     Name = reader["itemName"].ToString(),
-                    Price = (decimal)reader["price"]
+                    Price = (decimal)reader["price"], 
+                    menuCat = (int)reader["menuCategory_id"]
                 },
                 amount = (int)reader["amount"],
                 status = (StatusEnum)(int)reader["status"]
             };
-
-            return orderItem;
+                   return orderItem;
         } 
     }
 

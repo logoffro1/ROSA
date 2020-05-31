@@ -21,8 +21,8 @@ namespace RosaDAL
 
         public List<Order> ReadTables(DataTable dataTable)
         {
+     
             List<Order> Orders = new List<Order>();
-
             foreach (DataRow dr in dataTable.Rows)
             {
                 Order order = new Order()
@@ -32,7 +32,6 @@ namespace RosaDAL
                     //notes = (string)dr["notes"],
                     table = (int)dr["table_id"]
                 };
-
                 Orders.Add(order);
             }
             return Orders;
@@ -61,6 +60,35 @@ namespace RosaDAL
 
             ExecuteEditQuery(query, sqlParameters);
 
+        }
+
+        //Gets full orderItem through the orderID
+        //By Dewi
+        public Order GetOrderByID(int orderID)
+        {
+            SqlCommand cmd = new SqlCommand(
+                "select table_id, orderDate " +
+                "from [order]" +
+                "where order_id = @Id; ", conn);
+
+            cmd.Parameters.AddWithValue("@order_id", orderID);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                return ReadRecord(reader);
+            }
+
+            throw new Exception("Could not read order!");
+        }
+
+        private Order ReadRecord(SqlDataReader reader)
+        {
+            return new Order()
+            {
+                table = (int)reader["table_id"],
+                dateTime = (DateTime)reader["orderDate"]
+            };
         }
     }
 }

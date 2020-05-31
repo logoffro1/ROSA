@@ -47,7 +47,7 @@ namespace RosaLogic
 
         }
         public void RemoveOrder(int orderID)
-        {
+        { 
             orderDAO.RemoveOrder(orderID);
             //try
             //{
@@ -63,6 +63,9 @@ namespace RosaLogic
             //}
 
         }
+
+        
+    
 
     }
 }

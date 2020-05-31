@@ -1,95 +1,113 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RosaModel;
-using System.Configuration;
 
 namespace RosaDAL
 {
     /// <summary>
-    /// 
     /// Class that retrieves all data needed from the payment table,
     /// or that retrives data needed for the payment class
+    /// 
+    /// Note: In the DB, payment is called bill. Bill and payment is the same.
+    /// 
     /// By Dewi
     /// </summary>
     public class PaymentDAO : Base
     {
+        //change method names!
 
-        //Returns the table id and order date from the class order 
-        //to put in the payment object
-        public Payment GetById(int order_id)
+        public Order GetOrderById(int order_id)
         {
-            SqlCommand cmd = new SqlCommand(
-                "SELECT O.table_id, O.orderDate " +
-                "FROM [order] AS O " +
-                "WHERE O.order_id = @order_id", conn);
+            Order order = GetById(order_id);
+            order.listOrderItems = GetOrderItemsById(order_id);
 
-            cmd.Parameters.AddWithValue("@order_id", order_id);
-            SqlDataReader reader = cmd.ExecuteReader();
-            Payment payment = null;
-
-            if (reader.Read())
-            {
-                payment = ReadRecord(reader);
-            }
-            return payment;
+            return order;
         }
 
 
-        //Uses out parameters to obtain the total price of an order, with it's vat
-        //All calculated through SQL
-        //Out parameters are used because the payment object is not passed here
-        public void GetPriceVATById(int order_id, out decimal paymentTotalPrice, out decimal paymentTotalVAT)
+        //Returns all data about the order expect the order items
+        //---- technically in OrderDAO?
+        private Order GetById(int order_id)     //---------- what about an employee?
         {
             SqlCommand cmd = new SqlCommand(
-               "SELECT SUM(O.amount * MI.price) AS totalPrice, SUM(O.amount * (MI.price * MC.vat)) AS totalVAT " +
-               "FROM orderItems AS O " +
-               "JOIN menuItem AS MI ON O.menuItem_id = MI.menuItem_id " +
-               "JOIN menuCategory AS MC ON MI.menuCategory_id = MC.menuCategory_id  " +
-               "WHERE O.order_id = @order_id;" , conn);
+                "SELECT table_id, orderDate, notes, isPaid " +
+                "FROM [order] " +
+                "WHERE order_id = @order_id", conn);
 
             cmd.Parameters.AddWithValue("@order_id", order_id);
             SqlDataReader reader = cmd.ExecuteReader();
-            paymentTotalPrice = -1;
-            paymentTotalVAT = -1;
+            Order order = null;
 
             if (reader.Read())
             {
-                ReadPriceVAT(reader, out paymentTotalPrice, out paymentTotalVAT);
+                order = ReadRecord(reader);
             }
 
-        }
-
-        //Reads the total price and total VAT of a order from the databse table
-        private void ReadPriceVAT(SqlDataReader reader, out decimal paymentTotalPrice, out decimal paymentTotalVAT)
-        {
-            paymentTotalPrice = (decimal)reader["totalPrice"];
-            paymentTotalVAT = (decimal)reader["totalVAT"];
+            order.orderID = order_id;
+            return order;
         }
 
         //Reads and returns a payment object with the table id and date of the order, read from a database table
-        private Payment ReadRecord(SqlDataReader reader)
+        private Order ReadRecord(SqlDataReader reader)
         {
-            Payment payment = new Payment()
+            return new Order()
             {
-                Order = new Order()
-                {
-                    table = (int)reader["table_id"],
-                    dateTime = (DateTime)reader["orderDate"]
-                },
+                table = (int)reader["table_id"],
+                dateTime = (DateTime)reader["orderDate"],
+                notes = reader["notes"].ToString(),
+                isPaid = (bool)reader["isPaid"]
             };
-
-            return payment;
         }
 
-        //Changed the order to Paid (Billed) in the database
-        public void UpdateStatusToBilled(int order_id)
-        {
 
+        //Gets the list of order items from an order, through the order id
+        //---- techincally in OrderItem DAO?
+        private List<OrderItem> GetOrderItemsById(int order_id)
+        {
+            SqlCommand cmd = new SqlCommand(
+                "SELECT OT.order_ID, M.itemName, OT.amount, OT.[status], (M.price * OT.amount) AS price, MC.vat " +
+                "FROM orderItems AS OT " +
+                "JOIN menuItem AS M ON OT.menuItem_id = M.menuItem_id " +
+                "JOIN menuCategory AS MC ON M.menuCategory_id = MC.menuCategory_id " +
+                "WHERE Ot.order_id = @order_id; ", conn);
+
+            cmd.Parameters.AddWithValue("@order_id", order_id);
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<OrderItem> orderItems = new List<OrderItem>();
+
+            while (reader.Read())
+            {
+                orderItems.Add(ReadOrderItemRecord(reader));
+            }
+
+            return orderItems;
+        }
+
+        //Reads the order item record from the database
+        private OrderItem ReadOrderItemRecord(SqlDataReader reader)
+        {
+            OrderItem orderItem = new OrderItem()
+            {
+                menuItem = new MenuItem()
+                {
+                    Name = reader["itemName"].ToString(),
+                    Price = (decimal)reader["price"],
+                    VAT = (decimal)reader["vat"]
+                },
+                amount = (int)reader["amount"],
+                status = (StatusEnum)(int)reader["status"]
+            };
+
+            return orderItem;
+        }
+
+
+        //Below is when one wants to pay for the order, thus the DB needs to change to accomodate the payment
+
+        //Changed the order to Paid (Billed) in the database
+        public void UpdateOrderStatusToPaid(int order_id)      //Change method name? eg. CloseOrder
+        {
             SqlCommand cmd = new SqlCommand(
                 "update [order] " +
                 "set isPaid = 1" +
@@ -97,9 +115,25 @@ namespace RosaDAL
 
             cmd.Parameters.AddWithValue("@Id", order_id);
 
-            cmd.ExecuteReader();
+            if (cmd.ExecuteNonQuery() == 0)              
+                throw new Exception("Could not update order status to isPaid.");
         }
 
+
+        //Changed the table to available in the databse
+        public void UpdateToAvailableTable(int table_id)
+        {
+            SqlCommand cmd = new SqlCommand(
+                "update [table] " +
+                "set isAvailable = 1" +
+                "where table_id = @Id; ", conn);
+
+            cmd.Parameters.AddWithValue("@Id", table_id);
+
+            if (cmd.ExecuteNonQuery() == 0)
+                throw new Exception("Could not update table status to available.");
+
+        }
         //Inserts the payment/bill in the database when the order is finished
         public void InsertNewBill(Payment payment)
         {
@@ -114,8 +148,8 @@ namespace RosaDAL
             cmd.Parameters.AddWithValue("@comments", payment.Feedback);
             cmd.Parameters.AddWithValue("@totalVAT", payment.TotalVAT);
 
-            cmd.ExecuteReader(); //wasnt there anotehr method, one that doesnt return a value? ask tami
-
+            if (cmd.ExecuteNonQuery() == 0)
+                throw new Exception("Could not insert new bill in the database.");
         }
     }
 }
