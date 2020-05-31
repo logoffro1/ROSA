@@ -97,15 +97,14 @@ namespace LoginForm
             //if the useSystemPasswordChar is true, set it to false and the other way around
             //that shows or hides the password
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
+            if (txtPassword.UseSystemPasswordChar)
+                eyePic.BackgroundImage = Properties.Resources.Black_Eye_Watch_128;
+            else
+                eyePic.BackgroundImage = Properties.Resources.Closed_Eye2;
         }
         private void loginFormV2_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void loginForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

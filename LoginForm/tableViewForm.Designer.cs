@@ -41,6 +41,7 @@
             this.picTable2 = new System.Windows.Forms.PictureBox();
             this.picTable1 = new System.Windows.Forms.PictureBox();
             this.pnlTableInfo = new System.Windows.Forms.Panel();
+            this.btnOrder = new System.Windows.Forms.Button();
             this.btnReservedYes = new System.Windows.Forms.CheckBox();
             this.btnReservedNo = new System.Windows.Forms.CheckBox();
             this.btnOccupiedYes = new System.Windows.Forms.RadioButton();
@@ -68,7 +69,6 @@
             this.lblSelectTable = new System.Windows.Forms.Label();
             this.pnlTablesView = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnOrder = new System.Windows.Forms.Button();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTable9)).BeginInit();
@@ -266,6 +266,17 @@
             this.pnlTableInfo.TabIndex = 1;
             this.pnlTableInfo.Visible = false;
             // 
+            // btnOrder
+            // 
+            this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.Location = new System.Drawing.Point(28, 319);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(88, 26);
+            this.btnOrder.TabIndex = 33;
+            this.btnOrder.Text = "ORDER";
+            this.btnOrder.UseVisualStyleBackColor = true;
+            // 
             // btnReservedYes
             // 
             this.btnReservedYes.AutoSize = true;
@@ -439,19 +450,23 @@
             this.tablesToolStripMenuItem1.Name = "tablesToolStripMenuItem1";
             this.tablesToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
             this.tablesToolStripMenuItem1.Text = "Tables";
+            this.tablesToolStripMenuItem1.Visible = false;
             this.tablesToolStripMenuItem1.Click += new System.EventHandler(this.tablesToolStripMenuItem1_Click);
             // 
             // orderToolStripMenuItem1
             // 
+            this.orderToolStripMenuItem1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
             this.orderToolStripMenuItem1.Size = new System.Drawing.Size(78, 32);
             this.orderToolStripMenuItem1.Text = "Order";
+            this.orderToolStripMenuItem1.Visible = false;
             // 
             // barToolStripMenuItem
             // 
             this.barToolStripMenuItem.Name = "barToolStripMenuItem";
             this.barToolStripMenuItem.Size = new System.Drawing.Size(55, 32);
             this.barToolStripMenuItem.Text = "Bar";
+            this.barToolStripMenuItem.Visible = false;
             this.barToolStripMenuItem.Click += new System.EventHandler(this.barToolStripMenuItem_Click);
             // 
             // kitchenToolStripMenuItem
@@ -459,6 +474,7 @@
             this.kitchenToolStripMenuItem.Name = "kitchenToolStripMenuItem";
             this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
             this.kitchenToolStripMenuItem.Text = "Kitchen";
+            this.kitchenToolStripMenuItem.Visible = false;
             // 
             // homeToolStripMenuItem
             // 
@@ -537,17 +553,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrder.Location = new System.Drawing.Point(28, 319);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(88, 26);
-            this.btnOrder.TabIndex = 33;
-            this.btnOrder.Text = "ORDER";
-            this.btnOrder.UseVisualStyleBackColor = true;
             // 
             // tableViewForm
             // 

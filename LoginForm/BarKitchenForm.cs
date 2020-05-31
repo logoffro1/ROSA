@@ -146,7 +146,7 @@ namespace LoginForm
             {
                 OrderItem temp = new OrderItem(
                 int.Parse(listKitchenView.SelectedItems[0].SubItems[6].Text),  // orderId
-                (StatusEnum)Enum.Parse(typeof(StatusEnum), listKitchenView.SelectedItems[0].SubItems[4].Text)); // Status
+                (StatusEnum)Enum.Parse(typeof(StatusEnum),listKitchenView.SelectedItems[0].SubItems[4].Text)); // Status
 
                 if (temp.status == StatusEnum.Ordered)
                 {
@@ -189,16 +189,6 @@ namespace LoginForm
         private void MenuItemForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void MenuItemForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_Kitchen_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

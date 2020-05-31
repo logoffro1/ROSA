@@ -158,7 +158,6 @@
             this.panel_Kitchen.Size = new System.Drawing.Size(731, 514);
             this.panel_Kitchen.TabIndex = 34;
             this.panel_Kitchen.Visible = false;
-            this.panel_Kitchen.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Kitchen_Paint);
             // 
             // listKitchenView1
             // 
@@ -433,7 +432,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuItemForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuItemForm_FormClosing);
-            this.Load += new System.EventHandler(this.MenuItemForm_Load);
             this.navbar.ResumeLayout(false);
             this.navbar.PerformLayout();
             this.panel_Bar.ResumeLayout(false);
