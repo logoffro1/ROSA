@@ -9,6 +9,6 @@ namespace RosaModel
 {
     public enum StatusEnum
     {
-        Waiting = 1, Ordered, Ready, Served, Billed
+        Ordered = 1, Ready, Served
     }
 }

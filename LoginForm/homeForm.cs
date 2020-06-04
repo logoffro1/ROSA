@@ -9,8 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RosaLogic;
 using RosaModel;
+using System.IO;
 namespace LoginForm
-{
+{   
+     /// <summary>
+     /// HOME FORM
+     /// Made by Cosmin Ilie 
+     /// Student number: 645976
+     /// </summary>
     public partial class homeForm : Form
     {
         private Employee employee;
@@ -20,9 +26,10 @@ namespace LoginForm
         private int currentPic = 0; // the current selected help picture
         public homeForm(Employee employee)
         {
+            Employee_Service es = new Employee_Service();
             InitializeComponent();
             this.employee = employee;
-      
+            this.employee.personalNotes = es.GetNotes(employee);
         }
         void AddImagesToLists()
         {
@@ -41,21 +48,17 @@ namespace LoginForm
             circleImages.Add(picCircle4);
             circleImages.Add(picCircle5);
         }
+  
         private void mainForm_Load(object sender, EventArgs e)
         {
+            InitNotes();
             AddImagesToLists();
-
-            //split the name into 2 parts, firstName and lastName
-            string[] nameSplit = employee.employeeName.Split(' ');
             //show a Welcome message, "Welcome, firstName!"
-            lblWelcome.Text = $"Welcome, {nameSplit[0]}!";
-            lblName.Text = employee.employeeName;
+            lblWelcome.Text = $"Welcome, {employee.firstName}!";
+            lblName.Text = employee.firstName + " " + employee.lastName;
             lblRole.Text = employee.role.ToString();
-   //5 ah
-   //6:10
-            
+
             lblTime.Text = $"{DateTime.Now.DayOfWeek} - {DateTime.Now.Hour.ToString("00")}:{DateTime.Now.Minute.ToString("00")}";
-           
 
             //set the profile picture based on the employee role
             if (employee.role == Roles.Manager)
@@ -67,31 +70,34 @@ namespace LoginForm
             else if (employee.role == Roles.Chef)
                 profilePicture.Image = Properties.Resources.chefProfile;
         }
-
+        private void InitNotes()
+        {
+            //change the back color to match the sticky note
+            txtNotes.BackColor = Color.FromArgb(255, 255, 128);
+            lblNotes.BackColor = Color.FromArgb(255, 255, 128);
+            btnSave.BackColor = Color.FromArgb(255, 255, 128);
+            foreach(string s in employee.personalNotes)
+                txtNotes.Text += s + Environment.NewLine;               
+        }
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        }
-     
+        } 
         private void lblLogout_MouseHover(object sender, EventArgs e)
         {
             lblLogout.ForeColor = Color.Blue;
         }
-
         private void lblLogout_MouseLeave(object sender, EventArgs e)
         {
             lblLogout.ForeColor = Color.Black;
         }
-
         private void lblLogout_Click(object sender, EventArgs e)
         {
             //return to the login form
             loginForm loginForm = new loginForm();
             loginForm.Show();
             this.Hide();
-        }
-
-      
+        } 
         void ChangeHelpPicture(bool goingRight)
         {
             //if goingRight is true, then the user is pressing the right button, if false, then it's pressing the left button
@@ -124,44 +130,56 @@ namespace LoginForm
         {
             ChangeHelpPicture(false);
         }
-
         private void btnSlideRight_Click(object sender, EventArgs e)
         {
             ChangeHelpPicture(true);
         }
-
-        private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            this.Refresh();
-        }
-
         private void tablesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             tableViewForm tableForm = new tableViewForm(employee);
             tableForm.Show();
-            this.Hide();
+            this.Dispose();
+            
 
         }
-
             private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuItemForm menuItemForm = new MenuItemForm(employee,"bar");
+            BarKitchenForm menuItemForm = new BarKitchenForm(employee,"bar");
             this.Hide();
             menuItemForm.Show();
         }
-
         private void orderToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OrderForm ot = new OrderForm(employee);
             ot.Show();
             this.Hide();
         }
-
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuItemForm menuItemForm = new MenuItemForm(employee, "kitchen");
+            BarKitchenForm menuItemForm = new BarKitchenForm(employee, "kitchen");
             this.Hide();
             menuItemForm.Show();
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            WriteNotes();
+            btnSave.Text = "SAVED...";
+        }
+        private void WriteNotes()
+        {
+            Employee_Service es = new Employee_Service();
+                //get each new line into a separate string 
+                string[] txtLines = txtNotes.Text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+                string formattedLines = "";
+                foreach (string s in txtLines)
+                    formattedLines+=s+";";
+
+            es.EditAccount(employee.username, formattedLines);
+        }
+        private void txtNotes_TextChanged(object sender, EventArgs e)
+        {
+            btnSave.Text = "SAVE";
         }
     }
 }

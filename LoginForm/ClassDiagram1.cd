@@ -1,2 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LoginForm.EditForm" Collapsed="true">
+    <Position X="5.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAACAAAAAAAACIAADiAwAAIAAAAAQCAAAAAAA=</HashCode>
+      <FileName>EditForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginForm.homeForm" Collapsed="true">
+    <Position X="7.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gZAgAMEgQCMAsgwyQAKaACQqABAEAACIgAAAIEVACAA=</HashCode>
+      <FileName>homeForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginForm.loginForm" Collapsed="true">
+    <Position X="9.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAEAAACAAAFIAAgCAAIACAAAACAAAABEgAABAABw=</HashCode>
+      <FileName>loginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginForm.MenuItemForm" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEAAgAAARCAZABAAAAiKAhL+IwACAQCAkACAIAQACAE=</HashCode>
+      <FileName>MenuItemForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginForm.OrderForm" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAgACJQADAAABDIRAACAAAKABgAAGABAAAAQAA=</HashCode>
+      <FileName>OrderForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginForm.paymentForm" Collapsed="true">
+    <Position X="9.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oggAAAAEECAogAiEAYCJCADCowCAABJACACICCEApCA=</HashCode>
+      <FileName>paymentForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginForm.Program" Collapsed="true">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginForm.Revenue" Collapsed="true">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAACQACgAEAASEAYACAAACAJIAAAAAIIABAAA=</HashCode>
+      <FileName>Revenue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginForm.tableViewForm" Collapsed="true">
+    <Position X="9.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBQIoIEAQqAAKpBgQQKqAQgiAQQACBmKAQQQREVQKAA=</HashCode>
+      <FileName>tableViewForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

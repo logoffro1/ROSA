@@ -9,69 +9,52 @@ using RosaModel;
 
 namespace RosaDAL
 {
+    /// <summary>
+    /// Class that retrieves all data needed from the order item table,
+    /// or that retrives data needed for the order item class
+    /// </summary>
     public class OrderItemDAO : Base
     {
-        public List<OrderItem> GetById(int order_id)
+
+        //Gets the list of order items from an order, through the order id
+        //By Dewi
+        public List<OrderItem> GetOrderItemsById(int order_id)
         {
             SqlCommand cmd = new SqlCommand(
-                "SELECT OT.order_ID, M.itemName, OT.amount, (M.price * OT.amount) AS price " +
+                "SELECT OT.order_ID, M.itemName, OT.amount, OT.[status], (M.price * OT.amount) AS price, MC.menuCategory_id " +
                 "FROM orderItems AS OT " +
                 "JOIN menuItem AS M ON OT.menuItem_id = M.menuItem_id " +
+                "JOIN menuCategory AS MC ON M.menuCategory_id = MC.menuCategory_id" +
                 "WHERE Ot.order_id = @order_id; ", conn);
 
             cmd.Parameters.AddWithValue("@order_id", order_id);
             SqlDataReader reader = cmd.ExecuteReader();
             List<OrderItem> orderItems = new List<OrderItem>();
-
-            while (reader.Read())
+                    while (reader.Read())
             {
-                orderItems.Add(ReadRecord(reader));
+                orderItems.Add(ReadOrderItemRecord(reader));
             }
 
             return orderItems;
         }
-        private OrderItem ReadRecord(SqlDataReader reader)
+
+        //Reads the order item record from the database
+        //By Dewi
+        private OrderItem ReadOrderItemRecord(SqlDataReader reader)
         {
             OrderItem orderItem = new OrderItem()
             {
                 menuItem = new MenuItem()
                 {
                     Name = reader["itemName"].ToString(),
-                    Price = (decimal)reader["price"]
+                    Price = (decimal)reader["price"], 
+                    menuCat = (int)reader["menuCategory_id"]
                 },
                 amount = (int)reader["amount"],
                 status = (StatusEnum)(int)reader["status"]
             };
-
-            return orderItem;
+                   return orderItem;
         } 
-
-
-
-
-        public List<OrderItem> ReadTables(DataTable dataTable)
-        {
-            SqlCommand cmd = new SqlCommand(
-                "SELECT orderItems_id,order_id,menuitem_id,amount" +
-                "FROM orderItems AS OT " +
-                "WHERE order_id = @order_id; ", conn);
-
-            List<OrderItem> OrderItems = new List<OrderItem>();
-
-                foreach (DataRow dr in dataTable.Rows)
-                {
-                    OrderItem orderitem = new OrderItem()
-                    {
-                        orderItems_id = (int)dr["orderItems_id"],
-                        orderID = (int)dr["order_id"],
-                        amount = (int)dr["amount"],
-                        menuItem = (MenuItem)dr["menuItem_id"]
-                    };
-
-                    OrderItems.Add(orderitem);
-                }
-                return OrderItems;
-        }
     }
 
 }

@@ -12,8 +12,20 @@ namespace RosaModel
         public int capacity { get; set; }
         public bool isAvailable { get; set; }
         public bool isReserved { get; set; }
-        public TableStatus status { get; set; }
-        public DateTime orderdate { get; set; }
+        public Order order { get; set; }
 
+        public TableStatus CheckStatus()
+        {
+            TableStatus status = TableStatus.Empty;
+            if (!isAvailable)
+            {
+                if (order == null)
+                    status = TableStatus.Waiting;
+                else
+                    if (!order.isPaid)
+                        status = TableStatus.Ordered;
+            }
+            return status;          
+        }
     }
 }

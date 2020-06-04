@@ -23,6 +23,19 @@ namespace RosaLogic
             }
             
         }
+        //public Order GetOrderByTable(int table_id)
+        //{
+        //    try
+        //    {
+        //        return tableDAO.GetOrderByTable(table_id);
+        //    }
+
+        //    catch
+        //    {
+        //        ErrorDAO error = new ErrorDAO("Couldn't read the tables from the Database");
+        //        return null;
+        //    }
+        //}
         public void UpdateTable(Table table, bool isAvailable, bool isReserved)
         {
             try

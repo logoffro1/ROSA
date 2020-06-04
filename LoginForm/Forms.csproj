@@ -61,11 +61,11 @@
     <Compile Include="loginForm.Designer.cs">
       <DependentUpon>loginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuItemForm.cs">
+    <Compile Include="BarKitchenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuItemForm.Designer.cs">
-      <DependentUpon>MenuItemForm.cs</DependentUpon>
+    <Compile Include="BarKitchenForm.Designer.cs">
+      <DependentUpon>BarKitchenForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderForm.cs">
       <SubType>Form</SubType>
@@ -90,11 +90,11 @@
     <Compile Include="Revenue.Designer.cs">
       <DependentUpon>Revenue.cs</DependentUpon>
     </Compile>
-    <Compile Include="TableForm.cs">
+    <Compile Include="tableViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TableForm.Designer.cs">
-      <DependentUpon>TableForm.cs</DependentUpon>
+    <Compile Include="tableViewForm.Designer.cs">
+      <DependentUpon>tableViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="homeForm.cs">
       <SubType>Form</SubType>
@@ -110,8 +110,8 @@
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuItemForm.resx">
-      <DependentUpon>MenuItemForm.cs</DependentUpon>
+    <EmbeddedResource Include="BarKitchenForm.resx">
+      <DependentUpon>BarKitchenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
@@ -122,8 +122,8 @@
     <EmbeddedResource Include="Revenue.resx">
       <DependentUpon>Revenue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TableForm.resx">
-      <DependentUpon>TableForm.cs</DependentUpon>
+    <EmbeddedResource Include="tableViewForm.resx">
+      <DependentUpon>tableViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="homeForm.resx">
       <DependentUpon>homeForm.cs</DependentUpon>
@@ -261,6 +261,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Button_LogIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alert-Clock-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alert-Clock-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Addressbook-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coffee-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Closed_Eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Closed_Eye2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

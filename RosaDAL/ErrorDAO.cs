@@ -10,7 +10,7 @@ namespace RosaDAL
    public class ErrorDAO 
     {
      
-
+      //Move in the Model 
         public ErrorDAO(string explanation)
         {
             
@@ -24,7 +24,8 @@ namespace RosaDAL
             //if (Environment.UserInteractive)
             //    throw new Exception("test");
             //else
-            //throw new Exception(explanation);
+            //Console.WriteLine(explanation);
+            
         }
     }
 }

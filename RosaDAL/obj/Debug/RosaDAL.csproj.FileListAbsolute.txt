@@ -54,3 +54,12 @@ C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaDAL\obj
 C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaDAL\obj\Debug\RosaDAL.csproj.CopyComplete
 C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaDAL\obj\Debug\RosaDAL.dll
 C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaDAL\obj\Debug\RosaDAL.pdb
+C:\Users\31620\Desktop\new\RosaDAL\obj\Debug\RosaDAL.csprojAssemblyReference.cache
+C:\Users\31620\Desktop\new\RosaDAL\obj\Debug\RosaDAL.dll
+C:\Users\31620\Desktop\new\RosaDAL\obj\Debug\RosaDAL.pdb
+C:\Users\31620\Desktop\new\RosaDAL\bin\Debug\RosaDAL.dll.config
+C:\Users\31620\Desktop\new\RosaDAL\bin\Debug\RosaDAL.dll
+C:\Users\31620\Desktop\new\RosaDAL\bin\Debug\RosaDAL.pdb
+C:\Users\31620\Desktop\new\RosaDAL\bin\Debug\RosaModel.dll
+C:\Users\31620\Desktop\new\RosaDAL\bin\Debug\RosaModel.pdb
+C:\Users\31620\Desktop\new\RosaDAL\obj\Debug\RosaDAL.csproj.CopyComplete

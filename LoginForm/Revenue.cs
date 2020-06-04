@@ -29,11 +29,11 @@ namespace LoginForm
                 int totalSales = 0;
                 float totalTurnOver = 0;
                 // get the revenue report from the database for the start and end date
-                List<Revenue> revenues = service.GetRevenue(e.startdate, e.enddate);
+               // List<Revenue> revenues = service.GetRevenue(monthcalendarrevenue.SelectionStart, monthcalendarrevenue.SelectionEnd);
                 //clear the current items
                 listviewrevenue.Items.Clear();
                 //format each item in the list to an array of strings and add those to the listView
-                foreach (RevenueItem item in revenues)
+              /*  foreach (RevenueItem item in revenues)
                 {
                     string[] items = new string[] {
                         item.orderItems,
@@ -48,6 +48,7 @@ namespace LoginForm
                     ListViewItem li = new ListViewItem(items);
                     listviewrevenue.Items.Add(li);
                 }
+                */
                 //create and add a listViewItem for the total
                 ListViewItem total = new ListViewItem(new string[] { "Total", totalSales.ToString(), totalTurnOver.ToString("0.00 €"), " " });
                 listviewrevenue.Items.Add(total);

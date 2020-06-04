@@ -12,6 +12,10 @@ namespace LoginForm
 {
     public partial class OrderForm : Form
     {
+        //add order from menu card -> menu catergory -> menu items
+        //
+
+
         private Employee employee;
         public OrderForm(Employee employee)
         {
@@ -19,11 +23,23 @@ namespace LoginForm
             InitializeComponent();
             LoadOrders();
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        //Go to payment form
+        private void PayButton_Click(object sender, EventArgs e)     
         {
-            paymentForm payment = new paymentForm(employee);
-            this.Hide();
-            payment.Show();
+            try
+            {
+                //Select listview orderid
+                int orderId = int.Parse(OrderView.SelectedItems[0].Text);
+                paymentForm payment = new paymentForm(orderId, employee);
+                this.Close();   
+                payment.Show();
+            }
+            catch(Exception)
+            {
+               lbl_orderWarning.Text = "This order does not have any items! Please put items before paying!";
+            }
+
 
         }
         private void button1_Click_1(object sender, EventArgs e)
@@ -85,6 +101,46 @@ namespace LoginForm
 
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
             orderserv.RemoveOrder(int.Parse(OrderIDbox.Text));
+        }
+
+        private void EmployeeIDbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TableIDbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrderIDbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_orderWarning_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrderForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

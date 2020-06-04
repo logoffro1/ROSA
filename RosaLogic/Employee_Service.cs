@@ -34,7 +34,15 @@ namespace RosaLogic
                 ErrorDAO error = new ErrorDAO("Couldn't insert into the employee Database");
             }
         }
-        public void EditAccount(Employee oldEmployee,Employee newEmployee)
+        public void EditAccount(string username, string notes)
+        {
+            employeeDAO.EditAccount(username, notes);
+        }
+            public string[] GetNotes(Employee employee)
+        {
+            return employeeDAO.GetNotes(employee);
+        }
+            public void EditAccount(Employee oldEmployee,Employee newEmployee)
         {
             try
             {
