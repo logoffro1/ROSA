@@ -29,9 +29,9 @@ namespace RosaLogic
             }
 
         }
-        public void AddOrder(int tableID,int employeeID)
+        public void AddOrder(int tableID)
         {
-            orderDAO.CreateNewOrder(tableID, employeeID);
+            orderDAO.CreateNewOrder(tableID);
             //try
             //{
                 
@@ -45,6 +45,18 @@ namespace RosaLogic
 
             //}
 
+        }
+        public void CreateOrderItem(int orderID, int menuitemID)
+        {
+            orderDAO.CreateOrderItem(orderID, menuitemID);  
+        }
+        public void DeleteOrderItem(int orderitemID)
+        {
+            orderDAO.DeleteOrderItem(orderitemID);
+        }
+        public List<OrderItem> GetByID(int orderID)
+        {
+            return orderDAO.GetByID(orderID);
         }
         public void RemoveOrder(int orderID)
         { 
@@ -62,6 +74,22 @@ namespace RosaLogic
 
             //}
 
+        }
+        public void IncreaseAmount(int orderitemID)
+        {
+            orderDAO.IncreaseAmount(orderitemID);
+        }
+        public void DecreaseAmount(int orderitemID)
+        {
+            orderDAO.DecreaseAmount(orderitemID);
+        }
+        public void DecreaseStock(int menuitemID,int amount)
+        {
+            orderDAO.DecreaseStock(menuitemID, amount);
+        }
+        public List<MenuItem> GetMenuItems(int catID)
+        {
+            return orderDAO.GetMenuItems(catID);
         }
 
         //Dewi

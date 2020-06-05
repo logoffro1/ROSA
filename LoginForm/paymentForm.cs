@@ -69,7 +69,7 @@ namespace LoginForm
         //The payment button when a waiter/waitress wants to bill a customer/table
         private void btn_bill_Click(object sender, EventArgs e)
         {
-
+             
             //Checks which payment method is used, else they are warned 
             if (rbtn_cash.Checked)
                 currentPayment.PaymentMethod = PaymentMethodEnum.Cash;

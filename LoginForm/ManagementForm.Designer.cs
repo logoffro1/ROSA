@@ -37,6 +37,7 @@
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnRevenue = new System.Windows.Forms.Button();
             this.navbar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,6 +128,15 @@
             this.lblWelcome.TabIndex = 5;
             this.lblWelcome.Text = "Welcome, Alex!";
             // 
+            // btnRevenue
+            // 
+            this.btnRevenue.Location = new System.Drawing.Point(45, 212);
+            this.btnRevenue.Name = "btnRevenue";
+            this.btnRevenue.Size = new System.Drawing.Size(79, 33);
+            this.btnRevenue.TabIndex = 7;
+            this.btnRevenue.Text = "Revenue";
+            this.btnRevenue.UseVisualStyleBackColor = true;
+            // 
             // ManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -134,6 +144,7 @@
             this.BackgroundImage = global::LoginForm.Properties.Resources.BG_TABLESPAGE;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.btnRevenue);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.navbar);
@@ -162,5 +173,6 @@
         private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
         private System.Windows.Forms.Label lblLogout;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Button btnRevenue;
     }
 }
