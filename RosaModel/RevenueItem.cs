@@ -11,9 +11,9 @@ namespace RosaModel
         public string orderItems;     // name of the item
         public string menuItems;        
         public int sales;       // amount of times the item was sold
-        public double cost;     // the price of the item
+        public float cost;     // the price of the item
         public int boughtByCustomer; // the amount of unique customers it was bought by
-        public double Turnover   // total income from this item 
+        public float Turnover   // total income from this item 
         {
             get
             {

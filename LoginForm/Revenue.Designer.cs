@@ -1,4 +1,4 @@
-﻿/*namespace LoginForm
+﻿namespace LoginForm
 {
     partial class Revenue
     {
@@ -32,14 +32,14 @@
             this.lblcaldate2 = new System.Windows.Forms.Label();
             this.listviewrevenue = new System.Windows.Forms.ListView();
             this.colmenuitem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colorderitem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colsales = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colturnover = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.butcalrevenue = new System.Windows.Forms.Button();
             this.datetimestartdate = new System.Windows.Forms.DateTimePicker();
             this.datetimeenddate = new System.Windows.Forms.DateTimePicker();
             this.monthcalendarrevenue = new System.Windows.Forms.MonthCalendar();
             this.lbldateerror = new System.Windows.Forms.Label();
-            this.colorderitem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colsales = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colturnover = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lblcaldate1
@@ -82,6 +82,20 @@
             this.colmenuitem.Text = "Menu Item";
             this.colmenuitem.Width = 200;
             // 
+            // colorderitem
+            // 
+            this.colorderitem.Text = "Order Item";
+            this.colorderitem.Width = 75;
+            // 
+            // colsales
+            // 
+            this.colsales.Text = "Sales";
+            // 
+            // colturnover
+            // 
+            this.colturnover.Text = "Turnover";
+            this.colturnover.Width = 80;
+            // 
             // butcalrevenue
             // 
             this.butcalrevenue.Location = new System.Drawing.Point(621, 626);
@@ -90,6 +104,7 @@
             this.butcalrevenue.TabIndex = 4;
             this.butcalrevenue.Text = "Calculate Revenue";
             this.butcalrevenue.UseVisualStyleBackColor = true;
+            this.butcalrevenue.Click += new System.EventHandler(this.butcalrevenue_Click);
             // 
             // datetimestartdate
             // 
@@ -129,20 +144,6 @@
             this.lbldateerror.TabIndex = 8;
             this.lbldateerror.Text = "Use start date before the end date *";
             // 
-            // colorderitem
-            // 
-            this.colorderitem.Text = "Order Item";
-            this.colorderitem.Width = 75;
-            // 
-            // colsales
-            // 
-            this.colsales.Text = "Sales";
-            // 
-            // colturnover
-            // 
-            this.colturnover.Text = "Turnover";
-            this.colturnover.Width = 80;
-            // 
             // Revenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -179,4 +180,3 @@
         private System.Windows.Forms.ColumnHeader colturnover;
     }
 }
-*/

@@ -170,3 +170,17 @@ C:\Users\31620\Desktop\new\LoginForm\bin\Debug\RosaDAL.pdb
 C:\Users\31620\Desktop\new\LoginForm\bin\Debug\RosaDAL.dll.config
 C:\Users\31620\Desktop\new\LoginForm\obj\Debug\Forms.csproj.CopyComplete
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.BarKitchenForm.resources
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\Forms.csprojAssemblyReference.cache
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\LoginForm.EditForm.resources
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\LoginForm.loginForm.resources
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\LoginForm.BarKitchenForm.resources
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\LoginForm.OrderForm.resources
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\LoginForm.paymentForm.resources
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\LoginForm.Revenue.resources
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\LoginForm.tableViewForm.resources
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\LoginForm.homeForm.resources
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\LoginForm.Properties.Resources.resources
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\Forms.csproj.GenerateResource.cache
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\Forms.csproj.CoreCompileInputs.cache
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\LoginForm.exe
+C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\LoginForm\obj\Debug\LoginForm.pdb
