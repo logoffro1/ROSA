@@ -83,17 +83,17 @@ namespace LoginForm
             EditForm.Show();
             this.Hide();
         }
-        public string ListviewSelectItem(int number)
-        {
-            string temp;
-            temp = OrderView.SelectedItems[number].Text;
-            return temp;
-        }
+       // public string ListviewSelectItem(int number)
+        //{
+           // string temp;
+           // temp = OrderView.SelectedItems[number].Text;
+           //return temp;
+       // }
 
         private void AddOrder_Click(object sender, EventArgs e)
         {
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
-            orderserv.AddOrder(int.Parse(TableIDbox.Text), int.Parse(EmployeeIDbox.Text));
+            orderserv.AddOrder(int.Parse(TableIDbox.Text));
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
