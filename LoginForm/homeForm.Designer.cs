@@ -35,6 +35,7 @@
             this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.barToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitchenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,8 +77,7 @@
             // 
             // navbar
             // 
-            this.navbar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.navbar.BackgroundImage = global::LoginForm.Properties.Resources.BG_TABLESPAGE;
+            this.navbar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.navbar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.navbar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navbar.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -87,11 +87,12 @@
             this.orderToolStripMenuItem1,
             this.barToolStripMenuItem,
             this.kitchenToolStripMenuItem,
+            this.managementToolStripMenuItem,
             this.toolStripMenuItem1});
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
             this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.navbar.Size = new System.Drawing.Size(1005, 36);
+            this.navbar.Size = new System.Drawing.Size(1006, 36);
             this.navbar.TabIndex = 2;
             // 
             // homeToolStripMenuItem1
@@ -128,6 +129,16 @@
             this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
             this.kitchenToolStripMenuItem.Text = "Kitchen";
             this.kitchenToolStripMenuItem.Click += new System.EventHandler(this.kitchenToolStripMenuItem_Click);
+            // 
+            // managementToolStripMenuItem
+            // 
+            this.managementToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.managementToolStripMenuItem.Font = new System.Drawing.Font("Tw Cen MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(159, 32);
+            this.managementToolStripMenuItem.Text = "Management";
+            this.managementToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -411,8 +422,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LoginForm.Properties.Resources.HOME_BG;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this.navbar);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.lblWelcome);
@@ -478,5 +489,6 @@
         private System.Windows.Forms.RichTextBox txtNotes;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.Label btnSave;
+        private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
     }
 }

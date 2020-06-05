@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RosaLogic;
 using RosaModel;
+using LoginForm.Properties;
 namespace LoginForm
 {
     /// <summary>
@@ -24,7 +20,7 @@ namespace LoginForm
         private List<Table> tables = new List<Table>();
         private Table selectedTable; //the current selected table by the user
         private Timer timerWaitTime = new Timer();
-
+        private List<PictureBox> iconsPB = new List<PictureBox>();
         public tableViewForm(Employee employee)
         {
             InitializeComponent();
@@ -32,23 +28,6 @@ namespace LoginForm
         }
         private void tableViewForm_Load(object sender, EventArgs e)
         {
-            switch (employee.role)
-            {
-                case Roles.Waiter:
-                    tablesToolStripMenuItem1.Visible = true;                 
-                    break;
-                case Roles.Bartender:
-                    barToolStripMenuItem.Visible = true;
-                    break;
-                case Roles.Chef:
-                    kitchenToolStripMenuItem.Visible = true;
-                    break;
-                case Roles.Manager:
-                    tablesToolStripMenuItem1.Visible = true;
-                    barToolStripMenuItem.Visible = true;
-                    kitchenToolStripMenuItem.Visible = true;
-                    break;
-            }
             //show a Welcome message, "Welcome, firstName!"
             lblWelcome.Text = $"Welcome, {employee.firstName}!";
 
@@ -66,57 +45,58 @@ namespace LoginForm
         }
         private void ShowTableIcons(Table table)
         {
-
-
             int sizeX = tableImages[table.tableId - 1].Height / 3;
             int sizeY = sizeX;
+            int locationX = tableImages[table.tableId - 1].Location.X;
+            int locationY = tableImages[table.tableId - 1].Location.Y;
             if (table.isReserved)
-            {
-                PictureBox reservedIcon = new PictureBox()
-                {
-                    Name = "reservedIcon",
-                    Size = new Size(sizeX, sizeY),
-                    Location = new Point(tableImages[table.tableId - 1].Location.X - sizeX + 2, tableImages[table.tableId - 1].Location.Y),
-                    BackgroundImage = Properties.Resources.Addressbook_32,
-                    BackColor = Color.Transparent,
-                    BackgroundImageLayout = ImageLayout.Stretch
-                };
-                pnlTables.Controls.Add(reservedIcon);
-            }
+                MakePictureBox("reservedIcon", new Point(locationX - sizeX - 2, locationY), Resources.Addressbook_32);
+
             if (table.order != null)
             {
-                //loop through the order items, see if it has food and drinks that are not ready
-                if (WaitTimeMinutes((int)(DateTime.Now-table.order.dateTime).TotalSeconds) >= 15)
-                {
-                    PictureBox clockIcon = new PictureBox()
-                    {
-                        Name = "clockIcon",
-                        Size = new Size(sizeX, sizeY),
-                        Location = new Point(tableImages[table.tableId - 1].Location.X - sizeX + 2, tableImages[table.tableId - 1].Location.Y + tableImages[table.tableId - 1].Height - sizeX),
-                        BackgroundImage = Properties.Resources.Alert_Clock_32,
-                        BackColor = Color.Transparent,
-                        BackgroundImageLayout = ImageLayout.Stretch
-                    };
-                    pnlTables.Controls.Add(clockIcon);
-                }
-                if (table.order.listOrderItems != null)
+                if (WaitTimeMinutes((int)(DateTime.Now - table.order.dateTime).TotalSeconds) >= 15)
+                    MakePictureBox("clockIcon", new Point(locationX - sizeX - 2, locationY + tableImages[table.tableId - 1].Height - sizeX), Resources.Alert_Clock_32);
+
+                if (table.order.listOrderItems.Count > 0)
                 {
                     foreach (OrderItem OI in table.order.listOrderItems)
-                    {
-                       
-                    }
+                        if (OI.menuItem.menuCat >= 25)
+                        {
+                            MakePictureBox("drinkIcon", new Point(locationX + tableImages[0].Width + 2, locationY), Resources.Coffee_32);
+                            break;
+                        }
+                    foreach (OrderItem OI in table.order.listOrderItems)
+                        if (OI.menuItem.menuCat < 25)
+                        {
+                            MakePictureBox("foodIcon", new Point(locationX + tableImages[0].Width + 2, locationY + tableImages[table.tableId - 1].Height - sizeX), Resources.Food_32);
+                            break;
+                        }
                 }
             }
         }
+        private void MakePictureBox(string Name, Point Location, Image BackgroundImage)
+        {
+
+            int sizeX = tableImages[0].Height / 3;
+            int sizeY = sizeX;
+            PictureBox icon = new PictureBox()
+            {
+                Name = Name,
+                Size = new Size(sizeX, sizeY),
+                Location = Location,
+                BackgroundImage = BackgroundImage,
+                BackColor = Color.Transparent,
+                BackgroundImageLayout = ImageLayout.Stretch
+
+            };
+            pnlTables.Controls.Add(icon);
+            iconsPB.Add(icon);
+        }
         void ChangeTableColor() //change the back color depending on the availability for all the tables
         {
-            foreach (Control c in pnlTables.Controls)
-                if (c.Name.Contains("reservedIcon"))
-                {
-         
-                    c.Dispose();
-                }
-                   
+            foreach (PictureBox pb in iconsPB)
+                pb.Dispose();
+
             int count = 0; //to keep track of the table number
             foreach (PictureBox p in tableImages) // loop through the table images list
             {
@@ -130,16 +110,9 @@ namespace LoginForm
                 count++;
             }
         }
-        void ChangeTableImageColor(PictureBox tableImage) //change the back color depending on the availability for one table
-        {
-            if (!selectedTable.isAvailable)
-                tableImage.BackColor = Color.FromArgb(255, 128, 128); //red-ish color
-            else
-                tableImage.BackColor = Color.FromArgb(102, 210, 105); //green-ish color
-
-        }
         void ShowTableInfo(int tableId) //show the information for the selected table
         {
+         
             timerWaitTime.Stop();
 
             selectedTable = tables[tableId - 1]; //set the current selected table
@@ -159,13 +132,13 @@ namespace LoginForm
             else //if the table is not ocuppied
                 btnOccupiedNo.Checked = true;
 
-            lblStatus.Text = "Status: " + selectedTable.CheckStatus().ToString();
+            lblStatus.Text = "Status: " + selectedTable.status.ToString();
 
             ChangeLabelWaitTime(selectedTable);
 
-            if (selectedTable.CheckStatus() == TableStatus.Ordered)
+            if (selectedTable.status == TableStatus.Ordered)
             {
-               
+
                 timerWaitTime.Tick += TimerWaitTime_Tick;
                 timerWaitTime.Interval = 1000;
                 timerWaitTime.Start();
@@ -184,13 +157,13 @@ namespace LoginForm
         }
         private void ChangeLabelWaitTime(Table table)
         {
-            if (table.CheckStatus() == TableStatus.Ordered)
+            if (table.status == TableStatus.Ordered)
             {
                 int waitTimetotalSeconds = (int)(DateTime.Now - table.order.dateTime).TotalSeconds;
 
                 if (waitTimetotalSeconds > 0)
                 {
-                   int waitTimeMinutes = WaitTimeMinutes(waitTimetotalSeconds);
+                    int waitTimeMinutes = WaitTimeMinutes(waitTimetotalSeconds);
                     int waitTimeSeconds = waitTimetotalSeconds % 60;
                     if (waitTimeMinutes < 5)
                         lblWaitTime.BackColor = Color.LightGreen;
@@ -212,7 +185,6 @@ namespace LoginForm
         {
             PictureBox tablePic = (PictureBox)sender; //store the clicked table
             int tableId = int.Parse(tablePic.Name.Remove(0, 8));
-            // string[] tableSplit = tablePic.Name.Split('e'); //split the name from the number -> kinda dangerous, eg. do getTable, getIndex
             ShowTableInfo(tableId); //pass the number to ShowTableInfo     
         }
         private void btnExitTableInfo_Click(object sender, EventArgs e)
@@ -237,23 +209,37 @@ namespace LoginForm
         private void btnSaveTableInfo_Click(object sender, EventArgs e)
         {
             Table_Service tableService = new Table_Service();
-
-            if (selectedTable.CheckStatus() != TableStatus.Ordered)
+            Table tempSelectedTable = new Table()
             {
-                if (btnOccupiedYes.Checked)
-                    selectedTable.isAvailable = false;
-                else
-                    selectedTable.isAvailable = true;
+                isAvailable = selectedTable.isAvailable,
+                isReserved = selectedTable.isReserved
+            };
 
-                ShowTableInfo(selectedTable.tableId);
-                // update table  
-            }
+            if (btnOccupiedYes.Checked)
+                tempSelectedTable.isAvailable = false;
             else
+                tempSelectedTable.isAvailable = true;
+
+            if (btnReservedYes.Checked)
+                tempSelectedTable.isReserved = true;
+            else
+                tempSelectedTable.isReserved = false;
+
+            if (tempSelectedTable.isAvailable != selectedTable.isAvailable || tempSelectedTable.isReserved != selectedTable.isReserved)
+            {
+
+                if(tempSelectedTable.isAvailable != selectedTable.isAvailable)
+                if (selectedTable.status != TableStatus.Ordered)
+                    selectedTable.isAvailable = tempSelectedTable.isAvailable;
+                else
                 MessageBox.Show("Can't change info if there is a running order(PLACEHOLDER)", "Placeholder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-          
-            tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved);
-            ChangeTableColor();
-        
+
+                selectedTable.isReserved = tempSelectedTable.isReserved;
+
+                    ShowTableInfo(selectedTable.tableId);
+                    tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved);
+                    ChangeTableColor();           
+            }
         }
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -267,16 +253,13 @@ namespace LoginForm
         }
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BarKitchenForm menuItemForm = new BarKitchenForm(employee, "bar");
-            this.Hide();
-            menuItemForm.Show();
+            new SwitchForms(employee, this, new BarKitchenForm(employee, "bar"));
         }
 
         private void btnReservedYes_CheckedChanged(object sender, EventArgs e)
         {
             if (btnReservedYes.Checked)
             {
-                selectedTable.isReserved = true;
                 btnReservedYes.Enabled = false;
                 btnReservedNo.Enabled = true;
                 btnReservedNo.Checked = false;
@@ -288,13 +271,22 @@ namespace LoginForm
         {
             if (btnReservedNo.Checked)
             {
-                selectedTable.isReserved = false;
                 btnReservedNo.Enabled = false;
                 btnReservedYes.Enabled = true;
                 btnReservedYes.Checked = false;
             }
+        }
 
+        private void managementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new SwitchForms(employee, this, new ManagementForm(employee));
 
         }
+
+        private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new SwitchForms(employee, this, new BarKitchenForm(employee, "kitchen"));
+        }
+
     }
 }

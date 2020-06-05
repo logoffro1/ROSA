@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RosaLogic;
 using RosaModel;
@@ -60,12 +53,11 @@ namespace LoginForm
                             OpenForm(new BarKitchenForm(employee, "kitchen"));
                             break;
                         case Roles.Manager:
-                            OpenForm(new homeForm(employee));
+                            OpenForm(new ManagementForm(employee));
                             break;
                         default:
                             OpenForm(new homeForm(employee));
-                            break;
-                            
+                            break;                           
                     }
                 }
 
@@ -97,6 +89,7 @@ namespace LoginForm
             //if the useSystemPasswordChar is true, set it to false and the other way around
             //that shows or hides the password
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
+
             if (txtPassword.UseSystemPasswordChar)
                 eyePic.BackgroundImage = Properties.Resources.Black_Eye_Watch_128;
             else
@@ -105,6 +98,11 @@ namespace LoginForm
         private void loginFormV2_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void loginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

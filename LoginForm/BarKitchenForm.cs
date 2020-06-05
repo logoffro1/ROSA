@@ -190,5 +190,10 @@ namespace LoginForm
         {
             Application.Exit();
         }
+
+        private void BarKitchenForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
