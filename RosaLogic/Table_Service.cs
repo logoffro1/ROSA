@@ -22,7 +22,7 @@ namespace RosaLogic
                 foreach(Table t in tables)
                 {
                     if(t.order!= null)
-                    t.order.listOrderItems = orderItemDAO.GetOrderItemsById(t.order.orderID);
+                    t.order.ListOrderItems = orderItemDAO.GetOrderItemsById(t.order.OrderID);
                 }
                 return tables;
             }

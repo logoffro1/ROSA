@@ -64,8 +64,28 @@ namespace RosaLogic
 
         }
 
-        
-    
+        //Dewi
+        public Order GetOrderById(int orderID)
+        {
+            try
+            {
+                PaymentDAO paymentDAO = new PaymentDAO();
+
+                Order order = paymentDAO.GetOrderById(orderID);
+                order.Table = paymentDAO.GetTableByOrderID(order.Table.tableId);
+
+                return order;
+
+            }
+            catch (Exception)
+            {
+
+                ErrorDAO error = new ErrorDAO("Couldn't read from the Database!");
+                return null;
+
+            }
+        }
+
 
     }
 }

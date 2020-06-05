@@ -49,15 +49,16 @@ namespace RosaDAL
         {
             Order order = new Order()
             {
-                orderID = (int)reader["order_id"],
-                dateTime = (DateTime)reader["orderDate"],
-                table = (int)reader["table_id"]
+                OrderID = (int)reader["order_id"],
+                DateTime = (DateTime)reader["orderDate"]
             };
 
+            order.Table.tableId = (int)reader["table_id"];
+
             if (reader["isPaid"] != DBNull.Value)
-                order.isPaid = (bool)reader["isPaid"];
+                order.IsPaid = (bool)reader["isPaid"];
             else
-                order.isPaid = false;
+                order.IsPaid = false;
             return order;
         }
         private List<Table> ReadTables(DataTable dataTable)
@@ -78,7 +79,7 @@ namespace RosaDAL
                 Order order = GetOrderByTable(table.tableId);
 
                 if (order != null)
-                    if (!order.isPaid)
+                    if (!order.IsPaid)
                         table.order = order;
 
                 tablesTemp.Add(table);
