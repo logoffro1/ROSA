@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using RosaDAL;
 using RosaModel;
 namespace RosaLogic
-{
+{ 
+    /// <summary>
+  ///   Employee Service class
+  ///   Made by Cosmin Ilie
+  ///   Student number: 645976
+  /// </summary>
     public class Employee_Service
     {
         EmployeeDAO employeeDAO = new EmployeeDAO();

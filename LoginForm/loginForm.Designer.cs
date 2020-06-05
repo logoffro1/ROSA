@@ -134,7 +134,7 @@
             this.imgChapeauLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imgChapeauLogo.BackColor = System.Drawing.Color.Transparent;
             this.imgChapeauLogo.Image = global::LoginForm.Properties.Resources.chapeau1;
-            this.imgChapeauLogo.Location = new System.Drawing.Point(12, 190);
+            this.imgChapeauLogo.Location = new System.Drawing.Point(13, 190);
             this.imgChapeauLogo.Name = "imgChapeauLogo";
             this.imgChapeauLogo.Size = new System.Drawing.Size(457, 280);
             this.imgChapeauLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -169,7 +169,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LoginForm.Properties.Resources.BG_LOGINPAGE;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.eyePic);
@@ -188,6 +188,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chapeau - Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.loginFormV2_FormClosing);
+            this.Load += new System.EventHandler(this.loginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.eyePic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgChapeauLogo)).EndInit();
