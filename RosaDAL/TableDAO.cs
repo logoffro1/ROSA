@@ -4,12 +4,12 @@ using System.Data;
 using System.Data.SqlClient;
 using RosaModel;
 namespace RosaDAL
-{ 
+{
     /// <summary>
-  ///   Table DAO class
-  ///   Made by Cosmin Ilie
-  ///   Student number: 645976
-  /// </summary>
+    ///   Table DAO class
+    ///   Made by Cosmin Ilie
+    ///   Student number: 645976
+    /// </summary>
     public class TableDAO : Base
     {
         public List<Table> Db_Get_AllTables()
@@ -22,13 +22,13 @@ namespace RosaDAL
         public void UpdateTable(Table table, bool isAvailable, bool isReserved)
         {
             String query = "update [table] set isAvailable = @isAvailable, isReserved = @isReserved where table_id = @Id; ";
-              
-            SqlParameter[] sqlParameters = new SqlParameter[3] 
+
+            SqlParameter[] sqlParameters = new SqlParameter[3]
                {new SqlParameter("@isAvailable", Convert.ToInt32(isAvailable)),
                    new SqlParameter("@isReserved", Convert.ToInt32(isReserved)),
                    new SqlParameter("@Id", table.tableId)};
-                
-                ExecuteEditQuery(query, sqlParameters);
+
+            ExecuteEditQuery(query, sqlParameters);
         }
         public Order GetOrderByTable(int table_id)
         {

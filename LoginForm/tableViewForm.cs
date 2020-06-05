@@ -288,5 +288,9 @@ namespace LoginForm
             new SwitchForms(employee, this, new BarKitchenForm(employee, "kitchen"));
         }
 
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -88,7 +88,6 @@ namespace RosaDAL
             {
                 string exp = "RosaAPP couldn't execute the edit query";
                 ErrorDAO error = new ErrorDAO(exp);
-                 throw;
             }
             finally
             {
