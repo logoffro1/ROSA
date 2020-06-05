@@ -171,3 +171,4 @@ C:\Users\31620\Desktop\new\LoginForm\bin\Debug\RosaDAL.dll.config
 C:\Users\31620\Desktop\new\LoginForm\obj\Debug\Forms.csproj.CopyComplete
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.BarKitchenForm.resources
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.ManagementForm.resources
+C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.ManagementForm.resources

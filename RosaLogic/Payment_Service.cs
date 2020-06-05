@@ -40,7 +40,7 @@ namespace RosaLogic
                 payment.TotalPrice = 0;
                 payment.TotalVAT = 0;
 
-                foreach(OrderItem item in order.listOrderItems)
+                foreach(OrderItem item in order.ListOrderItems)
                 {
                     payment.TotalPrice += item.menuItem.Price;
                     payment.TotalVAT += item.menuItem.VAT;
@@ -63,7 +63,7 @@ namespace RosaLogic
                 //Use DB transaction - when one thing goes bad, all tyransacions goes back to original state
                 
                 paymentDAO.UpdateOrderStatusToPaid(payment.OrderId);
-                paymentDAO.UpdateToAvailableTable(payment.Order.table);
+                paymentDAO.UpdateToAvailableTable(payment.Order.Table.tableId);
                 paymentDAO.InsertNewBill(payment);
             }
             catch(Exception e)

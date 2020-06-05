@@ -47,9 +47,8 @@ namespace RosaDAL
                 //Order class
                 order = new Order()
                 {
-                    table = (int)reader["table_id"],
-                    dateTime = DateTime.Parse(reader["orderDate"].ToString()),
-                    notes = (string)reader["notes"]
+                    DateTime = DateTime.Parse(reader["orderDate"].ToString()),
+                    Notes = (string)reader["notes"]
                 },
 
                 //OrderItem class
@@ -60,6 +59,10 @@ namespace RosaDAL
                     status = (StatusEnum)(int)reader["status"]
                 }
             };
+
+            //Table in order object
+            itemtemp.order.Table.tableId = (int)reader["table_id"];
+
             return itemtemp;
         }
         private List<MenuItem> ReadTables(DataTable dataTable)
@@ -77,8 +80,7 @@ namespace RosaDAL
                     //Order class
                     order = new Order()
                     {
-                        table = (int)dr["table_id"],
-                        dateTime = DateTime.Parse(dr["orderDate"].ToString())
+                        DateTime = DateTime.Parse(dr["orderDate"].ToString())
                     },
 
                     //OrderItem class
@@ -90,13 +92,17 @@ namespace RosaDAL
                     }
 
                 };
+
+                //Table in the order class
+                temp.order.Table.tableId = (int)dr["table_id"];
+
                 if (dr.IsNull("notes"))
                 {
-                    temp.order.notes = "none";
+                    temp.order.Notes = "none";
                 }
                 else
                 {
-                    temp.order.notes = (string)dr["notes"];
+                    temp.order.Notes = (string)dr["notes"];
                 }
 
                 menuItem.Add(temp);

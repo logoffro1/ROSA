@@ -10,25 +10,25 @@ namespace RosaModel
     public class Order
     {
         //upoercase
-        public int orderID { get; set; }
-        public Boolean isPaid { get; set; }
-        public string notes { get; set; }
-        public DateTime dateTime { get; set; }
-        public int table { get; set; }      //return table object
-        public List<OrderItem> listOrderItems { get; set; }
+        public int OrderID { get; set; }
+        public Boolean IsPaid { get; set; }
+        public string Notes { get; set; }
+        public DateTime DateTime { get; set; }
+        public Table Table { get; set; }      //return table object
+        public List<OrderItem> ListOrderItems { get; set; }
 
-        public Order(int orderID, bool isPaid, string notes, DateTime dateTime, int table, List<OrderItem> listOrderItems)
+        public Order(int orderID, bool isPaid, string notes, DateTime dateTime, Table table, List<OrderItem> listOrderItems)
         {
-            this.orderID = orderID;
-            this.isPaid = isPaid;
-            this.notes = notes ?? throw new ArgumentNullException(nameof(notes));
-            this.dateTime = dateTime;
-            this.table = table;
-            this.listOrderItems = listOrderItems ?? throw new ArgumentNullException(nameof(listOrderItems));
+            OrderID = orderID;
+            IsPaid = isPaid;
+            Notes = notes ?? throw new ArgumentNullException(nameof(notes));
+            DateTime = dateTime;
+            Table = table;
+            ListOrderItems = listOrderItems ?? throw new ArgumentNullException(nameof(listOrderItems));
         }
         public Order()
         {
-
+            Table = new Table();
         }
     }
 }

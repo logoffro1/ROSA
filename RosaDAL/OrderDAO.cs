@@ -27,11 +27,13 @@ namespace RosaDAL
             {
                 Order order = new Order()
                 {
-                    orderID = (int)dr["order_id"],
+                    OrderID = (int)dr["order_id"]
                     //isPaid = (Boolean)dr["isPaid"],
                     //notes = (string)dr["notes"],
-                    table = (int)dr["table_id"]
                 };
+
+                order.Table.tableId = (int)dr["table_id"];
+
                 Orders.Add(order);
             }
             return Orders;
@@ -96,11 +98,14 @@ namespace RosaDAL
 
         private Order ReadRecord(SqlDataReader reader)
         {
-            return new Order()
+            Order order = new Order
             {
-                table = (int)reader["table_id"],
-                dateTime = (DateTime)reader["orderDate"]
+                DateTime = (DateTime)reader["orderDate"]
             };
+
+            order.Table.tableId = (int)reader["table_id"];
+
+            return order;
         }
         public List<OrderItem> GetByID(int orderID)
         {

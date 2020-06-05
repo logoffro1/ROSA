@@ -15,12 +15,10 @@ namespace RosaDAL
     /// </summary>
     public class PaymentDAO : Base
     {
-        //change method names!
-
         public Order GetOrderById(int order_id)
         {
             Order order = GetById(order_id);
-            order.listOrderItems = GetOrderItemsById(order_id);
+            order.ListOrderItems = GetOrderItemsById(order_id);
 
             return order;
         }
@@ -28,7 +26,7 @@ namespace RosaDAL
 
         //Returns all data about the order expect the order items
         //---- technically in OrderDAO?
-        private Order GetById(int order_id)     //---------- what about an employee?
+        private Order GetById(int order_id)     
         {
             SqlCommand cmd = new SqlCommand(
                 "SELECT table_id, orderDate, notes, isPaid " +
@@ -44,20 +42,23 @@ namespace RosaDAL
                 order = ReadRecord(reader);
             }
 
-            order.orderID = order_id;
+            order.OrderID = order_id;
             return order;
         }
 
         //Reads and returns a payment object with the table id and date of the order, read from a database table
         private Order ReadRecord(SqlDataReader reader)
         {
-            return new Order()
+            Order order = new Order
             {
-                table = (int)reader["table_id"],
-                dateTime = (DateTime)reader["orderDate"],
-                notes = reader["notes"].ToString(),
-                isPaid = (bool)reader["isPaid"]
+                DateTime = (DateTime)reader["orderDate"],
+                Notes = reader["notes"].ToString(),
+                IsPaid = (bool)reader["isPaid"]
             };
+
+            order.Table.tableId = (int)reader["table_id"];
+
+            return order;
         }
 
 
@@ -150,6 +151,42 @@ namespace RosaDAL
 
             if (cmd.ExecuteNonQuery() == 0)
                 throw new Exception("Could not insert new bill in the database.");
+        }
+
+
+        //Returns table object for an order's tableID
+        public Table GetTableByOrderID(int tableID)
+        {
+            SqlCommand cmd = new SqlCommand(
+                "SELECT capacity, isAvailable, isReserved" +
+                "FROM [table]" +
+                "WHERE table_id = @table_id", conn);
+
+            cmd.Parameters.AddWithValue("@table_id", tableID);
+            SqlDataReader reader = cmd.ExecuteReader();
+            Table table = null;
+
+            if (reader.Read())
+            {
+                table = ReadTableRecord(reader);
+            }
+
+            table.tableId = tableID;
+            return table;
+        }
+
+        //Reads the table item record from the database
+        private Table ReadTableRecord(SqlDataReader reader)
+        {
+
+            Table table = new Table
+            {
+                capacity = (int)reader["capacity"],
+                isReserved = (bool)reader["isReserved"],
+                isAvailable = (bool)reader["isAvailable"]
+            };
+
+            return table;
         }
     }
 }

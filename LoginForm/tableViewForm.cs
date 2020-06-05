@@ -54,18 +54,18 @@ namespace LoginForm
 
             if (table.order != null)
             {
-                if (WaitTimeMinutes((int)(DateTime.Now - table.order.dateTime).TotalSeconds) >= 15)
+                if (WaitTimeMinutes((int)(DateTime.Now - table.order.DateTime).TotalSeconds) >= 15)
                     MakePictureBox("clockIcon", new Point(locationX - sizeX - 2, locationY + tableImages[table.tableId - 1].Height - sizeX), Resources.Alert_Clock_32);
 
-                if (table.order.listOrderItems.Count > 0)
+                if (table.order.ListOrderItems.Count > 0)
                 {
-                    foreach (OrderItem OI in table.order.listOrderItems)
+                    foreach (OrderItem OI in table.order.ListOrderItems)
                         if (OI.menuItem.menuCat >= 25)
                         {
                             MakePictureBox("drinkIcon", new Point(locationX + tableImages[0].Width + 2, locationY), Resources.Coffee_32);
                             break;
                         }
-                    foreach (OrderItem OI in table.order.listOrderItems)
+                    foreach (OrderItem OI in table.order.ListOrderItems)
                         if (OI.menuItem.menuCat < 25)
                         {
                             MakePictureBox("foodIcon", new Point(locationX + tableImages[0].Width + 2, locationY + tableImages[table.tableId - 1].Height - sizeX), Resources.Food_32);
@@ -159,7 +159,7 @@ namespace LoginForm
         {
             if (table.status == TableStatus.Ordered)
             {
-                int waitTimetotalSeconds = (int)(DateTime.Now - table.order.dateTime).TotalSeconds;
+                int waitTimetotalSeconds = (int)(DateTime.Now - table.order.DateTime).TotalSeconds;
 
                 if (waitTimetotalSeconds > 0)
                 {
