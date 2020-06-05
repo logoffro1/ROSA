@@ -61,6 +61,7 @@
             this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.barToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitchenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -430,11 +431,12 @@
             this.tablesToolStripMenuItem1,
             this.orderToolStripMenuItem1,
             this.barToolStripMenuItem,
-            this.kitchenToolStripMenuItem});
+            this.kitchenToolStripMenuItem,
+            this.managementToolStripMenuItem});
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
             this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.navbar.Size = new System.Drawing.Size(1005, 36);
+            this.navbar.Size = new System.Drawing.Size(1006, 36);
             this.navbar.TabIndex = 2;
             // 
             // homeToolStripMenuItem1
@@ -450,7 +452,6 @@
             this.tablesToolStripMenuItem1.Name = "tablesToolStripMenuItem1";
             this.tablesToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
             this.tablesToolStripMenuItem1.Text = "Tables";
-            this.tablesToolStripMenuItem1.Visible = false;
             this.tablesToolStripMenuItem1.Click += new System.EventHandler(this.tablesToolStripMenuItem1_Click);
             // 
             // orderToolStripMenuItem1
@@ -459,14 +460,12 @@
             this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
             this.orderToolStripMenuItem1.Size = new System.Drawing.Size(78, 32);
             this.orderToolStripMenuItem1.Text = "Order";
-            this.orderToolStripMenuItem1.Visible = false;
             // 
             // barToolStripMenuItem
             // 
             this.barToolStripMenuItem.Name = "barToolStripMenuItem";
             this.barToolStripMenuItem.Size = new System.Drawing.Size(55, 32);
             this.barToolStripMenuItem.Text = "Bar";
-            this.barToolStripMenuItem.Visible = false;
             this.barToolStripMenuItem.Click += new System.EventHandler(this.barToolStripMenuItem_Click);
             // 
             // kitchenToolStripMenuItem
@@ -474,7 +473,16 @@
             this.kitchenToolStripMenuItem.Name = "kitchenToolStripMenuItem";
             this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
             this.kitchenToolStripMenuItem.Text = "Kitchen";
-            this.kitchenToolStripMenuItem.Visible = false;
+            this.kitchenToolStripMenuItem.Click += new System.EventHandler(this.kitchenToolStripMenuItem_Click);
+            // 
+            // managementToolStripMenuItem
+            // 
+            this.managementToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.managementToolStripMenuItem.Font = new System.Drawing.Font("Tw Cen MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(159, 32);
+            this.managementToolStripMenuItem.Text = "Management";
+            this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
             // 
             // homeToolStripMenuItem
             // 
@@ -559,8 +567,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LoginForm.Properties.Resources.HOME_BG;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this.navbar);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.lblWelcome);
@@ -641,5 +649,6 @@
         private System.Windows.Forms.CheckBox btnReservedYes;
         private System.Windows.Forms.CheckBox btnReservedNo;
         private System.Windows.Forms.Button btnOrder;
+        private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
     }
 }

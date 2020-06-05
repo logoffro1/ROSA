@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RosaLogic;
 using RosaModel;
-using System.IO;
 namespace LoginForm
 {   
      /// <summary>
@@ -136,29 +130,27 @@ namespace LoginForm
         }
         private void tablesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            tableViewForm tableForm = new tableViewForm(employee);
-            tableForm.Show();
-            this.Dispose();
+            new SwitchForms(employee, this, new tableViewForm(employee));
             
 
         }
             private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BarKitchenForm menuItemForm = new BarKitchenForm(employee,"bar");
-            this.Hide();
-            menuItemForm.Show();
+            //BarKitchenForm menuItemForm = new BarKitchenForm(employee,"bar");
+            //this.Hide();
+            //menuItemForm.Show();
+            new SwitchForms(employee, this, new BarKitchenForm(employee, "bar"));
         }
         private void orderToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OrderForm ot = new OrderForm(employee);
             ot.Show();
             this.Hide();
+            
         }
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BarKitchenForm menuItemForm = new BarKitchenForm(employee, "kitchen");
-            this.Hide();
-            menuItemForm.Show();
+            new SwitchForms(employee, this, new BarKitchenForm(employee, "kitchen"));
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -180,6 +172,11 @@ namespace LoginForm
         private void txtNotes_TextChanged(object sender, EventArgs e)
         {
             btnSave.Text = "SAVE";
+        }
+
+        private void managementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new SwitchForms(employee, this, new ManagementForm(employee));
         }
     }
 }

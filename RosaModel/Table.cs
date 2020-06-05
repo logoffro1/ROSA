@@ -1,31 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RosaModel
+﻿namespace RosaModel
 {
-   public class Table
+    /// <summary>
+    ///   Table Model class
+    ///   Made by Cosmin Ilie
+    ///   Student number: 645976
+    /// </summary>
+    public class Table
     {
         public int tableId { get; set; }
         public int capacity { get; set; }
         public bool isAvailable { get; set; }
         public bool isReserved { get; set; }
         public Order order { get; set; }
-
-        public TableStatus CheckStatus()
+        public TableStatus status
         {
-            TableStatus status = TableStatus.Empty;
-            if (!isAvailable)
+            get
             {
-                if (order == null)
-                    status = TableStatus.Waiting;
-                else
-                    if (!order.isPaid)
+                TableStatus status = TableStatus.Empty;
+                if (!isAvailable)
+                {
+                    if (order == null)
+                        status = TableStatus.Waiting;
+                    else
+                        if (!order.isPaid)
                         status = TableStatus.Ordered;
+                }
+                return status;
             }
-            return status;          
         }
     }
 }
