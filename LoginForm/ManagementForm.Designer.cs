@@ -38,6 +38,7 @@
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnRevenue = new System.Windows.Forms.Button();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
             this.navbar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,6 +138,16 @@
             this.btnRevenue.Text = "Revenue";
             this.btnRevenue.UseVisualStyleBackColor = true;
             // 
+            // btnAddEmployee
+            // 
+            this.btnAddEmployee.Location = new System.Drawing.Point(231, 131);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(116, 48);
+            this.btnAddEmployee.TabIndex = 8;
+            this.btnAddEmployee.Text = "Add Employee";
+            this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
+            // 
             // ManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -144,6 +155,7 @@
             this.BackgroundImage = global::LoginForm.Properties.Resources.BG_TABLESPAGE;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.btnAddEmployee);
             this.Controls.Add(this.btnRevenue);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.lblWelcome);
@@ -174,5 +186,6 @@
         private System.Windows.Forms.Label lblLogout;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnRevenue;
+        private System.Windows.Forms.Button btnAddEmployee;
     }
 }

@@ -24,9 +24,11 @@ namespace RosaDAL
             String query = "update [table] set isAvailable = @isAvailable, isReserved = @isReserved where table_id = @Id; ";
 
             SqlParameter[] sqlParameters = new SqlParameter[3]
-               {new SqlParameter("@isAvailable", Convert.ToInt32(isAvailable)),
+               {
+                   new SqlParameter("@isAvailable", Convert.ToInt32(isAvailable)),
                    new SqlParameter("@isReserved", Convert.ToInt32(isReserved)),
-                   new SqlParameter("@Id", table.tableId)};
+                   new SqlParameter("@Id", table.tableId)
+               };
 
             ExecuteEditQuery(query, sqlParameters);
         }

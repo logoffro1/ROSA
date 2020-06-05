@@ -53,5 +53,10 @@ namespace LoginForm
             loginForm.Show();
             this.Hide();
         }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            new SwitchForms(employee, this, new AddEmployeeForm(employee));
+        }
     }
 }

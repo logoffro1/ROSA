@@ -79,5 +79,19 @@ namespace RosaLogic
             }
 
         }
+
+        public Employee GetAccountByUsername(string username)
+        {
+            try
+            {
+                return employeeDAO.GetAccountByUsername(username);
+            }
+            catch
+            {
+                ErrorDAO error = new ErrorDAO("Couldn't read from the employee Table");
+                return null;
+            }
+
+        }
     }
 }
