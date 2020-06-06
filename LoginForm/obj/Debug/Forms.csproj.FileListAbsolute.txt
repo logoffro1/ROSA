@@ -173,3 +173,5 @@ C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.BarKitchenFo
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.ManagementForm.resources
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.ManagementForm.resources
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.AddEmployeeForm.resources
+C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.CustomControls.employeeUC.resources
+C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.EditEmployeeForm.resources

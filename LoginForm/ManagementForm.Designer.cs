@@ -39,6 +39,7 @@
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnRevenue = new System.Windows.Forms.Button();
             this.btnAddEmployee = new System.Windows.Forms.Button();
+            this.pnlEmployees = new System.Windows.Forms.FlowLayoutPanel();
             this.navbar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,13 +141,23 @@
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(231, 131);
+            this.btnAddEmployee.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEmployee.Location = new System.Drawing.Point(732, 116);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(116, 48);
+            this.btnAddEmployee.Size = new System.Drawing.Size(151, 43);
             this.btnAddEmployee.TabIndex = 8;
             this.btnAddEmployee.Text = "Add Employee";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
             this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
+            // 
+            // pnlEmployees
+            // 
+            this.pnlEmployees.AutoScroll = true;
+            this.pnlEmployees.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlEmployees.Location = new System.Drawing.Point(277, 116);
+            this.pnlEmployees.Name = "pnlEmployees";
+            this.pnlEmployees.Size = new System.Drawing.Size(449, 593);
+            this.pnlEmployees.TabIndex = 9;
             // 
             // ManagementForm
             // 
@@ -155,6 +166,7 @@
             this.BackgroundImage = global::LoginForm.Properties.Resources.BG_TABLESPAGE;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.pnlEmployees);
             this.Controls.Add(this.btnAddEmployee);
             this.Controls.Add(this.btnRevenue);
             this.Controls.Add(this.lblLogout);
@@ -167,6 +179,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagementForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManagementForm_FormClosing);
+            this.Load += new System.EventHandler(this.ManagementForm_Load);
             this.navbar.ResumeLayout(false);
             this.navbar.PerformLayout();
             this.ResumeLayout(false);
@@ -187,5 +200,6 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnRevenue;
         private System.Windows.Forms.Button btnAddEmployee;
+        private System.Windows.Forms.FlowLayoutPanel pnlEmployees;
     }
 }

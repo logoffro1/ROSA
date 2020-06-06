@@ -2,12 +2,12 @@
 using RosaDAL;
 using RosaModel;
 namespace RosaLogic
-{ 
+{
     /// <summary>
-  ///   Employee Service class
-  ///   Made by Cosmin Ilie
-  ///   Student number: 645976
-  /// </summary>
+    ///   Employee Service class
+    ///   Made by Cosmin Ilie
+    ///   Student number: 645976
+    /// </summary>
     public class Employee_Service
     {
         EmployeeDAO employeeDAO = new EmployeeDAO();
@@ -39,22 +39,22 @@ namespace RosaLogic
         {
             employeeDAO.EditAccount(username, notes);
         }
-            public string[] GetNotes(Employee employee)
+        public string[] GetNotes(Employee employee)
         {
             return employeeDAO.GetNotes(employee);
         }
-            public void EditAccount(Employee oldEmployee,Employee newEmployee)
+        public void EditAccount(Employee oldEmployee, Employee newEmployee)
         {
             try
             {
-                employeeDAO.EditAccount(oldEmployee,newEmployee);
+                employeeDAO.EditAccount(oldEmployee, newEmployee);
             }
             catch
             {
                 ErrorDAO error = new ErrorDAO("Couldn't update the Employee Table");
             }
         }
-            public void RemoveAccount(Employee employee)
+        public void RemoveAccount(Employee employee)
         {
             try
             {
