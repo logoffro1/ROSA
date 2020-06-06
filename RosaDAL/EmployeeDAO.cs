@@ -21,7 +21,7 @@ namespace RosaDAL
         }
         public void AddAccount(Employee employee)
         {
-            String query = "insert into employee values(@role, @name,@userName,@password);";
+            String query = "insert into employee values(@role, @name,@userName,@password, NULL);";
             SqlParameter[] parameters = new SqlParameter[4]
             {
                     new SqlParameter("@role", (int)employee.role),
@@ -84,6 +84,22 @@ namespace RosaDAL
             }
             return notes;
         }
+        public Employee GetAccountByUsername(string username)
+        {
+            Employee employee = null;
+
+            using (SqlCommand cmd = new SqlCommand("select employee_id, role_id, employeeName, username, [password] FROM employee where username = @username;", conn))
+            {
+                cmd.Parameters.AddWithValue("@username", username);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                        employee = ReadEmployee(reader);
+                }
+            }
+            return employee;
+        }
+    
         public Employee GetAccount(string username, string password)
         {
             Employee employee = null;
@@ -136,4 +152,6 @@ namespace RosaDAL
             return employees;
         }
     }
+
 }
+

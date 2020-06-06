@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RosaLogic;
 using RosaModel;
-
+using LoginForm.CustomControls;
 namespace LoginForm
 {
     public partial class ManagementForm : Form
@@ -54,24 +54,27 @@ namespace LoginForm
             this.Hide();
         }
 
-        private void managementToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-
+            new SwitchForms(employee, this, new AddEmployeeForm(employee));
         }
 
-        private void btnRevenue_Click(object sender, EventArgs e)
+        private void ManagementForm_Load(object sender, EventArgs e)
         {
-            Revenue newRevenue = new Revenue();
-            newRevenue.Show();
-            this.Hide();
-
+            LoadEmployees();
         }
-
-        private void revenueToolStripMenuItem_Click(object sender, EventArgs e)
+      public void LoadEmployees()
         {
-            Revenue newRevenue = new Revenue();
-            newRevenue.Show();
-            this.Hide();
+            Employee_Service employeeService = new Employee_Service();
+            List<Employee> employees = employeeService.GetEmployees();
+
+            employeeUC employeeControl;
+            pnlEmployees.Controls.Clear();
+            foreach (Employee emp in employees)
+            {
+                employeeControl = new employeeUC(employee,emp,this);
+                pnlEmployees.Controls.Add(employeeControl);
+            }
         }
     }
 }

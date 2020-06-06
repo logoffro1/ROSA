@@ -4,12 +4,12 @@ using System.Data;
 using System.Data.SqlClient;
 using RosaModel;
 namespace RosaDAL
-{ 
+{
     /// <summary>
-  ///   Table DAO class
-  ///   Made by Cosmin Ilie
-  ///   Student number: 645976
-  /// </summary>
+    ///   Table DAO class
+    ///   Made by Cosmin Ilie
+    ///   Student number: 645976
+    /// </summary>
     public class TableDAO : Base
     {
         public List<Table> Db_Get_AllTables()
@@ -22,13 +22,15 @@ namespace RosaDAL
         public void UpdateTable(Table table, bool isAvailable, bool isReserved)
         {
             String query = "update [table] set isAvailable = @isAvailable, isReserved = @isReserved where table_id = @Id; ";
-              
-            SqlParameter[] sqlParameters = new SqlParameter[3] 
-               {new SqlParameter("@isAvailable", Convert.ToInt32(isAvailable)),
+
+            SqlParameter[] sqlParameters = new SqlParameter[3]
+               {
+                   new SqlParameter("@isAvailable", Convert.ToInt32(isAvailable)),
                    new SqlParameter("@isReserved", Convert.ToInt32(isReserved)),
-                   new SqlParameter("@Id", table.tableId)};
-                
-                ExecuteEditQuery(query, sqlParameters);
+                   new SqlParameter("@Id", table.tableId)
+               };
+
+            ExecuteEditQuery(query, sqlParameters);
         }
         public Order GetOrderByTable(int table_id)
         {
@@ -49,15 +51,16 @@ namespace RosaDAL
         {
             Order order = new Order()
             {
-                orderID = (int)reader["order_id"],
-                dateTime = (DateTime)reader["orderDate"],
-                table = (int)reader["table_id"]
+                OrderID = (int)reader["order_id"],
+                DateTime = (DateTime)reader["orderDate"]
             };
 
+            order.Table.tableId = (int)reader["table_id"];
+
             if (reader["isPaid"] != DBNull.Value)
-                order.isPaid = (bool)reader["isPaid"];
+                order.IsPaid = (bool)reader["isPaid"];
             else
-                order.isPaid = false;
+                order.IsPaid = false;
             return order;
         }
         private List<Table> ReadTables(DataTable dataTable)
@@ -78,7 +81,7 @@ namespace RosaDAL
                 Order order = GetOrderByTable(table.tableId);
 
                 if (order != null)
-                    if (!order.isPaid)
+                    if (!order.IsPaid)
                         table.order = order;
 
                 tablesTemp.Add(table);

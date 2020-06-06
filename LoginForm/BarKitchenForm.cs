@@ -38,7 +38,7 @@ namespace LoginForm
             switch (menuItem.orderItem.status)
             {
                 case StatusEnum.Ordered:
-                    if (menuItem.order.dateTime.AddMinutes(15) < DateTime.Now)
+                    if (menuItem.order.DateTime.AddMinutes(15) < DateTime.Now)
                     { return Color.Red; }
                     else
                     {
@@ -60,12 +60,12 @@ namespace LoginForm
             List<ListViewItem> stucustList = new List<ListViewItem>();
             for (int i = 0; i < barLIst.Count; i++)
             {
-                stucust = new ListViewItem(barLIst[i].order.dateTime.ToString("HH:mm:ss"));
-                stucust.SubItems.Add(barLIst[i].order.table.ToString());
+                stucust = new ListViewItem(barLIst[i].order.DateTime.ToString("HH:mm:ss"));
+                stucust.SubItems.Add(barLIst[i].order.Table.tableId.ToString());
                 stucust.SubItems.Add(barLIst[i].orderItem.amount.ToString());
                 stucust.SubItems.Add(barLIst[i].Name);
                 stucust.SubItems.Add(barLIst[i].orderItem.status.ToString());
-                stucust.SubItems.Add(barLIst[i].order.notes.ToString());
+                stucust.SubItems.Add(barLIst[i].order.Notes.ToString());
                 stucust.SubItems.Add(barLIst[i].orderItem.orderID.ToString());
                 stucust.BackColor = checkStatus(barLIst[i]);
                 stucustList.Add(stucust);

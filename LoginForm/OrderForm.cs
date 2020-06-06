@@ -60,8 +60,8 @@ namespace LoginForm
             foreach (Order s in Orderlist)
             {
 
-                ListViewItem li = new ListViewItem(s.orderID.ToString());
-                li.SubItems.Add(s.table.ToString());
+                ListViewItem li = new ListViewItem(s.OrderID.ToString());
+                li.SubItems.Add(s.Table.tableId.ToString());
                // li.SubItems.Add(s.isPaid.ToString());
 
                 OrderView.Items.Add(li);

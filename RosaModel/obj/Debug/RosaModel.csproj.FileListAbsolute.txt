@@ -5,7 +5,6 @@ C:\Users\logoff\Desktop\RosaDAL\RosaModel\obj\Debug\RosaModel.dll
 C:\Users\logoff\Desktop\RosaDAL\RosaModel\obj\Debug\RosaModel.pdb
 C:\Users\logoff\source\repos\ROSA\RosaModel\bin\Debug\RosaModel.dll
 C:\Users\logoff\source\repos\ROSA\RosaModel\bin\Debug\RosaModel.pdb
-C:\Users\logoff\source\repos\ROSA\RosaModel\obj\Debug\RosaModel.csprojAssemblyReference.cache
 C:\Users\logoff\source\repos\ROSA\RosaModel\obj\Debug\RosaModel.dll
 C:\Users\logoff\source\repos\ROSA\RosaModel\obj\Debug\RosaModel.pdb
 D:\VS Repository\ROSA\RosaModel\bin\Debug\RosaModel.dll
@@ -30,3 +29,4 @@ C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaModel\o
 C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaModel\obj\Debug\RosaModel.csproj.CoreCompileInputs.cache
 C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaModel\obj\Debug\RosaModel.dll
 C:\Users\Eigenaar\Downloads\TERM 4\Project Building Application\ROSA\RosaModel\obj\Debug\RosaModel.pdb
+C:\Users\logoff\source\repos\ROSA\RosaModel\obj\Debug\RosaModel.csprojAssemblyReference.cache
