@@ -48,7 +48,7 @@ namespace LoginForm
                         item.menuItems,
                         item.sales.ToString(),
                         item.Turnover.ToString("0.00 €"), // format the turnover to a currency format
-                        item.boughtByCustomer.ToString()
+                        
                     };
                     //add the sales and turnover to a total
                     totalSales += item.sales;
@@ -132,9 +132,7 @@ namespace LoginForm
 
         private void butcalrevenue_Click(object sender, EventArgs e)
         {
-            Revenue RevenueForm = new Revenue();
-            RevenueForm.ShowDialog();
-            this.Hide();
+            
         }
     }
 }

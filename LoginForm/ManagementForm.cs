@@ -53,5 +53,25 @@ namespace LoginForm
             loginForm.Show();
             this.Hide();
         }
+
+        private void managementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            Revenue newRevenue = new Revenue();
+            newRevenue.Show();
+            this.Hide();
+
+        }
+
+        private void revenueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Revenue newRevenue = new Revenue();
+            newRevenue.Show();
+            this.Hide();
+        }
     }
 }

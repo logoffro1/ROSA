@@ -38,6 +38,7 @@
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnRevenue = new System.Windows.Forms.Button();
+            this.revenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.navbar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,10 +99,13 @@
             // managementToolStripMenuItem
             // 
             this.managementToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.revenueToolStripMenuItem});
             this.managementToolStripMenuItem.Font = new System.Drawing.Font("Tw Cen MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
             this.managementToolStripMenuItem.Size = new System.Drawing.Size(159, 32);
             this.managementToolStripMenuItem.Text = "Management";
+            this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
             // 
             // lblLogout
             // 
@@ -130,12 +134,20 @@
             // 
             // btnRevenue
             // 
-            this.btnRevenue.Location = new System.Drawing.Point(45, 212);
+            this.btnRevenue.Location = new System.Drawing.Point(56, 270);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Size = new System.Drawing.Size(79, 33);
             this.btnRevenue.TabIndex = 7;
             this.btnRevenue.Text = "Revenue";
             this.btnRevenue.UseVisualStyleBackColor = true;
+            this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
+            // 
+            // revenueToolStripMenuItem
+            // 
+            this.revenueToolStripMenuItem.Name = "revenueToolStripMenuItem";
+            this.revenueToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.revenueToolStripMenuItem.Text = "Revenue";
+            this.revenueToolStripMenuItem.Click += new System.EventHandler(this.revenueToolStripMenuItem_Click);
             // 
             // ManagementForm
             // 
@@ -174,5 +186,6 @@
         private System.Windows.Forms.Label lblLogout;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnRevenue;
+        private System.Windows.Forms.ToolStripMenuItem revenueToolStripMenuItem;
     }
 }
