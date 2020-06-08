@@ -15,7 +15,7 @@ namespace RosaDAL
         public List<Table> Db_Get_AllTables()
         {
             //read tables from database
-            String query = "select [table].table_id,[order].order_id, capacity, isAvailable, isReserved,[order].[orderDate] FROM [table] LEFT JOIN [order] ON [order].table_id=[table].table_id ORDER BY table_id,orderDate DESC;";
+            String query = "selct [table].table_id,[order].order_id, capacity, isAvailable, isReserved,[order].[orderDate] FROM [table] LEFT JOIN [order] ON [order].table_id=[table].table_id ORDER BY table_id,orderDate DESC;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }

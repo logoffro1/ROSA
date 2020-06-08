@@ -28,8 +28,8 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorHandler error = new ErrorHandler("Couldn't read the Tables from the Database!");
-                throw new Exception("error");
+                new ErrorHandler("Couldn't read the Tables from the Database!");
+                return null;
             }
             
         }
@@ -41,7 +41,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorHandler error = new ErrorHandler("Couldn't update Table to the database");
+               new ErrorHandler("Couldn't update Table to the database");
             }         
         }
     }

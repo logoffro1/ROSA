@@ -4,7 +4,7 @@ namespace RosaDAL
 {
     public class ErrorHandler
     {
-        public ErrorHandler(string explanation)
+        public ErrorHandler(string explanation) // the explanation is simplified so a normal user can understand it
         {
 
             string file = @"../../../Error.log";  //put the file path in the root folder
