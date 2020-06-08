@@ -23,7 +23,7 @@ namespace RosaLogic
             catch (Exception)
             {
 
-                ErrorDAO error = new ErrorDAO("Couldn't read from the Database!");
+                ErrorHandler error = new ErrorHandler("Couldn't read from the Database!");
                 return null;
 
             }
@@ -108,7 +108,7 @@ namespace RosaLogic
             catch (Exception)
             {
 
-                ErrorDAO error = new ErrorDAO("Couldn't read from the Database!");
+                ErrorHandler error = new ErrorHandler("Couldn't read from the Database!");
                 return null;
 
             }

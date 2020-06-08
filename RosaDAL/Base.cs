@@ -30,8 +30,7 @@ namespace RosaDAL
             }
             catch
             {
-                string exp = "RosaAPP couldn't open the connection";
-                ErrorDAO error = new ErrorDAO(exp);
+                throw;
 
             }
 
@@ -47,8 +46,7 @@ namespace RosaDAL
             }
             catch
             {
-                string exp = "RosaAPP couldn't close the connection";
-                ErrorDAO error = new ErrorDAO(exp);
+                throw;
             }
 
         }
@@ -65,8 +63,6 @@ namespace RosaDAL
             }
             catch
             {
-                string exp = "RosaAPP couldn't execute query";
-                ErrorDAO error = new ErrorDAO(exp);
                 throw;
             }
         }
@@ -86,8 +82,7 @@ namespace RosaDAL
             }
             catch
             {
-                string exp = "RosaAPP couldn't execute the edit query";
-                ErrorDAO error = new ErrorDAO(exp);
+                throw;
             }
             finally
             {
@@ -116,9 +111,7 @@ namespace RosaDAL
             }
             catch
             {
-                string exp = "RosaAPP couldn't execute the select query";
-                ErrorDAO error = new ErrorDAO(exp);
-                return null;
+                throw;
 
             }
             finally
