@@ -19,18 +19,17 @@ namespace LoginForm
         {
             Employee_Service employeeService = new Employee_Service();
 
-            if (string.IsNullOrWhiteSpace(txtUsername.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
+            if (txtUsername.Text == string.Empty || txtPassword.Text == string.Empty)
             {
                 //if the textboxes are empty, give error message
                 lblError.Show();
                 lblError.Text = "Username and Password required!";
-
             }
             else //if they are not empty, read the employees from the database and compare them with the input from the user
             {
                 lblError.Hide();
                 //return from the database only the employee that matches those credentials
-               Employee employee = employeeService.GetAccount(txtUsername.Text,txtPassword.Text);
+                Employee employee = employeeService.GetAccount(txtUsername.Text, txtPassword.Text);
 
                 if (employee == null)
                 {
@@ -57,10 +56,9 @@ namespace LoginForm
                             break;
                         default:
                             OpenForm(new homeForm(employee));
-                            break;                           
+                            break;
                     }
                 }
-
             }
         }
         void OpenForm(Form formToOpen)
@@ -75,13 +73,13 @@ namespace LoginForm
         private void txtUsername_KeyDown(object sender, KeyEventArgs e)
         {
             //if enter is pressed, call the CheckCredentials() method
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode.Equals(Keys.Enter))
                 CheckCredentials();
         }
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             //if enter is pressed, call the CheckCredentials() method
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode.Equals(Keys.Enter))
                 CheckCredentials();
         }
         private void eyePic_Click(object sender, EventArgs e)

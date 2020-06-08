@@ -28,7 +28,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read the Tables from the Database!");
+                ErrorHandler error = new ErrorHandler("Couldn't read the Tables from the Database!");
                 throw new Exception("error");
             }
             
@@ -41,7 +41,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't update Table to the database");
+                ErrorHandler error = new ErrorHandler("Couldn't update Table to the database");
             }         
         }
     }

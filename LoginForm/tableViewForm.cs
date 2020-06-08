@@ -16,11 +16,12 @@ namespace LoginForm
     {
         private Employee employee;
 
-        private List<PictureBox> tableImages;   //create a list for all the table images
-        private List<Table> tables = new List<Table>();
+        private PictureBox[] tableImages; //create an array for all the table images
+        private List<Table> tables;
         private Table selectedTable; //the current selected table by the user
         private Timer timerWaitTime = new Timer();
         private List<PictureBox> iconsPB = new List<PictureBox>();
+    
         public tableViewForm(Employee employee)
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace LoginForm
             tables = tableService.GetAllTables(); //return all the tables from the database
 
             //add all the table images in a list 
-            tableImages = new List<PictureBox>() { picTable1, picTable2, picTable3, picTable4, picTable5, picTable6, picTable7, picTable8, picTable9, picTable10 };
+            tableImages = new PictureBox[10]{ picTable1, picTable2, picTable3, picTable4, picTable5, picTable6, picTable7, picTable8, picTable9, picTable10 };
 
             ChangeTableColor();
         }
@@ -238,9 +239,11 @@ namespace LoginForm
 
                     ShowTableInfo(selectedTable.tableId);
                     tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved);
-                    ChangeTableColor();           
+                    ChangeTableColor();       
+
             }
         }
+
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             homeForm homeForm = new homeForm(employee);
@@ -255,7 +258,6 @@ namespace LoginForm
         {
             new SwitchForms(employee, this, new BarKitchenForm(employee, "bar"));
         }
-
         private void btnReservedYes_CheckedChanged(object sender, EventArgs e)
         {
             if (btnReservedYes.Checked)
@@ -266,7 +268,6 @@ namespace LoginForm
             }
 
         }
-
         private void btnReservedNo_CheckedChanged(object sender, EventArgs e)
         {
             if (btnReservedNo.Checked)
@@ -276,18 +277,15 @@ namespace LoginForm
                 btnReservedYes.Checked = false;
             }
         }
-
         private void managementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new SwitchForms(employee, this, new ManagementForm(employee));
 
         }
-
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new SwitchForms(employee, this, new BarKitchenForm(employee, "kitchen"));
         }
-
         private void btnOrder_Click(object sender, EventArgs e)
         {
 
