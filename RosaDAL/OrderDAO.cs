@@ -11,7 +11,7 @@ namespace RosaDAL
 {
     public class OrderDAO : Base
     {
-        public List<Order> Db_Get_AllOrders()
+        public List<Order> Db_Get_AllOrder()
         {
             //read orders from database
             string query = "select order_id,table_id,isPaid,notes from [order]";

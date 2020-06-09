@@ -387,6 +387,7 @@
             this.DinnerView.TabIndex = 0;
             this.DinnerView.UseCompatibleStateImageBehavior = false;
             this.DinnerView.View = System.Windows.Forms.View.Details;
+            this.DinnerView.SelectedIndexChanged += new System.EventHandler(this.DinnerView_SelectedIndexChanged);
             // 
             // ItemName
             // 

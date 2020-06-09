@@ -62,7 +62,7 @@ namespace LoginForm
 
                 ListViewItem li = new ListViewItem(s.OrderID.ToString());
                 li.SubItems.Add(s.Table.tableId.ToString());
-               // li.SubItems.Add(s.isPaid.ToString());
+                //li.SubItems.Add(s.isPaid.ToString());
 
                 OrderView.Items.Add(li);
             }
@@ -139,6 +139,11 @@ namespace LoginForm
         }
 
         private void OrderForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrderView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

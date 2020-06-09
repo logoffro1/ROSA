@@ -31,7 +31,6 @@ namespace RosaDAL
             catch
             {
                 throw;
-
             }
 
             return conn;

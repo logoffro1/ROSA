@@ -111,5 +111,10 @@ namespace LoginForm
         {
             new SwitchForms(employee, this, new ManagementForm(employee));
         }
+
+        private void orderToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

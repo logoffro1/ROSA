@@ -17,7 +17,7 @@ namespace RosaLogic
             try
             {
 
-                return orderDAO.Db_Get_AllOrders();
+                return orderDAO.Db_Get_AllOrder();
 
             }
             catch (Exception)

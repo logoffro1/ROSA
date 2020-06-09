@@ -48,7 +48,7 @@
             // 
             this.PayButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PayButton.Location = new System.Drawing.Point(627, 532);
-            this.PayButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PayButton.Margin = new System.Windows.Forms.Padding(2);
             this.PayButton.Name = "PayButton";
             this.PayButton.Size = new System.Drawing.Size(116, 42);
             this.PayButton.TabIndex = 0;
@@ -68,6 +68,7 @@
             this.OrderView.TabIndex = 1;
             this.OrderView.UseCompatibleStateImageBehavior = false;
             this.OrderView.View = System.Windows.Forms.View.Details;
+            this.OrderView.SelectedIndexChanged += new System.EventHandler(this.OrderView_SelectedIndexChanged);
             // 
             // OrderID
             // 
@@ -192,7 +193,7 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.OrderView);
             this.Controls.Add(this.PayButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "OrderForm";
             this.Text = "Order";
             this.Load += new System.EventHandler(this.OrderForm_Load);

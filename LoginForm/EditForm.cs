@@ -253,6 +253,9 @@ namespace LoginForm
             DrinksPanel.Show();
         }
 
-        
+        private void DinnerView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
