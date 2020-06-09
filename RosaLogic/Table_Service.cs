@@ -16,22 +16,21 @@ namespace RosaLogic
 
         public List<Table> GetAllTables()
         {
+            List<Table> tables = null;
             try
             {
-                List<Table> tables= tableDAO.Db_Get_AllTables();
+                tables= tableDAO.Db_Get_AllTables();
                 foreach(Table t in tables)
                 {
                     if(t.order!= null)
                     t.order.ListOrderItems = orderItemDAO.GetOrderItemsById(t.order.OrderID);
                 }
-                return tables;
             }
             catch
             {
                 new ErrorHandler("Couldn't read the Tables from the Database!");
-                return null;
             }
-            
+            return tables;
         }
         public void UpdateTable(Table table, bool isAvailable, bool isReserved)
         {

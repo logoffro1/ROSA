@@ -15,7 +15,7 @@ namespace RosaDAL
         public List<Table> Db_Get_AllTables()
         {
             //read tables from database
-            String query = "selct [table].table_id,[order].order_id, capacity, isAvailable, isReserved,[order].[orderDate] FROM [table] LEFT JOIN [order] ON [order].table_id=[table].table_id ORDER BY table_id,orderDate DESC;";
+            String query = "select [table].table_id,[order].order_id, capacity, isAvailable, isReserved,[order].[orderDate] FROM [table] LEFT JOIN [order] ON [order].table_id=[table].table_id ORDER BY table_id,orderDate DESC;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -36,7 +36,9 @@ namespace RosaDAL
         {
             OpenConnection();
             Order order = null;
-            using (SqlCommand cmd = new SqlCommand("select TOP 1 order_id, table_id, orderDate, notes, isPaid FROM [order] WHERE table_id = @table_id ORDER BY orderDate DESC;", conn))
+
+            String query = "SELECT TOP 1 order_id, table_id, orderDate, notes, isPaid FROM [order] WHERE table_id = @table_id ORDER BY orderDate DESC;";
+            using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@table_id", table_id);
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -49,18 +51,16 @@ namespace RosaDAL
         }
         private Order ReadOrder(SqlDataReader reader)
         {
+            //read the whole order - DO NOT FORGET TO IMPLEMENT
             Order order = new Order()
             {
                 OrderID = (int)reader["order_id"],
-                DateTime = (DateTime)reader["orderDate"]
+                DateTime = (DateTime)reader["orderDate"],
+                IsPaid = (bool)reader["isPaid"]               
             };
 
             order.Table.tableId = (int)reader["table_id"];
 
-            if (reader["isPaid"] != DBNull.Value)
-                order.IsPaid = (bool)reader["isPaid"];
-            else
-                order.IsPaid = false;
             return order;
         }
         private List<Table> ReadTables(DataTable dataTable)

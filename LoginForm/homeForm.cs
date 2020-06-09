@@ -5,12 +5,12 @@ using RosaLogic;
 using RosaModel;
 using LoginForm.Properties;
 namespace LoginForm
-{   
-     /// <summary>
-     /// HOME FORM
-     /// Made by Cosmin Ilie 
-     /// Student number: 645976
-     /// </summary>
+{
+    /// <summary>
+    /// HOME FORM
+    /// Made by Cosmin Ilie 
+    /// Student number: 645976
+    /// </summary>
     public partial class homeForm : Form
     {
         private Employee employee;
@@ -21,21 +21,21 @@ namespace LoginForm
         private const int nrOfPictures = 5;
         public homeForm(Employee employee)
         {
-           
+
             InitializeComponent();
 
             Employee_Service es = new Employee_Service();
             this.employee = employee;
-            this.employee.personalNotes = es.GetNotes(employee);          
+            this.employee.personalNotes = es.GetNotes(employee);
         }
         void AddImagesToLists()
         {
             //add all the help images
             helpImages = new Image[nrOfPictures] { Resources.helpTablesView, Resources.Table2, Resources.Table3, Resources.Table4, Resources.Table5 };
             //add all the circle picture boxes
-            circleImages = new PictureBox[nrOfPictures] {picCircle1,picCircle2,picCircle3,picCircle4,picCircle5 };         
+            circleImages = new PictureBox[nrOfPictures] { picCircle1, picCircle2, picCircle3, picCircle4, picCircle5 };
         }
-  
+
         private void mainForm_Load(object sender, EventArgs e)
         {
             InitNotes();
@@ -63,13 +63,13 @@ namespace LoginForm
             txtNotes.BackColor = Color.FromArgb(255, 255, 128);
             lblNotes.BackColor = Color.FromArgb(255, 255, 128);
             btnSave.BackColor = Color.FromArgb(255, 255, 128);
-            foreach(string s in employee.personalNotes)
-                txtNotes.Text += s + Environment.NewLine;               
+            foreach (string s in employee.personalNotes)
+                txtNotes.Text += s + Environment.NewLine;
         }
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        } 
+        }
         private void lblLogout_MouseHover(object sender, EventArgs e)
         {
             lblLogout.ForeColor = Color.Blue;
@@ -84,7 +84,7 @@ namespace LoginForm
             loginForm loginForm = new loginForm();
             loginForm.Show();
             this.Hide();
-        } 
+        }
         void ChangeHelpPicture(bool goingRight)
         {
             //if goingRight is true, then the user is pressing the right button, if false, then it's pressing the left button
@@ -123,9 +123,9 @@ namespace LoginForm
         }
         private void tablesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new SwitchForms(employee, this, new tableViewForm(employee));          
+            new SwitchForms(employee, this, new tableViewForm(employee));
         }
-            private void barToolStripMenuItem_Click(object sender, EventArgs e)
+        private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new SwitchForms(employee, this, new BarKitchenForm(employee, "bar"));
         }
@@ -133,7 +133,7 @@ namespace LoginForm
         {
             OrderForm ot = new OrderForm(employee);
             ot.Show();
-            this.Hide();         
+            this.Hide();
         }
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -147,12 +147,12 @@ namespace LoginForm
         private void WriteNotes()
         {
             Employee_Service es = new Employee_Service();
-                //get each new line into a separate string 
-                string[] txtLines = txtNotes.Text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            //get each new line into a separate string 
+            string[] txtLines = txtNotes.Text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-                string formattedLines = "";
-                foreach (string s in txtLines)
-                    formattedLines+=s+";";
+            string formattedLines = "";
+            foreach (string s in txtLines)
+                formattedLines += s + ";";
 
             es.EditAccount(employee.username, formattedLines);
         }

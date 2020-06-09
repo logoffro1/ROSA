@@ -277,7 +277,6 @@
             this.btnOrder.TabIndex = 33;
             this.btnOrder.Text = "ORDER";
             this.btnOrder.UseVisualStyleBackColor = true;
-            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnReservedYes
             // 

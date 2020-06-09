@@ -19,9 +19,8 @@ namespace LoginForm
         private PictureBox[] tableImages; //create an array for all the table images
         private List<Table> tables;
         private Table selectedTable; //the current selected table by the user
-        private Timer timerWaitTime = new Timer();
         private List<PictureBox> iconsPB = new List<PictureBox>();
-    
+
         public tableViewForm(Employee employee)
         {
             InitializeComponent();
@@ -36,7 +35,7 @@ namespace LoginForm
             tables = tableService.GetAllTables(); //return all the tables from the database
 
             //add all the table images in a list 
-            tableImages = new PictureBox[10]{ picTable1, picTable2, picTable3, picTable4, picTable5, picTable6, picTable7, picTable8, picTable9, picTable10 };
+            tableImages = new PictureBox[10] { picTable1, picTable2, picTable3, picTable4, picTable5, picTable6, picTable7, picTable8, picTable9, picTable10 };
 
             ChangeTableColor();
         }
@@ -113,9 +112,6 @@ namespace LoginForm
         }
         void ShowTableInfo(int tableId) //show the information for the selected table
         {
-         
-            timerWaitTime.Stop();
-
             selectedTable = tables[tableId - 1]; //set the current selected table
 
             //set the placeholder image to the corresponding table image from the list
@@ -136,10 +132,11 @@ namespace LoginForm
             lblStatus.Text = "Status: " + selectedTable.status.ToString();
 
             ChangeLabelWaitTime(selectedTable);
-
+             
+           
             if (selectedTable.status == TableStatus.Ordered)
             {
-
+                Timer timerWaitTime = new Timer();
                 timerWaitTime.Tick += TimerWaitTime_Tick;
                 timerWaitTime.Interval = 1000;
                 timerWaitTime.Start();
@@ -229,17 +226,17 @@ namespace LoginForm
             if (tempSelectedTable.isAvailable != selectedTable.isAvailable || tempSelectedTable.isReserved != selectedTable.isReserved)
             {
 
-                if(tempSelectedTable.isAvailable != selectedTable.isAvailable)
-                if (selectedTable.status != TableStatus.Ordered)
-                    selectedTable.isAvailable = tempSelectedTable.isAvailable;
-                else
-                MessageBox.Show("Can't change info if there is a running order(PLACEHOLDER)", "Placeholder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (tempSelectedTable.isAvailable != selectedTable.isAvailable)
+                    if (selectedTable.status != TableStatus.Ordered)
+                        selectedTable.isAvailable = tempSelectedTable.isAvailable;
+                    else
+                        MessageBox.Show("Can't change info if there is a running order(PLACEHOLDER)", "Placeholder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 selectedTable.isReserved = tempSelectedTable.isReserved;
 
-                    ShowTableInfo(selectedTable.tableId);
-                    tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved);
-                    ChangeTableColor();       
+                ShowTableInfo(selectedTable.tableId);
+                tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved);
+                ChangeTableColor();
 
             }
         }
@@ -285,10 +282,6 @@ namespace LoginForm
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new SwitchForms(employee, this, new BarKitchenForm(employee, "kitchen"));
-        }
-        private void btnOrder_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
