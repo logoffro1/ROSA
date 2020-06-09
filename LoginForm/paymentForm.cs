@@ -99,11 +99,11 @@ namespace LoginForm
 
             //Puts new payment/bill in the database and sets order to paid
             Payment_Service paymentService = new Payment_Service();
-            paymentService.PayBill(currentPayment);  
+            paymentService.PayBill(currentPayment);
 
             //UI to help show user that bill is paid
-            btn_bill.Visible = false;
-            lbl_billSuccess.Visible = true;
+            btn_bill.Hide();
+            lbl_billSuccess.Show();
         }
 
         //total price textbox changes amount according to what is in the rip textbox
@@ -161,9 +161,7 @@ namespace LoginForm
         //Returns to the order screen
         private void btn_return_Click(object sender, EventArgs e)
         {
-            OrderForm orderForm = new OrderForm(employee);
-            this.Close();       
-            orderForm.Show();
+
         }
 
         private void paymentForm_Load(object sender, EventArgs e)

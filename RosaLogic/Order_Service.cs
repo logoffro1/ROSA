@@ -29,6 +29,11 @@ namespace RosaLogic
             }
 
         }
+        public Order GetLatestOrder()
+        {
+
+            return orderDAO.GetLatestOrder();
+        }
         public void AddOrder(int tableID)
         {
             orderDAO.CreateNewOrder(tableID);

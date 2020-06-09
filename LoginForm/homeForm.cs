@@ -129,12 +129,6 @@ namespace LoginForm
         {
             new SwitchForms(employee, this, new BarKitchenForm(employee, "bar"));
         }
-        private void orderToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            OrderForm ot = new OrderForm(employee);
-            ot.Show();
-            this.Hide();
-        }
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new SwitchForms(employee, this, new BarKitchenForm(employee, "kitchen"));

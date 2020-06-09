@@ -2,12 +2,6 @@
 using RosaModel;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LoginForm
@@ -15,42 +9,55 @@ namespace LoginForm
     public partial class EditForm : Form
     {
         private Employee employee;
-        public EditForm(Employee employee)
+        private Table table;
+        private int orderId;
+        public EditForm(Employee employee, Table table, string panel)
         {
             this.employee = employee;
             InitializeComponent();
             DinnerPanel.Hide();
             LunchPanel.Hide();
             DrinksPanel.Hide();
-            
+            this.table = table;
+            if (table.order != null)
+                orderId = table.order.OrderID;
+            ChoosePanel(panel);
 
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void ChoosePanel(string panel)
         {
-        }
+            if (panel.Equals("order"))
+            {
+                OrderPanel.Show();
+                EditPanel.Hide();
+            }
 
+            else
+            {
+                EditPanel.Show();
+                OrderPanel.Hide();
+            }
+
+        }
         private void Backbuttonedit_Click(object sender, EventArgs e)  // this should go back to the tables page
         {
-            OrderForm orderForm = new OrderForm(employee);
-            orderForm.Show();
-            this.Close();
+            new SwitchForms(employee, this, new tableViewForm(employee));
         }
         private void DeleteOrderItemButton_Click(object sender, EventArgs e)
         {
-            RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  //deletes selected order item
+            Order_Service orderserv = new Order_Service();  //deletes selected order item
             orderserv.DeleteOrderItem(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
             Messagelabel.Text = "Deleted Order item with ID " + EditView.SelectedItems[0].SubItems[1].Text;
-            FillOrderViewByOrderID(int.Parse(ViewByIDBox.Text));
+            FillOrderViewByOrderID(orderId);
         }
 
         private void SelectOrderButton_Click(object sender, EventArgs e)
         {
-            FillOrderViewByOrderID(int.Parse(ViewByIDBox.Text));
+            FillOrderViewByOrderID(orderId);
         }
         private void FillOrderViewByOrderID(int orderID)
         {
-            RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
+            Order_Service orderserv = new Order_Service();
             List<OrderItem> orderitemlist = orderserv.GetByID(orderID);
 
             EditView.Items.Clear();
@@ -70,14 +77,14 @@ namespace LoginForm
         {
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // increases selected order item amount 
             orderserv.IncreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
-            FillOrderViewByOrderID(int.Parse(ViewByIDBox.Text));
+            FillOrderViewByOrderID(orderId);
         }
 
         private void DecreaseButton_Click(object sender, EventArgs e)
         {
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // decreases selected order item amount
             orderserv.DecreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
-            FillOrderViewByOrderID(int.Parse(ViewByIDBox.Text));
+            FillOrderViewByOrderID(orderId);
         }
 
         private void DecreaseAmountButton_Click(object sender, EventArgs e)  // this decreases the stock by the set amount | currently on a button but will be used each time an order item is added to an order
@@ -87,8 +94,8 @@ namespace LoginForm
             orderserv.DecreaseStock(int.Parse(MenuItemIDBox.Text), amount);
         }
 
-       
-        private void GetItems(int menuID,ListView listView)  // gets items for each part of the menu
+
+        private void GetItems(int menuID, ListView listView)  // gets items for each part of the menu
         {
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
             List<RosaModel.MenuItem> menuItemsList = orderserv.GetMenuItems(menuID);
@@ -102,13 +109,17 @@ namespace LoginForm
             }
         }
 
-        
+
 
         private void CreateOrderButton_Click(object sender, EventArgs e)
         {
             {
                 RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
-                orderserv.AddOrder(int.Parse(TableIDBox2.Text));
+                Table_Service ts = new Table_Service();
+                orderserv.AddOrder(table.tableId);
+                ts.UpdateTable(table, false, table.isReserved);
+
+
             }
         }
 
@@ -121,7 +132,7 @@ namespace LoginForm
                     Messagelabel.Text = "No item selected from menu";
                 }
             }
-            FillOrderViewByOrderID(int.Parse(ViewByIDBox.Text));
+            FillOrderViewByOrderID(orderId);
             ClearLists();
         }
         private bool CreateByID(ListView list)
@@ -129,8 +140,8 @@ namespace LoginForm
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // should get order ID from table screen instead of textbox
             if (list.SelectedItems.Count != 0)
             {
-                orderserv.CreateOrderItem(int.Parse(ViewByIDBox.Text), int.Parse(list.SelectedItems[0].SubItems[2].Text));
-                Messagelabel.Text = "Added " + list.SelectedItems[0].SubItems[0].Text + " to Order " + ViewByIDBox.Text;
+                orderserv.CreateOrderItem(orderId, int.Parse(list.SelectedItems[0].SubItems[2].Text));
+                Messagelabel.Text = "Added " + list.SelectedItems[0].SubItems[0].Text + " to Order " + orderId;
                 return true;
             }
             else
@@ -145,10 +156,10 @@ namespace LoginForm
             {
                 if (menuItemID.ToString() == EditView.Items[x].SubItems[2].Text)
                 {
-                    Messagelabel.Text ="Item with menuItem number " + EditView.Items[x].SubItems[2].Text + " already exists. The amount has been increased.";
+                    Messagelabel.Text = "Item with menuItem number " + EditView.Items[x].SubItems[2].Text + " already exists. The amount has been increased.";
                     return true;
                 }
-                
+
             }
             return false;
         }
@@ -158,7 +169,7 @@ namespace LoginForm
             DinnerView.SelectedItems.Clear();
             DrinksView.SelectedItems.Clear();
         }
-        
+
         private bool IncreaseAmountOfExistingItem(ListView list)
         {
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
@@ -252,10 +263,33 @@ namespace LoginForm
             LunchPanel.Hide();
             DrinksPanel.Show();
         }
+        private void EditForm_Load(object sender, EventArgs e)
+        {
+            FillOrderViewByOrderID(orderId);
+        }
 
-        private void DinnerView_SelectedIndexChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new SwitchForms(employee, this, new paymentForm(orderId, employee));
+        }
+
+        private void ViewByIDBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            Order_Service orderService = new Order_Service();
+
+            Table table = new Table
+
+            {
+                order = orderService.GetLatestOrder()
+
+            };
+
+            new SwitchForms(employee, this, new EditForm(employee,table,"Edit"));
         }
     }
 }
