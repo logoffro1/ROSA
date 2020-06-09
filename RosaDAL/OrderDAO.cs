@@ -46,9 +46,9 @@ namespace RosaDAL
 
 
             // 2020-04-05 12:13:14
-            string formattedDate = $"{DateTime.Now.Year}-{DateTime.Now.Month}-{DateTime.Now.Day}";
+            string formattedDate = $"{DateTime.Now.Year}-{DateTime.Now.Month}-{DateTime.Now.Day} {DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}.{DateTime.Now.Millisecond}";
             //string query = $"INSERT INTO [order](orderDate, table_id, employee_id, notes) VALUES ({datetime},{tableID},{employeeID},{comment}";
-            string query = $"INSERT INTO [order](table_id, orderDate, isPaid) VALUES ({tableID},{formattedDate}, 0)";
+            string query = $"INSERT INTO [order](table_id, orderDate, isPaid) VALUES ({tableID},'{formattedDate}', 0)";
 
 
             SqlParameter[] sqlParameters = new SqlParameter[0];
