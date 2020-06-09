@@ -46,7 +46,6 @@ namespace LoginForm
         private void ShowTableIcons(Table table)
         {
             int sizeX = tableImages[table.tableId - 1].Height / 3;
-            int sizeY = sizeX;
             int locationX = tableImages[table.tableId - 1].Location.X;
             int locationY = tableImages[table.tableId - 1].Location.Y;
             if (table.isReserved)
@@ -132,8 +131,8 @@ namespace LoginForm
             lblStatus.Text = "Status: " + selectedTable.status.ToString();
 
             ChangeLabelWaitTime(selectedTable);
-             
-           
+
+
             if (selectedTable.status == TableStatus.Ordered)
             {
                 Timer timerWaitTime = new Timer();
@@ -282,6 +281,14 @@ namespace LoginForm
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new SwitchForms(employee, this, new BarKitchenForm(employee, "kitchen"));
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            if (selectedTable.status != TableStatus.Ordered)
+                new SwitchForms(employee, this, new EditForm(employee, selectedTable, "order"));
+            else
+                new SwitchForms(employee, this, new EditForm(employee, selectedTable, "editOrder"));
         }
     }
 }

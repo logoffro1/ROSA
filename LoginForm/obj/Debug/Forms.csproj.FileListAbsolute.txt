@@ -122,7 +122,6 @@ C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\Forms.csproj.CopyCompl
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.exe
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.pdb
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.EditForm.resources
-C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.OrderForm.resources
 D:\VS Repository\ROSA\LoginForm\bin\Debug\System.Resources.Extensions.dll
 D:\VS Repository\ROSA\LoginForm\bin\Debug\System.Memory.dll
 D:\VS Repository\ROSA\LoginForm\bin\Debug\System.Numerics.Vectors.dll

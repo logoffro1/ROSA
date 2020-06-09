@@ -44,8 +44,11 @@ namespace RosaDAL
             // DateTime datetime = DateTime.Now;
             // string comment = "note";
 
+
+            // 2020-04-05 12:13:14
+            string formattedDate = $"{DateTime.Now.Year}-{DateTime.Now.Month}-{DateTime.Now.Day}";
             //string query = $"INSERT INTO [order](orderDate, table_id, employee_id, notes) VALUES ({datetime},{tableID},{employeeID},{comment}";
-            string query = $"INSERT INTO [order](table_id) VALUES ({tableID})";
+            string query = $"INSERT INTO [order](table_id, orderDate, isPaid) VALUES ({tableID},{formattedDate}, 0)";
 
 
             SqlParameter[] sqlParameters = new SqlParameter[0];
@@ -95,7 +98,23 @@ namespace RosaDAL
 
             throw new Exception("Could not read order!");
         }
+        public Order GetLatestOrder()
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("select TOP 1 * from [order] order by order_id DESC;",conn);
 
+                SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                return ReadRecord(reader);
+            }
+
+            throw new Exception("Could not read order!");
+
+
+
+        }
         private Order ReadRecord(SqlDataReader reader)
         {
             Order order = new Order
@@ -112,7 +131,7 @@ namespace RosaDAL
             string query = $"select * from [orderItems] join [menuItem] on orderItems.menuItem_id=menuItem.menuItem_id where order_id = ({orderID})";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return Read(ExecuteSelectQuery(query, sqlParameters));
-            
+
         }
         public List<OrderItem> Read(DataTable dataTable)
         {
@@ -155,7 +174,7 @@ namespace RosaDAL
         {
             string query = $"update[menuItem] set stock = stock-{amount} where menuItem_id = ({menuitemID})";
             SqlParameter[] sqlParameters = new SqlParameter[0];
-            ExecuteEditQuery(query, sqlParameters); 
+            ExecuteEditQuery(query, sqlParameters);
         }
         public void CheckStock(int menuitemID)
         {

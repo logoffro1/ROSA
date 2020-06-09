@@ -114,7 +114,6 @@
             this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
             this.orderToolStripMenuItem1.Size = new System.Drawing.Size(78, 32);
             this.orderToolStripMenuItem1.Text = "Order";
-            this.orderToolStripMenuItem1.Click += new System.EventHandler(this.orderToolStripMenuItem1_Click);
             // 
             // barToolStripMenuItem
             // 
