@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using RosaLogic;
 using RosaModel;
+using LoginForm.Properties;
 namespace LoginForm
 {   
      /// <summary>
@@ -15,32 +15,25 @@ namespace LoginForm
     {
         private Employee employee;
 
-        private List<Image> helpImages = new List<Image>(); //create list for the help images
-        private List<PictureBox> circleImages = new List<PictureBox>(); //create list for the circle picture boxes
+        private Image[] helpImages; //create array for the help images
+        private PictureBox[] circleImages; //create array for the circle picture boxes
         private int currentPic = 0; // the current selected help picture
+        private const int nrOfPictures = 5;
         public homeForm(Employee employee)
         {
-            Employee_Service es = new Employee_Service();
+           
             InitializeComponent();
+
+            Employee_Service es = new Employee_Service();
             this.employee = employee;
-            this.employee.personalNotes = es.GetNotes(employee);
+            this.employee.personalNotes = es.GetNotes(employee);          
         }
         void AddImagesToLists()
         {
-
             //add all the help images
-            helpImages.Add(Properties.Resources.helpTablesView);
-            helpImages.Add(Properties.Resources.Table2);
-            helpImages.Add(Properties.Resources.Table3);
-            helpImages.Add(Properties.Resources.Table4);
-            helpImages.Add(Properties.Resources.Table5);
-
+            helpImages = new Image[nrOfPictures] { Resources.helpTablesView, Resources.Table2, Resources.Table3, Resources.Table4, Resources.Table5 };
             //add all the circle picture boxes
-            circleImages.Add(picCircle1);
-            circleImages.Add(picCircle2);
-            circleImages.Add(picCircle3);
-            circleImages.Add(picCircle4);
-            circleImages.Add(picCircle5);
+            circleImages = new PictureBox[nrOfPictures] {picCircle1,picCircle2,picCircle3,picCircle4,picCircle5 };         
         }
   
         private void mainForm_Load(object sender, EventArgs e)
@@ -56,13 +49,13 @@ namespace LoginForm
 
             //set the profile picture based on the employee role
             if (employee.role == Roles.Manager)
-                profilePicture.Image = Properties.Resources.managerProfile;
+                profilePicture.Image = Resources.managerProfile;
             else if (employee.role == Roles.Waiter)
-                profilePicture.Image = Properties.Resources.waiterProfile;
+                profilePicture.Image = Resources.waiterProfile;
             else if (employee.role == Roles.Bartender)
-                profilePicture.Image = Properties.Resources.bartenderProfile;
+                profilePicture.Image = Resources.bartenderProfile;
             else if (employee.role == Roles.Chef)
-                profilePicture.Image = Properties.Resources.chefProfile;
+                profilePicture.Image = Resources.chefProfile;
         }
         private void InitNotes()
         {
@@ -99,25 +92,25 @@ namespace LoginForm
             if (goingRight)
             {
                 currentPic++;
-                if (currentPic == helpImages.Count) //if it reaches the last photo, set it back to the first photo
+                if (currentPic == helpImages.Length) //if it reaches the last photo, set it back to the first photo
                     currentPic = 0;
             }
             else
             {
                 currentPic--;
                 if (currentPic < 0) //if it goes under 0, set it to the last photo
-                    currentPic = helpImages.Count - 1;
+                    currentPic = helpImages.Length - 1;
             }
 
             picHelp.BackgroundImage = helpImages[currentPic]; //set the pictureBox image to the correct image
 
             //loop through the circle images, make it green only for the selected one
-            for (int i = 0; i < circleImages.Count; i++)
+            for (int i = 0; i < circleImages.Length; i++)
             {
                 if (i == currentPic) //set circle to green
-                    circleImages[i].BackgroundImage = Properties.Resources.circleGreen;
+                    circleImages[i].BackgroundImage = Resources.circleGreen;
                 else //set circle to grey
-                    circleImages[i].BackgroundImage = Properties.Resources.circleGrey;
+                    circleImages[i].BackgroundImage = Resources.circleGrey;
             }
         }
         private void btnSlideLeft_Click_1(object sender, EventArgs e)
@@ -130,23 +123,17 @@ namespace LoginForm
         }
         private void tablesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new SwitchForms(employee, this, new tableViewForm(employee));
-            
-
+            new SwitchForms(employee, this, new tableViewForm(employee));          
         }
             private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //BarKitchenForm menuItemForm = new BarKitchenForm(employee,"bar");
-            //this.Hide();
-            //menuItemForm.Show();
             new SwitchForms(employee, this, new BarKitchenForm(employee, "bar"));
         }
         private void orderToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OrderForm ot = new OrderForm(employee);
             ot.Show();
-            this.Hide();
-            
+            this.Hide();         
         }
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -173,7 +160,6 @@ namespace LoginForm
         {
             btnSave.Text = "SAVE";
         }
-
         private void managementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new SwitchForms(employee, this, new ManagementForm(employee));

@@ -19,7 +19,7 @@ namespace RosaDAL
             ts = new TimeSpan(23, 59, 59);
             endDate = endDate.Date + ts;
             //creating the query to get the item name, sales, cost and amount of times it was bought by a unique customer
-            string query = " ";
+            string query = "select *, [order].orderDate FROM bill left join[order] on bill.order_id = [order].order_id; ";
             //adding the start and end date parameters
             SqlParameter[] sqlParameters = new SqlParameter[0];
             {
@@ -45,8 +45,8 @@ namespace RosaDAL
                     orderItems = (string)dr["orderItems"],
                     menuItems = (string) dr["menuItems"],
                     sales = (int)dr["sales"],
-                    cost = float.Parse(dr["cost"].ToString()),
-                    boughtByCustomer = (int)dr["boughtByCustomers"]
+                    totalPrice = float.Parse(dr["totalPrice"].ToString()),
+                    
                 });
             }
 

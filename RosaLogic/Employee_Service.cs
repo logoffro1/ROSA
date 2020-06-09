@@ -2,12 +2,12 @@
 using RosaDAL;
 using RosaModel;
 namespace RosaLogic
-{ 
+{
     /// <summary>
-  ///   Employee Service class
-  ///   Made by Cosmin Ilie
-  ///   Student number: 645976
-  /// </summary>
+    ///   Employee Service class
+    ///   Made by Cosmin Ilie
+    ///   Student number: 645976
+    /// </summary>
     public class Employee_Service
     {
         EmployeeDAO employeeDAO = new EmployeeDAO();
@@ -19,7 +19,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read the employee Database");
+                new ErrorHandler("Couldn't read the employee Database");
                 return null;
             }
 
@@ -32,29 +32,29 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't insert into the employee Database");
+                new ErrorHandler("Couldn't insert into the employee Database");
             }
         }
         public void EditAccount(string username, string notes)
         {
             employeeDAO.EditAccount(username, notes);
         }
-            public string[] GetNotes(Employee employee)
+        public string[] GetNotes(Employee employee)
         {
             return employeeDAO.GetNotes(employee);
         }
-            public void EditAccount(Employee oldEmployee,Employee newEmployee)
+        public void EditAccount(Employee oldEmployee, Employee newEmployee)
         {
             try
             {
-                employeeDAO.EditAccount(oldEmployee,newEmployee);
+                employeeDAO.EditAccount(oldEmployee, newEmployee);
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't update the Employee Table");
+                new ErrorHandler("Couldn't update the Employee Table");
             }
         }
-            public void RemoveAccount(Employee employee)
+        public void RemoveAccount(Employee employee)
         {
             try
             {
@@ -62,8 +62,7 @@ namespace RosaLogic
             }
             catch
             {
-
-                ErrorDAO error = new ErrorDAO("Couldn't remove employee from the Database");
+                new ErrorHandler("Couldn't remove employee from the Database");
             }
         }
         public Employee GetAccount(string username, string password)
@@ -74,7 +73,21 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read from the employee Table");
+                new ErrorHandler("Couldn't read from the employee Table");
+                return null;
+            }
+
+        }
+
+        public Employee GetAccountByUsername(string username)
+        {
+            try
+            {
+                return employeeDAO.GetAccountByUsername(username);
+            }
+            catch
+            {
+                new ErrorHandler("Couldn't read from the employee Table");
                 return null;
             }
 

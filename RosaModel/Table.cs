@@ -22,7 +22,7 @@
                     if (order == null)
                         status = TableStatus.Waiting;
                     else
-                        if (!order.isPaid)
+                        if (!order.IsPaid)
                         status = TableStatus.Ordered;
                 }
                 return status;

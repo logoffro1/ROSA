@@ -23,7 +23,7 @@ namespace RosaLogic
             catch (Exception)
             {
 
-                ErrorDAO error = new ErrorDAO("Couldn't read from the Database!");
+                ErrorHandler error = new ErrorHandler("Couldn't read from the Database!");
                 return null;
 
             }
@@ -95,6 +95,29 @@ namespace RosaLogic
         {
             return orderDAO.GetMenuItems(catID);
         }
+
+        //Dewi
+        public Order GetOrderById(int orderID)
+        {
+            try
+            {
+                PaymentDAO paymentDAO = new PaymentDAO();
+
+                Order order = paymentDAO.GetOrderById(orderID);
+                order.Table = paymentDAO.GetTableByOrderID(order.Table.tableId);
+
+                return order;
+
+            }
+            catch (Exception)
+            {
+
+                ErrorHandler error = new ErrorHandler("Couldn't read from the Database!");
+                return null;
+
+            }
+        }
+
 
     }
 }

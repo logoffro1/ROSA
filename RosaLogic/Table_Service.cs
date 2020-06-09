@@ -22,14 +22,14 @@ namespace RosaLogic
                 foreach(Table t in tables)
                 {
                     if(t.order!= null)
-                    t.order.listOrderItems = orderItemDAO.GetOrderItemsById(t.order.orderID);
+                    t.order.ListOrderItems = orderItemDAO.GetOrderItemsById(t.order.OrderID);
                 }
                 return tables;
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read the Tables from the Database!");
-                throw new Exception("error");
+                new ErrorHandler("Couldn't read the Tables from the Database!");
+                return null;
             }
             
         }
@@ -41,7 +41,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't update Table to the database");
+               new ErrorHandler("Couldn't update Table to the database");
             }         
         }
     }

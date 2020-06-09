@@ -1,5 +1,6 @@
 ﻿using RosaLogic;
 using System;
+using RosaModel;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,13 @@ namespace LoginForm
 {
     public partial class Revenue : Form
     {
+        public string orderItems;     // name of the item
+        public string menuItems;
+        public int sales;       // amount of times the item was sold
+        public float cost;     // the price of the item
+        public int boughtByCustomer; // the amount of unique customers it was bought by
+        public float Turnover;
+
         public Revenue()
         {
             InitializeComponent();
@@ -28,18 +36,19 @@ namespace LoginForm
                 Revenue_Service service = new Revenue_Service();
                 int totalSales = 0;
                 float totalTurnOver = 0;
-                // get the revenue report from the database for the start and end date
-               // List<Revenue> revenues = service.GetRevenue(monthcalendarrevenue.SelectionStart, monthcalendarrevenue.SelectionEnd);
+                //get the revenue from the database for the start and end date
+                List<RosaModel.RevenueItem> revenues = service.GetRevenue(monthcalendarrevenue.SelectionStart, monthcalendarrevenue.SelectionEnd);
                 //clear the current items
                 listviewrevenue.Items.Clear();
                 //format each item in the list to an array of strings and add those to the listView
-              /*  foreach (RevenueItem item in revenues)
+                foreach (RosaModel.RevenueItem  item in revenues)
                 {
                     string[] items = new string[] {
                         item.orderItems,
+                        item.menuItems,
                         item.sales.ToString(),
                         item.Turnover.ToString("0.00 €"), // format the turnover to a currency format
-                        item.boughtByCustomer.ToString()
+                        
                     };
                     //add the sales and turnover to a total
                     totalSales += item.sales;
@@ -47,7 +56,7 @@ namespace LoginForm
                     ListViewItem li = new ListViewItem(items);
                     listviewrevenue.Items.Add(li);
                 }
-                */
+                
                 //create and add a listViewItem for the total
                 ListViewItem total = new ListViewItem(new string[] { "Total", totalSales.ToString(), totalTurnOver.ToString("0.00 €"), " " });
                 listviewrevenue.Items.Add(total);
@@ -119,6 +128,11 @@ namespace LoginForm
             {
                 e.Graphics.DrawLine(Pens.Black, e.Bounds.Left, e.Bounds.Top - 1, e.Bounds.Right, e.Bounds.Top - 1);
             }
+        }
+
+        private void butcalrevenue_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -51,15 +51,15 @@ namespace LoginForm
             currentPayment = payment;
 
             //Adds records of data to the listview
-            lbl_paymentTable.Text = payment.Order.table.ToString();
-            lbl_date.Text = payment.Order.dateTime.ToString("dd/MM/yyyy HH:mm:ss");
+            lbl_paymentTable.Text = payment.Order.Table.tableId.ToString();
+            lbl_date.Text = payment.Order.DateTime.ToString("dd/MM/yyyy HH:mm:ss");
             lbl_orderPrice.Text = payment.TotalPrice.ToString("€ 0.00");
             lbl_vat.Text = payment.TotalVAT.ToString("€ 0.00");
             textBox_tip.Text = "0.00";
             textBox_totalPrice.Text = (payment.TotalPrice).ToString("0.00");
 
             //Adds each order item to the listview
-            foreach (OrderItem item in payment.Order.listOrderItems)
+            foreach (OrderItem item in payment.Order.ListOrderItems)
             {
                 string[] row = { item.menuItem.Name, item.amount.ToString(), item.menuItem.Price.ToString(), item.status.ToString() };
                 listView_payments.Items.Add(new ListViewItem(row));
@@ -69,7 +69,7 @@ namespace LoginForm
         //The payment button when a waiter/waitress wants to bill a customer/table
         private void btn_bill_Click(object sender, EventArgs e)
         {
-
+             
             //Checks which payment method is used, else they are warned 
             if (rbtn_cash.Checked)
                 currentPayment.PaymentMethod = PaymentMethodEnum.Cash;
