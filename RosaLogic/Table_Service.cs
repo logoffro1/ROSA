@@ -16,22 +16,21 @@ namespace RosaLogic
 
         public List<Table> GetAllTables()
         {
+            List<Table> tables = null;
             try
             {
-                List<Table> tables= tableDAO.Db_Get_AllTables();
+                tables= tableDAO.Db_Get_AllTables();
                 foreach(Table t in tables)
                 {
                     if(t.order!= null)
                     t.order.ListOrderItems = orderItemDAO.GetOrderItemsById(t.order.OrderID);
                 }
-                return tables;
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read the Tables from the Database!");
-                throw new Exception("error");
+                new ErrorHandler("Couldn't read the Tables from the Database!");
             }
-            
+            return tables;
         }
         public void UpdateTable(Table table, bool isAvailable, bool isReserved)
         {
@@ -41,7 +40,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't update Table to the database");
+               new ErrorHandler("Couldn't update Table to the database");
             }         
         }
     }

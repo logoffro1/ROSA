@@ -20,7 +20,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read the Order Item from the Database!");
+                ErrorHandler error = new ErrorHandler("Couldn't read the Order Item from the Database!");
                 return null;
             }
         }

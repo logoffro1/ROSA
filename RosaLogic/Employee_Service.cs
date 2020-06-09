@@ -19,7 +19,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read the employee Database");
+                new ErrorHandler("Couldn't read the employee Database");
                 return null;
             }
 
@@ -32,7 +32,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't insert into the employee Database");
+                new ErrorHandler("Couldn't insert into the employee Database");
             }
         }
         public void EditAccount(string username, string notes)
@@ -51,7 +51,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't update the Employee Table");
+                new ErrorHandler("Couldn't update the Employee Table");
             }
         }
         public void RemoveAccount(Employee employee)
@@ -62,8 +62,7 @@ namespace RosaLogic
             }
             catch
             {
-
-                ErrorDAO error = new ErrorDAO("Couldn't remove employee from the Database");
+                new ErrorHandler("Couldn't remove employee from the Database");
             }
         }
         public Employee GetAccount(string username, string password)
@@ -74,7 +73,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read from the employee Table");
+                new ErrorHandler("Couldn't read from the employee Table");
                 return null;
             }
 
@@ -88,7 +87,7 @@ namespace RosaLogic
             }
             catch
             {
-                ErrorDAO error = new ErrorDAO("Couldn't read from the employee Table");
+                new ErrorHandler("Couldn't read from the employee Table");
                 return null;
             }
 

@@ -17,13 +17,13 @@ namespace RosaLogic
             try
             {
 
-                return orderDAO.Db_Get_AllOrders();
+                return orderDAO.Db_Get_AllOrder();
 
             }
             catch (Exception)
             {
 
-                ErrorDAO error = new ErrorDAO("Couldn't read from the Database!");
+                ErrorHandler error = new ErrorHandler("Couldn't read from the Database!");
                 return null;
 
             }
@@ -79,6 +79,10 @@ namespace RosaLogic
         {
             orderDAO.IncreaseAmount(orderitemID);
         }
+        public void IncreaseAmount2(int menuitemID)
+        {
+            orderDAO.IncreaseAmount2(menuitemID);
+        }
         public void DecreaseAmount(int orderitemID)
         {
             orderDAO.DecreaseAmount(orderitemID);
@@ -108,7 +112,7 @@ namespace RosaLogic
             catch (Exception)
             {
 
-                ErrorDAO error = new ErrorDAO("Couldn't read from the Database!");
+                ErrorHandler error = new ErrorHandler("Couldn't read from the Database!");
                 return null;
 
             }

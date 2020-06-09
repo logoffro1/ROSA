@@ -50,7 +50,7 @@ namespace RosaLogic
             }
             catch(Exception e)
             {
-                ErrorDAO error = new ErrorDAO($"Couldn't read the Payment from the Database! ({e.Message})");
+                ErrorHandler error = new ErrorHandler($"Couldn't read the Payment from the Database! ({e.Message})");
                 return null;
             }
         }
@@ -68,7 +68,7 @@ namespace RosaLogic
             }
             catch(Exception e)
             {
-                ErrorDAO error = new ErrorDAO($"Couldn't read the Payment from the Database! ({e.Message})");
+                ErrorHandler error = new ErrorHandler($"Couldn't read the Payment from the Database! ({e.Message})");
             }
         }
     }

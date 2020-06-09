@@ -64,23 +64,21 @@
             // lbl_paymentMethodWarning
             // 
             this.lbl_paymentMethodWarning.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_paymentMethodWarning.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_paymentMethodWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_paymentMethodWarning.ForeColor = System.Drawing.Color.Red;
-            this.lbl_paymentMethodWarning.Location = new System.Drawing.Point(292, 617);
-            this.lbl_paymentMethodWarning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_paymentMethodWarning.Location = new System.Drawing.Point(219, 501);
             this.lbl_paymentMethodWarning.Name = "lbl_paymentMethodWarning";
-            this.lbl_paymentMethodWarning.Size = new System.Drawing.Size(452, 55);
+            this.lbl_paymentMethodWarning.Size = new System.Drawing.Size(339, 45);
             this.lbl_paymentMethodWarning.TabIndex = 35;
             // 
             // lbl_PaymentMethod
             // 
             this.lbl_PaymentMethod.AutoSize = true;
             this.lbl_PaymentMethod.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_PaymentMethod.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PaymentMethod.Location = new System.Drawing.Point(775, 409);
-            this.lbl_PaymentMethod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_PaymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PaymentMethod.Location = new System.Drawing.Point(581, 332);
             this.lbl_PaymentMethod.Name = "lbl_PaymentMethod";
-            this.lbl_PaymentMethod.Size = new System.Drawing.Size(210, 28);
+            this.lbl_PaymentMethod.Size = new System.Drawing.Size(166, 24);
             this.lbl_PaymentMethod.TabIndex = 34;
             this.lbl_PaymentMethod.Text = "Payment Method";
             // 
@@ -88,11 +86,10 @@
             // 
             this.lbl_tip.AutoSize = true;
             this.lbl_tip.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_tip.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tip.Location = new System.Drawing.Point(24, 110);
-            this.lbl_tip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_tip.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tip.Location = new System.Drawing.Point(18, 89);
             this.lbl_tip.Name = "lbl_tip";
-            this.lbl_tip.Size = new System.Drawing.Size(46, 30);
+            this.lbl_tip.Size = new System.Drawing.Size(37, 24);
             this.lbl_tip.TabIndex = 33;
             this.lbl_tip.Text = "Tip";
             // 
@@ -101,12 +98,11 @@
             this.textBox_tip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_tip.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_tip.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox_tip.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_tip.Location = new System.Drawing.Point(77, 112);
-            this.textBox_tip.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_tip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_tip.Location = new System.Drawing.Point(58, 91);
             this.textBox_tip.Name = "textBox_tip";
             this.textBox_tip.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox_tip.Size = new System.Drawing.Size(208, 25);
+            this.textBox_tip.Size = new System.Drawing.Size(156, 19);
             this.textBox_tip.TabIndex = 32;
             this.textBox_tip.Text = "0.00";
             this.textBox_tip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -116,11 +112,10 @@
             // 
             this.lbl_vat_static.AutoSize = true;
             this.lbl_vat_static.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_vat_static.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_vat_static.Location = new System.Drawing.Point(24, 66);
-            this.lbl_vat_static.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_vat_static.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_vat_static.Location = new System.Drawing.Point(18, 54);
             this.lbl_vat_static.Name = "lbl_vat_static";
-            this.lbl_vat_static.Size = new System.Drawing.Size(58, 30);
+            this.lbl_vat_static.Size = new System.Drawing.Size(48, 24);
             this.lbl_vat_static.TabIndex = 27;
             this.lbl_vat_static.Text = "VAT";
             // 
@@ -128,11 +123,10 @@
             // 
             this.rbtn_credit.AutoSize = true;
             this.rbtn_credit.BackColor = System.Drawing.Color.Transparent;
-            this.rbtn_credit.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtn_credit.Location = new System.Drawing.Point(15, 91);
-            this.rbtn_credit.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtn_credit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtn_credit.Location = new System.Drawing.Point(11, 74);
             this.rbtn_credit.Name = "rbtn_credit";
-            this.rbtn_credit.Size = new System.Drawing.Size(173, 34);
+            this.rbtn_credit.Size = new System.Drawing.Size(122, 28);
             this.rbtn_credit.TabIndex = 30;
             this.rbtn_credit.TabStop = true;
             this.rbtn_credit.Text = "Credit Card";
@@ -143,11 +137,10 @@
             this.rbtn_pin.AutoSize = true;
             this.rbtn_pin.BackColor = System.Drawing.Color.Transparent;
             this.rbtn_pin.Checked = true;
-            this.rbtn_pin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtn_pin.Location = new System.Drawing.Point(15, 12);
-            this.rbtn_pin.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtn_pin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtn_pin.Location = new System.Drawing.Point(11, 10);
             this.rbtn_pin.Name = "rbtn_pin";
-            this.rbtn_pin.Size = new System.Drawing.Size(69, 34);
+            this.rbtn_pin.Size = new System.Drawing.Size(55, 28);
             this.rbtn_pin.TabIndex = 29;
             this.rbtn_pin.TabStop = true;
             this.rbtn_pin.Text = "Pin";
@@ -157,11 +150,10 @@
             // 
             this.rbtn_cash.AutoSize = true;
             this.rbtn_cash.BackColor = System.Drawing.Color.Transparent;
-            this.rbtn_cash.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtn_cash.Location = new System.Drawing.Point(15, 52);
-            this.rbtn_cash.Margin = new System.Windows.Forms.Padding(4);
+            this.rbtn_cash.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtn_cash.Location = new System.Drawing.Point(11, 42);
             this.rbtn_cash.Name = "rbtn_cash";
-            this.rbtn_cash.Size = new System.Drawing.Size(95, 34);
+            this.rbtn_cash.Size = new System.Drawing.Size(71, 28);
             this.rbtn_cash.TabIndex = 28;
             this.rbtn_cash.TabStop = true;
             this.rbtn_cash.Text = "Cash";
@@ -170,12 +162,11 @@
             // btn_bill
             // 
             this.btn_bill.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_bill.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_bill.ForeColor = System.Drawing.Color.White;
-            this.btn_bill.Location = new System.Drawing.Point(765, 609);
-            this.btn_bill.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_bill.Location = new System.Drawing.Point(574, 495);
             this.btn_bill.Name = "btn_bill";
-            this.btn_bill.Size = new System.Drawing.Size(343, 44);
+            this.btn_bill.Size = new System.Drawing.Size(257, 36);
             this.btn_bill.TabIndex = 27;
             this.btn_bill.Text = "Pay and Print Bill";
             this.btn_bill.UseVisualStyleBackColor = false;
@@ -184,12 +175,11 @@
             // btn_return
             // 
             this.btn_return.BackColor = System.Drawing.Color.Firebrick;
-            this.btn_return.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_return.ForeColor = System.Drawing.Color.White;
-            this.btn_return.Location = new System.Drawing.Point(39, 609);
-            this.btn_return.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_return.Location = new System.Drawing.Point(29, 495);
             this.btn_return.Name = "btn_return";
-            this.btn_return.Size = new System.Drawing.Size(143, 44);
+            this.btn_return.Size = new System.Drawing.Size(107, 36);
             this.btn_return.TabIndex = 6;
             this.btn_return.Text = "Return";
             this.btn_return.UseVisualStyleBackColor = false;
@@ -198,23 +188,21 @@
             // textBox_comments
             // 
             this.textBox_comments.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox_comments.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_comments.Location = new System.Drawing.Point(39, 439);
-            this.textBox_comments.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_comments.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_comments.Location = new System.Drawing.Point(29, 357);
             this.textBox_comments.Multiline = true;
             this.textBox_comments.Name = "textBox_comments";
-            this.textBox_comments.Size = new System.Drawing.Size(704, 137);
+            this.textBox_comments.Size = new System.Drawing.Size(529, 112);
             this.textBox_comments.TabIndex = 5;
             // 
             // lbl_commentStatic
             // 
             this.lbl_commentStatic.AutoSize = true;
             this.lbl_commentStatic.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_commentStatic.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_commentStatic.Location = new System.Drawing.Point(49, 409);
-            this.lbl_commentStatic.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_commentStatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_commentStatic.Location = new System.Drawing.Point(37, 332);
             this.lbl_commentStatic.Name = "lbl_commentStatic";
-            this.lbl_commentStatic.Size = new System.Drawing.Size(131, 28);
+            this.lbl_commentStatic.Size = new System.Drawing.Size(103, 24);
             this.lbl_commentStatic.TabIndex = 4;
             this.lbl_commentStatic.Text = "Feedback";
             // 
@@ -224,15 +212,15 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.listView_payments.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView_payments.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_payments.HideSelection = false;
-            this.listView_payments.Location = new System.Drawing.Point(39, 63);
-            this.listView_payments.Margin = new System.Windows.Forms.Padding(4);
+            this.listView_payments.Location = new System.Drawing.Point(29, 51);
             this.listView_payments.Name = "listView_payments";
-            this.listView_payments.Size = new System.Drawing.Size(704, 322);
+            this.listView_payments.Size = new System.Drawing.Size(529, 262);
             this.listView_payments.TabIndex = 3;
             this.listView_payments.UseCompatibleStateImageBehavior = false;
             this.listView_payments.View = System.Windows.Forms.View.Details;
+            this.listView_payments.SelectedIndexChanged += new System.EventHandler(this.listView_payments_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -252,11 +240,10 @@
             // 
             this.lbl_orderPrice_static.AutoSize = true;
             this.lbl_orderPrice_static.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_orderPrice_static.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_orderPrice_static.Location = new System.Drawing.Point(24, 28);
-            this.lbl_orderPrice_static.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_orderPrice_static.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_orderPrice_static.Location = new System.Drawing.Point(18, 23);
             this.lbl_orderPrice_static.Name = "lbl_orderPrice_static";
-            this.lbl_orderPrice_static.Size = new System.Drawing.Size(146, 30);
+            this.lbl_orderPrice_static.Size = new System.Drawing.Size(107, 24);
             this.lbl_orderPrice_static.TabIndex = 2;
             this.lbl_orderPrice_static.Text = "Order Price";
             // 
@@ -264,34 +251,31 @@
             // 
             this.lbl_date.AutoSize = true;
             this.lbl_date.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_date.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_date.Location = new System.Drawing.Point(291, 26);
-            this.lbl_date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_date.Location = new System.Drawing.Point(218, 21);
             this.lbl_date.Name = "lbl_date";
-            this.lbl_date.Size = new System.Drawing.Size(0, 30);
+            this.lbl_date.Size = new System.Drawing.Size(0, 24);
             this.lbl_date.TabIndex = 1;
             // 
             // lbl_paymentTable
             // 
             this.lbl_paymentTable.AutoSize = true;
             this.lbl_paymentTable.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_paymentTable.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_paymentTable.Location = new System.Drawing.Point(120, 26);
-            this.lbl_paymentTable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_paymentTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_paymentTable.Location = new System.Drawing.Point(90, 21);
             this.lbl_paymentTable.Name = "lbl_paymentTable";
-            this.lbl_paymentTable.Size = new System.Drawing.Size(0, 33);
+            this.lbl_paymentTable.Size = new System.Drawing.Size(0, 25);
             this.lbl_paymentTable.TabIndex = 0;
             // 
             // lbl_billSuccess
             // 
             this.lbl_billSuccess.AutoSize = true;
             this.lbl_billSuccess.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_billSuccess.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_billSuccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_billSuccess.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbl_billSuccess.Location = new System.Drawing.Point(863, 618);
-            this.lbl_billSuccess.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_billSuccess.Location = new System.Drawing.Point(647, 502);
             this.lbl_billSuccess.Name = "lbl_billSuccess";
-            this.lbl_billSuccess.Size = new System.Drawing.Size(176, 30);
+            this.lbl_billSuccess.Size = new System.Drawing.Size(130, 24);
             this.lbl_billSuccess.TabIndex = 27;
             this.lbl_billSuccess.Text = "Bill Successful";
             this.lbl_billSuccess.Visible = false;
@@ -308,10 +292,9 @@
             this.pnl_payment_price.Controls.Add(this.lbl_tip);
             this.pnl_payment_price.Controls.Add(this.lbl_orderPrice_static);
             this.pnl_payment_price.Controls.Add(this.textBox_tip);
-            this.pnl_payment_price.Location = new System.Drawing.Point(765, 63);
-            this.pnl_payment_price.Margin = new System.Windows.Forms.Padding(4);
+            this.pnl_payment_price.Location = new System.Drawing.Point(574, 51);
             this.pnl_payment_price.Name = "pnl_payment_price";
-            this.pnl_payment_price.Size = new System.Drawing.Size(343, 322);
+            this.pnl_payment_price.Size = new System.Drawing.Size(257, 262);
             this.pnl_payment_price.TabIndex = 37;
             // 
             // textBox_totalPrice
@@ -319,12 +302,11 @@
             this.textBox_totalPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_totalPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_totalPrice.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox_totalPrice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_totalPrice.Location = new System.Drawing.Point(65, 225);
-            this.textBox_totalPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_totalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_totalPrice.Location = new System.Drawing.Point(49, 183);
             this.textBox_totalPrice.Name = "textBox_totalPrice";
             this.textBox_totalPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox_totalPrice.Size = new System.Drawing.Size(208, 25);
+            this.textBox_totalPrice.Size = new System.Drawing.Size(156, 19);
             this.textBox_totalPrice.TabIndex = 37;
             this.textBox_totalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_totalPrice.TextChanged += new System.EventHandler(this.textBox_totalPrice_TextChanged);
@@ -332,32 +314,29 @@
             // lbl_totalPrice_static
             // 
             this.lbl_totalPrice_static.AutoSize = true;
-            this.lbl_totalPrice_static.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalPrice_static.Location = new System.Drawing.Point(97, 193);
-            this.lbl_totalPrice_static.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_totalPrice_static.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalPrice_static.Location = new System.Drawing.Point(73, 157);
             this.lbl_totalPrice_static.Name = "lbl_totalPrice_static";
-            this.lbl_totalPrice_static.Size = new System.Drawing.Size(133, 28);
+            this.lbl_totalPrice_static.Size = new System.Drawing.Size(109, 24);
             this.lbl_totalPrice_static.TabIndex = 36;
             this.lbl_totalPrice_static.Text = "Total price";
             // 
             // lbl_vat
             // 
             this.lbl_vat.AutoSize = true;
-            this.lbl_vat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_vat.Location = new System.Drawing.Point(200, 75);
-            this.lbl_vat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_vat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_vat.Location = new System.Drawing.Point(150, 61);
             this.lbl_vat.Name = "lbl_vat";
-            this.lbl_vat.Size = new System.Drawing.Size(0, 23);
+            this.lbl_vat.Size = new System.Drawing.Size(0, 20);
             this.lbl_vat.TabIndex = 35;
             // 
             // lbl_orderPrice
             // 
             this.lbl_orderPrice.AutoSize = true;
-            this.lbl_orderPrice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_orderPrice.Location = new System.Drawing.Point(200, 28);
-            this.lbl_orderPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_orderPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_orderPrice.Location = new System.Drawing.Point(150, 23);
             this.lbl_orderPrice.Name = "lbl_orderPrice";
-            this.lbl_orderPrice.Size = new System.Drawing.Size(0, 23);
+            this.lbl_orderPrice.Size = new System.Drawing.Size(0, 20);
             this.lbl_orderPrice.TabIndex = 34;
             // 
             // pnl_payment_method
@@ -366,21 +345,19 @@
             this.pnl_payment_method.Controls.Add(this.rbtn_cash);
             this.pnl_payment_method.Controls.Add(this.rbtn_pin);
             this.pnl_payment_method.Controls.Add(this.rbtn_credit);
-            this.pnl_payment_method.Location = new System.Drawing.Point(765, 439);
-            this.pnl_payment_method.Margin = new System.Windows.Forms.Padding(4);
+            this.pnl_payment_method.Location = new System.Drawing.Point(574, 357);
             this.pnl_payment_method.Name = "pnl_payment_method";
-            this.pnl_payment_method.Size = new System.Drawing.Size(343, 138);
+            this.pnl_payment_method.Size = new System.Drawing.Size(257, 112);
             this.pnl_payment_method.TabIndex = 38;
             // 
             // lbl_price
             // 
             this.lbl_price.AutoSize = true;
             this.lbl_price.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_price.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_price.Location = new System.Drawing.Point(777, 26);
-            this.lbl_price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_price.Location = new System.Drawing.Point(583, 21);
             this.lbl_price.Name = "lbl_price";
-            this.lbl_price.Size = new System.Drawing.Size(69, 28);
+            this.lbl_price.Size = new System.Drawing.Size(58, 24);
             this.lbl_price.TabIndex = 39;
             this.lbl_price.Text = "Price";
             // 
@@ -388,11 +365,10 @@
             // 
             this.lbl_payment_tableStatic.AutoSize = true;
             this.lbl_payment_tableStatic.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_payment_tableStatic.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_payment_tableStatic.Location = new System.Drawing.Point(33, 26);
-            this.lbl_payment_tableStatic.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_payment_tableStatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_payment_tableStatic.Location = new System.Drawing.Point(25, 21);
             this.lbl_payment_tableStatic.Name = "lbl_payment_tableStatic";
-            this.lbl_payment_tableStatic.Size = new System.Drawing.Size(85, 32);
+            this.lbl_payment_tableStatic.Size = new System.Drawing.Size(71, 25);
             this.lbl_payment_tableStatic.TabIndex = 40;
             this.lbl_payment_tableStatic.Text = "Table";
             // 
@@ -400,20 +376,19 @@
             // 
             this.lbl_payment_datestatic.AutoSize = true;
             this.lbl_payment_datestatic.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_payment_datestatic.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_payment_datestatic.Location = new System.Drawing.Point(212, 26);
-            this.lbl_payment_datestatic.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_payment_datestatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_payment_datestatic.Location = new System.Drawing.Point(159, 21);
             this.lbl_payment_datestatic.Name = "lbl_payment_datestatic";
-            this.lbl_payment_datestatic.Size = new System.Drawing.Size(77, 32);
+            this.lbl_payment_datestatic.Size = new System.Drawing.Size(61, 25);
             this.lbl_payment_datestatic.TabIndex = 41;
             this.lbl_payment_datestatic.Text = "Date";
             // 
             // paymentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LoginForm.Properties.Resources.HOME_BG;
-            this.ClientSize = new System.Drawing.Size(1141, 683);
+            this.ClientSize = new System.Drawing.Size(856, 555);
             this.Controls.Add(this.lbl_payment_datestatic);
             this.Controls.Add(this.lbl_payment_tableStatic);
             this.Controls.Add(this.lbl_price);
@@ -430,7 +405,6 @@
             this.Controls.Add(this.pnl_payment_method);
             this.Controls.Add(this.pnl_payment_price);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "paymentForm";
             this.Text = "Payment";
