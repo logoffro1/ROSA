@@ -72,3 +72,12 @@ C:\Users\31620\Desktop\liv pr\RosaDAL\obj\Debug\RosaDAL.csprojAssemblyReference.
 C:\Users\31620\Desktop\liv pr\RosaDAL\obj\Debug\RosaDAL.csproj.CopyComplete
 C:\Users\31620\Desktop\liv pr\RosaDAL\obj\Debug\RosaDAL.dll
 C:\Users\31620\Desktop\liv pr\RosaDAL\obj\Debug\RosaDAL.pdb
+C:\Users\Gabrian\Source\Repos\ROSA\RosaDAL\bin\Debug\RosaDAL.dll.config
+C:\Users\Gabrian\Source\Repos\ROSA\RosaDAL\bin\Debug\RosaDAL.dll
+C:\Users\Gabrian\Source\Repos\ROSA\RosaDAL\bin\Debug\RosaDAL.pdb
+C:\Users\Gabrian\Source\Repos\ROSA\RosaDAL\bin\Debug\RosaModel.dll
+C:\Users\Gabrian\Source\Repos\ROSA\RosaDAL\bin\Debug\RosaModel.pdb
+C:\Users\Gabrian\Source\Repos\ROSA\RosaDAL\obj\Debug\RosaDAL.csprojAssemblyReference.cache
+C:\Users\Gabrian\Source\Repos\ROSA\RosaDAL\obj\Debug\RosaDAL.csproj.CopyComplete
+C:\Users\Gabrian\Source\Repos\ROSA\RosaDAL\obj\Debug\RosaDAL.dll
+C:\Users\Gabrian\Source\Repos\ROSA\RosaDAL\obj\Debug\RosaDAL.pdb
