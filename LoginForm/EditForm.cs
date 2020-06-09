@@ -41,6 +41,7 @@ namespace LoginForm
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  //deletes selected order item
             orderserv.DeleteOrderItem(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
             Messagelabel.Text = "Deleted Order item with ID " + EditView.SelectedItems[0].SubItems[1].Text;
+            FillOrderViewByOrderID(int.Parse(ViewByIDBox.Text));
         }
 
         private void SelectOrderButton_Click(object sender, EventArgs e)
@@ -69,12 +70,14 @@ namespace LoginForm
         {
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // increases selected order item amount 
             orderserv.IncreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
+            FillOrderViewByOrderID(int.Parse(ViewByIDBox.Text));
         }
 
         private void DecreaseButton_Click(object sender, EventArgs e)
         {
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // decreases selected order item amount
-            orderserv.DecreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text)); 
+            orderserv.DecreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
+            FillOrderViewByOrderID(int.Parse(ViewByIDBox.Text));
         }
 
         private void DecreaseAmountButton_Click(object sender, EventArgs e)  // this decreases the stock by the set amount | currently on a button but will be used each time an order item is added to an order
