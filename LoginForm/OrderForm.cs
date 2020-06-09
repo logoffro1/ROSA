@@ -62,7 +62,7 @@ namespace LoginForm
 
                 ListViewItem li = new ListViewItem(s.OrderID.ToString());
                 li.SubItems.Add(s.Table.tableId.ToString());
-               // li.SubItems.Add(s.isPaid.ToString());
+                //li.SubItems.Add(s.isPaid.ToString());
 
                 OrderView.Items.Add(li);
             }
@@ -89,7 +89,7 @@ namespace LoginForm
            // temp = OrderView.SelectedItems[number].Text;
            //return temp;
        // }
-
+      
         private void AddOrder_Click(object sender, EventArgs e)
         {
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
@@ -139,6 +139,11 @@ namespace LoginForm
         }
 
         private void OrderForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrderView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

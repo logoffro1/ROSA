@@ -17,7 +17,7 @@ namespace RosaLogic
             try
             {
 
-                return orderDAO.Db_Get_AllOrders();
+                return orderDAO.Db_Get_AllOrder();
 
             }
             catch (Exception)
@@ -78,6 +78,10 @@ namespace RosaLogic
         public void IncreaseAmount(int orderitemID)
         {
             orderDAO.IncreaseAmount(orderitemID);
+        }
+        public void IncreaseAmount2(int menuitemID)
+        {
+            orderDAO.IncreaseAmount2(menuitemID);
         }
         public void DecreaseAmount(int orderitemID)
         {

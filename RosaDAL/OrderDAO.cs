@@ -11,7 +11,7 @@ namespace RosaDAL
 {
     public class OrderDAO : Base
     {
-        public List<Order> Db_Get_AllOrders()
+        public List<Order> Db_Get_AllOrder()
         {
             //read orders from database
             string query = "select order_id,table_id,isPaid,notes from [order]";
@@ -109,14 +109,13 @@ namespace RosaDAL
         }
         public List<OrderItem> GetByID(int orderID)
         {
-            string query = $"select * from [orderItems] where order_id = ({orderID})";
+            string query = $"select * from [orderItems] join [menuItem] on orderItems.menuItem_id=menuItem.menuItem_id where order_id = ({orderID})";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return Read(ExecuteSelectQuery(query, sqlParameters));
             
         }
         public List<OrderItem> Read(DataTable dataTable)
         {
-
             List<OrderItem> OrderItems = new List<OrderItem>();
             foreach (DataRow dr in dataTable.Rows)
             {
@@ -124,9 +123,10 @@ namespace RosaDAL
                 {
                     orderID = (int)dr["order_id"],
                     orderItems_id = (int)dr["orderItems_id"],
-                    //menuItem = (MenuItem)dr["menuItem_id"],     how do you write this??  
+                    menuItemID = (int)dr["menuItem_id"],
                     status = (StatusEnum)dr["status"],
-                    amount = (int)dr["amount"]
+                    amount = (int)dr["amount"],
+                    menuItemName = (string)dr["itemName"]
                 };
                 OrderItems.Add(orderItem);
             }
@@ -138,6 +138,13 @@ namespace RosaDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
+        public void IncreaseAmount2(int menuitemID)
+        {
+            string query = $"update [orderItems] set amount = amount+1 where menuItem_id=({menuitemID})";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
         public void DecreaseAmount(int orderitemID)
         {
             string query = $"update [orderItems] set amount = amount-1 where orderItems_id=({orderitemID})";
@@ -171,8 +178,8 @@ namespace RosaDAL
                 MenuItem menuItem = new MenuItem()
                 {
                     Name = (string)dr["itemName"],
-                    Price = (decimal)dr["price"]
-
+                    Price = (decimal)dr["price"],
+                    ID = (int)dr["menuItem_id"]
                 };
                 menuItems.Add(menuItem);
 

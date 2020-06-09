@@ -17,11 +17,9 @@ namespace RosaLogic
                 List<MenuItem> bars = menuItemDAO.Db_Get_AllOrders();
                 return bars;
             }
-            catch
+            catch 
             {
-                return null;
-         
-               
+                return null;                
             }
         }
         public void UpdateTableOrder(int id, int status)

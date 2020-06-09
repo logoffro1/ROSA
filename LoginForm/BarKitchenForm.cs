@@ -69,7 +69,6 @@ namespace LoginForm
                 stucust.SubItems.Add(barLIst[i].orderItem.orderID.ToString());
                 stucust.BackColor = checkStatus(barLIst[i]);
                 stucustList.Add(stucust);
-
             }
             if (name == "bar") //Displays the overview of the Bar View for the Bartender and Manager
             {
@@ -192,6 +191,16 @@ namespace LoginForm
         }
 
         private void BarKitchenForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_Kitchen_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listKitchenView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
