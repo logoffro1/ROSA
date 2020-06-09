@@ -26,7 +26,7 @@ namespace RosaDAL
                 "JOIN menuItem AS M ON OT.menuItem_id = M.menuItem_id " +
                 "JOIN menuCategory AS MC ON M.menuCategory_id = MC.menuCategory_id " +
                 "WHERE Ot.order_id = @order_id;", conn);
-            cmd.Parameters.AddWithValue("@order_id", order_id);
+            cmd.Parameters.AddWithValue("@order_id", order_id);  
            
             SqlDataReader reader = cmd.ExecuteReader();
             List<OrderItem> orderItems = new List<OrderItem>();

@@ -129,7 +129,6 @@ D:\VS Repository\ROSA\LoginForm\bin\Debug\System.Numerics.Vectors.dll
 D:\VS Repository\ROSA\LoginForm\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\VS Repository\ROSA\LoginForm\bin\Debug\System.Buffers.dll
 D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.EditForm.resources
-D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.MenuItemForm.resources
 D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.OrderForm.resources
 D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.paymentForm.resources
 D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.tableViewForm.resources
@@ -171,3 +170,5 @@ C:\Users\31620\Desktop\new\LoginForm\bin\Debug\RosaDAL.dll.config
 C:\Users\31620\Desktop\new\LoginForm\obj\Debug\Forms.csproj.CopyComplete
 C:\Users\MEDION\Documents\School\ROSA\LoginForm\obj\Debug\LoginForm.BarKitchenForm.resources
 C:\Users\logoff\source\repos\ROSA\LoginForm\obj\Debug\LoginForm.ManagementForm.resources
+D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.BarKitchenForm.resources
+D:\VS Repository\ROSA\LoginForm\obj\Debug\LoginForm.ManagementForm.resources

@@ -13,6 +13,8 @@ namespace RosaModel
         public MenuItem menuItem; 
         public StatusEnum status;
         public int amount;
+        public int menuItemID;
+        public string menuItemName;
 
         public OrderItem(int orderID, StatusEnum status) // for the Bar and Kitchen View
         {

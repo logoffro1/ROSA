@@ -79,6 +79,10 @@ namespace RosaLogic
         {
             orderDAO.IncreaseAmount(orderitemID);
         }
+        public void IncreaseAmount2(int menuitemID)
+        {
+            orderDAO.IncreaseAmount2(menuitemID);
+        }
         public void DecreaseAmount(int orderitemID)
         {
             orderDAO.DecreaseAmount(orderitemID);

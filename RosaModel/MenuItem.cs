@@ -15,6 +15,7 @@ namespace RosaModel
         public decimal VAT { get; set; }
         public OrderItem orderItem { get; set; }
         public Order order { get; set; }
+        public int ID { get; set; }
 
         public MenuItem(string name, decimal price, int menuCat, decimal vAT, OrderItem orderItem, Order order)
         {
