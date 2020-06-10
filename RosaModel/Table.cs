@@ -17,12 +17,12 @@
             get
             {
                 TableStatus status = TableStatus.Empty;
-                if (!isAvailable)
+                if (!isAvailable) // if the table is OCCUPIED
                 {
-                    if (order == null)
+                    if (order == null) // if the table is occupied and there is no order, the status is waiting
                         status = TableStatus.Waiting;
                     else
-                        if (!order.IsPaid)
+                        if (!order.IsPaid) //if the order is NOT null and the order wasn't paid yet, the status is ordered
                         status = TableStatus.Ordered;
                 }
                 return status;

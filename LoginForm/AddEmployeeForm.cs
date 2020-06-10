@@ -55,27 +55,30 @@ namespace LoginForm
         }
         private void AddEmployeeForm_Load(object sender, EventArgs e)
         {
-            dateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
+            dateOfBirth.MaxDate = DateTime.Now.AddYears(-18); // so the new employee can't be younger than 18 yo
         }
 
         private void btnAddAcount_Click(object sender, EventArgs e)
         {
             Employee_Service employeeService = new Employee_Service();
-            bool emptyField = false;
+            bool emptyField = false; // to check if a field is empty
+
             if (
                 string.IsNullOrEmpty(txtFirstNName.Text)
                 || string.IsNullOrEmpty(txtLastName.Text)
                 || string.IsNullOrEmpty(txtUsername.Text)
-                || string.IsNullOrEmpty(txtPassword.Text))
+                || string.IsNullOrEmpty(txtPassword.Text)) //if the textboxes are empty, set emptyField to true
                 emptyField = true;
 
-            if (!btnManager.Checked && !btnWaiter.Checked&& !btnChef.Checked&& !btnBartender.Checked)
+           //if all the  radio buttons are unchecked, set emptyField to truue
+            if (!btnManager.Checked && !btnWaiter.Checked && !btnChef.Checked && !btnBartender.Checked) 
                 emptyField = true;
-                
-                if (emptyField)
+
+            if (emptyField) //show warning if there are empty fields
                 MessageBox.Show("All fields must be filled!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
+                // set the employeeRole based on what was checked
                 Roles employeeRole;
                 if (btnManager.Checked)
                     employeeRole = Roles.Manager;
@@ -88,20 +91,20 @@ namespace LoginForm
 
 
                 Employee tempEmployee = employeeService.GetAccountByUsername(txtUsername.Text);
-                if(tempEmployee != null)
-                    MessageBox.Show("This username already exists!","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                if (tempEmployee != null) //check if that username already exists
+                    MessageBox.Show("This username already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-                    Employee newEmployee = new Employee()
+                    Employee newEmployee = new Employee() //create the new employee
                     {
                         firstName = txtFirstNName.Text,
                         lastName = txtLastName.Text,
                         username = txtUsername.Text,
                         password = txtPassword.Text,
-                        role = employeeRole                       
+                        role = employeeRole
                     };
-                    employeeService.AddAccount(newEmployee);
-                    MessageBox.Show("New account added!","Added",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+                    employeeService.AddAccount(newEmployee); //add the new employee to the DB
+                    MessageBox.Show("New account added!", "Added", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
 
@@ -112,9 +115,9 @@ namespace LoginForm
             new SwitchForms(employee, this, new ManagementForm(employee));
         }
 
-        private void orderToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void managementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new SwitchForms(employee, this, new ManagementForm(employee));
         }
     }
 }

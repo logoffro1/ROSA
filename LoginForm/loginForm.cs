@@ -43,28 +43,23 @@ namespace LoginForm
                     switch (employee.role)
                     {
                         case Roles.Waiter:
-                            OpenForm(new tableViewForm(employee));
+                            new SwitchForms(employee, this, new tableViewForm(employee));
                             break;
                         case Roles.Bartender:
-                            OpenForm(new BarKitchenForm(employee, "bar"));
+                            new SwitchForms(employee, this, new BarKitchenForm(employee,"bar"));
                             break;
                         case Roles.Chef:
-                            OpenForm(new BarKitchenForm(employee, "kitchen"));
+                            new SwitchForms(employee, this, new BarKitchenForm(employee, "kitchen"));
                             break;
                         case Roles.Manager:
-                            OpenForm(new ManagementForm(employee));
+                            new SwitchForms(employee, this, new ManagementForm(employee));
                             break;
                         default:
-                            OpenForm(new homeForm(employee));
+                            new SwitchForms(employee, this, new homeForm(employee));
                             break;
                     }
                 }
             }
-        }
-        void OpenForm(Form formToOpen)
-        {
-            formToOpen.Show();
-            this.Hide();
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -88,7 +83,7 @@ namespace LoginForm
             //that shows or hides the password
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
 
-            if (txtPassword.UseSystemPasswordChar)
+            if (txtPassword.UseSystemPasswordChar) //change the eye picture
                 eyePic.BackgroundImage = Properties.Resources.Black_Eye_Watch_128;
             else
                 eyePic.BackgroundImage = Properties.Resources.Closed_Eye2;
@@ -96,11 +91,6 @@ namespace LoginForm
         private void loginFormV2_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void loginForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -113,6 +113,7 @@
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
             this.managementToolStripMenuItem.Size = new System.Drawing.Size(177, 33);
             this.managementToolStripMenuItem.Text = "Management";
+            this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
             // 
             // lblLogout
             // 
@@ -121,7 +122,7 @@
             this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogout.ForeColor = System.Drawing.Color.Black;
-            this.lblLogout.Location = new System.Drawing.Point(927, 39);
+            this.lblLogout.Location = new System.Drawing.Point(917, 39);
             this.lblLogout.Name = "lblLogout";
             this.lblLogout.Size = new System.Drawing.Size(84, 24);
             this.lblLogout.TabIndex = 6;
@@ -169,10 +170,10 @@
             // btnAddAcount
             // 
             this.btnAddAcount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAcount.Location = new System.Drawing.Point(672, 350);
+            this.btnAddAcount.Location = new System.Drawing.Point(656, 352);
             this.btnAddAcount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddAcount.Name = "btnAddAcount";
-            this.btnAddAcount.Size = new System.Drawing.Size(131, 46);
+            this.btnAddAcount.Size = new System.Drawing.Size(158, 57);
             this.btnAddAcount.TabIndex = 16;
             this.btnAddAcount.Text = "Add Account";
             this.btnAddAcount.UseVisualStyleBackColor = true;

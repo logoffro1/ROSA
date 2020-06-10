@@ -20,12 +20,14 @@ namespace LoginForm
         public float cost;     // the price of the item
         public int boughtByCustomer; // the amount of unique customers it was bought by
         public float Turnover;
+        private Employee employee;
 
-        public Revenue()
+        public Revenue(Employee employee)
         {
             InitializeComponent();
             monthcalendarrevenue.SelectionRange = new SelectionRange(DateTime.Today, DateTime.Today);
             lbldateerror.Visible = false;
+            this.employee = employee;
 
         }
 
@@ -133,6 +135,18 @@ namespace LoginForm
         private void butcalrevenue_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Revenue_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ManagementForm managementForm = new ManagementForm(employee);
+            managementForm.Show();
+            this.Hide();
         }
     }
 }

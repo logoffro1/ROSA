@@ -37,11 +37,28 @@ namespace RosaLogic
         }
         public void EditAccount(string username, string notes)
         {
-            employeeDAO.EditAccount(username, notes);
+            try
+            {
+                employeeDAO.EditAccount(username, notes);
+            }
+            catch
+            {
+                new ErrorHandler("Couldn't edit the account");
+            }
+
         }
         public string[] GetNotes(Employee employee)
         {
-            return employeeDAO.GetNotes(employee);
+            try
+            {
+                return employeeDAO.GetNotes(employee);
+            }
+            catch
+            {
+                new ErrorHandler("Error trying to get the notes from the DB");
+                return null;
+            }
+
         }
         public void EditAccount(Employee oldEmployee, Employee newEmployee)
         {

@@ -103,7 +103,7 @@
             this.textBox_tip.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox_tip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_tip.Location = new System.Drawing.Point(77, 112);
-            this.textBox_tip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_tip.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_tip.Name = "textBox_tip";
             this.textBox_tip.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox_tip.Size = new System.Drawing.Size(208, 23);
@@ -130,7 +130,7 @@
             this.rbtn_credit.BackColor = System.Drawing.Color.Transparent;
             this.rbtn_credit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtn_credit.Location = new System.Drawing.Point(15, 91);
-            this.rbtn_credit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn_credit.Margin = new System.Windows.Forms.Padding(4);
             this.rbtn_credit.Name = "rbtn_credit";
             this.rbtn_credit.Size = new System.Drawing.Size(157, 33);
             this.rbtn_credit.TabIndex = 30;
@@ -145,7 +145,7 @@
             this.rbtn_pin.Checked = true;
             this.rbtn_pin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtn_pin.Location = new System.Drawing.Point(15, 12);
-            this.rbtn_pin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn_pin.Margin = new System.Windows.Forms.Padding(4);
             this.rbtn_pin.Name = "rbtn_pin";
             this.rbtn_pin.Size = new System.Drawing.Size(69, 33);
             this.rbtn_pin.TabIndex = 29;
@@ -159,7 +159,7 @@
             this.rbtn_cash.BackColor = System.Drawing.Color.Transparent;
             this.rbtn_cash.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtn_cash.Location = new System.Drawing.Point(15, 52);
-            this.rbtn_cash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn_cash.Margin = new System.Windows.Forms.Padding(4);
             this.rbtn_cash.Name = "rbtn_cash";
             this.rbtn_cash.Size = new System.Drawing.Size(89, 33);
             this.rbtn_cash.TabIndex = 28;
@@ -173,7 +173,7 @@
             this.btn_bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_bill.ForeColor = System.Drawing.Color.White;
             this.btn_bill.Location = new System.Drawing.Point(610, 620);
-            this.btn_bill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_bill.Margin = new System.Windows.Forms.Padding(4);
             this.btn_bill.Name = "btn_bill";
             this.btn_bill.Size = new System.Drawing.Size(343, 44);
             this.btn_bill.TabIndex = 27;
@@ -187,7 +187,7 @@
             this.btn_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_return.ForeColor = System.Drawing.Color.White;
             this.btn_return.Location = new System.Drawing.Point(39, 609);
-            this.btn_return.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_return.Margin = new System.Windows.Forms.Padding(4);
             this.btn_return.Name = "btn_return";
             this.btn_return.Size = new System.Drawing.Size(143, 44);
             this.btn_return.TabIndex = 6;
@@ -200,7 +200,7 @@
             this.textBox_comments.BackColor = System.Drawing.SystemColors.Window;
             this.textBox_comments.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_comments.Location = new System.Drawing.Point(68, 439);
-            this.textBox_comments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_comments.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_comments.Multiline = true;
             this.textBox_comments.Name = "textBox_comments";
             this.textBox_comments.Size = new System.Drawing.Size(533, 137);
@@ -227,7 +227,7 @@
             this.listView_payments.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_payments.HideSelection = false;
             this.listView_payments.Location = new System.Drawing.Point(39, 63);
-            this.listView_payments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listView_payments.Margin = new System.Windows.Forms.Padding(4);
             this.listView_payments.Name = "listView_payments";
             this.listView_payments.Size = new System.Drawing.Size(562, 322);
             this.listView_payments.TabIndex = 3;
@@ -310,7 +310,7 @@
             this.pnl_payment_price.Controls.Add(this.lbl_orderPrice_static);
             this.pnl_payment_price.Controls.Add(this.textBox_tip);
             this.pnl_payment_price.Location = new System.Drawing.Point(668, 63);
-            this.pnl_payment_price.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_payment_price.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_payment_price.Name = "pnl_payment_price";
             this.pnl_payment_price.Size = new System.Drawing.Size(314, 322);
             this.pnl_payment_price.TabIndex = 37;
@@ -322,7 +322,7 @@
             this.textBox_totalPrice.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox_totalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_totalPrice.Location = new System.Drawing.Point(52, 225);
-            this.textBox_totalPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_totalPrice.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_totalPrice.Name = "textBox_totalPrice";
             this.textBox_totalPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox_totalPrice.Size = new System.Drawing.Size(208, 23);
@@ -368,7 +368,7 @@
             this.pnl_payment_method.Controls.Add(this.rbtn_pin);
             this.pnl_payment_method.Controls.Add(this.rbtn_credit);
             this.pnl_payment_method.Location = new System.Drawing.Point(668, 438);
-            this.pnl_payment_method.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_payment_method.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_payment_method.Name = "pnl_payment_method";
             this.pnl_payment_method.Size = new System.Drawing.Size(314, 138);
             this.pnl_payment_method.TabIndex = 38;
@@ -433,11 +433,12 @@
             this.Controls.Add(this.lbl_paymentMethodWarning);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "paymentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.paymentForm_FormClosing);
             this.Load += new System.EventHandler(this.paymentForm_Load);
             this.pnl_payment_price.ResumeLayout(false);
             this.pnl_payment_price.PerformLayout();

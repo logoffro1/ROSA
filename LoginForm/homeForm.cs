@@ -18,35 +18,42 @@ namespace LoginForm
         private Image[] helpImages; //create array for the help images
         private PictureBox[] circleImages; //create array for the circle picture boxes
         private int currentPic = 0; // the current selected help picture
-        private const int nrOfPictures = 5;
+        private const int nrOfPictures = 5; //the number of Help pictures
         public homeForm(Employee employee)
         {
-
             InitializeComponent();
 
             Employee_Service es = new Employee_Service();
             this.employee = employee;
             this.employee.personalNotes = es.GetNotes(employee);
         }
-        void AddImagesToLists()
-        {
-            //add all the help images
-            helpImages = new Image[nrOfPictures] { Resources.helpTablesView, Resources.Table2, Resources.Table3, Resources.Table4, Resources.Table5 };
-            //add all the circle picture boxes
-            circleImages = new PictureBox[nrOfPictures] { picCircle1, picCircle2, picCircle3, picCircle4, picCircle5 };
-        }
-
         private void mainForm_Load(object sender, EventArgs e)
         {
-            InitNotes();
+            SetInfo();
             AddImagesToLists();
             //show a Welcome message, "Welcome, firstName!"
             lblWelcome.Text = $"Welcome, {employee.firstName}!";
-            lblName.Text = employee.firstName + " " + employee.lastName;
-            lblRole.Text = employee.role.ToString();
+        }
+        void AddImagesToLists()
+        {
+            //add all the help images
+            helpImages = new Image[nrOfPictures] { Resources.helpTablesView3, Resources.helpOrdersView, Resources.helpPayment1, Resources.helpAddingAccount,  Resources.helpBarView1};
+            //add all the circle picture boxes
+            circleImages = new PictureBox[nrOfPictures] { picCircle1, picCircle2, picCircle3, picCircle4, picCircle5 };
+        }
+        private void SetInfo()
+        {
+            #region stickyNotes
+            //change the back color to match the sticky note
+            txtNotes.BackColor = Color.FromArgb(255, 255, 128);
+            lblNotes.BackColor = Color.FromArgb(255, 255, 128);
+            btnSave.BackColor = Color.FromArgb(255, 255, 128);
 
-            lblTime.Text = $"{DateTime.Now.DayOfWeek} - {DateTime.Now.Hour.ToString("00")}:{DateTime.Now.Minute.ToString("00")}";
+            foreach (string s in employee.personalNotes) //write the employee notes in the textbox
+                txtNotes.Text += s + Environment.NewLine;
+            #endregion
 
+            #region profilePicture
             //set the profile picture based on the employee role
             if (employee.role == Roles.Manager)
                 profilePicture.Image = Resources.managerProfile;
@@ -56,15 +63,15 @@ namespace LoginForm
                 profilePicture.Image = Resources.bartenderProfile;
             else if (employee.role == Roles.Chef)
                 profilePicture.Image = Resources.chefProfile;
-        }
-        private void InitNotes()
-        {
-            //change the back color to match the sticky note
-            txtNotes.BackColor = Color.FromArgb(255, 255, 128);
-            lblNotes.BackColor = Color.FromArgb(255, 255, 128);
-            btnSave.BackColor = Color.FromArgb(255, 255, 128);
-            foreach (string s in employee.personalNotes)
-                txtNotes.Text += s + Environment.NewLine;
+            #endregion
+
+            #region mainInfo
+            lblName.Text = employee.firstName + " " + employee.lastName; //set the name label
+            lblRole.Text = employee.role.ToString();  //set the role label
+
+            //set the current time label
+            lblTime.Text = $"{DateTime.Now.DayOfWeek} - {DateTime.Now.Hour.ToString("00")}:{DateTime.Now.Minute.ToString("00")}";
+            #endregion
         }
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -145,7 +152,7 @@ namespace LoginForm
             string[] txtLines = txtNotes.Text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
             string formattedLines = "";
-            foreach (string s in txtLines)
+            foreach (string s in txtLines)//loop through the txtLines array and add each string into formattedLines
                 formattedLines += s + ";";
 
             es.EditAccount(employee.username, formattedLines);

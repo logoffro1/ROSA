@@ -33,6 +33,7 @@
             this.tablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BarView = new System.Windows.Forms.ToolStripMenuItem();
             this.kitchenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Bar = new System.Windows.Forms.Panel();
             this.listBarView1 = new System.Windows.Forms.ListView();
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -69,6 +70,7 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label11 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.navbar.SuspendLayout();
             this.panel_Bar.SuspendLayout();
             this.panel_Kitchen.SuspendLayout();
@@ -83,7 +85,8 @@
             this.homeToolStripMenuItem,
             this.tablesToolStripMenuItem,
             this.BarView,
-            this.kitchenToolStripMenuItem});
+            this.kitchenToolStripMenuItem,
+            this.managementToolStripMenuItem});
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
             this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -119,6 +122,15 @@
             this.kitchenToolStripMenuItem.Text = "Kitchen";
             this.kitchenToolStripMenuItem.Click += new System.EventHandler(this.kitchenToolStripMenuItem_Click);
             // 
+            // managementToolStripMenuItem
+            // 
+            this.managementToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.managementToolStripMenuItem.Font = new System.Drawing.Font("Tw Cen MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(159, 32);
+            this.managementToolStripMenuItem.Text = "Management";
+            this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
+            // 
             // panel_Bar
             // 
             this.panel_Bar.BackColor = System.Drawing.Color.Transparent;
@@ -147,7 +159,7 @@
             this.listBarView1.FullRowSelect = true;
             this.listBarView1.HideSelection = false;
             this.listBarView1.Location = new System.Drawing.Point(47, 372);
-            this.listBarView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBarView1.Margin = new System.Windows.Forms.Padding(4);
             this.listBarView1.Name = "listBarView1";
             this.listBarView1.Size = new System.Drawing.Size(892, 238);
             this.listBarView1.TabIndex = 33;
@@ -196,8 +208,8 @@
             // 
             // btnReady
             // 
-            this.btnReady.Location = new System.Drawing.Point(764, 14);
-            this.btnReady.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReady.Location = new System.Drawing.Point(723, 13);
+            this.btnReady.Margin = new System.Windows.Forms.Padding(4);
             this.btnReady.Name = "btnReady";
             this.btnReady.Size = new System.Drawing.Size(176, 25);
             this.btnReady.TabIndex = 31;
@@ -217,7 +229,7 @@
             this.listBarView.FullRowSelect = true;
             this.listBarView.HideSelection = false;
             this.listBarView.Location = new System.Drawing.Point(47, 50);
-            this.listBarView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBarView.Margin = new System.Windows.Forms.Padding(4);
             this.listBarView.Name = "listBarView";
             this.listBarView.Size = new System.Drawing.Size(892, 274);
             this.listBarView.TabIndex = 27;
@@ -279,7 +291,6 @@
             this.panel_Kitchen.Size = new System.Drawing.Size(975, 633);
             this.panel_Kitchen.TabIndex = 34;
             this.panel_Kitchen.Visible = false;
-            this.panel_Kitchen.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Kitchen_Paint);
             // 
             // listKitchenView1
             // 
@@ -293,7 +304,7 @@
             this.listKitchenView1.FullRowSelect = true;
             this.listKitchenView1.HideSelection = false;
             this.listKitchenView1.Location = new System.Drawing.Point(44, 363);
-            this.listKitchenView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listKitchenView1.Margin = new System.Windows.Forms.Padding(4);
             this.listKitchenView1.Name = "listKitchenView1";
             this.listKitchenView1.Size = new System.Drawing.Size(892, 244);
             this.listKitchenView1.TabIndex = 33;
@@ -342,8 +353,8 @@
             // 
             // btnReadyKitchen
             // 
-            this.btnReadyKitchen.Location = new System.Drawing.Point(747, 14);
-            this.btnReadyKitchen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReadyKitchen.Location = new System.Drawing.Point(735, 14);
+            this.btnReadyKitchen.Margin = new System.Windows.Forms.Padding(4);
             this.btnReadyKitchen.Name = "btnReadyKitchen";
             this.btnReadyKitchen.Size = new System.Drawing.Size(193, 28);
             this.btnReadyKitchen.TabIndex = 31;
@@ -363,13 +374,12 @@
             this.listKitchenView.FullRowSelect = true;
             this.listKitchenView.HideSelection = false;
             this.listKitchenView.Location = new System.Drawing.Point(44, 59);
-            this.listKitchenView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listKitchenView.Margin = new System.Windows.Forms.Padding(4);
             this.listKitchenView.Name = "listKitchenView";
             this.listKitchenView.Size = new System.Drawing.Size(892, 232);
             this.listKitchenView.TabIndex = 27;
             this.listKitchenView.UseCompatibleStateImageBehavior = false;
             this.listKitchenView.View = System.Windows.Forms.View.Details;
-            this.listKitchenView.SelectedIndexChanged += new System.EventHandler(this.listKitchenView_SelectedIndexChanged);
             // 
             // columnHeader8
             // 
@@ -411,6 +421,20 @@
             this.label11.TabIndex = 25;
             this.label11.Text = "Orders for Kitchen ";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Font = new System.Drawing.Font("Tw Cen MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(928, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 22);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Log Out";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // BarKitchenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -418,18 +442,18 @@
             this.BackgroundImage = global::LoginForm.Properties.Resources.HOME_BG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1012, 734);
-            this.Controls.Add(this.panel_Kitchen);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.navbar);
             this.Controls.Add(this.panel_Bar);
+            this.Controls.Add(this.panel_Kitchen);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "BarKitchenForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuItemForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuItemForm_FormClosing);
-            this.Load += new System.EventHandler(this.BarKitchenForm_Load);
             this.navbar.ResumeLayout(false);
             this.navbar.PerformLayout();
             this.panel_Bar.ResumeLayout(false);
@@ -484,5 +508,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader19;
         private System.Windows.Forms.ColumnHeader columnHeader20;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
+        private System.Windows.Forms.Label label4;
     }
 }

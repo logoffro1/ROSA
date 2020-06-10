@@ -345,7 +345,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Tw Cen MT", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(58, 478);
+            this.lblTime.Location = new System.Drawing.Point(52, 478);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(119, 25);
             this.lblTime.TabIndex = 3;
@@ -387,7 +387,7 @@
             // 
             // picHelp
             // 
-            this.picHelp.BackgroundImage = global::LoginForm.Properties.Resources.helpTablesView;
+            this.picHelp.BackgroundImage = global::LoginForm.Properties.Resources.helpTablesView3;
             this.picHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picHelp.Location = new System.Drawing.Point(384, 229);
             this.picHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RosaDAL;
 using RosaModel;
 namespace RosaLogic
-{ 
+{
     /// <summary>
-  ///   Table Service class
-  ///   Made by Cosmin Ilie
-  ///   Student number: 645976
-  /// </summary>
+    ///   Table Service class
+    ///   Made by Cosmin Ilie
+    ///   Student number: 645976
+    /// </summary>
     public class Table_Service
     {
         TableDAO tableDAO = new TableDAO();
@@ -19,11 +18,11 @@ namespace RosaLogic
             List<Table> tables = null;
             try
             {
-                tables= tableDAO.Db_Get_AllTables();
-                foreach(Table t in tables)
+                tables = tableDAO.Db_Get_AllTables();
+                foreach (Table t in tables) //loop through all the tables
                 {
-                    if(t.order!= null)
-                    t.order.ListOrderItems = orderItemDAO.GetOrderItemsById(t.order.OrderID);
+                    if (t.order != null) //if the order is not null, read the orderItems for that order
+                        t.order.ListOrderItems = orderItemDAO.GetOrderItemsById(t.order.OrderID);
                 }
             }
             catch
@@ -40,8 +39,8 @@ namespace RosaLogic
             }
             catch
             {
-               new ErrorHandler("Couldn't update Table to the database");
-            }         
+                new ErrorHandler("Couldn't update Table to the database");
+            }
         }
     }
 }

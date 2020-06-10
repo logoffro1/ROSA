@@ -63,11 +63,13 @@ namespace LoginForm
         {
             dateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
 
+            //fill the textboxes with the current information
             txtFirstNName.Text = employeeToEdit.firstName;
             txtLastName.Text = employeeToEdit.lastName;
             txtUsername.Text = employeeToEdit.username;
             txtPassword.Text = employeeToEdit.password;
 
+            //check the radio button with the correct role
             if (employeeToEdit.role == Roles.Manager)
                 btnManager.Checked = true;
             else if (employeeToEdit.role == Roles.Chef)
@@ -86,6 +88,7 @@ namespace LoginForm
         private void btnEditAccount_Click(object sender, EventArgs e)
         {
             Employee_Service employeeService = new Employee_Service();
+            // check if textboxes are empty
             if (string.IsNullOrEmpty(txtUsername.Text))
                 txtUsername.Text = employeeToEdit.username;
             if (string.IsNullOrEmpty(txtFirstNName.Text))
@@ -95,7 +98,7 @@ namespace LoginForm
             if (string.IsNullOrEmpty(txtPassword.Text))
                 txtPassword.Text = employeeToEdit.password;
 
-            Roles newRole;
+            Roles newRole;//assign the new role
             if (btnManager.Checked)
                 newRole = Roles.Manager;
             else if (btnWaiter.Checked)
@@ -105,7 +108,7 @@ namespace LoginForm
             else
                 newRole = Roles.Bartender;
 
-           Employee newEmployee = new Employee()
+           Employee newEmployee = new Employee() //create new employee
             {
                 firstName = txtFirstNName.Text,
                 lastName = txtLastName.Text,
@@ -113,9 +116,14 @@ namespace LoginForm
                 password = txtPassword.Text,
                 role = newRole
             };
-            employeeService.EditAccount(employeeToEdit, newEmployee);
+            employeeService.EditAccount(employeeToEdit, newEmployee); //eddit the account
             MessageBox.Show("Account eddited succesfully!","Edited",MessageBoxButtons.OK);
 
+        }
+
+        private void managementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new SwitchForms(connectedEmployee, this, new ManagementForm(connectedEmployee));
         }
     }
 }

@@ -19,7 +19,7 @@ namespace RosaDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadEmployees(ExecuteSelectQuery(query, sqlParameters));
         }
-        public void AddAccount(Employee employee)
+        public void AddAccount(Employee employee) // add new employee to DB
         {
             String query = "insert into employee values(@role, @name,@userName,@password, NULL);";
             SqlParameter[] parameters = new SqlParameter[4]
@@ -32,7 +32,7 @@ namespace RosaDAL
             ExecuteEditQuery(query, parameters);
 
         }
-        public void RemoveAccount(Employee employee)
+        public void RemoveAccount(Employee employee) //remove an employee from DB based on username
         {
             String query = "delete from employee where username = @username;";
 
@@ -43,7 +43,7 @@ namespace RosaDAL
             ExecuteEditQuery(query, parameter);
 
         }
-        public void EditAccount(string username, string notes)
+        public void EditAccount(string username, string notes) //edit only the NOTES of an account
         {
             String query = "UPDATE employee SET personalNotes = @notes WHERE username = @username;";
             SqlParameter[] parameters = new SqlParameter[2]
@@ -54,7 +54,7 @@ namespace RosaDAL
             ExecuteEditQuery(query, parameters);
 
         }
-        public void EditAccount(Employee oldEmployee, Employee newEmployee)
+        public void EditAccount(Employee oldEmployee, Employee newEmployee) //edit more details about an employee
         {
             String query = "UPDATE employee SET role_id = @roleId, employeeName = @name, username = @newUsername, [password] = password WHERE username = @username;";
 
@@ -69,7 +69,7 @@ namespace RosaDAL
             ExecuteEditQuery(query, parameters);
 
         }
-        public string[] GetNotes(Employee employee)
+        public string[] GetNotes(Employee employee) //get the NOTES from the DB (used in the home page)
         {
             string[] notes = new string[0];
             using (SqlCommand cmd = new SqlCommand("SELECT personalNotes FROM employee WHERE username = @username;", conn))
@@ -78,13 +78,13 @@ namespace RosaDAL
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
-                        if (!reader.IsDBNull(0))
+                        if (!reader.IsDBNull(0)) // if the notes are not null
                             notes = reader["personalNotes"].ToString().Split(';');
                 }
             }
             return notes;
         }
-        public Employee GetAccountByUsername(string username)
+        public Employee GetAccountByUsername(string username) //return an account based on the username
         {
             Employee employee = null;
 
@@ -99,8 +99,8 @@ namespace RosaDAL
             }
             return employee;
         }
-    
-        public Employee GetAccount(string username, string password)
+
+        public Employee GetAccount(string username, string password) //get an account matching the parameters
         {
             Employee employee = null;
 

@@ -68,6 +68,7 @@
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblSelectTable = new System.Windows.Forms.Label();
             this.pnlTablesView = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
@@ -84,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlaceHolder)).BeginInit();
             this.navbar.SuspendLayout();
             this.pnlTablesView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -534,6 +536,7 @@
             // pnlTablesView
             // 
             this.pnlTablesView.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTablesView.Controls.Add(this.pictureBox2);
             this.pnlTablesView.Controls.Add(this.pictureBox1);
             this.pnlTablesView.Controls.Add(this.lblSelectTable);
             this.pnlTablesView.Controls.Add(this.pnlTableInfo);
@@ -544,10 +547,20 @@
             this.pnlTablesView.Size = new System.Drawing.Size(981, 633);
             this.pnlTablesView.TabIndex = 26;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::LoginForm.Properties.Resources.IconsExplanation1;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(632, 485);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(245, 142);
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LoginForm.Properties.Resources.Available_Occupied_Icon;
-            this.pictureBox1.Location = new System.Drawing.Point(626, 520);
+            this.pictureBox1.Location = new System.Drawing.Point(669, 409);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(174, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -593,6 +606,7 @@
             this.navbar.PerformLayout();
             this.pnlTablesView.ResumeLayout(false);
             this.pnlTablesView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -641,5 +655,6 @@
         private System.Windows.Forms.CheckBox btnReservedNo;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

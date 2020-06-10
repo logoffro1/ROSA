@@ -14,6 +14,6 @@
         public string username { get; set; } //used for login
         public string password { get; set; } //used for login
 
-        public string[] personalNotes { get; set; }         
+        public string[] personalNotes { get; set; }  //the employees personal notes, used in the Home Page  
     }
 }

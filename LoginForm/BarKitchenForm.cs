@@ -181,28 +181,22 @@ namespace LoginForm
         }
         private void tablesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tableViewForm tableViewForm = new tableViewForm(employee);
-            tableViewForm.Show();
-            this.Hide();
+            new SwitchForms(employee, this, new tableViewForm(employee));
         }
         private void MenuItemForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-
-        private void BarKitchenForm_Load(object sender, EventArgs e)
+        private void managementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new SwitchForms(employee, this, new ManagementForm(employee));
         }
 
-        private void panel_Kitchen_Paint(object sender, PaintEventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void listKitchenView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            loginForm loginForm = new loginForm();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }

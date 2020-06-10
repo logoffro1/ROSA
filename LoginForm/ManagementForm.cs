@@ -69,8 +69,9 @@ namespace LoginForm
             List<Employee> employees = employeeService.GetEmployees();
 
             employeeUC employeeControl;
-            pnlEmployees.Controls.Clear();
-            foreach (Employee emp in employees)
+            pnlEmployees.Controls.Clear(); //clear the existing panels
+
+            foreach (Employee emp in employees) //for each employee, show a custom control and put it in the panel
             {
                 employeeControl = new employeeUC(employee,emp,this);
                 pnlEmployees.Controls.Add(employeeControl);
@@ -79,7 +80,10 @@ namespace LoginForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //revenue
+            Revenue revenue = new Revenue(employee);
+            revenue.Show();
+            this.Hide();
+          
         }
     }
 }
