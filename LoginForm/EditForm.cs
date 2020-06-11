@@ -51,7 +51,7 @@ namespace LoginForm
             {
                 orderserv.DeleteOrderItem(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
                 Messagelabel.Text = "Deleted Order item with ID " + EditView.SelectedItems[0].SubItems[1].Text;
-                orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), int.Parse(EditView.SelectedItems[0].SubItems[3].Text), "+");
+                orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "+");
                 FillOrderViewByOrderID(orderId);
             }
             else
@@ -131,9 +131,9 @@ namespace LoginForm
                 RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
                 Table_Service ts = new Table_Service();
                 orderserv.AddOrder(table.tableId);
+                ts.UpdateTable(table, false, table.isReserved);             
                 SetLatestOrder();
-                ts.UpdateTable(table, false, table.isReserved);
-                
+
 
 
             }
@@ -160,8 +160,8 @@ namespace LoginForm
             if (list.SelectedItems.Count != 0)
             {
                 orderserv.CreateOrderItem(orderId, int.Parse(list.SelectedItems[0].SubItems[2].Text));
-                orderserv.AdjustStock(int.Parse(list.SelectedItems[0].SubItems[2].Text), 1, "-");
                 Messagelabel.Text = "Added " + list.SelectedItems[0].SubItems[0].Text + " to Order " + orderId;
+                orderserv.AdjustStock(int.Parse(list.SelectedItems[0].SubItems[2].Text), 1, "-");
                 return true;
             }
             else
@@ -300,20 +300,14 @@ namespace LoginForm
                 Messagelabel.Text = "Order is currently empty !";
             }
         }
-        private void SetLatestOrder()  //gets the latest order's ID
+        private void SetLatestOrder()
         {
             Order_Service orderService = new Order_Service();
 
-            Table table = new Table
-
-            {
-                order = orderService.GetLatestOrder()
-
-            };
-
+            table.order = orderService.GetLatestOrder();
             new SwitchForms(employee, this, new EditForm(employee, table, "Edit"));
         }
-        private bool CheckStockAmount(ListView list) // checks if the stock is more than 0 in the db and if it isnt returns an insufficient stock message
+        private bool CheckStockAmount(ListView list)
         {
             Order_Service orderService = new Order_Service();
             if (list.SelectedItems.Count > 0)
