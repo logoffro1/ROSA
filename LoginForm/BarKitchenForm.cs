@@ -194,9 +194,7 @@ namespace LoginForm
 
         private void label4_Click(object sender, EventArgs e)
         {
-            loginForm loginForm = new loginForm();
-            loginForm.Show();
-            this.Hide();
+            new SwitchForms(employee, this, new loginForm());
         }
     }
 }

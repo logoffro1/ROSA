@@ -131,17 +131,6 @@ namespace LoginForm
                 e.Graphics.DrawLine(Pens.Black, e.Bounds.Left, e.Bounds.Top - 1, e.Bounds.Right, e.Bounds.Top - 1);
             }
         }
-
-        private void butcalrevenue_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Revenue_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             ManagementForm managementForm = new ManagementForm(employee);

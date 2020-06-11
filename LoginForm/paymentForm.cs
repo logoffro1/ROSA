@@ -161,19 +161,10 @@ namespace LoginForm
         //Returns to the order screen
         private void btn_return_Click(object sender, EventArgs e)
         {
-
+            tableViewForm tableViewForm = new tableViewForm(employee);
+            tableViewForm.Show();
+            this.Hide();
         }
-
-        private void paymentForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView_payments_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void paymentForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

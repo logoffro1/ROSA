@@ -282,14 +282,11 @@ namespace LoginForm
         {
             Order_Service orderService = new Order_Service();
 
-            Table table = new Table
+            table.order = orderService.GetLatestOrder();
 
-            {
-                order = orderService.GetLatestOrder()
-
-            };
-
-            new SwitchForms(employee, this, new EditForm(employee,table,"Edit"));
+            //  new SwitchForms(employee, this, new EditForm(employee,table,"Edit"));
+            OrderPanel.Hide();
+            EditPanel.Show();
         }
     }
 }

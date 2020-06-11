@@ -74,14 +74,14 @@
             this.menuitemID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EditPanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.ViewbyIDLabel = new System.Windows.Forms.Label();
+            this.ViewByIDBox = new System.Windows.Forms.TextBox();
             this.AddOrderItemFromListButton = new System.Windows.Forms.Button();
             this.OrderPanel = new System.Windows.Forms.Panel();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.TableIDLabel = new System.Windows.Forms.Label();
             this.TableIDBox2 = new System.Windows.Forms.TextBox();
             this.CreateOrderButton = new System.Windows.Forms.Button();
-            this.ViewbyIDLabel = new System.Windows.Forms.Label();
-            this.ViewByIDBox = new System.Windows.Forms.TextBox();
-            this.btnCheck = new System.Windows.Forms.Button();
             this.LunchPanel.SuspendLayout();
             this.DinnerPanel.SuspendLayout();
             this.DrinksPanel.SuspendLayout();
@@ -550,6 +550,25 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ViewbyIDLabel
+            // 
+            this.ViewbyIDLabel.AutoSize = true;
+            this.ViewbyIDLabel.Location = new System.Drawing.Point(463, 21);
+            this.ViewbyIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ViewbyIDLabel.Name = "ViewbyIDLabel";
+            this.ViewbyIDLabel.Size = new System.Drawing.Size(62, 17);
+            this.ViewbyIDLabel.TabIndex = 15;
+            this.ViewbyIDLabel.Text = "Order ID";
+            // 
+            // ViewByIDBox
+            // 
+            this.ViewByIDBox.Location = new System.Drawing.Point(467, 41);
+            this.ViewByIDBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ViewByIDBox.Name = "ViewByIDBox";
+            this.ViewByIDBox.Size = new System.Drawing.Size(132, 22);
+            this.ViewByIDBox.TabIndex = 14;
+            this.ViewByIDBox.TextChanged += new System.EventHandler(this.ViewByIDBox_TextChanged);
+            // 
             // AddOrderItemFromListButton
             // 
             this.AddOrderItemFromListButton.Location = new System.Drawing.Point(480, 286);
@@ -573,6 +592,17 @@
             this.OrderPanel.Name = "OrderPanel";
             this.OrderPanel.Size = new System.Drawing.Size(1063, 551);
             this.OrderPanel.TabIndex = 0;
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(446, 231);
+            this.btnCheck.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(133, 28);
+            this.btnCheck.TabIndex = 4;
+            this.btnCheck.Text = "Check Order";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // TableIDLabel
             // 
@@ -602,36 +632,6 @@
             this.CreateOrderButton.Text = "Create Order";
             this.CreateOrderButton.UseVisualStyleBackColor = true;
             this.CreateOrderButton.Click += new System.EventHandler(this.CreateOrderButton_Click);
-            // 
-            // ViewbyIDLabel
-            // 
-            this.ViewbyIDLabel.AutoSize = true;
-            this.ViewbyIDLabel.Location = new System.Drawing.Point(463, 21);
-            this.ViewbyIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.ViewbyIDLabel.Name = "ViewbyIDLabel";
-            this.ViewbyIDLabel.Size = new System.Drawing.Size(62, 17);
-            this.ViewbyIDLabel.TabIndex = 15;
-            this.ViewbyIDLabel.Text = "Order ID";
-            // 
-            // ViewByIDBox
-            // 
-            this.ViewByIDBox.Location = new System.Drawing.Point(467, 41);
-            this.ViewByIDBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ViewByIDBox.Name = "ViewByIDBox";
-            this.ViewByIDBox.Size = new System.Drawing.Size(132, 22);
-            this.ViewByIDBox.TabIndex = 14;
-            this.ViewByIDBox.TextChanged += new System.EventHandler(this.ViewByIDBox_TextChanged);
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Location = new System.Drawing.Point(446, 231);
-            this.btnCheck.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(133, 28);
-            this.btnCheck.TabIndex = 4;
-            this.btnCheck.Text = "Check Order";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // EditForm
             // 

@@ -51,9 +51,7 @@ namespace LoginForm
 
         private void lblLogout_Click(object sender, EventArgs e)
         {
-            loginForm loginForm = new loginForm();
-            loginForm.Show();
-            this.Hide();
+            new SwitchForms(connectedEmployee, this, new loginForm());
         }
         private void EditEmployeeForm_Load(object sender, EventArgs e)
         {
