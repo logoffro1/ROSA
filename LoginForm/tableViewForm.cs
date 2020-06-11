@@ -68,11 +68,13 @@ namespace LoginForm
                 {
                     //i'm using 2 loops to avoid using 2 booleans 
                     foreach (OrderItem OI in table.order.ListOrderItems)
+                    {
                         if (OI.menuItem.menuCat >= 25) //if the order has drinks, display the drinks icon
                         {
                             MakePictureBox("drinkIcon", new Point(locationX + tableImages[0].Width + 2, locationY), Resources.Coffee_32);
                             break;
                         }
+                    }
                     foreach (OrderItem OI in table.order.ListOrderItems)
                         if (OI.menuItem.menuCat < 25) //if the order has food, display the food icon
                         {
@@ -250,7 +252,7 @@ namespace LoginForm
                     if (selectedTable.status != TableStatus.Ordered) //if the order doesn't have an order, change the availability
                         selectedTable.isAvailable = tempSelectedTable.isAvailable;
                     else //if there is an order, give warning message
-                        MessageBox.Show("Can't change info if there is a running order(PLACEHOLDER)", "Placeholder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Can't change info if there is a running order!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 selectedTable.isReserved = tempSelectedTable.isReserved;
 

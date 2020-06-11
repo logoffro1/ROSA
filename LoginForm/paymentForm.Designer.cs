@@ -109,7 +109,6 @@
             this.textBox_tip.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox_tip.Size = new System.Drawing.Size(208, 23);
             this.textBox_tip.TabIndex = 32;
-            this.textBox_tip.Text = "0.00";
             this.textBox_tip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_tip.TextChanged += new System.EventHandler(this.textBox_tip_TextChanged);
             // 
@@ -440,6 +439,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.paymentForm_FormClosing);
+            this.Load += new System.EventHandler(this.paymentForm_Load);
             this.pnl_payment_price.ResumeLayout(false);
             this.pnl_payment_price.PerformLayout();
             this.pnl_payment_method.ResumeLayout(false);
