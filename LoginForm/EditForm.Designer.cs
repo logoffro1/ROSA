@@ -529,8 +529,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Messagelabel);
-            this.Controls.Add(this.OrderPanel);
             this.Controls.Add(this.EditPanel);
+            this.Controls.Add(this.OrderPanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

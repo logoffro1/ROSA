@@ -288,9 +288,16 @@ namespace LoginForm
             FillOrderViewByOrderID(orderId);
         }
 
-        private void button1_Click(object sender, EventArgs e)  //pay button goes to 
+        private void button1_Click(object sender, EventArgs e)  //pay button goes to payment screen
         {
-            new SwitchForms(employee, this, new paymentForm(orderId, employee));
+            if (EditView.Items.Count > 0)
+            {
+                new SwitchForms(employee, this, new paymentForm(orderId, employee));
+            }
+            else
+            {
+                Messagelabel.Text = "Order is currently empty !";
+            }
         }
         private void SetLatestOrder()
         {
