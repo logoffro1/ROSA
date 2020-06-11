@@ -313,5 +313,15 @@ namespace LoginForm
             else //if there is an order, go to editOrder panel
                 new SwitchForms(employee, this, new EditForm(employee, selectedTable, "editOrder"));
         }
+
+        private void btnOccupiedNo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOccupiedYes_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
