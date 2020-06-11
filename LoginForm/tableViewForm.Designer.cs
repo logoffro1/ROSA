@@ -103,20 +103,20 @@
             this.pnlTables.Controls.Add(this.picTable3);
             this.pnlTables.Controls.Add(this.picTable2);
             this.pnlTables.Controls.Add(this.picTable1);
-            this.pnlTables.Location = new System.Drawing.Point(12, 23);
-            this.pnlTables.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTables.Location = new System.Drawing.Point(9, 19);
+            this.pnlTables.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTables.Name = "pnlTables";
-            this.pnlTables.Size = new System.Drawing.Size(583, 604);
+            this.pnlTables.Size = new System.Drawing.Size(437, 491);
             this.pnlTables.TabIndex = 0;
             // 
             // picTable10
             // 
             this.picTable10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable10.Image = global::LoginForm.Properties.Resources.Table10;
-            this.picTable10.Location = new System.Drawing.Point(345, 497);
-            this.picTable10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picTable10.Location = new System.Drawing.Point(259, 404);
+            this.picTable10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picTable10.Name = "picTable10";
-            this.picTable10.Size = new System.Drawing.Size(131, 98);
+            this.picTable10.Size = new System.Drawing.Size(98, 80);
             this.picTable10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTable10.TabIndex = 18;
             this.picTable10.TabStop = false;
@@ -126,10 +126,10 @@
             // 
             this.picTable9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable9.Image = global::LoginForm.Properties.Resources.Table9;
-            this.picTable9.Location = new System.Drawing.Point(103, 497);
-            this.picTable9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picTable9.Location = new System.Drawing.Point(77, 404);
+            this.picTable9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picTable9.Name = "picTable9";
-            this.picTable9.Size = new System.Drawing.Size(131, 98);
+            this.picTable9.Size = new System.Drawing.Size(98, 80);
             this.picTable9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTable9.TabIndex = 16;
             this.picTable9.TabStop = false;
@@ -139,10 +139,10 @@
             // 
             this.picTable8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable8.Image = global::LoginForm.Properties.Resources.Table8;
-            this.picTable8.Location = new System.Drawing.Point(345, 377);
-            this.picTable8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picTable8.Location = new System.Drawing.Point(259, 306);
+            this.picTable8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picTable8.Name = "picTable8";
-            this.picTable8.Size = new System.Drawing.Size(131, 98);
+            this.picTable8.Size = new System.Drawing.Size(98, 80);
             this.picTable8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTable8.TabIndex = 14;
             this.picTable8.TabStop = false;
@@ -152,10 +152,10 @@
             // 
             this.picTable7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable7.Image = global::LoginForm.Properties.Resources.Table7;
-            this.picTable7.Location = new System.Drawing.Point(103, 377);
-            this.picTable7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picTable7.Location = new System.Drawing.Point(77, 306);
+            this.picTable7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picTable7.Name = "picTable7";
-            this.picTable7.Size = new System.Drawing.Size(131, 98);
+            this.picTable7.Size = new System.Drawing.Size(98, 80);
             this.picTable7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTable7.TabIndex = 12;
             this.picTable7.TabStop = false;
@@ -165,10 +165,10 @@
             // 
             this.picTable6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable6.Image = global::LoginForm.Properties.Resources.Table6;
-            this.picTable6.Location = new System.Drawing.Point(345, 258);
-            this.picTable6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picTable6.Location = new System.Drawing.Point(259, 210);
+            this.picTable6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picTable6.Name = "picTable6";
-            this.picTable6.Size = new System.Drawing.Size(131, 98);
+            this.picTable6.Size = new System.Drawing.Size(98, 80);
             this.picTable6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTable6.TabIndex = 10;
             this.picTable6.TabStop = false;
@@ -178,10 +178,10 @@
             // 
             this.picTable5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable5.Image = global::LoginForm.Properties.Resources.Table5;
-            this.picTable5.Location = new System.Drawing.Point(103, 258);
-            this.picTable5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picTable5.Location = new System.Drawing.Point(77, 210);
+            this.picTable5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picTable5.Name = "picTable5";
-            this.picTable5.Size = new System.Drawing.Size(131, 98);
+            this.picTable5.Size = new System.Drawing.Size(98, 80);
             this.picTable5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTable5.TabIndex = 8;
             this.picTable5.TabStop = false;
@@ -192,10 +192,10 @@
             this.picTable4.BackColor = System.Drawing.Color.Transparent;
             this.picTable4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable4.Image = global::LoginForm.Properties.Resources.Table4;
-            this.picTable4.Location = new System.Drawing.Point(345, 137);
-            this.picTable4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picTable4.Location = new System.Drawing.Point(259, 111);
+            this.picTable4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picTable4.Name = "picTable4";
-            this.picTable4.Size = new System.Drawing.Size(131, 98);
+            this.picTable4.Size = new System.Drawing.Size(98, 80);
             this.picTable4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTable4.TabIndex = 6;
             this.picTable4.TabStop = false;
@@ -205,10 +205,10 @@
             // 
             this.picTable3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable3.Image = global::LoginForm.Properties.Resources.Table3;
-            this.picTable3.Location = new System.Drawing.Point(103, 137);
-            this.picTable3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picTable3.Location = new System.Drawing.Point(77, 111);
+            this.picTable3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picTable3.Name = "picTable3";
-            this.picTable3.Size = new System.Drawing.Size(131, 98);
+            this.picTable3.Size = new System.Drawing.Size(98, 80);
             this.picTable3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTable3.TabIndex = 4;
             this.picTable3.TabStop = false;
@@ -219,10 +219,10 @@
             this.picTable2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.picTable2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable2.Image = global::LoginForm.Properties.Resources.Table2;
-            this.picTable2.Location = new System.Drawing.Point(345, 18);
-            this.picTable2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picTable2.Location = new System.Drawing.Point(259, 15);
+            this.picTable2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picTable2.Name = "picTable2";
-            this.picTable2.Size = new System.Drawing.Size(131, 98);
+            this.picTable2.Size = new System.Drawing.Size(98, 80);
             this.picTable2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTable2.TabIndex = 2;
             this.picTable2.TabStop = false;
@@ -234,10 +234,10 @@
             this.picTable1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picTable1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTable1.Image = global::LoginForm.Properties.Resources.Table1;
-            this.picTable1.Location = new System.Drawing.Point(103, 18);
-            this.picTable1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picTable1.Location = new System.Drawing.Point(77, 15);
+            this.picTable1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picTable1.Name = "picTable1";
-            this.picTable1.Size = new System.Drawing.Size(131, 98);
+            this.picTable1.Size = new System.Drawing.Size(98, 80);
             this.picTable1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTable1.TabIndex = 0;
             this.picTable1.TabStop = false;
@@ -261,20 +261,20 @@
             this.pnlTableInfo.Controls.Add(this.lblOccupied);
             this.pnlTableInfo.Controls.Add(this.lblCapacity);
             this.pnlTableInfo.Controls.Add(this.picPlaceHolder);
-            this.pnlTableInfo.Location = new System.Drawing.Point(696, 23);
-            this.pnlTableInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTableInfo.Location = new System.Drawing.Point(502, 18);
+            this.pnlTableInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTableInfo.Name = "pnlTableInfo";
-            this.pnlTableInfo.Size = new System.Drawing.Size(285, 358);
+            this.pnlTableInfo.Size = new System.Drawing.Size(214, 291);
             this.pnlTableInfo.TabIndex = 1;
             this.pnlTableInfo.Visible = false;
             // 
             // btnOrder
             // 
-            this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrder.Location = new System.Drawing.Point(28, 319);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrder.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.Location = new System.Drawing.Point(13, 266);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(88, 26);
+            this.btnOrder.Size = new System.Drawing.Size(66, 21);
             this.btnOrder.TabIndex = 33;
             this.btnOrder.Text = "ORDER";
             this.btnOrder.UseVisualStyleBackColor = true;
@@ -283,10 +283,11 @@
             // btnReservedYes
             // 
             this.btnReservedYes.AutoSize = true;
-            this.btnReservedYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservedYes.Location = new System.Drawing.Point(173, 218);
+            this.btnReservedYes.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservedYes.Location = new System.Drawing.Point(139, 177);
+            this.btnReservedYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReservedYes.Name = "btnReservedYes";
-            this.btnReservedYes.Size = new System.Drawing.Size(57, 21);
+            this.btnReservedYes.Size = new System.Drawing.Size(45, 19);
             this.btnReservedYes.TabIndex = 32;
             this.btnReservedYes.Text = "Yes";
             this.btnReservedYes.UseVisualStyleBackColor = true;
@@ -295,10 +296,11 @@
             // btnReservedNo
             // 
             this.btnReservedNo.AutoSize = true;
-            this.btnReservedNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservedNo.Location = new System.Drawing.Point(119, 218);
+            this.btnReservedNo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservedNo.Location = new System.Drawing.Point(98, 177);
+            this.btnReservedNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReservedNo.Name = "btnReservedNo";
-            this.btnReservedNo.Size = new System.Drawing.Size(50, 21);
+            this.btnReservedNo.Size = new System.Drawing.Size(42, 19);
             this.btnReservedNo.TabIndex = 26;
             this.btnReservedNo.Text = "No";
             this.btnReservedNo.UseVisualStyleBackColor = true;
@@ -307,52 +309,58 @@
             // btnOccupiedYes
             // 
             this.btnOccupiedYes.AutoSize = true;
-            this.btnOccupiedYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOccupiedYes.Location = new System.Drawing.Point(174, 179);
+            this.btnOccupiedYes.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOccupiedYes.Location = new System.Drawing.Point(140, 145);
+            this.btnOccupiedYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOccupiedYes.Name = "btnOccupiedYes";
-            this.btnOccupiedYes.Size = new System.Drawing.Size(56, 21);
+            this.btnOccupiedYes.Size = new System.Drawing.Size(44, 19);
             this.btnOccupiedYes.TabIndex = 31;
             this.btnOccupiedYes.Text = "Yes";
             this.btnOccupiedYes.UseVisualStyleBackColor = true;
+            this.btnOccupiedYes.CheckedChanged += new System.EventHandler(this.btnOccupiedYes_CheckedChanged);
             // 
             // btnOccupiedNo
             // 
             this.btnOccupiedNo.AutoSize = true;
-            this.btnOccupiedNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOccupiedNo.Location = new System.Drawing.Point(119, 179);
+            this.btnOccupiedNo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOccupiedNo.Location = new System.Drawing.Point(99, 145);
+            this.btnOccupiedNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOccupiedNo.Name = "btnOccupiedNo";
-            this.btnOccupiedNo.Size = new System.Drawing.Size(49, 21);
+            this.btnOccupiedNo.Size = new System.Drawing.Size(41, 19);
             this.btnOccupiedNo.TabIndex = 30;
             this.btnOccupiedNo.Text = "No";
             this.btnOccupiedNo.UseVisualStyleBackColor = true;
+            this.btnOccupiedNo.CheckedChanged += new System.EventHandler(this.btnOccupiedNo_CheckedChanged);
             // 
             // lblWaitTime
             // 
             this.lblWaitTime.AutoSize = true;
             this.lblWaitTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWaitTime.Location = new System.Drawing.Point(125, 286);
+            this.lblWaitTime.Location = new System.Drawing.Point(94, 232);
+            this.lblWaitTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWaitTime.Name = "lblWaitTime";
-            this.lblWaitTime.Size = new System.Drawing.Size(55, 20);
+            this.lblWaitTime.Size = new System.Drawing.Size(49, 17);
             this.lblWaitTime.TabIndex = 29;
             this.lblWaitTime.Text = "00:00";
             // 
             // lblWaitTimeText
             // 
             this.lblWaitTimeText.AutoSize = true;
-            this.lblWaitTimeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWaitTimeText.Location = new System.Drawing.Point(29, 286);
+            this.lblWaitTimeText.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWaitTimeText.Location = new System.Drawing.Point(12, 230);
+            this.lblWaitTimeText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWaitTimeText.Name = "lblWaitTimeText";
-            this.lblWaitTimeText.Size = new System.Drawing.Size(101, 20);
+            this.lblWaitTimeText.Size = new System.Drawing.Size(84, 18);
             this.lblWaitTimeText.TabIndex = 28;
             this.lblWaitTimeText.Text = "Wait time: ";
             // 
             // btnSaveTableInfo
             // 
-            this.btnSaveTableInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveTableInfo.Location = new System.Drawing.Point(199, 319);
-            this.btnSaveTableInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSaveTableInfo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveTableInfo.Location = new System.Drawing.Point(141, 266);
+            this.btnSaveTableInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveTableInfo.Name = "btnSaveTableInfo";
-            this.btnSaveTableInfo.Size = new System.Drawing.Size(75, 26);
+            this.btnSaveTableInfo.Size = new System.Drawing.Size(56, 21);
             this.btnSaveTableInfo.TabIndex = 27;
             this.btnSaveTableInfo.Text = "SAVE";
             this.btnSaveTableInfo.UseVisualStyleBackColor = true;
@@ -365,9 +373,10 @@
             this.btnExitTableInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExitTableInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExitTableInfo.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnExitTableInfo.Location = new System.Drawing.Point(245, 6);
+            this.btnExitTableInfo.Location = new System.Drawing.Point(184, 5);
+            this.btnExitTableInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnExitTableInfo.Name = "btnExitTableInfo";
-            this.btnExitTableInfo.Size = new System.Drawing.Size(33, 31);
+            this.btnExitTableInfo.Size = new System.Drawing.Size(27, 26);
             this.btnExitTableInfo.TabIndex = 24;
             this.btnExitTableInfo.Text = "X";
             this.btnExitTableInfo.Click += new System.EventHandler(this.btnExitTableInfo_Click);
@@ -375,50 +384,54 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(29, 254);
+            this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(12, 204);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(63, 20);
+            this.lblStatus.Size = new System.Drawing.Size(49, 18);
             this.lblStatus.TabIndex = 23;
             this.lblStatus.Text = "Status";
             // 
             // lblReserved
             // 
             this.lblReserved.AutoSize = true;
-            this.lblReserved.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReserved.Location = new System.Drawing.Point(28, 217);
+            this.lblReserved.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReserved.Location = new System.Drawing.Point(11, 174);
+            this.lblReserved.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReserved.Name = "lblReserved";
-            this.lblReserved.Size = new System.Drawing.Size(88, 20);
+            this.lblReserved.Size = new System.Drawing.Size(76, 18);
             this.lblReserved.TabIndex = 22;
             this.lblReserved.Text = "Reserved";
             // 
             // lblOccupied
             // 
             this.lblOccupied.AutoSize = true;
-            this.lblOccupied.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOccupied.Location = new System.Drawing.Point(27, 178);
+            this.lblOccupied.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOccupied.Location = new System.Drawing.Point(10, 143);
+            this.lblOccupied.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOccupied.Name = "lblOccupied";
-            this.lblOccupied.Size = new System.Drawing.Size(88, 20);
+            this.lblOccupied.Size = new System.Drawing.Size(84, 18);
             this.lblOccupied.TabIndex = 21;
             this.lblOccupied.Text = "Occupied";
             // 
             // lblCapacity
             // 
             this.lblCapacity.AutoSize = true;
-            this.lblCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapacity.Location = new System.Drawing.Point(27, 138);
+            this.lblCapacity.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCapacity.Location = new System.Drawing.Point(10, 110);
+            this.lblCapacity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(82, 20);
+            this.lblCapacity.Size = new System.Drawing.Size(77, 18);
             this.lblCapacity.TabIndex = 20;
             this.lblCapacity.Text = "Capacity";
             // 
             // picPlaceHolder
             // 
             this.picPlaceHolder.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picPlaceHolder.Location = new System.Drawing.Point(77, 20);
-            this.picPlaceHolder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picPlaceHolder.Location = new System.Drawing.Point(58, 16);
+            this.picPlaceHolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picPlaceHolder.Name = "picPlaceHolder";
-            this.picPlaceHolder.Size = new System.Drawing.Size(131, 98);
+            this.picPlaceHolder.Size = new System.Drawing.Size(98, 80);
             this.picPlaceHolder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPlaceHolder.TabIndex = 19;
             this.picPlaceHolder.TabStop = false;
@@ -436,14 +449,14 @@
             this.managementToolStripMenuItem});
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
-            this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.navbar.Size = new System.Drawing.Size(1006, 36);
+            this.navbar.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.navbar.Size = new System.Drawing.Size(754, 30);
             this.navbar.TabIndex = 2;
             // 
             // homeToolStripMenuItem1
             // 
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
-            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
+            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(67, 26);
             this.homeToolStripMenuItem1.Text = "Home";
             this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem1_Click);
             // 
@@ -451,21 +464,21 @@
             // 
             this.tablesToolStripMenuItem1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tablesToolStripMenuItem1.Name = "tablesToolStripMenuItem1";
-            this.tablesToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
+            this.tablesToolStripMenuItem1.Size = new System.Drawing.Size(67, 26);
             this.tablesToolStripMenuItem1.Text = "Tables";
             this.tablesToolStripMenuItem1.Click += new System.EventHandler(this.tablesToolStripMenuItem1_Click);
             // 
             // barToolStripMenuItem
             // 
             this.barToolStripMenuItem.Name = "barToolStripMenuItem";
-            this.barToolStripMenuItem.Size = new System.Drawing.Size(55, 32);
+            this.barToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.barToolStripMenuItem.Text = "Bar";
             this.barToolStripMenuItem.Click += new System.EventHandler(this.barToolStripMenuItem_Click);
             // 
             // kitchenToolStripMenuItem
             // 
             this.kitchenToolStripMenuItem.Name = "kitchenToolStripMenuItem";
-            this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
+            this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.kitchenToolStripMenuItem.Text = "Kitchen";
             this.kitchenToolStripMenuItem.Click += new System.EventHandler(this.kitchenToolStripMenuItem_Click);
             // 
@@ -474,7 +487,7 @@
             this.managementToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.managementToolStripMenuItem.Font = new System.Drawing.Font("Tw Cen MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(159, 32);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.managementToolStripMenuItem.Text = "Management";
             this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
             // 
@@ -501,9 +514,10 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
             this.lblWelcome.Font = new System.Drawing.Font("Tw Cen MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(733, 39);
+            this.lblWelcome.Location = new System.Drawing.Point(550, 32);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(131, 22);
+            this.lblWelcome.Size = new System.Drawing.Size(104, 17);
             this.lblWelcome.TabIndex = 3;
             this.lblWelcome.Text = "Welcome, Alex!";
             // 
@@ -514,9 +528,10 @@
             this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblLogout.Font = new System.Drawing.Font("Tw Cen MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogout.ForeColor = System.Drawing.Color.Black;
-            this.lblLogout.Location = new System.Drawing.Point(917, 39);
+            this.lblLogout.Location = new System.Drawing.Point(688, 32);
+            this.lblLogout.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(72, 22);
+            this.lblLogout.Size = new System.Drawing.Size(57, 17);
             this.lblLogout.TabIndex = 4;
             this.lblLogout.Text = "Log Out";
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
@@ -526,10 +541,11 @@
             // lblSelectTable
             // 
             this.lblSelectTable.AutoSize = true;
-            this.lblSelectTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectTable.Location = new System.Drawing.Point(155, 0);
+            this.lblSelectTable.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectTable.Location = new System.Drawing.Point(116, 0);
+            this.lblSelectTable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSelectTable.Name = "lblSelectTable";
-            this.lblSelectTable.Size = new System.Drawing.Size(302, 20);
+            this.lblSelectTable.Size = new System.Drawing.Size(262, 20);
             this.lblSelectTable.TabIndex = 25;
             this.lblSelectTable.Text = "Select a table for more information";
             // 
@@ -541,39 +557,41 @@
             this.pnlTablesView.Controls.Add(this.lblSelectTable);
             this.pnlTablesView.Controls.Add(this.pnlTableInfo);
             this.pnlTablesView.Controls.Add(this.pnlTables);
-            this.pnlTablesView.Location = new System.Drawing.Point(12, 76);
-            this.pnlTablesView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTablesView.Location = new System.Drawing.Point(9, 62);
+            this.pnlTablesView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTablesView.Name = "pnlTablesView";
-            this.pnlTablesView.Size = new System.Drawing.Size(981, 633);
+            this.pnlTablesView.Size = new System.Drawing.Size(736, 514);
             this.pnlTablesView.TabIndex = 26;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::LoginForm.Properties.Resources.IconsExplanation1;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(632, 485);
+            this.pictureBox2.Location = new System.Drawing.Point(516, 397);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(245, 142);
+            this.pictureBox2.Size = new System.Drawing.Size(184, 115);
             this.pictureBox2.TabIndex = 26;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LoginForm.Properties.Resources.Available_Occupied_Icon;
-            this.pictureBox1.Location = new System.Drawing.Point(669, 409);
+            this.pictureBox1.Location = new System.Drawing.Point(544, 333);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(130, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
             // tableViewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LoginForm.Properties.Resources.HOME_BG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.ClientSize = new System.Drawing.Size(754, 586);
             this.Controls.Add(this.navbar);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.lblWelcome);
@@ -581,7 +599,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "tableViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
