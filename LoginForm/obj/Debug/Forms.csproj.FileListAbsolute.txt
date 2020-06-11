@@ -234,7 +234,6 @@ C:\Users\Gabrian\Source\Repos\ROSA\LoginForm\obj\Debug\LoginForm.loginForm.resou
 C:\Users\Gabrian\Source\Repos\ROSA\LoginForm\obj\Debug\LoginForm.BarKitchenForm.resources
 C:\Users\Gabrian\Source\Repos\ROSA\LoginForm\obj\Debug\LoginForm.AddEmployeeForm.resources
 C:\Users\Gabrian\Source\Repos\ROSA\LoginForm\obj\Debug\LoginForm.ManagementForm.resources
-C:\Users\Gabrian\Source\Repos\ROSA\LoginForm\obj\Debug\LoginForm.OrderForm.resources
 C:\Users\Gabrian\Source\Repos\ROSA\LoginForm\obj\Debug\LoginForm.paymentForm.resources
 C:\Users\Gabrian\Source\Repos\ROSA\LoginForm\obj\Debug\LoginForm.Revenue.resources
 C:\Users\Gabrian\Source\Repos\ROSA\LoginForm\obj\Debug\LoginForm.tableViewForm.resources

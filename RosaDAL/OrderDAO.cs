@@ -47,7 +47,6 @@ namespace RosaDAL
 
             // 2020-04-05 12:13:14
             string formattedDate = $"{DateTime.Now.Year}-{DateTime.Now.Month}-{DateTime.Now.Day} {DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}.{DateTime.Now.Millisecond}";
-            //string query = $"INSERT INTO [order](orderDate, table_id, employee_id, notes) VALUES ({datetime},{tableID},{employeeID},{comment}";
             string query = $"INSERT INTO [order](table_id, orderDate, isPaid) VALUES ({tableID},'{formattedDate}', 0)";
 
 
@@ -170,23 +169,33 @@ namespace RosaDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
-        public void DecreaseStock(int menuitemID, int amount)
+        public void AdjustStock(int menuitemID, int amount,string oprtr)
         {
-            string query = $"update[menuItem] set stock = stock-{amount} where menuItem_id = ({menuitemID})";
+            string query = $"update[menuItem] set stock = stock{oprtr}{amount} where menuItem_id = ({menuitemID})";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
-        public void CheckStock(int menuitemID)
+        public int CheckStockbyID(int menuitemID)
         {
-            string query = $"select [stock] from menuItem where ({menuitemID})";
+            string query = $"select [stock] from menuItem where menuItem_id =({menuitemID})";
             SqlParameter[] sqlParameters = new SqlParameter[0];
-            ExecuteEditQuery(query, sqlParameters);
+            return readstock(ExecuteSelectQuery(query, sqlParameters));
         }
         public List<MenuItem> GetMenuItems(int catID)
         {
             string query = $"Select * from [menuItem] where menuCategory_id=({catID})";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadMenuItems(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public int readstock(DataTable dataTable)
+        {
+            int stock=1;
+            foreach (DataRow dr in dataTable.Rows) 
+            {
+               stock = (int)dr["stock"];
+            }
+
+            return stock;
         }
         public List<MenuItem> ReadMenuItems(DataTable dataTable)
         {
@@ -198,7 +207,8 @@ namespace RosaDAL
                 {
                     Name = (string)dr["itemName"],
                     Price = (decimal)dr["price"],
-                    ID = (int)dr["menuItem_id"]
+                    ID = (int)dr["menuItem_id"],
+                    stock= (int)dr["stock"]
                 };
                 menuItems.Add(menuItem);
 
