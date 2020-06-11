@@ -66,7 +66,6 @@ namespace LoginForm
 
                 if (table.order.ListOrderItems.Count > 0) //if the order has items in it
                 {
-
                     //i'm using 2 loops to avoid using 2 booleans 
                     foreach (OrderItem OI in table.order.ListOrderItems)
                         if (OI.menuItem.menuCat >= 25) //if the order has drinks, display the drinks icon
@@ -98,7 +97,7 @@ namespace LoginForm
                 BackgroundImageLayout = ImageLayout.Stretch
 
             };
-            
+
             pnlTables.Controls.Add(icon); //add the icon to the pnlTables controls so it becomes visibile
             iconsPB.Add(icon); // add the icons to an icons list (so I can dispose of them easier)
         }
@@ -127,11 +126,11 @@ namespace LoginForm
             //set the placeholder image to the corresponding table image from the list
             picPlaceHolder.Image = tableImages[tableId - 1].Image;
             //set the labels to the right values from the database
-            lblCapacity.Text = "Capacity: " + selectedTable.capacity.ToString();        
+            lblCapacity.Text = "Capacity: " + selectedTable.capacity.ToString();
             lblStatus.Text = "Status: " + selectedTable.status.ToString();
-          
+
             SetRadioButtons(); //set the radio buttons of the occupied/reserved      
-     
+
             ChangeLabelWaitTime(selectedTable);
 
             //if the table has an order, create and start the timer
@@ -160,7 +159,7 @@ namespace LoginForm
         }
         private void TimerWaitTime_Tick(object sender, EventArgs e) //with every tick, change the wait time label
         {
-            ChangeLabelWaitTime(selectedTable); 
+            ChangeLabelWaitTime(selectedTable);
         }
         private int WaitTimeMinutes(int waitTimeTotalSeconds)
         {
@@ -168,7 +167,7 @@ namespace LoginForm
         }
         private void ChangeLabelWaitTime(Table table)
         {
-           
+
             /*
              * All this does is, it calculates the wait time for the order from the moment the order was placed
              * it changes the label color of the wait time label depending on the minutes waited
@@ -256,7 +255,7 @@ namespace LoginForm
                 selectedTable.isReserved = tempSelectedTable.isReserved;
 
 
-                
+
                 ShowTableInfo(selectedTable.tableId); //refresh ShowTableInfo panel
                 tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved); // update the table
                 ChangeTableColor(); //change the colors and the icons

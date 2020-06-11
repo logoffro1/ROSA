@@ -74,7 +74,7 @@
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
             this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.navbar.Size = new System.Drawing.Size(1005, 37);
+            this.navbar.Size = new System.Drawing.Size(1006, 37);
             this.navbar.TabIndex = 3;
             // 
             // homeToolStripMenuItem1
@@ -365,7 +365,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LoginForm.Properties.Resources.BG_TABLESPAGE;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblLogout);

@@ -90,7 +90,7 @@
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
             this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.navbar.Size = new System.Drawing.Size(1012, 36);
+            this.navbar.Size = new System.Drawing.Size(1006, 36);
             this.navbar.TabIndex = 3;
             this.navbar.Text = "menuStrip1";
             // 
@@ -441,7 +441,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LoginForm.Properties.Resources.HOME_BG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1012, 734);
+            this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.navbar);
             this.Controls.Add(this.panel_Bar);

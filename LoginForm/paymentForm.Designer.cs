@@ -104,6 +104,7 @@
             this.textBox_tip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_tip.Location = new System.Drawing.Point(77, 112);
             this.textBox_tip.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_tip.MaxLength = 6;
             this.textBox_tip.Name = "textBox_tip";
             this.textBox_tip.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox_tip.Size = new System.Drawing.Size(208, 23);
@@ -319,6 +320,7 @@
             this.textBox_totalPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_totalPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_totalPrice.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox_totalPrice.Enabled = false;
             this.textBox_totalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_totalPrice.Location = new System.Drawing.Point(52, 225);
             this.textBox_totalPrice.Margin = new System.Windows.Forms.Padding(4);

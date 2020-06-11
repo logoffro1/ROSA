@@ -103,9 +103,14 @@ namespace LoginForm
             if (EditView.SelectedItems.Count > 0)
             {
                 RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // decreases selected order item amount
-                orderserv.DecreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
-                orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "+");
-                FillOrderViewByOrderID(orderId);
+                if (int.Parse(EditView.SelectedItems[0].SubItems[3].Text) > 0)
+                {
+                    orderserv.DecreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
+                    orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "+");
+                    FillOrderViewByOrderID(orderId);
+                }
+                else
+                    Messagelabel.Text = "You can't decrease the amount any further!";
             }
             else
             {
@@ -332,6 +337,10 @@ namespace LoginForm
         private void Backbutton_Click(object sender, EventArgs e)
         {
             new SwitchForms(employee, this, new tableViewForm(employee));
+        }
+        private void EditForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
