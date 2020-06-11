@@ -92,15 +92,18 @@ namespace RosaLogic
         {
             orderDAO.DecreaseAmount(orderitemID);
         }
-        public void DecreaseStock(int menuitemID,int amount)
+        public void AdjustStock(int menuitemID,int amount,string oprtr)
         {
-            orderDAO.DecreaseStock(menuitemID, amount);
+            orderDAO.AdjustStock(menuitemID, amount, oprtr);
         }
         public List<MenuItem> GetMenuItems(int catID)
         {
             return orderDAO.GetMenuItems(catID);
         }
-
+        public int CheckStock(int menuitemID)
+        {
+            return orderDAO.CheckStockbyID(menuitemID);
+        }
         //Dewi
         public Order GetOrderById(int orderID)
         {

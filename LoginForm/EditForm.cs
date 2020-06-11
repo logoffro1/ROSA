@@ -46,9 +46,17 @@ namespace LoginForm
         private void DeleteOrderItemButton_Click(object sender, EventArgs e)
         {
             Order_Service orderserv = new Order_Service();  //deletes selected order item
-            orderserv.DeleteOrderItem(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
-            Messagelabel.Text = "Deleted Order item with ID " + EditView.SelectedItems[0].SubItems[1].Text;
-            FillOrderViewByOrderID(orderId);
+            if (EditView.SelectedItems.Count > 0)
+            {
+                orderserv.DeleteOrderItem(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
+                Messagelabel.Text = "Deleted Order item with ID " + EditView.SelectedItems[0].SubItems[1].Text;
+                orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "+");
+                FillOrderViewByOrderID(orderId);
+            }
+            else
+            {
+                Messagelabel.Text = "No item selected!";
+            }
         }
 
         private void SelectOrderButton_Click(object sender, EventArgs e)
@@ -76,25 +84,33 @@ namespace LoginForm
         private void IncreaseButton_Click(object sender, EventArgs e)
         {
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // increases selected order item amount 
-            orderserv.IncreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
-            FillOrderViewByOrderID(orderId);
+            if (EditView.SelectedItems.Count > 0)
+            {
+                orderserv.IncreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
+                orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "-");
+
+                FillOrderViewByOrderID(orderId);
+            }
+            else
+            {
+                Messagelabel.Text = "No item selected!";
+            }
         }
 
         private void DecreaseButton_Click(object sender, EventArgs e)
         {
-            RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // decreases selected order item amount
-            orderserv.DecreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
-            FillOrderViewByOrderID(orderId);
+            if (EditView.SelectedItems.Count > 0)
+            {
+                RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // decreases selected order item amount
+                orderserv.DecreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
+                orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "+");
+                FillOrderViewByOrderID(orderId);
+            }
+            else
+            {
+                Messagelabel.Text = "No item selected!";
+            }
         }
-
-        private void DecreaseAmountButton_Click(object sender, EventArgs e)  // this decreases the stock by the set amount | currently on a button but will be used each time an order item is added to an order
-        {
-            int amount = 1;
-            RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
-            orderserv.DecreaseStock(int.Parse(MenuItemIDBox.Text), amount);
-        }
-
-
         private void GetItems(int menuID, ListView listView)  // gets items for each part of the menu
         {
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
@@ -108,9 +124,6 @@ namespace LoginForm
                 listView.Items.Add(li);
             }
         }
-
-
-
         private void CreateOrderButton_Click(object sender, EventArgs e)
         {
             {
@@ -125,11 +138,14 @@ namespace LoginForm
 
         private void AddOrderItemFromListButton_Click(object sender, EventArgs e) //adding order item from the menu
         {
-            if ((!IncreaseAmountOfExistingItem(LunchView)) & (!IncreaseAmountOfExistingItem(DinnerView)) & (!IncreaseAmountOfExistingItem(DrinksView)))
+            if ((!CheckStockAmount(DrinksView)) & (!CheckStockAmount(DinnerView))& (!CheckStockAmount(LunchView)))
             {
-                if ((!CreateByID(LunchView)) & (!CreateByID(DinnerView)) & (!CreateByID(DrinksView)))
+                if ((!IncreaseAmountOfExistingItem(LunchView)) & (!IncreaseAmountOfExistingItem(DinnerView)) & (!IncreaseAmountOfExistingItem(DrinksView)))
                 {
-                    Messagelabel.Text = "No item selected from menu";
+                    if ((!CreateByID(LunchView)) & (!CreateByID(DinnerView)) & (!CreateByID(DrinksView)))
+                    {
+                        Messagelabel.Text = "No item selected from menu";
+                    }
                 }
             }
             FillOrderViewByOrderID(orderId);
@@ -142,6 +158,7 @@ namespace LoginForm
             {
                 orderserv.CreateOrderItem(orderId, int.Parse(list.SelectedItems[0].SubItems[2].Text));
                 Messagelabel.Text = "Added " + list.SelectedItems[0].SubItems[0].Text + " to Order " + orderId;
+                orderserv.AdjustStock(int.Parse(list.SelectedItems[0].SubItems[2].Text), 1, "-");
                 return true;
             }
             else
@@ -178,6 +195,7 @@ namespace LoginForm
                 if (CheckListForItem(int.Parse(list.SelectedItems[0].SubItems[2].Text)))
                 {
                     orderserv.IncreaseAmount2(int.Parse(list.SelectedItems[0].SubItems[2].Text));
+                    orderserv.AdjustStock(int.Parse(list.SelectedItems[0].SubItems[2].Text), 1, "-");
                     return true;
                 }
             }
@@ -273,10 +291,6 @@ namespace LoginForm
             new SwitchForms(employee, this, new paymentForm(orderId, employee));
         }
 
-        private void ViewByIDBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
@@ -290,6 +304,27 @@ namespace LoginForm
             };
 
             new SwitchForms(employee, this, new EditForm(employee,table,"Edit"));
+        }
+        private bool CheckStockAmount(ListView list)
+        {
+            Order_Service orderService = new Order_Service();
+            if (list.SelectedItems.Count > 0)
+            {
+                int stock = orderService.CheckStock(int.Parse(list.SelectedItems[0].SubItems[2].Text));
+                if (stock < 0)
+                {
+                    Messagelabel.Text = "Insufficient stock!";
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
