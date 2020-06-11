@@ -32,7 +32,6 @@
             this.navbar = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.barToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitchenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +83,6 @@
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem1,
             this.tablesToolStripMenuItem1,
-            this.orderToolStripMenuItem1,
             this.barToolStripMenuItem,
             this.kitchenToolStripMenuItem,
             this.managementToolStripMenuItem,
@@ -108,12 +106,6 @@
             this.tablesToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
             this.tablesToolStripMenuItem1.Text = "Tables";
             this.tablesToolStripMenuItem1.Click += new System.EventHandler(this.tablesToolStripMenuItem1_Click);
-            // 
-            // orderToolStripMenuItem1
-            // 
-            this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
-            this.orderToolStripMenuItem1.Size = new System.Drawing.Size(78, 32);
-            this.orderToolStripMenuItem1.Text = "Order";
             // 
             // barToolStripMenuItem
             // 
@@ -353,7 +345,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Tw Cen MT", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(58, 478);
+            this.lblTime.Location = new System.Drawing.Point(52, 478);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(119, 25);
             this.lblTime.TabIndex = 3;
@@ -395,7 +387,7 @@
             // 
             // picHelp
             // 
-            this.picHelp.BackgroundImage = global::LoginForm.Properties.Resources.helpTablesView;
+            this.picHelp.BackgroundImage = global::LoginForm.Properties.Resources.helpTablesView3;
             this.picHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picHelp.Location = new System.Drawing.Point(384, 229);
             this.picHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -483,7 +475,6 @@
         private System.Windows.Forms.ToolStripMenuItem barToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kitchenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RichTextBox txtNotes;
         private System.Windows.Forms.Label lblNotes;

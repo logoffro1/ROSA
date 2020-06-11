@@ -58,7 +58,6 @@
             this.navbar = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.barToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitchenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +68,7 @@
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblSelectTable = new System.Windows.Forms.Label();
             this.pnlTablesView = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTable10)).BeginInit();
@@ -85,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlaceHolder)).BeginInit();
             this.navbar.SuspendLayout();
             this.pnlTablesView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -430,7 +431,6 @@
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem1,
             this.tablesToolStripMenuItem1,
-            this.orderToolStripMenuItem1,
             this.barToolStripMenuItem,
             this.kitchenToolStripMenuItem,
             this.managementToolStripMenuItem});
@@ -454,13 +454,6 @@
             this.tablesToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
             this.tablesToolStripMenuItem1.Text = "Tables";
             this.tablesToolStripMenuItem1.Click += new System.EventHandler(this.tablesToolStripMenuItem1_Click);
-            // 
-            // orderToolStripMenuItem1
-            // 
-            this.orderToolStripMenuItem1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
-            this.orderToolStripMenuItem1.Size = new System.Drawing.Size(78, 32);
-            this.orderToolStripMenuItem1.Text = "Order";
             // 
             // barToolStripMenuItem
             // 
@@ -543,6 +536,7 @@
             // pnlTablesView
             // 
             this.pnlTablesView.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTablesView.Controls.Add(this.pictureBox2);
             this.pnlTablesView.Controls.Add(this.pictureBox1);
             this.pnlTablesView.Controls.Add(this.lblSelectTable);
             this.pnlTablesView.Controls.Add(this.pnlTableInfo);
@@ -553,10 +547,20 @@
             this.pnlTablesView.Size = new System.Drawing.Size(981, 633);
             this.pnlTablesView.TabIndex = 26;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::LoginForm.Properties.Resources.IconsExplanation1;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(632, 485);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(245, 142);
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LoginForm.Properties.Resources.Available_Occupied_Icon;
-            this.pictureBox1.Location = new System.Drawing.Point(626, 520);
+            this.pictureBox1.Location = new System.Drawing.Point(669, 409);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(174, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -602,6 +606,7 @@
             this.navbar.PerformLayout();
             this.pnlTablesView.ResumeLayout(false);
             this.pnlTablesView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -644,12 +649,12 @@
         private System.Windows.Forms.ToolStripMenuItem kitchenToolStripMenuItem;
         private System.Windows.Forms.Label lblWaitTimeText;
         private System.Windows.Forms.Label lblWaitTime;
-        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem1;
         private System.Windows.Forms.RadioButton btnOccupiedYes;
         private System.Windows.Forms.RadioButton btnOccupiedNo;
         private System.Windows.Forms.CheckBox btnReservedYes;
         private System.Windows.Forms.CheckBox btnReservedNo;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

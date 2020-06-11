@@ -33,3 +33,4 @@ C:\Users\31620\Desktop\liv pr\RosaModel\bin\Debug\RosaModel.pdb
 C:\Users\31620\Desktop\liv pr\RosaModel\obj\Debug\RosaModel.csprojAssemblyReference.cache
 C:\Users\31620\Desktop\liv pr\RosaModel\obj\Debug\RosaModel.dll
 C:\Users\31620\Desktop\liv pr\RosaModel\obj\Debug\RosaModel.pdb
+C:\Users\logoff\source\repos\ROSA\RosaModel\obj\Debug\RosaModel.csprojAssemblyReference.cache

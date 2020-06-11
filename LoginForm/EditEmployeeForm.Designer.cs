@@ -31,7 +31,6 @@
             this.navbar = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.barToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitchenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +68,6 @@
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem1,
             this.tablesToolStripMenuItem1,
-            this.orderToolStripMenuItem1,
             this.barToolStripMenuItem,
             this.kitchenToolStripMenuItem,
             this.managementToolStripMenuItem});
@@ -94,13 +92,6 @@
             this.tablesToolStripMenuItem1.Text = "Tables";
             this.tablesToolStripMenuItem1.Click += new System.EventHandler(this.tablesToolStripMenuItem1_Click);
             // 
-            // orderToolStripMenuItem1
-            // 
-            this.orderToolStripMenuItem1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
-            this.orderToolStripMenuItem1.Size = new System.Drawing.Size(78, 32);
-            this.orderToolStripMenuItem1.Text = "Order";
-            // 
             // barToolStripMenuItem
             // 
             this.barToolStripMenuItem.Name = "barToolStripMenuItem";
@@ -122,6 +113,7 @@
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
             this.managementToolStripMenuItem.Size = new System.Drawing.Size(159, 32);
             this.managementToolStripMenuItem.Text = "Management";
+            this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
             // 
             // lblLogout
             // 
@@ -389,7 +381,6 @@
         private System.Windows.Forms.MenuStrip navbar;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tablesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem barToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kitchenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;

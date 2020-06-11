@@ -19,7 +19,7 @@ namespace LoginForm
         private PictureBox[] tableImages; //create an array for all the table images
         private List<Table> tables;
         private Table selectedTable; //the current selected table by the user
-        private List<PictureBox> iconsPB = new List<PictureBox>();
+        private List<PictureBox> iconsPB = new List<PictureBox>(); //for storing all the table icons
 
         public tableViewForm(Employee employee)
         {
@@ -27,6 +27,10 @@ namespace LoginForm
             this.employee = employee;
         }
         private void tableViewForm_Load(object sender, EventArgs e)
+        {
+            LoadForm();
+        }
+        private void LoadForm()
         {
             //show a Welcome message, "Welcome, firstName!"
             lblWelcome.Text = $"Welcome, {employee.firstName}!";
@@ -43,29 +47,35 @@ namespace LoginForm
         {
             Application.Exit();
         }
-        private void ShowTableIcons(Table table)
+        private void ShowTableIcons(Table table) //show the icons for each table
         {
-            int sizeX = tableImages[table.tableId - 1].Height / 3;
+            int sizeX = tableImages[table.tableId - 1].Height / 3; //make the size to be 1/3 of the table image, so it looks the same on every monitor
+
+            //store the location of the tableImage
             int locationX = tableImages[table.tableId - 1].Location.X;
             int locationY = tableImages[table.tableId - 1].Location.Y;
-            if (table.isReserved)
+
+            if (table.isReserved) //add reserved Icon
                 MakePictureBox("reservedIcon", new Point(locationX - sizeX - 2, locationY), Resources.Addressbook_32);
 
-            if (table.order != null)
+            if (table.order != null) //if the table has an order
             {
+                //if the waiting time is more than 15 minutes, display the time icon
                 if (WaitTimeMinutes((int)(DateTime.Now - table.order.DateTime).TotalSeconds) >= 15)
                     MakePictureBox("clockIcon", new Point(locationX - sizeX - 2, locationY + tableImages[table.tableId - 1].Height - sizeX), Resources.Alert_Clock_32);
 
-                if (table.order.ListOrderItems.Count > 0)
+                if (table.order.ListOrderItems.Count > 0) //if the order has items in it
                 {
+
+                    //i'm using 2 loops to avoid using 2 booleans 
                     foreach (OrderItem OI in table.order.ListOrderItems)
-                        if (OI.menuItem.menuCat >= 25)
+                        if (OI.menuItem.menuCat >= 25) //if the order has drinks, display the drinks icon
                         {
                             MakePictureBox("drinkIcon", new Point(locationX + tableImages[0].Width + 2, locationY), Resources.Coffee_32);
                             break;
                         }
                     foreach (OrderItem OI in table.order.ListOrderItems)
-                        if (OI.menuItem.menuCat < 25)
+                        if (OI.menuItem.menuCat < 25) //if the order has food, display the food icon
                         {
                             MakePictureBox("foodIcon", new Point(locationX + tableImages[0].Width + 2, locationY + tableImages[table.tableId - 1].Height - sizeX), Resources.Food_32);
                             break;
@@ -73,10 +83,10 @@ namespace LoginForm
                 }
             }
         }
-        private void MakePictureBox(string Name, Point Location, Image BackgroundImage)
+        private void MakePictureBox(string Name, Point Location, Image BackgroundImage) // create picture box for the icons
         {
 
-            int sizeX = tableImages[0].Height / 3;
+            int sizeX = tableImages[0].Height / 3; //make the size of the icon 1/3 of the table image
             int sizeY = sizeX;
             PictureBox icon = new PictureBox()
             {
@@ -88,16 +98,17 @@ namespace LoginForm
                 BackgroundImageLayout = ImageLayout.Stretch
 
             };
-            pnlTables.Controls.Add(icon);
-            iconsPB.Add(icon);
+            
+            pnlTables.Controls.Add(icon); //add the icon to the pnlTables controls so it becomes visibile
+            iconsPB.Add(icon); // add the icons to an icons list (so I can dispose of them easier)
         }
         void ChangeTableColor() //change the back color depending on the availability for all the tables
         {
-            foreach (PictureBox pb in iconsPB)
+            foreach (PictureBox pb in iconsPB) //dispose of all the table icons
                 pb.Dispose();
 
             int count = 0; //to keep track of the table number
-            foreach (PictureBox p in tableImages) // loop through the table images list
+            foreach (PictureBox p in tableImages) // loop through the t able images list
             {
                 //if the table is occupied, set the color to green
                 if (tables[count].isAvailable)
@@ -105,7 +116,7 @@ namespace LoginForm
                 else //if it is not occupied, set it to red
                     p.BackColor = Color.FromArgb(255, 128, 128); //red-ish color
 
-                ShowTableIcons(tables[count]);
+                ShowTableIcons(tables[count]); // foreach table, show the icons
                 count++;
             }
         }
@@ -116,23 +127,14 @@ namespace LoginForm
             //set the placeholder image to the corresponding table image from the list
             picPlaceHolder.Image = tableImages[tableId - 1].Image;
             //set the labels to the right values from the database
-            lblCapacity.Text = "Capacity: " + selectedTable.capacity.ToString();
-            if (selectedTable.isReserved)
-                btnReservedYes.Checked = true;
-            else
-                btnReservedNo.Checked = true;
-
-            //if the table is occupied, show that on the screen
-            if (!selectedTable.isAvailable)
-                btnOccupiedYes.Checked = true;
-            else //if the table is not ocuppied
-                btnOccupiedNo.Checked = true;
-
+            lblCapacity.Text = "Capacity: " + selectedTable.capacity.ToString();        
             lblStatus.Text = "Status: " + selectedTable.status.ToString();
-
+          
+            SetRadioButtons(); //set the radio buttons of the occupied/reserved      
+     
             ChangeLabelWaitTime(selectedTable);
 
-
+            //if the table has an order, create and start the timer
             if (selectedTable.status == TableStatus.Ordered)
             {
                 Timer timerWaitTime = new Timer();
@@ -143,10 +145,22 @@ namespace LoginForm
 
             pnlTableInfo.Show();  //show the table info panel
         }
-
-        private void TimerWaitTime_Tick(object sender, EventArgs e)
+        private void SetRadioButtons()
         {
-            ChangeLabelWaitTime(selectedTable);
+            if (selectedTable.isReserved)
+                btnReservedYes.Checked = true;
+            else
+                btnReservedNo.Checked = true;
+
+            //if the table is occupied, show that on the screen
+            if (!selectedTable.isAvailable)
+                btnOccupiedYes.Checked = true;
+            else //if the table is not ocuppied
+                btnOccupiedNo.Checked = true;
+        }
+        private void TimerWaitTime_Tick(object sender, EventArgs e) //with every tick, change the wait time label
+        {
+            ChangeLabelWaitTime(selectedTable); 
         }
         private int WaitTimeMinutes(int waitTimeTotalSeconds)
         {
@@ -154,6 +168,12 @@ namespace LoginForm
         }
         private void ChangeLabelWaitTime(Table table)
         {
+           
+            /*
+             * All this does is, it calculates the wait time for the order from the moment the order was placed
+             * it changes the label color of the wait time label depending on the minutes waited
+             * it changes the wait time label to the appropiate time       
+             */
             if (table.status == TableStatus.Ordered)
             {
                 int waitTimetotalSeconds = (int)(DateTime.Now - table.order.DateTime).TotalSeconds;
@@ -172,7 +192,7 @@ namespace LoginForm
                     lblWaitTime.Text = $"{waitTimeMinutes.ToString("00")}:{waitTimeSeconds.ToString("00")}";
                 }
             }
-            else
+            else //if there is no order, the timer shows 00:00
             {
                 lblWaitTime.BackColor = SystemColors.Control;
                 lblWaitTime.Text = "00:00";
@@ -181,7 +201,7 @@ namespace LoginForm
         private void TableClick(object sender, EventArgs e) //event handler
         {
             PictureBox tablePic = (PictureBox)sender; //store the clicked table
-            int tableId = int.Parse(tablePic.Name.Remove(0, 8));
+            int tableId = int.Parse(tablePic.Name.Remove(0, 8)); //return only the table number
             ShowTableInfo(tableId); //pass the number to ShowTableInfo     
         }
         private void btnExitTableInfo_Click(object sender, EventArgs e)
@@ -206,12 +226,14 @@ namespace LoginForm
         private void btnSaveTableInfo_Click(object sender, EventArgs e)
         {
             Table_Service tableService = new Table_Service();
-            Table tempSelectedTable = new Table()
+
+            Table tempSelectedTable = new Table() //store the table information into a temp table
             {
                 isAvailable = selectedTable.isAvailable,
                 isReserved = selectedTable.isReserved
             };
 
+            //set the temp table to the correct information
             if (btnOccupiedYes.Checked)
                 tempSelectedTable.isAvailable = false;
             else
@@ -222,22 +244,26 @@ namespace LoginForm
             else
                 tempSelectedTable.isReserved = false;
 
+
+            // this check if changes were actually made (it compares the temp table with the selected table)
             if (tempSelectedTable.isAvailable != selectedTable.isAvailable || tempSelectedTable.isReserved != selectedTable.isReserved)
             {
 
-                if (tempSelectedTable.isAvailable != selectedTable.isAvailable)
-                    if (selectedTable.status != TableStatus.Ordered)
+                if (tempSelectedTable.isAvailable != selectedTable.isAvailable) //if the isAvailable changed
+                    if (selectedTable.status != TableStatus.Ordered) //if the order doesn't have an order, change the availability
                         selectedTable.isAvailable = tempSelectedTable.isAvailable;
-                    else
+                    else //if there is an order, give warning message
                         MessageBox.Show("Can't change info if there is a running order(PLACEHOLDER)", "Placeholder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 selectedTable.isReserved = tempSelectedTable.isReserved;
 
-                ShowTableInfo(selectedTable.tableId);
-                tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved);
-                ChangeTableColor();
 
-            }
+                
+                ShowTableInfo(selectedTable.tableId); //refresh ShowTableInfo panel
+                tableService.UpdateTable(selectedTable, selectedTable.isAvailable, selectedTable.isReserved); // update the table
+                ChangeTableColor(); //change the colors and the icons
+
+            } // if there were no changes, do nothing
         }
 
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -248,7 +274,8 @@ namespace LoginForm
         }
         private void tablesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Refresh();
+            new SwitchForms(employee, this, new tableViewForm(employee));
+
         }
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -262,7 +289,6 @@ namespace LoginForm
                 btnReservedNo.Enabled = true;
                 btnReservedNo.Checked = false;
             }
-
         }
         private void btnReservedNo_CheckedChanged(object sender, EventArgs e)
         {
@@ -285,9 +311,9 @@ namespace LoginForm
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            if (selectedTable.status != TableStatus.Ordered)
+            if (selectedTable.status != TableStatus.Ordered) //if there is no order, go to createOrder panel
                 new SwitchForms(employee, this, new EditForm(employee, selectedTable, "order"));
-            else
+            else //if there is an order, go to editOrder panel
                 new SwitchForms(employee, this, new EditForm(employee, selectedTable, "editOrder"));
         }
     }

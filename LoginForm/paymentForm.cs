@@ -173,5 +173,10 @@ namespace LoginForm
         {
 
         }
+
+        private void paymentForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

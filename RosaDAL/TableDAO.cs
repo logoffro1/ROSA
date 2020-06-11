@@ -19,24 +19,25 @@ namespace RosaDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
-        public void UpdateTable(Table table, bool isAvailable, bool isReserved)
+        public void UpdateTable(Table table, bool isAvailable, bool isReserved) //update the booleans for the table
         {
             String query = "update [table] set isAvailable = @isAvailable, isReserved = @isReserved where table_id = @Id; ";
 
             SqlParameter[] sqlParameters = new SqlParameter[3]
                {
-                   new SqlParameter("@isAvailable", Convert.ToInt32(isAvailable)),
+                   new SqlParameter("@isAvailable", Convert.ToInt32(isAvailable)), //convert bool to int, pass as parameter
                    new SqlParameter("@isReserved", Convert.ToInt32(isReserved)),
                    new SqlParameter("@Id", table.tableId)
                };
 
             ExecuteEditQuery(query, sqlParameters);
         }
-        public Order GetOrderByTable(int table_id)
+        public Order GetOrderByTable(int table_id) //get the order for the specified table
         {
-            OpenConnection();
+            OpenConnection(); //if I remove this, everything breaks so i'm going to leave it here
             Order order = null;
 
+            //return only the LATEST order for that table
             String query = "SELECT TOP 1 order_id, table_id, orderDate, notes, isPaid FROM [order] WHERE table_id = @table_id ORDER BY orderDate DESC;";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
@@ -56,7 +57,7 @@ namespace RosaDAL
             {
                 OrderID = (int)reader["order_id"],
                 DateTime = (DateTime)reader["orderDate"],
-                IsPaid = (bool)reader["isPaid"]               
+                IsPaid = (bool)reader["isPaid"]
             };
 
             order.Table.tableId = (int)reader["table_id"];
@@ -67,6 +68,7 @@ namespace RosaDAL
         {
             List<Table> tablesTemp = new List<Table>();
             List<Table> tables = new List<Table>();
+
             foreach (DataRow dr in dataTable.Rows)
             {
 
@@ -81,16 +83,18 @@ namespace RosaDAL
                 Order order = GetOrderByTable(table.tableId);
 
                 if (order != null)
-                    if (!order.IsPaid)
+                    if (!order.IsPaid) //if the table exists and is not paid, set it to the table
                         table.order = order;
 
-                tablesTemp.Add(table);
+                tablesTemp.Add(table); //add all the tables to a temporary list
             }
 
-            List<int> tableId = new List<int>();
+            List<int> tableId = new List<int>(); //store all the table ids in a list
+
+            //loop through all the table, MAKE SURE the tables added to the list have different table IDs          
             foreach (Table t in tablesTemp)
             {
-                if (tableId.Contains(t.tableId))
+                if (tableId.Contains(t.tableId))//if that table id already exists, go to the next table
                     continue;
                 tableId.Add(t.tableId);
                 tables.Add(t);
