@@ -36,9 +36,7 @@ namespace LoginForm
         }
 
         //Accesses DB to get all nesessary information for the OrderId that was passed from the Order screen
-        //------------------------------get passed the whole order & pass order as a parameter, use the whole running order instead of orderItem
-        //^ cant cause gabrian still hasnt done his part, and the order id or order object will have to be passed by his implementation
-        private void ShowData() //------------------------------get passed the whole order & pass order as a parameter, use the whole running order instead of orderItem
+        private void ShowData() 
         {
             //Accesses the data for the database
             Payment_Service paymentService = new Payment_Service();
@@ -95,7 +93,6 @@ namespace LoginForm
 
             //Puts remaining data in the payment object
             currentPayment.Feedback = textBox_comments.Text;
-            currentPayment.OrderId = currentOrderId;                //-----------NEEDED?
 
             //Puts new payment/bill in the database and sets order to paid
             Payment_Service paymentService = new Payment_Service();
@@ -119,7 +116,7 @@ namespace LoginForm
                 else
                     tempTip = float.Parse(textBox_tip.Text);
 
-                float tempOrderPrice = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);      //-----------CHANGE!
+                float tempOrderPrice = (float)currentPayment.TotalPrice;
                 textBox_totalPrice.Text = (tempTip + tempOrderPrice).ToString("0.00");
             
                 lbl_paymentMethodWarning.Text = "";
@@ -148,7 +145,7 @@ namespace LoginForm
                 else
                     tempOrderPrice = float.Parse(textBox_totalPrice.Text);
 
-                float tempTip = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);//-----------CHANGE!
+                float tempTip = (float)currentPayment.TotalPrice;
                 textBox_tip.Text = (tempOrderPrice - tempTip).ToString("0.00");
                 textBox_tip.SelectionStart = tempSelectionStart;
                 lbl_paymentMethodWarning.Text = "";
