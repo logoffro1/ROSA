@@ -72,9 +72,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.AddOrderItemFromListButton = new System.Windows.Forms.Button();
             this.OrderPanel = new System.Windows.Forms.Panel();
+            this.Backbutton = new System.Windows.Forms.Button();
             this.CreateLabel = new System.Windows.Forms.Label();
             this.CreateOrderButton = new System.Windows.Forms.Button();
-            this.Backbutton = new System.Windows.Forms.Button();
             this.LunchPanel.SuspendLayout();
             this.DinnerPanel.SuspendLayout();
             this.DrinksPanel.SuspendLayout();
@@ -492,6 +492,16 @@
             this.OrderPanel.Size = new System.Drawing.Size(797, 448);
             this.OrderPanel.TabIndex = 0;
             // 
+            // Backbutton
+            // 
+            this.Backbutton.Location = new System.Drawing.Point(23, 20);
+            this.Backbutton.Name = "Backbutton";
+            this.Backbutton.Size = new System.Drawing.Size(130, 32);
+            this.Backbutton.TabIndex = 4;
+            this.Backbutton.Text = "Back to tables";
+            this.Backbutton.UseVisualStyleBackColor = true;
+            this.Backbutton.Click += new System.EventHandler(this.Backbutton_Click);
+            // 
             // CreateLabel
             // 
             this.CreateLabel.AutoSize = true;
@@ -512,16 +522,6 @@
             this.CreateOrderButton.UseVisualStyleBackColor = true;
             this.CreateOrderButton.Click += new System.EventHandler(this.CreateOrderButton_Click);
             // 
-            // Backbutton
-            // 
-            this.Backbutton.Location = new System.Drawing.Point(23, 20);
-            this.Backbutton.Name = "Backbutton";
-            this.Backbutton.Size = new System.Drawing.Size(130, 32);
-            this.Backbutton.TabIndex = 4;
-            this.Backbutton.Text = "Back to tables";
-            this.Backbutton.UseVisualStyleBackColor = true;
-            this.Backbutton.Click += new System.EventHandler(this.Backbutton_Click);
-            // 
             // EditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,8 +530,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Messagelabel);
-            this.Controls.Add(this.OrderPanel);
             this.Controls.Add(this.EditPanel);
+            this.Controls.Add(this.OrderPanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
