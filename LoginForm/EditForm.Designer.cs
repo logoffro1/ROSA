@@ -145,7 +145,7 @@
             // Messagelabel
             // 
             this.Messagelabel.AutoSize = true;
-            this.Messagelabel.BackColor = System.Drawing.Color.Silver;
+            this.Messagelabel.BackColor = System.Drawing.Color.Lime;
             this.Messagelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Messagelabel.Location = new System.Drawing.Point(9, 409);
             this.Messagelabel.Name = "Messagelabel";
@@ -191,7 +191,7 @@
             this.LunchPanel.Controls.Add(this.LunchView);
             this.LunchPanel.Location = new System.Drawing.Point(549, 57);
             this.LunchPanel.Name = "LunchPanel";
-            this.LunchPanel.Size = new System.Drawing.Size(240, 365);
+            this.LunchPanel.Size = new System.Drawing.Size(240, 290);
             this.LunchPanel.TabIndex = 21;
             // 
             // LunchBitesButton
@@ -235,7 +235,7 @@
             this.LunchView.Location = new System.Drawing.Point(3, 50);
             this.LunchView.MultiSelect = false;
             this.LunchView.Name = "LunchView";
-            this.LunchView.Size = new System.Drawing.Size(233, 312);
+            this.LunchView.Size = new System.Drawing.Size(233, 241);
             this.LunchView.TabIndex = 1;
             this.LunchView.UseCompatibleStateImageBehavior = false;
             this.LunchView.View = System.Windows.Forms.View.Details;
@@ -293,7 +293,7 @@
             this.DinnerPanel.Controls.Add(this.StartersButton);
             this.DinnerPanel.Location = new System.Drawing.Point(549, 56);
             this.DinnerPanel.Name = "DinnerPanel";
-            this.DinnerPanel.Size = new System.Drawing.Size(240, 365);
+            this.DinnerPanel.Size = new System.Drawing.Size(240, 292);
             this.DinnerPanel.TabIndex = 22;
             // 
             // Desserts
@@ -327,7 +327,7 @@
             this.DinnerView.Location = new System.Drawing.Point(3, 51);
             this.DinnerView.MultiSelect = false;
             this.DinnerView.Name = "DinnerView";
-            this.DinnerView.Size = new System.Drawing.Size(233, 311);
+            this.DinnerView.Size = new System.Drawing.Size(233, 241);
             this.DinnerView.TabIndex = 0;
             this.DinnerView.UseCompatibleStateImageBehavior = false;
             this.DinnerView.View = System.Windows.Forms.View.Details;
@@ -366,7 +366,7 @@
             this.DrinksPanel.Controls.Add(this.DrinksView);
             this.DrinksPanel.Location = new System.Drawing.Point(549, 57);
             this.DrinksPanel.Name = "DrinksPanel";
-            this.DrinksPanel.Size = new System.Drawing.Size(240, 365);
+            this.DrinksPanel.Size = new System.Drawing.Size(240, 291);
             this.DrinksPanel.TabIndex = 23;
             // 
             // WinesButton
@@ -419,7 +419,7 @@
             this.DrinksView.HideSelection = false;
             this.DrinksView.Location = new System.Drawing.Point(3, 50);
             this.DrinksView.Name = "DrinksView";
-            this.DrinksView.Size = new System.Drawing.Size(233, 312);
+            this.DrinksView.Size = new System.Drawing.Size(233, 241);
             this.DrinksView.TabIndex = 25;
             this.DrinksView.UseCompatibleStateImageBehavior = false;
             this.DrinksView.View = System.Windows.Forms.View.Details;
@@ -463,9 +463,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(420, 365);
+            this.button1.Location = new System.Drawing.Point(382, 300);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 53);
+            this.button1.Size = new System.Drawing.Size(148, 47);
             this.button1.TabIndex = 25;
             this.button1.Text = "PAY ORDER";
             this.button1.UseVisualStyleBackColor = true;
@@ -473,9 +473,9 @@
             // 
             // AddOrderItemFromListButton
             // 
-            this.AddOrderItemFromListButton.Location = new System.Drawing.Point(360, 300);
+            this.AddOrderItemFromListButton.Location = new System.Drawing.Point(549, 354);
             this.AddOrderItemFromListButton.Name = "AddOrderItemFromListButton";
-            this.AddOrderItemFromListButton.Size = new System.Drawing.Size(171, 47);
+            this.AddOrderItemFromListButton.Size = new System.Drawing.Size(240, 30);
             this.AddOrderItemFromListButton.TabIndex = 21;
             this.AddOrderItemFromListButton.Text = "Add Order Item from Menu";
             this.AddOrderItemFromListButton.UseVisualStyleBackColor = true;
@@ -495,6 +495,7 @@
             // CreateLabel
             // 
             this.CreateLabel.AutoSize = true;
+            this.CreateLabel.BackColor = System.Drawing.Color.Lime;
             this.CreateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateLabel.Location = new System.Drawing.Point(153, 197);
             this.CreateLabel.Name = "CreateLabel";
@@ -529,8 +530,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Messagelabel);
-            this.Controls.Add(this.EditPanel);
             this.Controls.Add(this.OrderPanel);
+            this.Controls.Add(this.EditPanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
