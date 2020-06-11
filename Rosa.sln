@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RosaLogic", "RosaLogic\Rosa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RosaModel", "RosaModel\RosaModel.csproj", "{9D34D34E-04A0-45A2-AD95-AF65C43BBBC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms", "LoginForm\Forms.csproj", "{09AE5868-F655-41D3-B03E-9916E6373E94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RosaUI", "LoginForm\RosaUI.csproj", "{09AE5868-F655-41D3-B03E-9916E6373E94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

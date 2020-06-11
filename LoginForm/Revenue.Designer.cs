@@ -105,7 +105,6 @@
             this.butcalrevenue.TabIndex = 4;
             this.butcalrevenue.Text = "Calculate Revenue";
             this.butcalrevenue.UseVisualStyleBackColor = true;
-            this.butcalrevenue.Click += new System.EventHandler(this.butcalrevenue_Click);
             // 
             // datetimestartdate
             // 
@@ -171,7 +170,6 @@
             this.Controls.Add(this.lblcaldate1);
             this.Name = "Revenue";
             this.Text = "Revenue";
-            this.Load += new System.EventHandler(this.Revenue_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

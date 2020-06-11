@@ -363,7 +363,7 @@
             this.MaximizeBox = false;
             this.Name = "EditEmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManagementForm";
+            this.Text = " ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditEmployeeForm_FormClosing);
             this.Load += new System.EventHandler(this.EditEmployeeForm_Load);
             this.navbar.ResumeLayout(false);

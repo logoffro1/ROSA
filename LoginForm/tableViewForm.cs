@@ -219,9 +219,7 @@ namespace LoginForm
         private void lblLogout_Click(object sender, EventArgs e)
         {
             //return to the login form
-            loginForm loginForm = new loginForm();
-            loginForm.Show();
-            this.Hide();
+            new SwitchForms(employee, this, new loginForm());
         }
         private void btnSaveTableInfo_Click(object sender, EventArgs e)
         {
@@ -268,9 +266,7 @@ namespace LoginForm
 
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            homeForm homeForm = new homeForm(employee);
-            homeForm.Show();
-            this.Hide();
+            new SwitchForms(employee, this, new homeForm(employee));
         }
         private void tablesToolStripMenuItem1_Click(object sender, EventArgs e)
         {

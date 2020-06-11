@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using RosaLogic;
 using RosaModel;
 using LoginForm.Properties;
+using System.Threading;
 namespace LoginForm
 {
     /// <summary>
@@ -88,9 +89,7 @@ namespace LoginForm
         private void lblLogout_Click(object sender, EventArgs e)
         {
             //return to the login form
-            loginForm loginForm = new loginForm();
-            loginForm.Show();
-            this.Hide();
+            new SwitchForms(employee, this, new loginForm()); 
         }
         void ChangeHelpPicture(bool goingRight)
         {
@@ -130,7 +129,7 @@ namespace LoginForm
         }
         private void tablesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new SwitchForms(employee, this, new tableViewForm(employee));
+             new SwitchForms(employee, this, new tableViewForm(employee));
         }
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {

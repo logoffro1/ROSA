@@ -233,7 +233,6 @@
             this.listView_payments.TabIndex = 3;
             this.listView_payments.UseCompatibleStateImageBehavior = false;
             this.listView_payments.View = System.Windows.Forms.View.Details;
-            this.listView_payments.SelectedIndexChanged += new System.EventHandler(this.listView_payments_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -439,7 +438,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.paymentForm_FormClosing);
-            this.Load += new System.EventHandler(this.paymentForm_Load);
             this.pnl_payment_price.ResumeLayout(false);
             this.pnl_payment_price.PerformLayout();
             this.pnl_payment_method.ResumeLayout(false);

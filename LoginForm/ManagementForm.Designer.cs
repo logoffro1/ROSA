@@ -137,9 +137,9 @@
             // 
             this.pnlEmployees.AutoScroll = true;
             this.pnlEmployees.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlEmployees.Location = new System.Drawing.Point(289, 116);
+            this.pnlEmployees.Location = new System.Drawing.Point(264, 116);
             this.pnlEmployees.Name = "pnlEmployees";
-            this.pnlEmployees.Size = new System.Drawing.Size(437, 593);
+            this.pnlEmployees.Size = new System.Drawing.Size(462, 593);
             this.pnlEmployees.TabIndex = 9;
             // 
             // label1
@@ -156,7 +156,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(132, 116);
+            this.button1.Location = new System.Drawing.Point(107, 116);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 43);
             this.button1.TabIndex = 11;
