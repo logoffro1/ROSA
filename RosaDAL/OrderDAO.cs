@@ -120,7 +120,6 @@ namespace RosaDAL
             };
 
             order.Table.tableId = (int)reader["table_id"];
-
             return order;
         }
         public List<OrderItem> GetByID(int orderID)
