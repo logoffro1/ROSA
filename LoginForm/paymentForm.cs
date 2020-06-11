@@ -117,14 +117,15 @@ namespace LoginForm
                 if (textBox_tip.Text == "")
                     tempTip = 0;
                 else
-                    tempTip = float.Parse(textBox_tip.Text);                                
+                    tempTip = float.Parse(textBox_tip.Text);
 
                 float tempOrderPrice = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);      //-----------CHANGE!
-                textBox_totalPrice.Text = (tempTip + tempOrderPrice).ToString("0.00");      
-
+                textBox_totalPrice.Text = (tempTip + tempOrderPrice).ToString("0.00");
+            
                 lbl_paymentMethodWarning.Text = "";
+
             }
-            catch(Exception)
+            catch (Exception)
             {
                 lbl_paymentMethodWarning.Text = "Input a decimal number in the tip box please.";
             }
@@ -134,8 +135,8 @@ namespace LoginForm
         //Tip textbox changes amount according to what is in the total price textbox
         private void textBox_totalPrice_TextChanged(object sender, EventArgs e)
         {
-            float tempOrderPrice; 
-
+            float tempOrderPrice;
+            var tempSelectionStart = textBox_tip.SelectionStart;
             try
             {
                 //If there's nothing in the total price text box OR if the total price is less than what is should be, put a warning
@@ -149,7 +150,7 @@ namespace LoginForm
 
                 float tempTip = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);//-----------CHANGE!
                 textBox_tip.Text = (tempOrderPrice - tempTip).ToString("0.00");
-
+                textBox_tip.SelectionStart = tempSelectionStart;
                 lbl_paymentMethodWarning.Text = "";
             }
             catch (Exception)
