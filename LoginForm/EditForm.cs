@@ -131,8 +131,9 @@ namespace LoginForm
                 RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
                 Table_Service ts = new Table_Service();
                 orderserv.AddOrder(table.tableId);
-                ts.UpdateTable(table, false, table.isReserved);
+                ts.UpdateTable(table, false, table.isReserved);             
                 SetLatestOrder();
+
 
 
             }
@@ -303,13 +304,7 @@ namespace LoginForm
         {
             Order_Service orderService = new Order_Service();
 
-            Table table = new Table
-
-            {
-                order = orderService.GetLatestOrder()
-
-            };
-
+            table.order = orderService.GetLatestOrder();
             new SwitchForms(employee, this, new EditForm(employee, table, "Edit"));
         }
         private bool CheckStockAmount(ListView list)

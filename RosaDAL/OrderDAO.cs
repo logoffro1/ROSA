@@ -110,14 +110,12 @@ namespace RosaDAL
             }
 
             throw new Exception("Could not read order!");
-
-
-
         }
         private Order ReadRecord(SqlDataReader reader)
         {
             Order order = new Order
             {
+                OrderID = (int)reader["order_id"],
                 DateTime = (DateTime)reader["orderDate"]
             };
 
