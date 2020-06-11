@@ -22,6 +22,7 @@ namespace LoginForm
             if (table.order != null)
                 orderId = table.order.OrderID;
             ChoosePanel(panel);
+            CreateLabel.Text = "Table number " + table.tableId.ToString() + " currently has no running order!";
 
         }
         private void ChoosePanel(string panel)
@@ -131,6 +132,7 @@ namespace LoginForm
                 Table_Service ts = new Table_Service();
                 orderserv.AddOrder(table.tableId);
                 ts.UpdateTable(table, false, table.isReserved);
+                SetLatestOrder();
 
 
             }
@@ -151,9 +153,9 @@ namespace LoginForm
             FillOrderViewByOrderID(orderId);
             ClearLists();
         }
-        private bool CreateByID(ListView list)
+        private bool CreateByID(ListView list)  //Creates a new order item in the current order by ID taken from the menu
         {
-            RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // should get order ID from table screen instead of textbox
+            RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  
             if (list.SelectedItems.Count != 0)
             {
                 orderserv.CreateOrderItem(orderId, int.Parse(list.SelectedItems[0].SubItems[2].Text));
@@ -167,7 +169,7 @@ namespace LoginForm
             }
         }
 
-        private bool CheckListForItem(int menuItemID)
+        private bool CheckListForItem(int menuItemID) //Goes through the current order and checks if an item with the given menuitemID exists
         {
             for (int x = 0; x < EditView.Items.Count; x++)
             {
@@ -187,7 +189,7 @@ namespace LoginForm
             DrinksView.SelectedItems.Clear();
         }
 
-        private bool IncreaseAmountOfExistingItem(ListView list)
+        private bool IncreaseAmountOfExistingItem(ListView list)  //Increases the amount of an item that is already created in the current order
         {
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
             if (list.SelectedItems.Count > 0)
@@ -286,13 +288,11 @@ namespace LoginForm
             FillOrderViewByOrderID(orderId);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)  //pay button goes to 
         {
             new SwitchForms(employee, this, new paymentForm(orderId, employee));
         }
-
-
-        private void btnCheck_Click(object sender, EventArgs e)
+        private void SetLatestOrder()
         {
             Order_Service orderService = new Order_Service();
 
@@ -303,7 +303,7 @@ namespace LoginForm
 
             };
 
-            new SwitchForms(employee, this, new EditForm(employee,table,"Edit"));
+            new SwitchForms(employee, this, new EditForm(employee, table, "Edit"));
         }
         private bool CheckStockAmount(ListView list)
         {
@@ -325,6 +325,11 @@ namespace LoginForm
             {
                 return false;
             }
+        }
+
+        private void Backbutton_Click(object sender, EventArgs e)
+        {
+            new SwitchForms(employee, this, new tableViewForm(employee));
         }
     }
 }

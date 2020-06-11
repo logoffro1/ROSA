@@ -72,10 +72,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.AddOrderItemFromListButton = new System.Windows.Forms.Button();
             this.OrderPanel = new System.Windows.Forms.Panel();
-            this.btnCheck = new System.Windows.Forms.Button();
-            this.TableIDLabel = new System.Windows.Forms.Label();
-            this.TableIDBox2 = new System.Windows.Forms.TextBox();
+            this.CreateLabel = new System.Windows.Forms.Label();
             this.CreateOrderButton = new System.Windows.Forms.Button();
+            this.Backbutton = new System.Windows.Forms.Button();
             this.LunchPanel.SuspendLayout();
             this.DinnerPanel.SuspendLayout();
             this.DrinksPanel.SuspendLayout();
@@ -485,50 +484,42 @@
             // OrderPanel
             // 
             this.OrderPanel.BackColor = System.Drawing.Color.Transparent;
-            this.OrderPanel.Controls.Add(this.btnCheck);
-            this.OrderPanel.Controls.Add(this.TableIDLabel);
-            this.OrderPanel.Controls.Add(this.TableIDBox2);
+            this.OrderPanel.Controls.Add(this.Backbutton);
+            this.OrderPanel.Controls.Add(this.CreateLabel);
             this.OrderPanel.Controls.Add(this.CreateOrderButton);
             this.OrderPanel.Location = new System.Drawing.Point(0, 0);
             this.OrderPanel.Name = "OrderPanel";
             this.OrderPanel.Size = new System.Drawing.Size(797, 448);
             this.OrderPanel.TabIndex = 0;
             // 
-            // btnCheck
+            // CreateLabel
             // 
-            this.btnCheck.Location = new System.Drawing.Point(334, 188);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(100, 23);
-            this.btnCheck.TabIndex = 4;
-            this.btnCheck.Text = "Check Order";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
-            // 
-            // TableIDLabel
-            // 
-            this.TableIDLabel.AutoSize = true;
-            this.TableIDLabel.Location = new System.Drawing.Point(212, 143);
-            this.TableIDLabel.Name = "TableIDLabel";
-            this.TableIDLabel.Size = new System.Drawing.Size(48, 13);
-            this.TableIDLabel.TabIndex = 3;
-            this.TableIDLabel.Text = "Table ID";
-            // 
-            // TableIDBox2
-            // 
-            this.TableIDBox2.Location = new System.Drawing.Point(212, 162);
-            this.TableIDBox2.Name = "TableIDBox2";
-            this.TableIDBox2.Size = new System.Drawing.Size(100, 20);
-            this.TableIDBox2.TabIndex = 2;
+            this.CreateLabel.AutoSize = true;
+            this.CreateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateLabel.Location = new System.Drawing.Point(153, 197);
+            this.CreateLabel.Name = "CreateLabel";
+            this.CreateLabel.Size = new System.Drawing.Size(0, 26);
+            this.CreateLabel.TabIndex = 3;
             // 
             // CreateOrderButton
             // 
-            this.CreateOrderButton.Location = new System.Drawing.Point(212, 188);
+            this.CreateOrderButton.Location = new System.Drawing.Point(315, 359);
             this.CreateOrderButton.Name = "CreateOrderButton";
-            this.CreateOrderButton.Size = new System.Drawing.Size(100, 23);
+            this.CreateOrderButton.Size = new System.Drawing.Size(182, 59);
             this.CreateOrderButton.TabIndex = 1;
             this.CreateOrderButton.Text = "Create Order";
             this.CreateOrderButton.UseVisualStyleBackColor = true;
             this.CreateOrderButton.Click += new System.EventHandler(this.CreateOrderButton_Click);
+            // 
+            // Backbutton
+            // 
+            this.Backbutton.Location = new System.Drawing.Point(23, 20);
+            this.Backbutton.Name = "Backbutton";
+            this.Backbutton.Size = new System.Drawing.Size(130, 32);
+            this.Backbutton.TabIndex = 4;
+            this.Backbutton.Text = "Back to tables";
+            this.Backbutton.UseVisualStyleBackColor = true;
+            this.Backbutton.Click += new System.EventHandler(this.Backbutton_Click);
             // 
             // EditForm
             // 
@@ -538,8 +529,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Messagelabel);
-            this.Controls.Add(this.EditPanel);
             this.Controls.Add(this.OrderPanel);
+            this.Controls.Add(this.EditPanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -604,9 +595,8 @@
         private System.Windows.Forms.ColumnHeader menuitID;
         private System.Windows.Forms.ColumnHeader menuitemID;
         private System.Windows.Forms.ColumnHeader ItemName2;
-        private System.Windows.Forms.Label TableIDLabel;
-        private System.Windows.Forms.TextBox TableIDBox2;
+        private System.Windows.Forms.Label CreateLabel;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.Button Backbutton;
     }
 }
