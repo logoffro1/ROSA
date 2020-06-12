@@ -403,7 +403,7 @@
             // 
             this.picHelp.BackgroundImage = global::LoginForm.Properties.Resources.helpTablesView3;
             this.picHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picHelp.Location = new System.Drawing.Point(384, 229);
+            this.picHelp.Location = new System.Drawing.Point(385, 229);
             this.picHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picHelp.Name = "picHelp";
             this.picHelp.Size = new System.Drawing.Size(545, 353);
