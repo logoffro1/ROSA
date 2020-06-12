@@ -414,7 +414,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.paymentForm_FormClosing);
-            this.Load += new System.EventHandler(this.paymentForm_Load);
             this.pnl_payment_price.ResumeLayout(false);
             this.pnl_payment_price.PerformLayout();
             this.pnl_payment_method.ResumeLayout(false);
