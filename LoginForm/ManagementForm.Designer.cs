@@ -126,8 +126,8 @@
             // btnAddEmployee
             // 
             this.btnAddEmployee.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEmployee.Location = new System.Drawing.Point(549, 94);
-            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddEmployee.Location = new System.Drawing.Point(587, 94);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddEmployee.Name = "btnAddEmployee";
             this.btnAddEmployee.Size = new System.Drawing.Size(145, 35);
             this.btnAddEmployee.TabIndex = 8;
@@ -140,10 +140,10 @@
             this.pnlEmployees.AutoScroll = true;
             this.pnlEmployees.BackColor = System.Drawing.SystemColors.Control;
             this.pnlEmployees.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlEmployees.Location = new System.Drawing.Point(198, 94);
-            this.pnlEmployees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlEmployees.Location = new System.Drawing.Point(179, 93);
+            this.pnlEmployees.Margin = new System.Windows.Forms.Padding(2);
             this.pnlEmployees.Name = "pnlEmployees";
-            this.pnlEmployees.Size = new System.Drawing.Size(346, 482);
+            this.pnlEmployees.Size = new System.Drawing.Size(395, 482);
             this.pnlEmployees.TabIndex = 9;
             // 
             // label1
@@ -151,7 +151,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(259, 65);
+            this.label1.Location = new System.Drawing.Point(260, 55);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 27);
@@ -173,7 +173,7 @@
             this.Controls.Add(this.navbar);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "ManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
