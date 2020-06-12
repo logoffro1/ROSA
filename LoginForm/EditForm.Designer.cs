@@ -84,7 +84,7 @@
             // 
             // Backbuttonedit
             // 
-            this.Backbuttonedit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Backbuttonedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Backbuttonedit.Location = new System.Drawing.Point(12, 12);
             this.Backbuttonedit.Name = "Backbuttonedit";
             this.Backbuttonedit.Size = new System.Drawing.Size(141, 39);
@@ -95,6 +95,7 @@
             // 
             // EditView
             // 
+            this.EditView.BackColor = System.Drawing.Color.White;
             this.EditView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.OrderID,
             this.OrderItem,
@@ -102,8 +103,9 @@
             this.Amount,
             this.Status,
             this.ItemName2});
-            this.EditView.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditView.FullRowSelect = true;
+            this.EditView.GridLines = true;
             this.EditView.HideSelection = false;
             this.EditView.Location = new System.Drawing.Point(12, 107);
             this.EditView.MultiSelect = false;
@@ -150,18 +152,19 @@
             // 
             this.Messagelabel.AutoSize = true;
             this.Messagelabel.BackColor = System.Drawing.Color.Lime;
-            this.Messagelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Messagelabel.Location = new System.Drawing.Point(8, 440);
+            this.Messagelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Messagelabel.Location = new System.Drawing.Point(17, 483);
             this.Messagelabel.Name = "Messagelabel";
-            this.Messagelabel.Size = new System.Drawing.Size(0, 20);
+            this.Messagelabel.Size = new System.Drawing.Size(156, 20);
             this.Messagelabel.TabIndex = 9;
+            this.Messagelabel.Text = "Messages go here";
             // 
             // DeleteOrderItemButton
             // 
-            this.DeleteOrderItemButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteOrderItemButton.Location = new System.Drawing.Point(12, 424);
+            this.DeleteOrderItemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteOrderItemButton.Location = new System.Drawing.Point(12, 423);
             this.DeleteOrderItemButton.Name = "DeleteOrderItemButton";
-            this.DeleteOrderItemButton.Size = new System.Drawing.Size(154, 47);
+            this.DeleteOrderItemButton.Size = new System.Drawing.Size(154, 48);
             this.DeleteOrderItemButton.TabIndex = 10;
             this.DeleteOrderItemButton.Text = "Delete order item";
             this.DeleteOrderItemButton.UseVisualStyleBackColor = true;
@@ -169,10 +172,10 @@
             // 
             // IncreaseButton
             // 
-            this.IncreaseButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IncreaseButton.Location = new System.Drawing.Point(193, 424);
+            this.IncreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IncreaseButton.Location = new System.Drawing.Point(172, 423);
             this.IncreaseButton.Name = "IncreaseButton";
-            this.IncreaseButton.Size = new System.Drawing.Size(137, 47);
+            this.IncreaseButton.Size = new System.Drawing.Size(156, 48);
             this.IncreaseButton.TabIndex = 16;
             this.IncreaseButton.Text = "Increase Amount";
             this.IncreaseButton.UseVisualStyleBackColor = true;
@@ -180,10 +183,10 @@
             // 
             // DecreaseButton
             // 
-            this.DecreaseButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DecreaseButton.Location = new System.Drawing.Point(356, 423);
+            this.DecreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DecreaseButton.Location = new System.Drawing.Point(334, 423);
             this.DecreaseButton.Name = "DecreaseButton";
-            this.DecreaseButton.Size = new System.Drawing.Size(141, 48);
+            this.DecreaseButton.Size = new System.Drawing.Size(163, 48);
             this.DecreaseButton.TabIndex = 17;
             this.DecreaseButton.Text = "Decrease Amount";
             this.DecreaseButton.UseVisualStyleBackColor = true;
@@ -203,7 +206,7 @@
             // 
             // LunchBitesButton
             // 
-            this.LunchBitesButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LunchBitesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LunchBitesButton.Location = new System.Drawing.Point(161, 5);
             this.LunchBitesButton.Name = "LunchBitesButton";
             this.LunchBitesButton.Size = new System.Drawing.Size(75, 39);
@@ -214,7 +217,7 @@
             // 
             // SpecialsButton
             // 
-            this.SpecialsButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpecialsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SpecialsButton.Location = new System.Drawing.Point(81, 5);
             this.SpecialsButton.Name = "SpecialsButton";
             this.SpecialsButton.Size = new System.Drawing.Size(75, 39);
@@ -225,7 +228,7 @@
             // 
             // LunchMainButton
             // 
-            this.LunchMainButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LunchMainButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LunchMainButton.Location = new System.Drawing.Point(3, 5);
             this.LunchMainButton.Name = "LunchMainButton";
             this.LunchMainButton.Size = new System.Drawing.Size(75, 39);
@@ -240,13 +243,13 @@
             this.columnHeader7,
             this.columnHeader8,
             this.ID});
-            this.LunchView.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LunchView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LunchView.FullRowSelect = true;
             this.LunchView.HideSelection = false;
             this.LunchView.Location = new System.Drawing.Point(3, 50);
             this.LunchView.MultiSelect = false;
             this.LunchView.Name = "LunchView";
-            this.LunchView.Size = new System.Drawing.Size(233, 241);
+            this.LunchView.Size = new System.Drawing.Size(233, 247);
             this.LunchView.TabIndex = 1;
             this.LunchView.UseCompatibleStateImageBehavior = false;
             this.LunchView.View = System.Windows.Forms.View.Details;
@@ -268,7 +271,7 @@
             // 
             // LunchButton
             // 
-            this.LunchButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LunchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LunchButton.Location = new System.Drawing.Point(504, 52);
             this.LunchButton.Name = "LunchButton";
             this.LunchButton.Size = new System.Drawing.Size(75, 40);
@@ -279,7 +282,7 @@
             // 
             // DinnerButton
             // 
-            this.DinnerButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DinnerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DinnerButton.Location = new System.Drawing.Point(587, 52);
             this.DinnerButton.Name = "DinnerButton";
             this.DinnerButton.Size = new System.Drawing.Size(75, 40);
@@ -290,7 +293,7 @@
             // 
             // DrinksButton
             // 
-            this.DrinksButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DrinksButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DrinksButton.Location = new System.Drawing.Point(669, 52);
             this.DrinksButton.Name = "DrinksButton";
             this.DrinksButton.Size = new System.Drawing.Size(75, 40);
@@ -306,13 +309,14 @@
             this.DinnerPanel.Controls.Add(this.MainsButton);
             this.DinnerPanel.Controls.Add(this.StartersButton);
             this.DinnerPanel.Controls.Add(this.DinnerView);
-            this.DinnerPanel.Location = new System.Drawing.Point(504, 107);
+            this.DinnerPanel.Location = new System.Drawing.Point(505, 107);
             this.DinnerPanel.Name = "DinnerPanel";
             this.DinnerPanel.Size = new System.Drawing.Size(240, 301);
             this.DinnerPanel.TabIndex = 22;
             // 
             // Desserts
             // 
+            this.Desserts.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Desserts.Location = new System.Drawing.Point(161, 6);
             this.Desserts.Name = "Desserts";
             this.Desserts.Size = new System.Drawing.Size(75, 39);
@@ -323,6 +327,7 @@
             // 
             // MainsButton
             // 
+            this.MainsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainsButton.Location = new System.Drawing.Point(82, 6);
             this.MainsButton.Name = "MainsButton";
             this.MainsButton.Size = new System.Drawing.Size(75, 39);
@@ -333,6 +338,7 @@
             // 
             // StartersButton
             // 
+            this.StartersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartersButton.Location = new System.Drawing.Point(3, 6);
             this.StartersButton.Name = "StartersButton";
             this.StartersButton.Size = new System.Drawing.Size(75, 39);
@@ -352,7 +358,7 @@
             this.DinnerView.Location = new System.Drawing.Point(3, 51);
             this.DinnerView.MultiSelect = false;
             this.DinnerView.Name = "DinnerView";
-            this.DinnerView.Size = new System.Drawing.Size(233, 241);
+            this.DinnerView.Size = new System.Drawing.Size(233, 247);
             this.DinnerView.TabIndex = 0;
             this.DinnerView.UseCompatibleStateImageBehavior = false;
             this.DinnerView.View = System.Windows.Forms.View.Details;
@@ -434,7 +440,7 @@
             this.DrinksView.HideSelection = false;
             this.DrinksView.Location = new System.Drawing.Point(3, 50);
             this.DrinksView.Name = "DrinksView";
-            this.DrinksView.Size = new System.Drawing.Size(233, 241);
+            this.DrinksView.Size = new System.Drawing.Size(233, 247);
             this.DrinksView.TabIndex = 25;
             this.DrinksView.UseCompatibleStateImageBehavior = false;
             this.DrinksView.View = System.Windows.Forms.View.Details;
@@ -468,8 +474,8 @@
             this.EditPanel.Controls.Add(this.DecreaseButton);
             this.EditPanel.Controls.Add(this.DeleteOrderItemButton);
             this.EditPanel.Controls.Add(this.IncreaseButton);
-            this.EditPanel.Controls.Add(this.LunchPanel);
             this.EditPanel.Controls.Add(this.DinnerPanel);
+            this.EditPanel.Controls.Add(this.LunchPanel);
             this.EditPanel.Controls.Add(this.DrinksPanel);
             this.EditPanel.Location = new System.Drawing.Point(0, 0);
             this.EditPanel.Name = "EditPanel";
@@ -478,21 +484,21 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(546, 514);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(597, 510);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 47);
             this.button1.TabIndex = 25;
-            this.button1.Text = "PAY ORDER";
+            this.button1.Text = "Payment";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AddOrderItemFromListButton
             // 
-            this.AddOrderItemFromListButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddOrderItemFromListButton.Location = new System.Drawing.Point(531, 424);
+            this.AddOrderItemFromListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddOrderItemFromListButton.Location = new System.Drawing.Point(503, 423);
             this.AddOrderItemFromListButton.Name = "AddOrderItemFromListButton";
-            this.AddOrderItemFromListButton.Size = new System.Drawing.Size(188, 30);
+            this.AddOrderItemFromListButton.Size = new System.Drawing.Size(242, 48);
             this.AddOrderItemFromListButton.TabIndex = 21;
             this.AddOrderItemFromListButton.Text = "Add Order Item from Menu";
             this.AddOrderItemFromListButton.UseVisualStyleBackColor = true;
