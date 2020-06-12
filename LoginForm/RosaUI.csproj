@@ -102,12 +102,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Revenue.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Revenue.Designer.cs">
-      <DependentUpon>Revenue.cs</DependentUpon>
-    </Compile>
     <Compile Include="SwitchForms.cs" />
     <Compile Include="tableViewForm.cs">
       <SubType>Form</SubType>
@@ -146,9 +140,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="paymentForm.resx">
       <DependentUpon>paymentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Revenue.resx">
-      <DependentUpon>Revenue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tableViewForm.resx">
       <DependentUpon>tableViewForm.cs</DependentUpon>

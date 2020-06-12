@@ -67,6 +67,7 @@ namespace LoginForm
                 stucust.SubItems.Add(barLIst[i].orderItem.status.ToString());
                 stucust.SubItems.Add(barLIst[i].order.Notes.ToString());
                 stucust.SubItems.Add(barLIst[i].orderItem.orderID.ToString());
+                stucust.SubItems.Add(barLIst[i].orderItem.orderItems_id.ToString());
                 stucust.BackColor = checkStatus(barLIst[i]);
                 stucustList.Add(stucust);
             }
@@ -131,12 +132,13 @@ namespace LoginForm
             if (listBarView.SelectedItems.Count > 0)
             {
                 OrderItem temp = new OrderItem(
-                 int.Parse(listBarView.SelectedItems[0].SubItems[6].Text),  // orderId
+                 int.Parse(listBarView.SelectedItems[0].SubItems[6].Text),  // orderItemsId
                  (StatusEnum)Enum.Parse(typeof(StatusEnum), listBarView.SelectedItems[0].SubItems[4].Text)); // Status
+                temp.orderItems_id = int.Parse(listBarView.SelectedItems[0].SubItems[7].Text);
 
                 if (temp.status == StatusEnum.Ordered)
                 {
-                    tableService.UpdateTableOrder(temp.orderID, status); // updates table                     
+                    tableService.UpdateTableOrder(temp.orderItems_id, status); // updates table                     
                     MessageBox.Show("Order Send!");
                     KitcheOrBarView("bar");
                 }
@@ -146,10 +148,11 @@ namespace LoginForm
                 OrderItem temp = new OrderItem(
                 int.Parse(listKitchenView.SelectedItems[0].SubItems[6].Text),  // orderId
                 (StatusEnum)Enum.Parse(typeof(StatusEnum),listKitchenView.SelectedItems[0].SubItems[4].Text)); // Status
+               temp.orderItems_id = int.Parse(listKitchenView.SelectedItems[0].SubItems[7].Text);
 
                 if (temp.status == StatusEnum.Ordered)
                 {
-                    tableService.UpdateTableOrder(temp.orderID, status); // update table
+                    tableService.UpdateTableOrder(temp.orderItems_id, status); // update table
                     MessageBox.Show("Order Send!");
                     KitcheOrBarView("kitchen");
                 }

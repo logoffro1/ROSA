@@ -89,36 +89,36 @@
             this.managementToolStripMenuItem});
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
-            this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.navbar.Size = new System.Drawing.Size(1012, 36);
+            this.navbar.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.navbar.Size = new System.Drawing.Size(754, 30);
             this.navbar.TabIndex = 3;
             this.navbar.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // tablesToolStripMenuItem
             // 
             this.tablesToolStripMenuItem.Name = "tablesToolStripMenuItem";
-            this.tablesToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
+            this.tablesToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
             this.tablesToolStripMenuItem.Text = "Tables";
             this.tablesToolStripMenuItem.Click += new System.EventHandler(this.tablesToolStripMenuItem_Click);
             // 
             // BarView
             // 
             this.BarView.Name = "BarView";
-            this.BarView.Size = new System.Drawing.Size(55, 32);
+            this.BarView.Size = new System.Drawing.Size(46, 26);
             this.BarView.Text = "Bar";
             this.BarView.Click += new System.EventHandler(this.BarView_Click);
             // 
             // kitchenToolStripMenuItem
             // 
             this.kitchenToolStripMenuItem.Name = "kitchenToolStripMenuItem";
-            this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
+            this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.kitchenToolStripMenuItem.Text = "Kitchen";
             this.kitchenToolStripMenuItem.Click += new System.EventHandler(this.kitchenToolStripMenuItem_Click);
             // 
@@ -127,7 +127,7 @@
             this.managementToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.managementToolStripMenuItem.Font = new System.Drawing.Font("Tw Cen MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(159, 32);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.managementToolStripMenuItem.Text = "Management";
             this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
             // 
@@ -140,10 +140,10 @@
             this.panel_Bar.Controls.Add(this.btnReady);
             this.panel_Bar.Controls.Add(this.listBarView);
             this.panel_Bar.Controls.Add(this.label2);
-            this.panel_Bar.Location = new System.Drawing.Point(12, 68);
-            this.panel_Bar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_Bar.Location = new System.Drawing.Point(9, 55);
+            this.panel_Bar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_Bar.Name = "panel_Bar";
-            this.panel_Bar.Size = new System.Drawing.Size(975, 633);
+            this.panel_Bar.Size = new System.Drawing.Size(731, 514);
             this.panel_Bar.TabIndex = 35;
             this.panel_Bar.Visible = false;
             // 
@@ -156,12 +156,12 @@
             this.columnHeader18,
             this.columnHeader19,
             this.columnHeader20});
+            this.listBarView1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBarView1.FullRowSelect = true;
             this.listBarView1.HideSelection = false;
-            this.listBarView1.Location = new System.Drawing.Point(47, 372);
-            this.listBarView1.Margin = new System.Windows.Forms.Padding(4);
+            this.listBarView1.Location = new System.Drawing.Point(35, 302);
             this.listBarView1.Name = "listBarView1";
-            this.listBarView1.Size = new System.Drawing.Size(892, 238);
+            this.listBarView1.Size = new System.Drawing.Size(670, 194);
             this.listBarView1.TabIndex = 33;
             this.listBarView1.UseCompatibleStateImageBehavior = false;
             this.listBarView1.View = System.Windows.Forms.View.Details;
@@ -199,19 +199,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 347);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(36, 282);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 20);
+            this.label1.Size = new System.Drawing.Size(109, 18);
             this.label1.TabIndex = 32;
             this.label1.Text = "Orders Ready";
             // 
             // btnReady
             // 
-            this.btnReady.Location = new System.Drawing.Point(723, 13);
-            this.btnReady.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReady.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReady.Location = new System.Drawing.Point(573, 11);
             this.btnReady.Name = "btnReady";
-            this.btnReady.Size = new System.Drawing.Size(176, 25);
+            this.btnReady.Size = new System.Drawing.Size(132, 24);
             this.btnReady.TabIndex = 31;
             this.btnReady.Text = "Mark As Ready";
             this.btnReady.UseVisualStyleBackColor = true;
@@ -226,12 +227,12 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
+            this.listBarView.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBarView.FullRowSelect = true;
             this.listBarView.HideSelection = false;
-            this.listBarView.Location = new System.Drawing.Point(47, 50);
-            this.listBarView.Margin = new System.Windows.Forms.Padding(4);
+            this.listBarView.Location = new System.Drawing.Point(35, 41);
             this.listBarView.Name = "listBarView";
-            this.listBarView.Size = new System.Drawing.Size(892, 274);
+            this.listBarView.Size = new System.Drawing.Size(670, 223);
             this.listBarView.TabIndex = 27;
             this.listBarView.UseCompatibleStateImageBehavior = false;
             this.listBarView.View = System.Windows.Forms.View.Details;
@@ -269,10 +270,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 14);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(32, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 20);
+            this.label2.Size = new System.Drawing.Size(108, 18);
             this.label2.TabIndex = 25;
             this.label2.Text = "Orders for Bar";
             // 
@@ -285,10 +287,10 @@
             this.panel_Kitchen.Controls.Add(this.btnReadyKitchen);
             this.panel_Kitchen.Controls.Add(this.listKitchenView);
             this.panel_Kitchen.Controls.Add(this.label11);
-            this.panel_Kitchen.Location = new System.Drawing.Point(9, 68);
-            this.panel_Kitchen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_Kitchen.Location = new System.Drawing.Point(7, 55);
+            this.panel_Kitchen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_Kitchen.Name = "panel_Kitchen";
-            this.panel_Kitchen.Size = new System.Drawing.Size(975, 633);
+            this.panel_Kitchen.Size = new System.Drawing.Size(731, 514);
             this.panel_Kitchen.TabIndex = 34;
             this.panel_Kitchen.Visible = false;
             // 
@@ -303,10 +305,9 @@
             this.columnHeader27});
             this.listKitchenView1.FullRowSelect = true;
             this.listKitchenView1.HideSelection = false;
-            this.listKitchenView1.Location = new System.Drawing.Point(44, 363);
-            this.listKitchenView1.Margin = new System.Windows.Forms.Padding(4);
+            this.listKitchenView1.Location = new System.Drawing.Point(33, 295);
             this.listKitchenView1.Name = "listKitchenView1";
-            this.listKitchenView1.Size = new System.Drawing.Size(892, 244);
+            this.listKitchenView1.Size = new System.Drawing.Size(670, 199);
             this.listKitchenView1.TabIndex = 33;
             this.listKitchenView1.UseCompatibleStateImageBehavior = false;
             this.listKitchenView1.View = System.Windows.Forms.View.Details;
@@ -345,18 +346,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 329);
+            this.label3.Location = new System.Drawing.Point(30, 267);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 20);
+            this.label3.Size = new System.Drawing.Size(109, 17);
             this.label3.TabIndex = 32;
             this.label3.Text = "Orders Ready";
             // 
             // btnReadyKitchen
             // 
-            this.btnReadyKitchen.Location = new System.Drawing.Point(735, 14);
-            this.btnReadyKitchen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReadyKitchen.Location = new System.Drawing.Point(551, 11);
             this.btnReadyKitchen.Name = "btnReadyKitchen";
-            this.btnReadyKitchen.Size = new System.Drawing.Size(193, 28);
+            this.btnReadyKitchen.Size = new System.Drawing.Size(145, 23);
             this.btnReadyKitchen.TabIndex = 31;
             this.btnReadyKitchen.Text = "Mark As Ready";
             this.btnReadyKitchen.UseVisualStyleBackColor = true;
@@ -373,10 +374,9 @@
             this.columnHeader13});
             this.listKitchenView.FullRowSelect = true;
             this.listKitchenView.HideSelection = false;
-            this.listKitchenView.Location = new System.Drawing.Point(44, 59);
-            this.listKitchenView.Margin = new System.Windows.Forms.Padding(4);
+            this.listKitchenView.Location = new System.Drawing.Point(33, 48);
             this.listKitchenView.Name = "listKitchenView";
-            this.listKitchenView.Size = new System.Drawing.Size(892, 232);
+            this.listKitchenView.Size = new System.Drawing.Size(670, 189);
             this.listKitchenView.TabIndex = 27;
             this.listKitchenView.UseCompatibleStateImageBehavior = false;
             this.listKitchenView.View = System.Windows.Forms.View.Details;
@@ -415,9 +415,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(40, 21);
+            this.label11.Location = new System.Drawing.Point(30, 17);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(171, 20);
+            this.label11.Size = new System.Drawing.Size(147, 17);
             this.label11.TabIndex = 25;
             this.label11.Text = "Orders for Kitchen ";
             // 
@@ -428,27 +429,27 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Tw Cen MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(928, 44);
+            this.label4.Location = new System.Drawing.Point(696, 36);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 22);
+            this.label4.Size = new System.Drawing.Size(57, 17);
             this.label4.TabIndex = 34;
             this.label4.Text = "Log Out";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // BarKitchenForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LoginForm.Properties.Resources.HOME_BG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1012, 734);
+            this.ClientSize = new System.Drawing.Size(754, 586);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.navbar);
             this.Controls.Add(this.panel_Bar);
             this.Controls.Add(this.panel_Kitchen);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "BarKitchenForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

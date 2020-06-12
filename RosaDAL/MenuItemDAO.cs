@@ -13,13 +13,13 @@ namespace RosaDAL
     {
         public List<MenuItem> Db_Get_AllOrders()
         {
-            string query = "SELECT [order].[orderDate], [order].[table_id], [amount], [itemName], [status], [notes],  [menuItem].[menuCategory_id], [orderitems].[order_id] FROM [orderItems] JOIN [order] ON orderItems.order_id = [order].order_id JOIN [menuItem] ON orderItems.menuItem_id = menuItem.menuItem_id;";
+            string query = "SELECT [order].[orderDate], [order].[table_id], [amount], [itemName], [status], [notes],  [menuItem].[menuCategory_id], [orderitems].[order_id], [orderItems].[orderItems_id] FROM [orderItems] JOIN [order] ON orderItems.order_id = [order].order_id JOIN [menuItem] ON orderItems.menuItem_id = menuItem.menuItem_id;";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
         public MenuItem GetFromTableTheStatus(int status)
         {
-            SqlCommand cmd = new SqlCommand("SELECT [order].[orderDate], [order].[table_id], [amount], [itemName], [status], [notes], [menuItem].[menuCategory_id], [orderitems].[order_id] FROM [orderitems] JOIN [order] ON orderItems.order_id = [order].order_id JOIN [menuItem] ON orderItems.menuItem_id = menuItem.menuItem_id WHERE [status] = @status", conn);
+            SqlCommand cmd = new SqlCommand("SELECT [order].[orderDate], [order].[table_id], [amount], [itemName], [status], [notes], [menuItem].[menuCategory_id], [orderItems].[order_id], [orderItems].[orderItems_id] FROM [orderitems] JOIN [order] ON orderItems.order_id = [order].order_id JOIN [menuItem] ON orderItems.menuItem_id = menuItem.menuItem_id WHERE [status] = @status", conn);
             cmd.Parameters.AddWithValue("@status", status);
             SqlDataReader reader = cmd.ExecuteReader();
             MenuItem temp = null;
@@ -31,9 +31,9 @@ namespace RosaDAL
         }
         public void UpdateTableOrder(int id, int status)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE [orderItems] SET status = @status WHERE order_id = @orderid;", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE [orderItems] SET status = @status WHERE orderItems_id = @orderitemsid;", conn);
             cmd.Parameters.AddWithValue("@status", status);
-            cmd.Parameters.AddWithValue("@orderid", id);
+            cmd.Parameters.AddWithValue("@orderitemsid", id);
             cmd.ExecuteReader();
         }
         private MenuItem ReadTable(SqlDataReader reader)
@@ -56,7 +56,8 @@ namespace RosaDAL
                 {
                     amount = (int)reader["amount"],
                     orderID = (int)reader["order_id"],
-                    status = (StatusEnum)(int)reader["status"]
+                    status = (StatusEnum)(int)reader["status"],
+                    orderItems_id = (int)reader["orderItems_id"]
                 }
             };
 
@@ -82,7 +83,8 @@ namespace RosaDAL
                     {
                         amount = (int)dr["amount"],
                         orderID = (int)dr["order_id"],
-                        status = (StatusEnum)(int)dr["status"]
+                        status = (StatusEnum)(int)dr["status"],
+                        orderItems_id = (int)dr["orderItems_id"]
                     },
 
                     //Order class

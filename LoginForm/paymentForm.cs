@@ -36,9 +36,7 @@ namespace LoginForm
         }
 
         //Accesses DB to get all nesessary information for the OrderId that was passed from the Order screen
-        //------------------------------get passed the whole order & pass order as a parameter, use the whole running order instead of orderItem
-        //^ cant cause gabrian still hasnt done his part, and the order id or order object will have to be passed by his implementation
-        private void ShowData() //------------------------------get passed the whole order & pass order as a parameter, use the whole running order instead of orderItem
+        private void ShowData() 
         {
             //Accesses the data for the database
             Payment_Service paymentService = new Payment_Service();
@@ -55,7 +53,6 @@ namespace LoginForm
             lbl_date.Text = payment.Order.DateTime.ToString("dd/MM/yyyy HH:mm:ss");
             lbl_orderPrice.Text = payment.TotalPrice.ToString("€ 0.00");
             lbl_vat.Text = payment.TotalVAT.ToString("€ 0.00");
-            textBox_tip.Text = "0.00";
             textBox_totalPrice.Text = (payment.TotalPrice).ToString("0.00");
 
             //Adds each order item to the listview
@@ -95,7 +92,6 @@ namespace LoginForm
 
             //Puts remaining data in the payment object
             currentPayment.Feedback = textBox_comments.Text;
-            currentPayment.OrderId = currentOrderId;                //-----------NEEDED?
 
             //Puts new payment/bill in the database and sets order to paid
             Payment_Service paymentService = new Payment_Service();
@@ -117,14 +113,15 @@ namespace LoginForm
                 if (textBox_tip.Text == "")
                     tempTip = 0;
                 else
-                    tempTip = float.Parse(textBox_tip.Text);                                
+                    tempTip = float.Parse(textBox_tip.Text);
 
-                float tempOrderPrice = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);      //-----------CHANGE!
-                textBox_totalPrice.Text = (tempTip + tempOrderPrice).ToString("0.00");      
-
+                float tempOrderPrice = (float)currentPayment.TotalPrice;
+                textBox_totalPrice.Text = (tempTip + tempOrderPrice).ToString("0.00");
+            
                 lbl_paymentMethodWarning.Text = "";
+
             }
-            catch(Exception)
+            catch (Exception)
             {
                 lbl_paymentMethodWarning.Text = "Input a decimal number in the tip box please.";
             }
@@ -134,8 +131,8 @@ namespace LoginForm
         //Tip textbox changes amount according to what is in the total price textbox
         private void textBox_totalPrice_TextChanged(object sender, EventArgs e)
         {
-            float tempOrderPrice; 
-
+            float tempOrderPrice;
+            var tempSelectionStart = textBox_tip.SelectionStart;
             try
             {
                 //If there's nothing in the total price text box OR if the total price is less than what is should be, put a warning
@@ -147,9 +144,11 @@ namespace LoginForm
                 else
                     tempOrderPrice = float.Parse(textBox_totalPrice.Text);
 
-                float tempTip = float.Parse(lbl_orderPrice.Text.Split(' ')[1]);//-----------CHANGE!
+                float tempTip = (float)currentPayment.TotalPrice;
+                
+                if(!(textBox_tip.Text == string.Empty))
                 textBox_tip.Text = (tempOrderPrice - tempTip).ToString("0.00");
-
+                textBox_tip.SelectionStart = tempSelectionStart;
                 lbl_paymentMethodWarning.Text = "";
             }
             catch (Exception)

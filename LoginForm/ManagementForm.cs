@@ -75,13 +75,5 @@ namespace LoginForm
                 pnlEmployees.Controls.Add(employeeControl);
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Revenue revenue = new Revenue(employee);
-            revenue.Show();
-            this.Hide();
-          
-        }
     }
 }
