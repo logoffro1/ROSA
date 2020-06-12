@@ -18,9 +18,13 @@ namespace LoginForm
             DinnerPanel.Hide();
             LunchPanel.Hide();
             DrinksPanel.Hide();
+            Messagelabel.Text = "";
+            AddOrderItemFromListButton.Hide();
             this.table = table;
             if (table.order != null)
+            {
                 orderId = table.order.OrderID;
+            }
             ChoosePanel(panel);
             CreateLabel.Text = "Table number " + table.tableId.ToString() + " currently has no running order!";
 
@@ -64,7 +68,7 @@ namespace LoginForm
         {
             FillOrderViewByOrderID(orderId);
         }
-        private void FillOrderViewByOrderID(int orderID)
+        private void FillOrderViewByOrderID(int orderID) //fills the order item list
         {
             Order_Service orderserv = new Order_Service();
             List<OrderItem> orderitemlist = orderserv.GetByID(orderID);
@@ -130,7 +134,7 @@ namespace LoginForm
                 listView.Items.Add(li);
             }
         }
-        private void CreateOrderButton_Click(object sender, EventArgs e)
+        private void CreateOrderButton_Click(object sender, EventArgs e) //creates new order and then gets its ID
         {
             {
                 RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
@@ -138,9 +142,6 @@ namespace LoginForm
                 orderserv.AddOrder(table.tableId);
                 ts.UpdateTable(table, false, table.isReserved);             
                 SetLatestOrder();
-
-
-
             }
         }
 
@@ -181,7 +182,7 @@ namespace LoginForm
             {
                 if (menuItemID.ToString() == EditView.Items[x].SubItems[2].Text)
                 {
-                    Messagelabel.Text = "Item with menuItem number " + EditView.Items[x].SubItems[2].Text + " already exists. The amount has been increased.";
+                    Messagelabel.Text = "Menu item with number " + EditView.Items[x].SubItems[2].Text + " already exists. The amount has been increased.";
                     return true;
                 }
 
@@ -273,6 +274,7 @@ namespace LoginForm
             DrinksPanel.Hide();
             DinnerPanel.Hide();
             LunchPanel.Show();
+            AddOrderItemFromListButton.Show();
         }
 
         private void DinnerButton_Click(object sender, EventArgs e)
@@ -280,6 +282,7 @@ namespace LoginForm
             LunchPanel.Hide();
             DrinksPanel.Hide();
             DinnerPanel.Show();
+            AddOrderItemFromListButton.Show();
 
         }
 
@@ -288,6 +291,7 @@ namespace LoginForm
             DinnerPanel.Hide();
             LunchPanel.Hide();
             DrinksPanel.Show();
+            AddOrderItemFromListButton.Show();
         }
         private void EditForm_Load(object sender, EventArgs e)
         {
