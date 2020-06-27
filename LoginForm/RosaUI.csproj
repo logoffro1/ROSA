@@ -296,5 +296,17 @@
   <ItemGroup>
     <None Include="Resources\IconsExplanation1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Purchase-Order-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Purchase-Order-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\svg-checkmark-verified-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconsExplanation2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
