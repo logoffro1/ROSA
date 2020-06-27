@@ -76,7 +76,7 @@
             this.lbl_PaymentMethod.AutoSize = true;
             this.lbl_PaymentMethod.BackColor = System.Drawing.Color.Transparent;
             this.lbl_PaymentMethod.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PaymentMethod.Location = new System.Drawing.Point(510, 328);
+            this.lbl_PaymentMethod.Location = new System.Drawing.Point(499, 328);
             this.lbl_PaymentMethod.Name = "lbl_PaymentMethod";
             this.lbl_PaymentMethod.Size = new System.Drawing.Size(186, 25);
             this.lbl_PaymentMethod.TabIndex = 34;
@@ -202,7 +202,7 @@
             this.lbl_commentStatic.AutoSize = true;
             this.lbl_commentStatic.BackColor = System.Drawing.Color.Transparent;
             this.lbl_commentStatic.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_commentStatic.Location = new System.Drawing.Point(39, 328);
+            this.lbl_commentStatic.Location = new System.Drawing.Point(25, 328);
             this.lbl_commentStatic.Name = "lbl_commentStatic";
             this.lbl_commentStatic.Size = new System.Drawing.Size(115, 25);
             this.lbl_commentStatic.TabIndex = 4;
@@ -226,7 +226,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Item";
-            this.columnHeader1.Width = 154;
+            this.columnHeader1.Width = 230;
             // 
             // columnHeader2
             // 
@@ -236,6 +236,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Price";
+            this.columnHeader3.Width = 79;
             // 
             // lbl_orderPrice_static
             // 
@@ -357,7 +358,7 @@
             this.lbl_price.AutoSize = true;
             this.lbl_price.BackColor = System.Drawing.Color.Transparent;
             this.lbl_price.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_price.Location = new System.Drawing.Point(510, 21);
+            this.lbl_price.Location = new System.Drawing.Point(499, 21);
             this.lbl_price.Name = "lbl_price";
             this.lbl_price.Size = new System.Drawing.Size(62, 25);
             this.lbl_price.TabIndex = 39;

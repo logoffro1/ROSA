@@ -55,14 +55,14 @@
             this.managementToolStripMenuItem});
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
-            this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.navbar.Size = new System.Drawing.Size(1005, 36);
+            this.navbar.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.navbar.Size = new System.Drawing.Size(754, 30);
             this.navbar.TabIndex = 3;
             // 
             // homeToolStripMenuItem1
             // 
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
-            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
+            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(67, 26);
             this.homeToolStripMenuItem1.Text = "Home";
             this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem1_Click);
             // 
@@ -70,21 +70,21 @@
             // 
             this.tablesToolStripMenuItem1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tablesToolStripMenuItem1.Name = "tablesToolStripMenuItem1";
-            this.tablesToolStripMenuItem1.Size = new System.Drawing.Size(82, 32);
+            this.tablesToolStripMenuItem1.Size = new System.Drawing.Size(67, 26);
             this.tablesToolStripMenuItem1.Text = "Tables";
             this.tablesToolStripMenuItem1.Click += new System.EventHandler(this.tablesToolStripMenuItem1_Click);
             // 
             // barToolStripMenuItem
             // 
             this.barToolStripMenuItem.Name = "barToolStripMenuItem";
-            this.barToolStripMenuItem.Size = new System.Drawing.Size(55, 32);
+            this.barToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.barToolStripMenuItem.Text = "Bar";
             this.barToolStripMenuItem.Click += new System.EventHandler(this.barToolStripMenuItem_Click);
             // 
             // kitchenToolStripMenuItem
             // 
             this.kitchenToolStripMenuItem.Name = "kitchenToolStripMenuItem";
-            this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
+            this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.kitchenToolStripMenuItem.Text = "Kitchen";
             this.kitchenToolStripMenuItem.Click += new System.EventHandler(this.kitchenToolStripMenuItem_Click);
             // 
@@ -93,7 +93,7 @@
             this.managementToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.managementToolStripMenuItem.Font = new System.Drawing.Font("Tw Cen MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(159, 32);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.managementToolStripMenuItem.Text = "Management";
             // 
             // lblLogout
@@ -103,9 +103,10 @@
             this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblLogout.Font = new System.Drawing.Font("Tw Cen MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogout.ForeColor = System.Drawing.Color.Black;
-            this.lblLogout.Location = new System.Drawing.Point(927, 39);
+            this.lblLogout.Location = new System.Drawing.Point(695, 32);
+            this.lblLogout.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(72, 22);
+            this.lblLogout.Size = new System.Drawing.Size(57, 17);
             this.lblLogout.TabIndex = 6;
             this.lblLogout.Text = "Log Out";
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
@@ -115,19 +116,20 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
             this.lblWelcome.Font = new System.Drawing.Font("Tw Cen MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(743, 39);
+            this.lblWelcome.Location = new System.Drawing.Point(557, 32);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(131, 22);
+            this.lblWelcome.Size = new System.Drawing.Size(104, 17);
             this.lblWelcome.TabIndex = 5;
             this.lblWelcome.Text = "Welcome, Alex!";
             // 
             // btnAddEmployee
             // 
             this.btnAddEmployee.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEmployee.Location = new System.Drawing.Point(732, 116);
-            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddEmployee.Location = new System.Drawing.Point(587, 94);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(193, 43);
+            this.btnAddEmployee.Size = new System.Drawing.Size(145, 35);
             this.btnAddEmployee.TabIndex = 8;
             this.btnAddEmployee.Text = "Add Employee";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
@@ -138,10 +140,10 @@
             this.pnlEmployees.AutoScroll = true;
             this.pnlEmployees.BackColor = System.Drawing.SystemColors.Control;
             this.pnlEmployees.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlEmployees.Location = new System.Drawing.Point(264, 116);
-            this.pnlEmployees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlEmployees.Location = new System.Drawing.Point(179, 93);
+            this.pnlEmployees.Margin = new System.Windows.Forms.Padding(2);
             this.pnlEmployees.Name = "pnlEmployees";
-            this.pnlEmployees.Size = new System.Drawing.Size(461, 593);
+            this.pnlEmployees.Size = new System.Drawing.Size(395, 482);
             this.pnlEmployees.TabIndex = 9;
             // 
             // label1
@@ -149,19 +151,20 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(345, 80);
+            this.label1.Location = new System.Drawing.Point(260, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 36);
+            this.label1.Size = new System.Drawing.Size(237, 27);
             this.label1.TabIndex = 10;
             this.label1.Text = "Employee Overview";
             // 
             // ManagementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LoginForm.Properties.Resources.BG_TABLESPAGE;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.ClientSize = new System.Drawing.Size(754, 586);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlEmployees);
             this.Controls.Add(this.btnAddEmployee);
@@ -170,7 +173,7 @@
             this.Controls.Add(this.navbar);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "ManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
