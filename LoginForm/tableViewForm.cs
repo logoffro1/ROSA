@@ -60,27 +60,24 @@ namespace LoginForm
 
             if (table.order != null) //if the table has an order
             {
+                MakePictureBox("orderIcon", new Point(locationX + tableImages[0].Width + 2, locationY), Resources.Purchase_Order_32);
                 //if the waiting time is more than 15 minutes, display the time icon
                 if (WaitTimeMinutes((int)(DateTime.Now - table.order.DateTime).TotalSeconds) >= 15)
                     MakePictureBox("clockIcon", new Point(locationX - sizeX - 2, locationY + tableImages[table.tableId - 1].Height - sizeX), Resources.Alert_Clock_32);
 
                 if (table.order.ListOrderItems.Count > 0) //if the order has items in it
                 {
-                    //i'm using 2 loops to avoid using 2 booleans 
+                    int count = 0;
                     foreach (OrderItem OI in table.order.ListOrderItems)
+                        if (OI.status == StatusEnum.Ready) //if the order has food, display the food icon
+                        {
+                            count++;
+                           
+                        }
+                    if(count == table.order.ListOrderItems.Count)
                     {
-                        if (OI.menuItem.menuCat >= 25) //if the order has drinks, display the drinks icon
-                        {
-                            MakePictureBox("drinkIcon", new Point(locationX + tableImages[0].Width + 2, locationY), Resources.Coffee_32);
-                            break;
-                        }
+                        MakePictureBox("readyIcon", new Point(locationX + tableImages[0].Width + 2, locationY + tableImages[table.tableId - 1].Height - sizeX), Resources.svg_checkmark_verified_6);
                     }
-                    foreach (OrderItem OI in table.order.ListOrderItems)
-                        if (OI.menuItem.menuCat < 25) //if the order has food, display the food icon
-                        {
-                            MakePictureBox("foodIcon", new Point(locationX + tableImages[0].Width + 2, locationY + tableImages[table.tableId - 1].Height - sizeX), Resources.Food_32);
-                            break;
-                        }
                 }
             }
         }
@@ -99,7 +96,6 @@ namespace LoginForm
                 BackgroundImageLayout = ImageLayout.Stretch
 
             };
-
             pnlTables.Controls.Add(icon); //add the icon to the pnlTables controls so it becomes visibile
             iconsPB.Add(icon); // add the icons to an icons list (so I can dispose of them easier)
         }

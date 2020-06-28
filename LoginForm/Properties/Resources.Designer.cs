@@ -453,6 +453,16 @@ namespace LoginForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconsExplanation2 {
+            get {
+                object obj = ResourceManager.GetObject("IconsExplanation2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap infoBox {
             get {
                 object obj = ResourceManager.GetObject("infoBox", resourceCulture);
@@ -516,6 +526,36 @@ namespace LoginForm.Properties {
         internal static System.Drawing.Bitmap note3 {
             get {
                 object obj = ResourceManager.GetObject("note3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Purchase_Order_32 {
+            get {
+                object obj = ResourceManager.GetObject("Purchase-Order-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Purchase_Order_321 {
+            get {
+                object obj = ResourceManager.GetObject("Purchase-Order-321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap svg_checkmark_verified_6 {
+            get {
+                object obj = ResourceManager.GetObject("svg-checkmark-verified-6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
