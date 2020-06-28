@@ -315,7 +315,7 @@ namespace LoginForm.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ellipse_49 {
             get {
-                object obj = ResourceManager.GetObject("Ellipse 49", resourceCulture);
+                object obj = ResourceManager.GetObject("Ellipse_49", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -325,7 +325,7 @@ namespace LoginForm.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ellipse_491 {
             get {
-                object obj = ResourceManager.GetObject("Ellipse 491", resourceCulture);
+                object obj = ResourceManager.GetObject("Ellipse_491", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -335,7 +335,7 @@ namespace LoginForm.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ellipse_50 {
             get {
-                object obj = ResourceManager.GetObject("Ellipse 50", resourceCulture);
+                object obj = ResourceManager.GetObject("Ellipse_50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -605,7 +605,7 @@ namespace LoginForm.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Rectangle_267 {
             get {
-                object obj = ResourceManager.GetObject("Rectangle 267", resourceCulture);
+                object obj = ResourceManager.GetObject("Rectangle_267", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -775,7 +775,7 @@ namespace LoginForm.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap z_Login_Page {
             get {
-                object obj = ResourceManager.GetObject("z-Login Page", resourceCulture);
+                object obj = ResourceManager.GetObject("z_Login_Page", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
