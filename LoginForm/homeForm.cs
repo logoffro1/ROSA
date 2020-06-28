@@ -84,7 +84,7 @@ namespace LoginForm
         }
         private void lblLogout_MouseLeave(object sender, EventArgs e)
         {
-            lblLogout.ForeColor = Color.Black;
+            lblLogout.ForeColor = Color.FromArgb(254, 247, 233);
         }
         private void lblLogout_Click(object sender, EventArgs e)
         {

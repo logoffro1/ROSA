@@ -84,10 +84,12 @@ namespace LoginForm
             try
             {
                 currentPayment.TipAmount = decimal.Parse(textBox_tip.Text);
+                if (currentPayment.TipAmount < 0)
+                    throw new Exception();
             }
             catch (Exception)
             {
-                currentPayment.TipAmount = 0;
+                return;
             }
 
             //Puts remaining data in the payment object
@@ -112,8 +114,11 @@ namespace LoginForm
                 //If there's no value in the textbox, just set it to 0
                 if (textBox_tip.Text == "")
                     tempTip = 0;
-                else
+                else 
                     tempTip = float.Parse(textBox_tip.Text);
+
+                if (tempTip < 0)
+                    throw new Exception();
 
                 float tempOrderPrice = (float)currentPayment.TotalPrice + (float)currentPayment.TotalVAT;
                 textBox_totalPrice.Text = (tempTip + tempOrderPrice).ToString("0.00");
@@ -123,7 +128,7 @@ namespace LoginForm
             }
             catch (Exception)
             {
-                lbl_paymentMethodWarning.Text = "Input a decimal number in the tip box please.";
+                lbl_paymentMethodWarning.Text = "Input a positive decimal number in the tip box please.";
             }
         }
 
@@ -167,6 +172,11 @@ namespace LoginForm
         private void paymentForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lbl_paymentMethodWarning_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
