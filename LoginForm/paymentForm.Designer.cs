@@ -57,6 +57,8 @@
             this.lbl_price = new System.Windows.Forms.Label();
             this.lbl_payment_tableStatic = new System.Windows.Forms.Label();
             this.lbl_payment_datestatic = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.pnl_payment_price.SuspendLayout();
             this.pnl_payment_method.SuspendLayout();
             this.SuspendLayout();
@@ -64,11 +66,11 @@
             // lbl_paymentMethodWarning
             // 
             this.lbl_paymentMethodWarning.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_paymentMethodWarning.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_paymentMethodWarning.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_paymentMethodWarning.ForeColor = System.Drawing.Color.Red;
-            this.lbl_paymentMethodWarning.Location = new System.Drawing.Point(156, 495);
+            this.lbl_paymentMethodWarning.Location = new System.Drawing.Point(156, 504);
             this.lbl_paymentMethodWarning.Name = "lbl_paymentMethodWarning";
-            this.lbl_paymentMethodWarning.Size = new System.Drawing.Size(339, 45);
+            this.lbl_paymentMethodWarning.Size = new System.Drawing.Size(339, 53);
             this.lbl_paymentMethodWarning.TabIndex = 35;
             // 
             // lbl_PaymentMethod
@@ -86,10 +88,10 @@
             // 
             this.lbl_tip.AutoSize = true;
             this.lbl_tip.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_tip.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tip.Location = new System.Drawing.Point(18, 89);
+            this.lbl_tip.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tip.Location = new System.Drawing.Point(18, 107);
             this.lbl_tip.Name = "lbl_tip";
-            this.lbl_tip.Size = new System.Drawing.Size(32, 21);
+            this.lbl_tip.Size = new System.Drawing.Size(34, 22);
             this.lbl_tip.TabIndex = 33;
             this.lbl_tip.Text = "Tip";
             // 
@@ -98,24 +100,24 @@
             this.textBox_tip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_tip.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_tip.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox_tip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_tip.Location = new System.Drawing.Point(58, 91);
+            this.textBox_tip.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_tip.Location = new System.Drawing.Point(131, 107);
             this.textBox_tip.MaxLength = 6;
             this.textBox_tip.Name = "textBox_tip";
             this.textBox_tip.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox_tip.Size = new System.Drawing.Size(156, 19);
+            this.textBox_tip.Size = new System.Drawing.Size(76, 24);
             this.textBox_tip.TabIndex = 32;
-            this.textBox_tip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_tip.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox_tip.TextChanged += new System.EventHandler(this.textBox_tip_TextChanged);
             // 
             // lbl_vat_static
             // 
             this.lbl_vat_static.AutoSize = true;
             this.lbl_vat_static.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_vat_static.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_vat_static.Location = new System.Drawing.Point(18, 54);
+            this.lbl_vat_static.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_vat_static.Location = new System.Drawing.Point(17, 61);
             this.lbl_vat_static.Name = "lbl_vat_static";
-            this.lbl_vat_static.Size = new System.Drawing.Size(42, 21);
+            this.lbl_vat_static.Size = new System.Drawing.Size(48, 22);
             this.lbl_vat_static.TabIndex = 27;
             this.lbl_vat_static.Text = "VAT";
             // 
@@ -165,7 +167,7 @@
             this.btn_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_bill.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_bill.ForeColor = System.Drawing.Color.White;
-            this.btn_bill.Location = new System.Drawing.Point(501, 501);
+            this.btn_bill.Location = new System.Drawing.Point(504, 504);
             this.btn_bill.Name = "btn_bill";
             this.btn_bill.Size = new System.Drawing.Size(236, 36);
             this.btn_bill.TabIndex = 27;
@@ -242,10 +244,10 @@
             // 
             this.lbl_orderPrice_static.AutoSize = true;
             this.lbl_orderPrice_static.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_orderPrice_static.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_orderPrice_static.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_orderPrice_static.Location = new System.Drawing.Point(18, 23);
             this.lbl_orderPrice_static.Name = "lbl_orderPrice_static";
-            this.lbl_orderPrice_static.Size = new System.Drawing.Size(96, 21);
+            this.lbl_orderPrice_static.Size = new System.Drawing.Size(113, 22);
             this.lbl_orderPrice_static.TabIndex = 2;
             this.lbl_orderPrice_static.Text = "Order Price";
             // 
@@ -294,6 +296,8 @@
             this.pnl_payment_price.Controls.Add(this.lbl_tip);
             this.pnl_payment_price.Controls.Add(this.lbl_orderPrice_static);
             this.pnl_payment_price.Controls.Add(this.textBox_tip);
+            this.pnl_payment_price.Controls.Add(this.textBox1);
+            this.pnl_payment_price.Controls.Add(this.textBox2);
             this.pnl_payment_price.Location = new System.Drawing.Point(501, 51);
             this.pnl_payment_price.Name = "pnl_payment_price";
             this.pnl_payment_price.Size = new System.Drawing.Size(236, 262);
@@ -304,42 +308,41 @@
             this.textBox_totalPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBox_totalPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_totalPrice.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox_totalPrice.Enabled = false;
-            this.textBox_totalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_totalPrice.Location = new System.Drawing.Point(39, 183);
+            this.textBox_totalPrice.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_totalPrice.Location = new System.Drawing.Point(131, 174);
             this.textBox_totalPrice.Name = "textBox_totalPrice";
             this.textBox_totalPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox_totalPrice.Size = new System.Drawing.Size(156, 19);
+            this.textBox_totalPrice.Size = new System.Drawing.Size(76, 24);
             this.textBox_totalPrice.TabIndex = 37;
-            this.textBox_totalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_totalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox_totalPrice.TextChanged += new System.EventHandler(this.textBox_totalPrice_TextChanged);
             // 
             // lbl_totalPrice_static
             // 
             this.lbl_totalPrice_static.AutoSize = true;
-            this.lbl_totalPrice_static.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalPrice_static.Location = new System.Drawing.Point(72, 161);
+            this.lbl_totalPrice_static.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalPrice_static.Location = new System.Drawing.Point(18, 173);
             this.lbl_totalPrice_static.Name = "lbl_totalPrice_static";
-            this.lbl_totalPrice_static.Size = new System.Drawing.Size(89, 19);
+            this.lbl_totalPrice_static.Size = new System.Drawing.Size(107, 23);
             this.lbl_totalPrice_static.TabIndex = 36;
             this.lbl_totalPrice_static.Text = "Total price";
             // 
             // lbl_vat
             // 
             this.lbl_vat.AutoSize = true;
-            this.lbl_vat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_vat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_vat.Location = new System.Drawing.Point(150, 61);
             this.lbl_vat.Name = "lbl_vat";
-            this.lbl_vat.Size = new System.Drawing.Size(0, 20);
+            this.lbl_vat.Size = new System.Drawing.Size(0, 24);
             this.lbl_vat.TabIndex = 35;
             // 
             // lbl_orderPrice
             // 
             this.lbl_orderPrice.AutoSize = true;
-            this.lbl_orderPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_orderPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_orderPrice.Location = new System.Drawing.Point(150, 23);
             this.lbl_orderPrice.Name = "lbl_orderPrice";
-            this.lbl_orderPrice.Size = new System.Drawing.Size(0, 20);
+            this.lbl_orderPrice.Size = new System.Drawing.Size(0, 24);
             this.lbl_orderPrice.TabIndex = 34;
             // 
             // pnl_payment_method
@@ -385,6 +388,36 @@
             this.lbl_payment_datestatic.Size = new System.Drawing.Size(60, 25);
             this.lbl_payment_datestatic.TabIndex = 41;
             this.lbl_payment_datestatic.Text = "Date";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(143, 107);
+            this.textBox1.MaxLength = 6;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox1.Size = new System.Drawing.Size(76, 24);
+            this.textBox1.TabIndex = 38;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(143, 174);
+            this.textBox2.MaxLength = 6;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox2.Size = new System.Drawing.Size(76, 24);
+            this.textBox2.TabIndex = 39;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // paymentForm
             // 
@@ -454,5 +487,7 @@
         private System.Windows.Forms.Label lbl_payment_tableStatic;
         private System.Windows.Forms.Label lbl_payment_datestatic;
         private System.Windows.Forms.TextBox textBox_totalPrice;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
