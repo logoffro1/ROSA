@@ -483,6 +483,16 @@ namespace LoginForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap last_night {
+            get {
+                object obj = ResourceManager.GetObject("last night", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lock_32 {
             get {
                 object obj = ResourceManager.GetObject("Lock-32", resourceCulture);
@@ -666,6 +676,16 @@ namespace LoginForm.Properties {
         internal static System.Drawing.Bitmap tablePic {
             get {
                 object obj = ResourceManager.GetObject("tablePic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap untitled {
+            get {
+                object obj = ResourceManager.GetObject("untitled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

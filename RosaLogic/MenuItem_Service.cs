@@ -14,35 +14,12 @@ namespace RosaLogic
         {
             try
             {
-                List<MenuItem> bars = menuItemDAO.Db_Get_AllOrders();
+                List<MenuItem> bars = menuItemDAO.GetsMenuItems();
                 return bars;
             }
             catch 
             {
                 return null;                
-            }
-        }
-        public void UpdateTableOrder(int id, int status)
-        {
-            try
-            {
-                menuItemDAO.UpdateTableOrder(id, status);
-            }
-            catch
-            {
-                throw new Exception("Could not update TableOrder");
-            }
-        }
-        public MenuItem GetFromTableTheStatus(int status)
-        {
-            try
-            {
-                return menuItemDAO.GetFromTableTheStatus(status);
-            }
-
-            catch
-            {
-                return null;
             }
         }
     }

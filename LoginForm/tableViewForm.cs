@@ -272,7 +272,7 @@ namespace LoginForm
         }
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SwitchForms(employee, this, new BarKitchenForm(employee, "bar"));
+            new SwitchForms(employee, this, new BarKitchenForm(employee));
         }
         private void btnReservedYes_CheckedChanged(object sender, EventArgs e)
         {
@@ -299,7 +299,7 @@ namespace LoginForm
         }
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SwitchForms(employee, this, new BarKitchenForm(employee, "kitchen"));
+            new SwitchForms(employee, this, new BarKitchenForm(employee));
         }
 
         private void btnOrder_Click(object sender, EventArgs e)

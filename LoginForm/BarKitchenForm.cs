@@ -13,32 +13,38 @@ using RosaModel;
 
 namespace LoginForm
 {
-    public partial class BarKitchenForm : Form 
+    public partial class BarKitchenForm : Form
     {
         private Employee employee;
-        ListViewItem stucust;
+        ListViewItem AddItem;
 
-        public BarKitchenForm(Employee employee, string name)     
+        public BarKitchenForm(Employee employee)
         {
             this.employee = employee;
             InitializeComponent();
-            KitcheOrBarView(name);
+
         }
+        // the user clicks on Bar
         private void BarView_Click(object sender, EventArgs e)
         {
-            KitcheOrBarView("bar");
-            return;
+            if (employee.role == Roles.Bartender || employee.role == Roles.Manager)
+            {
+                panel_Bar.Show();
+                panel_Kitchen.Hide();
+                KitcheOrBarView();
+            }
+            else
+            {
+                MessageBox.Show($"Acces Denied!{Environment.NewLine}Your role does not have permission!", "Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
-        private void RefreshDatabase(object sender, EventArgs e)
+        // Presents the color based on the (Enum)status 
+        private Color checkStatus(OrderItem Status) // Presents the color based on the (Enum)status 
         {
-            KitcheOrBarView("kitchen");
-        }
-        private Color checkStatus(RosaModel.MenuItem menuItem) // Presents the color based on the (Enum)status 
-        {
-            switch (menuItem.orderItem.status)
+            switch (Status.status)
             {
                 case StatusEnum.Ordered:
-                    if (menuItem.order.DateTime.AddMinutes(15) < DateTime.Now)
+                    if (Status.order.DateTime.AddMinutes(15) < DateTime.Now)
                     { return Color.Red; }
                     else
                     {
@@ -52,130 +58,99 @@ namespace LoginForm
                     return Color.White;
             }
         }
-        private void KitcheOrBarView(string name) //Displays the overview of both the Bar and Kitchen View
-        {
-            MenuItem_Service BarService = new MenuItem_Service();
-            OrderItem orderitems = new OrderItem();
-            List<RosaModel.MenuItem> barLIst = BarService.GetOrderItem();
-            List<ListViewItem> stucustList = new List<ListViewItem>();
-            for (int i = 0; i < barLIst.Count; i++)
-            {
-                stucust = new ListViewItem(barLIst[i].order.DateTime.ToString("HH:mm:ss"));
-                stucust.SubItems.Add(barLIst[i].order.Table.tableId.ToString());
-                stucust.SubItems.Add(barLIst[i].orderItem.amount.ToString());
-                stucust.SubItems.Add(barLIst[i].Name);
-                stucust.SubItems.Add(barLIst[i].orderItem.status.ToString());
-                stucust.SubItems.Add(barLIst[i].order.Notes.ToString());
-                stucust.SubItems.Add(barLIst[i].orderItem.orderID.ToString());
-                stucust.SubItems.Add(barLIst[i].orderItem.orderItems_id.ToString());
-                stucust.BackColor = checkStatus(barLIst[i]);
-                stucustList.Add(stucust);
-            }
-            if (name == "bar") //Displays the overview of the Bar View for the Bartender and Manager
-            {
-                panel_Bar.Show();
-                panel_Kitchen.Hide();
+        //Displays the overview of both the Bar and Kitchen View
+        private void KitcheOrBarView() 
+        {   // Clear ListViews 
+            listBarOrderView.Items.Clear();
+            listBarReadyView.Items.Clear();
+            listKitchenOrderView.Items.Clear();
+            listKitchenReadyView.Items.Clear();
 
-                listBarView.Items.Clear();
-                listBarView1.Items.Clear();
+            OrderItem_Service OrderedItemService = new OrderItem_Service();
+            List<ListViewItem> AddItems = new List<ListViewItem>();
+            // Where Query to get the OrderItems for Kitchen and Bar
+            List<RosaModel.OrderItem> KitchenBarList = OrderedItemService.GetKItchenOrderedItems(); 
 
-                for (int i = 0; i < stucustList.Count; i++)
+            foreach (OrderItem orderItem in KitchenBarList)
+            {
+                AddItem = new ListViewItem(orderItem.order.DateTime.ToString("HH:mm:ss"));
+                AddItem.SubItems.Add(orderItem.order.Table.tableId.ToString());               
+                AddItem.SubItems.Add(orderItem.menuItem.Name);
+                AddItem.SubItems.Add(orderItem.amount.ToString());
+                AddItem.SubItems.Add(orderItem.order.Notes);
+                AddItem.SubItems.Add(orderItem.status.ToString());
+                AddItem.SubItems.Add(orderItem.orderItems_id.ToString());
+                AddItem.BackColor = checkStatus(orderItem);
+                AddItem.Tag = orderItem;
+                AddItems.Add(AddItem);
+                AddItem.BackColor = checkStatus(orderItem);
+                if (orderItem.menuItem.menuCat >= 25)
                 {
-                    if (barLIst[i].menuCat >= 25) // it is more than 24 because all drinks has number above 24
+                    if (orderItem.status == StatusEnum.Ready) 
                     {
-                        if (barLIst[i].orderItem.status == (StatusEnum)Enum.Parse(typeof(StatusEnum), StatusEnum.Ordered.ToString()))
-                        {
-                            listBarView.Items.Add(stucustList[i]); //  ordered
-                        }
-                        else
-                        {
-                            listBarView1.Items.Add(stucustList[i]); // served and ready
-                        }
+                        listBarReadyView.Items.Add(AddItem);
                     }
-                    listBarView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-                    listBarView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    else
+                    {
+                        listBarOrderView.Items.Add(AddItem);
+                    }
                 }
-            }
-            else if (name == "kitchen" ) //Displays the overview of the Kitchen View for the Chef and Manager
-            {
-                panel_Bar.Hide();
-                panel_Kitchen.Show();
-
-                listKitchenView.Items.Clear();
-                listKitchenView1.Items.Clear();
-                for (int i = 0; i < stucustList.Count; i++)
+                else
                 {
-
-                    if (barLIst[i].menuCat <= 24) // it is laess than 25 because all dishes has number below 25
+                    if (orderItem.status == StatusEnum.Ready)
                     {
-
-                        if (barLIst[i].orderItem.status == (StatusEnum)Enum.Parse(typeof(StatusEnum), StatusEnum.Ordered.ToString()))
-                        {
-                            listKitchenView.Items.Add(stucustList[i]); //  ordered
-                        }
-                        else
-                        {
-                            listKitchenView1.Items.Add(stucustList[i]); // served and ready
-                        }
+                        listKitchenReadyView.Items.Add(AddItem);
                     }
-
-                    listKitchenView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-                    listKitchenView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    else
+                    {
+                        listKitchenOrderView.Items.Add(AddItem);
+                    }
                 }
+                listBarOrderView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                listBarReadyView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                listKitchenOrderView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                listKitchenReadyView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
-        private void UpdateButtons() // When you click on button you want to update the status of the certain order
+        // When you click on button you want to update the status of the certain item
+        private void MarkAsReadyButton() 
         {
-            MenuItem_Service tableService = new MenuItem_Service();
-            int status = 2; // to which one it goes from order status to ready status
-
-            if (listBarView.SelectedItems.Count > 0)
-            {
-                OrderItem temp = new OrderItem(
-                 int.Parse(listBarView.SelectedItems[0].SubItems[6].Text),  // orderItemsId
-                 (StatusEnum)Enum.Parse(typeof(StatusEnum), listBarView.SelectedItems[0].SubItems[4].Text)); // Status
-                temp.orderItems_id = int.Parse(listBarView.SelectedItems[0].SubItems[7].Text);
-
-                if (temp.status == StatusEnum.Ordered)
-                {
-                    tableService.UpdateTableOrder(temp.orderItems_id, status); // updates table                     
-                    MessageBox.Show("Order Send!");
-                    KitcheOrBarView("bar");
-                }
+            OrderItem orderItem = new OrderItem();
+            OrderItem_Service KitchenOrBarService = new OrderItem_Service();
+            if (listBarOrderView.SelectedItems.Count > 0)
+            {                
+                orderItem.orderItems_id = int.Parse(((RosaModel.OrderItem)listBarOrderView.SelectedItems[0].Tag).orderItems_id.ToString());
             }
-            else if (listKitchenView.SelectedItems.Count > 0)
+            else if (listKitchenOrderView.SelectedItems.Count > 0)
             {
-                OrderItem temp = new OrderItem(
-                int.Parse(listKitchenView.SelectedItems[0].SubItems[6].Text),  // orderId
-                (StatusEnum)Enum.Parse(typeof(StatusEnum),listKitchenView.SelectedItems[0].SubItems[4].Text)); // Status
-               temp.orderItems_id = int.Parse(listKitchenView.SelectedItems[0].SubItems[7].Text);
-
-                if (temp.status == StatusEnum.Ordered)
-                {
-                    tableService.UpdateTableOrder(temp.orderItems_id, status); // update table
-                    MessageBox.Show("Order Send!");
-                    KitcheOrBarView("kitchen");
-                }
+                orderItem.orderItems_id = int.Parse(((RosaModel.OrderItem)listKitchenOrderView.SelectedItems[0].Tag).orderItems_id.ToString());
             }
-            else
-            {
-                MessageBox.Show("Item Was Not Selected!");
-            }
-        }
-
-        private void btnReady_Click(object sender, EventArgs e)
+            KitchenOrBarService.UpdateTableOrder(orderItem.orderItems_id, 2);
+            KitcheOrBarView();
+            MessageBox.Show("Order Send!");
+        }        
+        private void btnReadyBar_Click(object sender, EventArgs e)
         {
-            UpdateButtons();
+            MarkAsReadyButton();
         }
         private void btnReadyKitchen_Click(object sender, EventArgs e)
         {
-            UpdateButtons();
+            MarkAsReadyButton();
         }
-        private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
+        // the user click on Kitchen
+        private void KitchenView_Click(object sender, EventArgs e) 
         {
-            KitcheOrBarView("kitchen");
+            if (employee.role == Roles.Chef || employee.role == Roles.Manager)
+            {
+                panel_Bar.Hide();
+                panel_Kitchen.Show();
+                KitcheOrBarView();
+            }
+            else
+            {
+                MessageBox.Show($"Acces Denied!{Environment.NewLine}Your role does not have permission!", "Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
-
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             homeForm homeForm = new homeForm(employee);
@@ -194,7 +169,6 @@ namespace LoginForm
         {
             new SwitchForms(employee, this, new ManagementForm(employee));
         }
-
         private void label4_Click(object sender, EventArgs e)
         {
             new SwitchForms(employee, this, new loginForm());

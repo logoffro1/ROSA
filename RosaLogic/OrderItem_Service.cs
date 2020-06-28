@@ -24,17 +24,30 @@ namespace RosaLogic
                 return null;
             }
         }
-        //public List<OrderItem> GetItemsById(int order_id)
-       // {
-            //try
-           // {
-              //  return orderItemDAO.ReadTables();
-          //  }
-           // catch
-           // {
-              //  ErrorDAO error = new ErrorDAO("Couldn't read the Order Item from the Database!");
-             //   return null;
-           // }
-        //}
+        // By Liv
+        public void UpdateTableOrder(int id, int status) // Updates the table 
+        {
+            try
+            {
+                orderItemDAO.UpdateTableOrder(id, status); // by orederItem_id and status
+            }
+            catch
+            {
+                throw new Exception("Could not update TableOrder");
+            }
+        }
+        // By Liv
+        public List<OrderItem> GetKItchenOrderedItems() // Gets items from the order
+        {
+            try
+            {
+                return orderItemDAO.GetOrderedItemsKitchenOrBar();
+            }
+
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

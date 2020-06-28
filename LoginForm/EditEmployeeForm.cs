@@ -40,13 +40,13 @@ namespace LoginForm
 
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SwitchForms(connectedEmployee, this, new BarKitchenForm(connectedEmployee, "bar"));
+            new SwitchForms(connectedEmployee, this, new BarKitchenForm(connectedEmployee));
         }
 
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            new SwitchForms(connectedEmployee, this, new BarKitchenForm(connectedEmployee, "kitchen"));
+            new SwitchForms(connectedEmployee, this, new BarKitchenForm(connectedEmployee));
         }
 
         private void lblLogout_Click(object sender, EventArgs e)

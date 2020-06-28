@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using RosaDAL;
 using RosaModel;
 namespace RosaLogic
@@ -25,7 +26,7 @@ namespace RosaLogic
                         t.order.ListOrderItems = orderItemDAO.GetOrderItemsById(t.order.OrderID);
                 }
             }
-            catch
+            catch 
             {
                 new ErrorHandler("Couldn't read the Tables from the Database!");
             }

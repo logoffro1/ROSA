@@ -25,12 +25,12 @@ namespace LoginForm
         */
         public SwitchForms(Employee employee, Form currentForm, Form formToOpen) //this was made so it can be used in every form, without reusing the same code
         {
-           
+
             this.currentForm = currentForm;
             this.formToOpen = formToOpen;
 
             if (formToOpen is loginForm || formToOpen is homeForm) //everyone has acces to those forms
-                ShowHideForms();
+                ShowHideForms(formToOpen);
             else
                 switch (employee.role)
                 {
@@ -38,29 +38,33 @@ namespace LoginForm
                         if (!(formToOpen is tableViewForm || formToOpen is EditForm || formToOpen is paymentForm))
                             MessageBox.Show($"Acces Denied!{Environment.NewLine}Your role does not have permission!", "Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         else
-                            ShowHideForms();
+                            ShowHideForms(formToOpen);
                         break;
                     case Roles.Bartender:
                         if (!(formToOpen is BarKitchenForm))
                             MessageBox.Show($"Acces Denied!{Environment.NewLine}Your role does not have permission!", "Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         else
-                            ShowHideForms();
+                            ShowHideForms(formToOpen);
                         break;
                     case Roles.Chef:
                         if (!(formToOpen is BarKitchenForm))
                             MessageBox.Show($"Acces Denied!{Environment.NewLine}Your role does not have permission!", "Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         else
-                            ShowHideForms();
+                            ShowHideForms(formToOpen);
                         break;
                     default:
-                        ShowHideForms();
+                        ShowHideForms(formToOpen);
                         break;
                 }
+            //ShowHideForms();
         }
-        private void ShowHideForms()
+        private void ShowHideForms(Form a)
         {
-            formToOpen.Show();
-            currentForm.Hide();
+            if (a != currentForm)
+            {
+                a.Show();
+                currentForm.Hide();
+            }
         }
     }
 }
