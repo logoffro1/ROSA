@@ -67,7 +67,7 @@ namespace RosaDAL
         private List<OrderItem> GetOrderItemsById(int order_id)
         {
             SqlCommand cmd = new SqlCommand(
-                "SELECT OT.order_ID, M.itemName, OT.amount, OT.[status], (M.price * OT.amount) AS price, MC.vat " +
+                "SELECT OT.order_ID, M.itemName, OT.amount, OT.[status], (M.price) AS price, MC.vat " +
                 "FROM orderItems AS OT " +
                 "JOIN menuItem AS M ON OT.menuItem_id = M.menuItem_id " +
                 "JOIN menuCategory AS MC ON M.menuCategory_id = MC.menuCategory_id " +
