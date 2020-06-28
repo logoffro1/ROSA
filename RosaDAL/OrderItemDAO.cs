@@ -61,8 +61,8 @@ namespace RosaDAL
                 "JOIN [menuItem] ON orderItems.menuItem_id = menuItem.menuItem_id " +
                 "JOIN [menuCategory] ON menuItem.menuCategory_id = menuCategory.menuCategory_id " +
                 "JOIN [order] ON orderItems.order_id = [order].[order_id] " +
-                "WHERE[order].[orderDate] > GETDATE()" +
-                "ORDER BY[order].[orderDate];", conn);
+                "WHERE [order].[orderDate] >= GETDATE() AND [order].[orderDate] <= GETDATE() +1 " +
+                "ORDER BY[order].[orderDate] DESC;", conn);
             SqlDataReader reader = cmd.ExecuteReader();
             List<OrderItem> temp = new List<OrderItem>();
             while (reader.Read())
