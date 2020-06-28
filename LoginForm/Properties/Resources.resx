@@ -118,98 +118,149 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Button_LogIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button_LogIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="note3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\note3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="svg-checkmark-verified-6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\svg-checkmark-verified-6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tablePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tablePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="waiterProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\waiterProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Table1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Table11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Table5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Table5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconsExplanation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconsExplanation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="helpPayment" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\helpPayment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BG_LOGINPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BG_LOGINPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Table8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Table8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Table7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Table7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="helpTablesView1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\helpTablesView1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lock-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lock-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Calendar-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Calendar-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="backgroundImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroundImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Table3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Table3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Table7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconsExplanation2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconsExplanation2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconsExplanation1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconsExplanation1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loginButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loginButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="infoBoxWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infoBoxWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="circleGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\circleGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tablePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tablePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="infoBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\infoBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Food-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Food-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Table6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Button_RIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_RIGHT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Box_LogIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Box_LogIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Black-Eye-Watch-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Black-Eye-Watch-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lock-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lock-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Table9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Table9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Table2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Table2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="helpTablesView3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helpTablesView3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Purchase-Order-321" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Purchase-Order-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Button_LEFT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_LEFT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="note3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\note3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="box2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\box2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="circleGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circleGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chefProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chefProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Button_LEFT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button_LEFT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="helpBarView1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helpBarView1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_LogIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_LogIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Addressbook-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Addressbook-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_LOGINPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_LOGINPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infoBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infoBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chapeau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chapeau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Black-Eye-Watch-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Black-Eye-Watch-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="helpTablesView1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helpTablesView1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Purchase-Order-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Purchase-Order-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="box2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\box2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Available_Occupied Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Available_Occupied Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="helpOrdersView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helpOrdersView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chapeau2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chapeau2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="managerProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\managerProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chapeau1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chapeau1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="untitled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\untitled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WhiteOpacity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WhiteOpacity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="svg-checkmark-verified-6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\svg-checkmark-verified-6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconsExplanation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconsExplanation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alert-Clock-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alert-Clock-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Box_LogIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Box_LogIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="helpTablesView2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helpTablesView2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Closed_Eye2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Closed_Eye2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_TABLESPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_TABLESPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loginButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="helpBarView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helpBarView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="helpAddingAccount" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\helpAddingAccount.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,97 +268,70 @@
   <data name="note2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\note2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Coffee-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Coffee-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chapeau1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chapeau1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="helpTablesView3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\helpTablesView3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="helpPayment1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\helpPayment1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Table10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Table10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="helpTablesView2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\helpTablesView2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="infoBoxWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\infoBoxWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="circleGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\circleGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Alert-Clock-256" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Alert-Clock-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Table4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Table4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="helpBarView1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\helpBarView1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Table2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Calendar-256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Calendar-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Food-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Food-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circleGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circleGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Purchase-Order-321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Purchase-Order-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HOME_BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HOME_BG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Alert-Clock-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Alert-Clock-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Table10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Table10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Closed_Eye2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Closed_Eye2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="helpOrdersView" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\helpOrdersView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="managerProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\managerProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bartenderProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bartenderProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Table6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Table6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Calendar-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Calendar-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Available_Occupied Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Available_Occupied Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BG_TABLESPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BG_TABLESPAGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Closed_Eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Closed_Eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Purchase-Order-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Purchase-Order-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Addressbook-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Addressbook-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chapeau" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chapeau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WhiteOpacity" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WhiteOpacity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="waiterProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\waiterProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="helpTablesView" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\helpTablesView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chapeau2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chapeau2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Coffee-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Coffee-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="helpBarView" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\helpBarView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="helpPayment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helpPayment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconsExplanation2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconsExplanation2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Alert-Clock-256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alert-Clock-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bartenderProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bartenderProfile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Closed_Eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Closed_Eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="helpPayment1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\helpPayment1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="last night" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\last night.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ellipse_49" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ellipse 49.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ellipse_491" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ellipse 491.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ellipse_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ellipse 50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="readyToServe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\readyToServe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rectangle_267" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rectangle 267.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="z_Login_Page" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z-Login Page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

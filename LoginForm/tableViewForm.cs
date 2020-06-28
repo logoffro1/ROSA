@@ -211,7 +211,7 @@ namespace LoginForm
         }
         private void lblLogout_MouseLeave(object sender, EventArgs e)
         {
-            lblLogout.ForeColor = Color.Black;
+            lblLogout.ForeColor = Color.FromArgb(254, 247, 233);
         }
         private void lblLogout_Click(object sender, EventArgs e)
         {
@@ -272,7 +272,7 @@ namespace LoginForm
         }
         private void barToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SwitchForms(employee, this, new BarKitchenForm(employee, "bar"));
+            new SwitchForms(employee, this, new BarKitchenForm(employee));
         }
         private void btnReservedYes_CheckedChanged(object sender, EventArgs e)
         {
@@ -299,7 +299,7 @@ namespace LoginForm
         }
         private void kitchenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SwitchForms(employee, this, new BarKitchenForm(employee, "kitchen"));
+            new SwitchForms(employee, this, new BarKitchenForm(employee));
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
@@ -316,6 +316,11 @@ namespace LoginForm
         }
 
         private void btnOccupiedYes_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
