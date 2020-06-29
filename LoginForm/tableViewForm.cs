@@ -42,6 +42,7 @@ namespace LoginForm
             tableImages = new PictureBox[10] { picTable1, picTable2, picTable3, picTable4, picTable5, picTable6, picTable7, picTable8, picTable9, picTable10 };
 
             ChangeTableColor();
+            ShowTableInfo(1);
         }
         private void tableViewForm_FormClosing(object sender, FormClosingEventArgs e)
         {
