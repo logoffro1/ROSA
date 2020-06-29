@@ -91,10 +91,13 @@ namespace LoginForm
             RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // increases selected order item amount 
             if (EditView.SelectedItems.Count > 0)
             {
-                orderserv.IncreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
-                orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "-");
+                if (!CheckStockAmount(EditView, 2))
+                {
+                    orderserv.IncreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
+                    orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "-");
 
-                FillOrderViewByOrderID(orderId);
+                    FillOrderViewByOrderID(orderId);
+                }
             }
             else
             {
@@ -147,7 +150,7 @@ namespace LoginForm
 
         private void AddOrderItemFromListButton_Click(object sender, EventArgs e) //adding order item from the menu
         {
-            if ((!CheckStockAmount(DrinksView)) & (!CheckStockAmount(DinnerView))& (!CheckStockAmount(LunchView)))
+            if ((!CheckStockAmount(DrinksView,2)) & (!CheckStockAmount(DinnerView,2))& (!CheckStockAmount(LunchView,2)))
             {
                 if ((!IncreaseAmountOfExistingItem(LunchView)) & (!IncreaseAmountOfExistingItem(DinnerView)) & (!IncreaseAmountOfExistingItem(DrinksView)))
                 {
@@ -316,13 +319,13 @@ namespace LoginForm
             table.order = orderService.GetLatestOrder();
             new SwitchForms(employee, this, new EditForm(employee, table, "Edit"));
         }
-        private bool CheckStockAmount(ListView list)
+        private bool CheckStockAmount(ListView list, int pos)
         {
             Order_Service orderService = new Order_Service();
             if (list.SelectedItems.Count > 0)
             {
-                int stock = orderService.CheckStock(int.Parse(list.SelectedItems[0].SubItems[2].Text));
-                if (stock < 0)
+                int stock = orderService.CheckStock(int.Parse(list.SelectedItems[0].SubItems[pos].Text));
+                if (stock < 1)
                 {
                     Messagelabel.Text = "Insufficient stock!";
                     return true;

@@ -80,20 +80,21 @@ namespace LoginForm
                 return;
             }
 
+            if (currentPayment.TipAmount < 0)
+                return;
+
             //If incorrect format, just sets tip to 0
             try
             {
                 currentPayment.TipAmount = decimal.Parse(textBox_tip.Text);
-                if (currentPayment.TipAmount < 0)
-                    throw new Exception();
             }
             catch (Exception)
             {
-                return;
+                currentPayment.TipAmount = 0;
             }
 
-            //Puts remaining data in the payment object
-            currentPayment.Feedback = textBox_comments.Text;
+                //Puts remaining data in the payment object
+                currentPayment.Feedback = textBox_comments.Text;
 
             //Puts new payment/bill in the database and sets order to paid
             Payment_Service paymentService = new Payment_Service();

@@ -30,6 +30,15 @@ namespace LoginForm
             if (employee.role == Roles.Bartender || employee.role == Roles.Manager)
             {
                 panel_Bar.Show();
+
+                //UI stuff
+                BarView.BackColor = Color.FromArgb(122, 122, 122);
+                BarView.ForeColor = Color.FromArgb(254, 247, 233);
+
+                kitchenToolStripMenuItem.BackColor = Color.White;
+                kitchenToolStripMenuItem.ForeColor = Color.Black;
+
+
                 panel_Kitchen.Hide();
                 KitcheOrBarView();
             }
@@ -144,6 +153,14 @@ namespace LoginForm
             {
                 panel_Bar.Hide();
                 panel_Kitchen.Show();
+
+                //UI stuff
+                kitchenToolStripMenuItem.BackColor = Color.FromArgb(122, 122, 122);
+                kitchenToolStripMenuItem.ForeColor = Color.FromArgb(254, 247, 233);
+
+                BarView.BackColor = Color.White;
+                BarView.ForeColor = Color.Black;
+
                 KitcheOrBarView();
             }
             else
