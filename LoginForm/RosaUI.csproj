@@ -335,5 +335,8 @@
   <ItemGroup>
     <None Include="Resources\Ellipse 493.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z-Login Page1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

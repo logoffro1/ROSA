@@ -19,7 +19,7 @@ namespace LoginForm
             LunchPanel.Show();
             DrinksPanel.Hide();
             Messagelabel.Text = "";
-            AddOrderItemFromListButton.Hide();
+            AddOrderItemFromListButton.Show();
             this.table = table;
             if (table.order != null)
             {
