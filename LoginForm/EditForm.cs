@@ -16,7 +16,7 @@ namespace LoginForm
             this.employee = employee;
             InitializeComponent();
             DinnerPanel.Hide();
-            LunchPanel.Hide();
+            LunchPanel.Show();
             DrinksPanel.Hide();
             Messagelabel.Text = "";
             AddOrderItemFromListButton.Hide();
@@ -55,7 +55,7 @@ namespace LoginForm
             {
                 orderserv.DeleteOrderItem(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
                 Messagelabel.Text = "Deleted Order item with ID " + EditView.SelectedItems[0].SubItems[1].Text;
-                orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "+");
+                orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), int.Parse((EditView.SelectedItems[0].SubItems[3].Text)), "+");
                 FillOrderViewByOrderID(orderId);
             }
             else
