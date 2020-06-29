@@ -46,10 +46,10 @@ namespace LoginForm
                             new SwitchForms(employee, this, new tableViewForm(employee));
                             break;
                         case Roles.Bartender:
-                            new SwitchForms(employee, this, new BarKitchenForm(employee,"bar"));
+                            new SwitchForms(employee, this, new BarKitchenForm(employee));
                             break;
                         case Roles.Chef:
-                            new SwitchForms(employee, this, new BarKitchenForm(employee, "kitchen"));
+                            new SwitchForms(employee, this, new BarKitchenForm(employee));
                             break;
                         case Roles.Manager:
                             new SwitchForms(employee, this, new ManagementForm(employee));

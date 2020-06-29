@@ -313,6 +313,56 @@ namespace LoginForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ellipse_49 {
+            get {
+                object obj = ResourceManager.GetObject("Ellipse_49", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ellipse_491 {
+            get {
+                object obj = ResourceManager.GetObject("Ellipse_491", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ellipse_492 {
+            get {
+                object obj = ResourceManager.GetObject("Ellipse_492", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ellipse_493 {
+            get {
+                object obj = ResourceManager.GetObject("Ellipse_493", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ellipse_50 {
+            get {
+                object obj = ResourceManager.GetObject("Ellipse_50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Food_32 {
             get {
                 object obj = ResourceManager.GetObject("Food-32", resourceCulture);
@@ -453,6 +503,16 @@ namespace LoginForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconsExplanation2 {
+            get {
+                object obj = ResourceManager.GetObject("IconsExplanation2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap infoBox {
             get {
                 object obj = ResourceManager.GetObject("infoBox", resourceCulture);
@@ -466,6 +526,16 @@ namespace LoginForm.Properties {
         internal static System.Drawing.Bitmap infoBoxWhite {
             get {
                 object obj = ResourceManager.GetObject("infoBoxWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap last_night {
+            get {
+                object obj = ResourceManager.GetObject("last night", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,6 +586,56 @@ namespace LoginForm.Properties {
         internal static System.Drawing.Bitmap note3 {
             get {
                 object obj = ResourceManager.GetObject("note3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Purchase_Order_32 {
+            get {
+                object obj = ResourceManager.GetObject("Purchase-Order-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Purchase_Order_321 {
+            get {
+                object obj = ResourceManager.GetObject("Purchase-Order-321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap readyToServe {
+            get {
+                object obj = ResourceManager.GetObject("readyToServe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_267 {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle_267", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap svg_checkmark_verified_6 {
+            get {
+                object obj = ResourceManager.GetObject("svg-checkmark-verified-6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -633,6 +753,16 @@ namespace LoginForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap untitled {
+            get {
+                object obj = ResourceManager.GetObject("untitled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap User_64 {
             get {
                 object obj = ResourceManager.GetObject("User_64", resourceCulture);
@@ -656,6 +786,16 @@ namespace LoginForm.Properties {
         internal static System.Drawing.Bitmap WhiteOpacity {
             get {
                 object obj = ResourceManager.GetObject("WhiteOpacity", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z_Login_Page {
+            get {
+                object obj = ResourceManager.GetObject("z_Login_Page", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

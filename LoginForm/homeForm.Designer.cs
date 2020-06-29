@@ -76,9 +76,10 @@
             // 
             // navbar
             // 
-            this.navbar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.navbar.AutoSize = false;
+            this.navbar.BackColor = System.Drawing.Color.Orange;
             this.navbar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.navbar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navbar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navbar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem1,
@@ -87,50 +88,71 @@
             this.kitchenToolStripMenuItem,
             this.managementToolStripMenuItem,
             this.toolStripMenuItem1});
+            this.navbar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
-            this.navbar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.navbar.Size = new System.Drawing.Size(1005, 31);
+            this.navbar.Padding = new System.Windows.Forms.Padding(160, 18, 7, 12);
+            this.navbar.Size = new System.Drawing.Size(1005, 74);
             this.navbar.TabIndex = 2;
             // 
             // homeToolStripMenuItem1
             // 
-            this.homeToolStripMenuItem1.BackColor = System.Drawing.Color.Transparent;
+            this.homeToolStripMenuItem1.AutoSize = false;
+            this.homeToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
             this.homeToolStripMenuItem1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
+            this.homeToolStripMenuItem1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
-            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(83, 27);
+            this.homeToolStripMenuItem1.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(83, 31);
             this.homeToolStripMenuItem1.Text = "Home";
             // 
             // tablesToolStripMenuItem1
             // 
+            this.tablesToolStripMenuItem1.AutoSize = false;
+            this.tablesToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
             this.tablesToolStripMenuItem1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablesToolStripMenuItem1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.tablesToolStripMenuItem1.Name = "tablesToolStripMenuItem1";
-            this.tablesToolStripMenuItem1.Size = new System.Drawing.Size(85, 27);
+            this.tablesToolStripMenuItem1.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.tablesToolStripMenuItem1.Size = new System.Drawing.Size(83, 31);
             this.tablesToolStripMenuItem1.Text = "Tables";
             this.tablesToolStripMenuItem1.Click += new System.EventHandler(this.tablesToolStripMenuItem1_Click);
             // 
             // barToolStripMenuItem
             // 
+            this.barToolStripMenuItem.AutoSize = false;
+            this.barToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
             this.barToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.barToolStripMenuItem.Name = "barToolStripMenuItem";
-            this.barToolStripMenuItem.Size = new System.Drawing.Size(55, 27);
+            this.barToolStripMenuItem.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.barToolStripMenuItem.Size = new System.Drawing.Size(83, 31);
             this.barToolStripMenuItem.Text = "Bar";
             this.barToolStripMenuItem.Click += new System.EventHandler(this.barToolStripMenuItem_Click);
             // 
             // kitchenToolStripMenuItem
             // 
+            this.kitchenToolStripMenuItem.AutoSize = false;
+            this.kitchenToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
             this.kitchenToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kitchenToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.kitchenToolStripMenuItem.Name = "kitchenToolStripMenuItem";
-            this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(97, 27);
+            this.kitchenToolStripMenuItem.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.kitchenToolStripMenuItem.Size = new System.Drawing.Size(83, 31);
             this.kitchenToolStripMenuItem.Text = "Kitchen";
             this.kitchenToolStripMenuItem.Click += new System.EventHandler(this.kitchenToolStripMenuItem_Click);
             // 
             // managementToolStripMenuItem
             // 
             this.managementToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.managementToolStripMenuItem.AutoSize = false;
+            this.managementToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
             this.managementToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managementToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(156, 27);
+            this.managementToolStripMenuItem.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(158, 31);
             this.managementToolStripMenuItem.Text = "Management";
             this.managementToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
@@ -138,7 +160,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 27);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 4);
             // 
             // homeToolStripMenuItem
             // 
@@ -162,23 +184,26 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(733, 39);
+            this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(507, 101);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(149, 22);
+            this.lblWelcome.Size = new System.Drawing.Size(266, 40);
             this.lblWelcome.TabIndex = 3;
             this.lblWelcome.Text = "Welcome, Alex!";
             // 
             // lblLogout
             // 
+            this.lblLogout.AutoEllipsis = true;
             this.lblLogout.AutoSize = true;
-            this.lblLogout.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(0)))), ((int)(((byte)(42)))));
             this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblLogout.Font = new System.Drawing.Font("Tw Cen MT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogout.ForeColor = System.Drawing.Color.Black;
-            this.lblLogout.Location = new System.Drawing.Point(917, 39);
+            this.lblLogout.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
+            this.lblLogout.Location = new System.Drawing.Point(904, 23);
+            this.lblLogout.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(72, 22);
+            this.lblLogout.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblLogout.Size = new System.Drawing.Size(87, 27);
             this.lblLogout.TabIndex = 4;
             this.lblLogout.Text = "Log Out";
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
@@ -191,6 +216,7 @@
             this.pnlHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlHome.Controls.Add(this.btnSlideRight);
             this.pnlHome.Controls.Add(this.btnSlideLeft);
+            this.pnlHome.Controls.Add(this.lblWelcome);
             this.pnlHome.Controls.Add(this.picCircle5);
             this.pnlHome.Controls.Add(this.picCircle4);
             this.pnlHome.Controls.Add(this.picCircle3);
@@ -198,7 +224,6 @@
             this.pnlHome.Controls.Add(this.picCircle1);
             this.pnlHome.Controls.Add(this.pnlInfoUser);
             this.pnlHome.Controls.Add(this.picHelp);
-            this.pnlHome.Controls.Add(this.pictureBox1);
             this.pnlHome.Location = new System.Drawing.Point(16, 39);
             this.pnlHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlHome.Name = "pnlHome";
@@ -292,7 +317,7 @@
             // 
             // pnlInfoUser
             // 
-            this.pnlInfoUser.BackgroundImage = global::LoginForm.Properties.Resources.infoBoxWhite;
+            this.pnlInfoUser.BackgroundImage = global::LoginForm.Properties.Resources.Rectangle_267;
             this.pnlInfoUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlInfoUser.Controls.Add(this.btnSave);
             this.pnlInfoUser.Controls.Add(this.lblNotes);
@@ -302,10 +327,10 @@
             this.pnlInfoUser.Controls.Add(this.lblName);
             this.pnlInfoUser.Controls.Add(this.lblRole);
             this.pnlInfoUser.Controls.Add(this.profilePicture);
-            this.pnlInfoUser.Location = new System.Drawing.Point(8, 126);
+            this.pnlInfoUser.Location = new System.Drawing.Point(15, 57);
             this.pnlInfoUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlInfoUser.Name = "pnlInfoUser";
-            this.pnlInfoUser.Size = new System.Drawing.Size(285, 526);
+            this.pnlInfoUser.Size = new System.Drawing.Size(313, 577);
             this.pnlInfoUser.TabIndex = 3;
             // 
             // btnSave
@@ -358,7 +383,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(32, 480);
+            this.lblTime.Location = new System.Drawing.Point(27, 500);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(130, 23);
             this.lblTime.TabIndex = 3;
@@ -369,7 +394,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Century Gothic", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(32, 191);
+            this.lblName.Location = new System.Drawing.Point(52, 191);
             this.lblName.Name = "lblName";
             this.lblName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblName.Size = new System.Drawing.Size(211, 26);
@@ -381,7 +406,7 @@
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.Location = new System.Drawing.Point(37, 213);
+            this.lblRole.Location = new System.Drawing.Point(81, 214);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(128, 30);
             this.lblRole.TabIndex = 2;
@@ -391,7 +416,7 @@
             // profilePicture
             // 
             this.profilePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.profilePicture.Location = new System.Drawing.Point(43, 23);
+            this.profilePicture.Location = new System.Drawing.Point(57, 23);
             this.profilePicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.profilePicture.Name = "profilePicture";
             this.profilePicture.Size = new System.Drawing.Size(188, 165);
@@ -403,7 +428,7 @@
             // 
             this.picHelp.BackgroundImage = global::LoginForm.Properties.Resources.helpTablesView3;
             this.picHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picHelp.Location = new System.Drawing.Point(384, 229);
+            this.picHelp.Location = new System.Drawing.Point(385, 229);
             this.picHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picHelp.Name = "picHelp";
             this.picHelp.Size = new System.Drawing.Size(545, 353);
@@ -413,11 +438,12 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Orange;
             this.pictureBox1.Image = global::LoginForm.Properties.Resources.chapeau1;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 105);
+            this.pictureBox1.Size = new System.Drawing.Size(136, 74);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -426,12 +452,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::LoginForm.Properties.Resources.HOME_BG;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1005, 721);
-            this.Controls.Add(this.navbar);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblLogout);
-            this.Controls.Add(this.lblWelcome);
+            this.Controls.Add(this.navbar);
             this.Controls.Add(this.pnlHome);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -440,12 +466,13 @@
             this.MaximizeBox = false;
             this.Name = "homeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chapeau - Home";
+            this.Text = " ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.navbar.ResumeLayout(false);
             this.navbar.PerformLayout();
             this.pnlHome.ResumeLayout(false);
+            this.pnlHome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCircle5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCircle4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCircle3)).EndInit();

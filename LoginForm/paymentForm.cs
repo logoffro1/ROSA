@@ -53,7 +53,7 @@ namespace LoginForm
             lbl_date.Text = payment.Order.DateTime.ToString("dd/MM/yyyy HH:mm:ss");
             lbl_orderPrice.Text = payment.TotalPrice.ToString("€ 0.00");
             lbl_vat.Text = payment.TotalVAT.ToString("€ 0.00");
-            textBox_totalPrice.Text = (payment.TotalPrice).ToString("0.00");
+            textBox_totalPrice.Text = (payment.TotalPrice + payment.TotalVAT).ToString("0.00");
 
             //Adds each order item to the listview
             foreach (OrderItem item in payment.Order.ListOrderItems)
@@ -80,6 +80,9 @@ namespace LoginForm
                 return;
             }
 
+            if (currentPayment.TipAmount < 0)
+                return;
+
             //If incorrect format, just sets tip to 0
             try
             {
@@ -90,8 +93,8 @@ namespace LoginForm
                 currentPayment.TipAmount = 0;
             }
 
-            //Puts remaining data in the payment object
-            currentPayment.Feedback = textBox_comments.Text;
+                //Puts remaining data in the payment object
+                currentPayment.Feedback = textBox_comments.Text;
 
             //Puts new payment/bill in the database and sets order to paid
             Payment_Service paymentService = new Payment_Service();
@@ -112,10 +115,13 @@ namespace LoginForm
                 //If there's no value in the textbox, just set it to 0
                 if (textBox_tip.Text == "")
                     tempTip = 0;
-                else
+                else 
                     tempTip = float.Parse(textBox_tip.Text);
 
-                float tempOrderPrice = (float)currentPayment.TotalPrice;
+                if (tempTip < 0)
+                    throw new Exception();
+
+                float tempOrderPrice = (float)currentPayment.TotalPrice + (float)currentPayment.TotalVAT;
                 textBox_totalPrice.Text = (tempTip + tempOrderPrice).ToString("0.00");
             
                 lbl_paymentMethodWarning.Text = "";
@@ -123,7 +129,7 @@ namespace LoginForm
             }
             catch (Exception)
             {
-                lbl_paymentMethodWarning.Text = "Input a decimal number in the tip box please.";
+                lbl_paymentMethodWarning.Text = "Input a positive decimal number in the tip box please.";
             }
         }
 
@@ -144,7 +150,7 @@ namespace LoginForm
                 else
                     tempOrderPrice = float.Parse(textBox_totalPrice.Text);
 
-                float tempTip = (float)currentPayment.TotalPrice;
+                float tempTip = (float)currentPayment.TotalPrice + (float)currentPayment.TotalVAT;
                 
                 if(!(textBox_tip.Text == string.Empty))
                 textBox_tip.Text = (tempOrderPrice - tempTip).ToString("0.00");
@@ -167,6 +173,11 @@ namespace LoginForm
         private void paymentForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lbl_paymentMethodWarning_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

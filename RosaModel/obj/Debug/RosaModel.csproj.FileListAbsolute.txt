@@ -38,4 +38,8 @@ C:\Users\Gabrian\source\repos\ROSA\RosaModel\bin\Debug\RosaModel.dll
 C:\Users\Gabrian\source\repos\ROSA\RosaModel\bin\Debug\RosaModel.pdb
 C:\Users\Gabrian\source\repos\ROSA\RosaModel\obj\Debug\RosaModel.dll
 C:\Users\Gabrian\source\repos\ROSA\RosaModel\obj\Debug\RosaModel.pdb
-C:\Users\Gabrian\source\repos\ROSA\RosaModel\obj\Debug\RosaModel.csprojAssemblyReference.cache
+C:\Users\31620\Source\Repos\ROSA\RosaModel\bin\Debug\RosaModel.dll
+C:\Users\31620\Source\Repos\ROSA\RosaModel\bin\Debug\RosaModel.pdb
+C:\Users\31620\Source\Repos\ROSA\RosaModel\obj\Debug\RosaModel.csprojAssemblyReference.cache
+C:\Users\31620\Source\Repos\ROSA\RosaModel\obj\Debug\RosaModel.dll
+C:\Users\31620\Source\Repos\ROSA\RosaModel\obj\Debug\RosaModel.pdb
