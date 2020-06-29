@@ -42,7 +42,6 @@
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblLogout = new System.Windows.Forms.Label();
             this.pnlHome = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSlideRight = new System.Windows.Forms.Button();
             this.btnSlideLeft = new System.Windows.Forms.Button();
             this.picCircle5 = new System.Windows.Forms.PictureBox();
@@ -60,9 +59,9 @@
             this.lblRole = new System.Windows.Forms.Label();
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.picHelp = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.navbar.SuspendLayout();
             this.pnlHome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCircle5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCircle4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCircle3)).BeginInit();
@@ -72,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // navbar
@@ -91,8 +91,8 @@
             this.navbar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
-            this.navbar.Padding = new System.Windows.Forms.Padding(120, 15, 5, 10);
-            this.navbar.Size = new System.Drawing.Size(754, 60);
+            this.navbar.Padding = new System.Windows.Forms.Padding(160, 18, 7, 12);
+            this.navbar.Size = new System.Drawing.Size(1005, 74);
             this.navbar.TabIndex = 2;
             // 
             // homeToolStripMenuItem1
@@ -146,12 +146,13 @@
             // managementToolStripMenuItem
             // 
             this.managementToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.managementToolStripMenuItem.AutoSize = false;
             this.managementToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
             this.managementToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managementToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
             this.managementToolStripMenuItem.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(132, 31);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(158, 31);
             this.managementToolStripMenuItem.Text = "Management";
             this.managementToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.managementToolStripMenuItem.Click += new System.EventHandler(this.managementToolStripMenuItem_Click);
@@ -159,7 +160,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 4);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 4);
             // 
             // homeToolStripMenuItem
             // 
@@ -184,10 +185,9 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
             this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(380, 82);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWelcome.Location = new System.Drawing.Point(507, 101);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(222, 33);
+            this.lblWelcome.Size = new System.Drawing.Size(266, 40);
             this.lblWelcome.TabIndex = 3;
             this.lblWelcome.Text = "Welcome, Alex!";
             // 
@@ -199,11 +199,11 @@
             this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblLogout.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
-            this.lblLogout.Location = new System.Drawing.Point(678, 19);
-            this.lblLogout.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.lblLogout.Location = new System.Drawing.Point(904, 23);
+            this.lblLogout.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Padding = new System.Windows.Forms.Padding(2);
-            this.lblLogout.Size = new System.Drawing.Size(69, 22);
+            this.lblLogout.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblLogout.Size = new System.Drawing.Size(87, 27);
             this.lblLogout.TabIndex = 4;
             this.lblLogout.Text = "Log Out";
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
@@ -224,23 +224,11 @@
             this.pnlHome.Controls.Add(this.picCircle1);
             this.pnlHome.Controls.Add(this.pnlInfoUser);
             this.pnlHome.Controls.Add(this.picHelp);
-            this.pnlHome.Location = new System.Drawing.Point(12, 32);
-            this.pnlHome.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlHome.Location = new System.Drawing.Point(16, 39);
+            this.pnlHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(735, 540);
+            this.pnlHome.Size = new System.Drawing.Size(980, 665);
             this.pnlHome.TabIndex = 26;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Orange;
-            this.pictureBox1.Image = global::LoginForm.Properties.Resources.chapeau1;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(102, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btnSlideRight
             // 
@@ -249,10 +237,10 @@
             this.btnSlideRight.FlatAppearance.BorderSize = 0;
             this.btnSlideRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSlideRight.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSlideRight.Location = new System.Drawing.Point(697, 307);
-            this.btnSlideRight.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSlideRight.Location = new System.Drawing.Point(929, 378);
+            this.btnSlideRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSlideRight.Name = "btnSlideRight";
-            this.btnSlideRight.Size = new System.Drawing.Size(33, 53);
+            this.btnSlideRight.Size = new System.Drawing.Size(44, 65);
             this.btnSlideRight.TabIndex = 13;
             this.btnSlideRight.UseVisualStyleBackColor = true;
             this.btnSlideRight.Click += new System.EventHandler(this.btnSlideRight_Click);
@@ -264,10 +252,10 @@
             this.btnSlideLeft.FlatAppearance.BorderSize = 0;
             this.btnSlideLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSlideLeft.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSlideLeft.Location = new System.Drawing.Point(250, 307);
-            this.btnSlideLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSlideLeft.Location = new System.Drawing.Point(333, 378);
+            this.btnSlideLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSlideLeft.Name = "btnSlideLeft";
-            this.btnSlideLeft.Size = new System.Drawing.Size(33, 53);
+            this.btnSlideLeft.Size = new System.Drawing.Size(44, 65);
             this.btnSlideLeft.TabIndex = 12;
             this.btnSlideLeft.UseVisualStyleBackColor = true;
             this.btnSlideLeft.Click += new System.EventHandler(this.btnSlideLeft_Click_1);
@@ -276,10 +264,10 @@
             // 
             this.picCircle5.BackgroundImage = global::LoginForm.Properties.Resources.circleGrey;
             this.picCircle5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCircle5.Location = new System.Drawing.Point(519, 175);
-            this.picCircle5.Margin = new System.Windows.Forms.Padding(2);
+            this.picCircle5.Location = new System.Drawing.Point(692, 215);
+            this.picCircle5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picCircle5.Name = "picCircle5";
-            this.picCircle5.Size = new System.Drawing.Size(8, 8);
+            this.picCircle5.Size = new System.Drawing.Size(11, 10);
             this.picCircle5.TabIndex = 9;
             this.picCircle5.TabStop = false;
             // 
@@ -287,10 +275,10 @@
             // 
             this.picCircle4.BackgroundImage = global::LoginForm.Properties.Resources.circleGrey;
             this.picCircle4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCircle4.Location = new System.Drawing.Point(502, 175);
-            this.picCircle4.Margin = new System.Windows.Forms.Padding(2);
+            this.picCircle4.Location = new System.Drawing.Point(669, 215);
+            this.picCircle4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picCircle4.Name = "picCircle4";
-            this.picCircle4.Size = new System.Drawing.Size(8, 8);
+            this.picCircle4.Size = new System.Drawing.Size(11, 10);
             this.picCircle4.TabIndex = 8;
             this.picCircle4.TabStop = false;
             // 
@@ -298,10 +286,10 @@
             // 
             this.picCircle3.BackgroundImage = global::LoginForm.Properties.Resources.circleGrey;
             this.picCircle3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCircle3.Location = new System.Drawing.Point(484, 175);
-            this.picCircle3.Margin = new System.Windows.Forms.Padding(2);
+            this.picCircle3.Location = new System.Drawing.Point(645, 215);
+            this.picCircle3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picCircle3.Name = "picCircle3";
-            this.picCircle3.Size = new System.Drawing.Size(8, 8);
+            this.picCircle3.Size = new System.Drawing.Size(11, 10);
             this.picCircle3.TabIndex = 7;
             this.picCircle3.TabStop = false;
             // 
@@ -309,10 +297,10 @@
             // 
             this.picCircle2.BackgroundImage = global::LoginForm.Properties.Resources.circleGrey;
             this.picCircle2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCircle2.Location = new System.Drawing.Point(467, 175);
-            this.picCircle2.Margin = new System.Windows.Forms.Padding(2);
+            this.picCircle2.Location = new System.Drawing.Point(623, 215);
+            this.picCircle2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picCircle2.Name = "picCircle2";
-            this.picCircle2.Size = new System.Drawing.Size(8, 8);
+            this.picCircle2.Size = new System.Drawing.Size(11, 10);
             this.picCircle2.TabIndex = 6;
             this.picCircle2.TabStop = false;
             // 
@@ -320,10 +308,10 @@
             // 
             this.picCircle1.BackgroundImage = global::LoginForm.Properties.Resources.circleGreen;
             this.picCircle1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCircle1.Location = new System.Drawing.Point(450, 175);
-            this.picCircle1.Margin = new System.Windows.Forms.Padding(2);
+            this.picCircle1.Location = new System.Drawing.Point(600, 215);
+            this.picCircle1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picCircle1.Name = "picCircle1";
-            this.picCircle1.Size = new System.Drawing.Size(8, 8);
+            this.picCircle1.Size = new System.Drawing.Size(11, 10);
             this.picCircle1.TabIndex = 5;
             this.picCircle1.TabStop = false;
             // 
@@ -339,20 +327,19 @@
             this.pnlInfoUser.Controls.Add(this.lblName);
             this.pnlInfoUser.Controls.Add(this.lblRole);
             this.pnlInfoUser.Controls.Add(this.profilePicture);
-            this.pnlInfoUser.Location = new System.Drawing.Point(11, 46);
-            this.pnlInfoUser.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlInfoUser.Location = new System.Drawing.Point(15, 57);
+            this.pnlInfoUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlInfoUser.Name = "pnlInfoUser";
-            this.pnlInfoUser.Size = new System.Drawing.Size(235, 469);
+            this.pnlInfoUser.Size = new System.Drawing.Size(313, 577);
             this.pnlInfoUser.TabIndex = 3;
             // 
             // btnSave
             // 
             this.btnSave.AutoSize = true;
             this.btnSave.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(24, 352);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnSave.Location = new System.Drawing.Point(32, 433);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(46, 19);
+            this.btnSave.Size = new System.Drawing.Size(57, 23);
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "SAVE";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -361,10 +348,9 @@
             // 
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Tw Cen MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(82, 218);
-            this.lblNotes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNotes.Location = new System.Drawing.Point(109, 268);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(43, 17);
+            this.lblNotes.Size = new System.Drawing.Size(54, 22);
             this.lblNotes.TabIndex = 6;
             this.lblNotes.Text = "Notes";
             // 
@@ -373,11 +359,11 @@
             this.txtNotes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNotes.Font = new System.Drawing.Font("Tw Cen MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNotes.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtNotes.Location = new System.Drawing.Point(24, 236);
-            this.txtNotes.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNotes.Location = new System.Drawing.Point(32, 290);
+            this.txtNotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNotes.MaxLength = 200;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(160, 112);
+            this.txtNotes.Size = new System.Drawing.Size(213, 138);
             this.txtNotes.TabIndex = 5;
             this.txtNotes.Text = "";
             this.txtNotes.TextChanged += new System.EventHandler(this.txtNotes_TextChanged);
@@ -386,10 +372,10 @@
             // 
             this.pictureBox2.BackgroundImage = global::LoginForm.Properties.Resources.note3;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(16, 201);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(21, 247);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(197, 187);
+            this.pictureBox2.Size = new System.Drawing.Size(263, 230);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
@@ -397,10 +383,9 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(20, 406);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTime.Location = new System.Drawing.Point(27, 500);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(109, 21);
+            this.lblTime.Size = new System.Drawing.Size(130, 23);
             this.lblTime.TabIndex = 3;
             this.lblTime.Text = "Current time";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -409,11 +394,10 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Century Gothic", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(39, 155);
-            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Location = new System.Drawing.Point(52, 191);
             this.lblName.Name = "lblName";
             this.lblName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblName.Size = new System.Drawing.Size(163, 19);
+            this.lblName.Size = new System.Drawing.Size(211, 26);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Alexander Hagens";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -422,10 +406,9 @@
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.Location = new System.Drawing.Point(61, 174);
-            this.lblRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRole.Location = new System.Drawing.Point(81, 214);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(102, 22);
+            this.lblRole.Size = new System.Drawing.Size(128, 30);
             this.lblRole.TabIndex = 2;
             this.lblRole.Text = "Bartender";
             this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -433,10 +416,10 @@
             // profilePicture
             // 
             this.profilePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.profilePicture.Location = new System.Drawing.Point(43, 19);
-            this.profilePicture.Margin = new System.Windows.Forms.Padding(2);
+            this.profilePicture.Location = new System.Drawing.Point(57, 23);
+            this.profilePicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(141, 134);
+            this.profilePicture.Size = new System.Drawing.Size(188, 165);
             this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profilePicture.TabIndex = 0;
             this.profilePicture.TabStop = false;
@@ -445,21 +428,33 @@
             // 
             this.picHelp.BackgroundImage = global::LoginForm.Properties.Resources.helpTablesView3;
             this.picHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picHelp.Location = new System.Drawing.Point(289, 186);
-            this.picHelp.Margin = new System.Windows.Forms.Padding(2);
+            this.picHelp.Location = new System.Drawing.Point(385, 229);
+            this.picHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picHelp.Name = "picHelp";
-            this.picHelp.Size = new System.Drawing.Size(409, 287);
+            this.picHelp.Size = new System.Drawing.Size(545, 353);
             this.picHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picHelp.TabIndex = 1;
             this.picHelp.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Orange;
+            this.pictureBox1.Image = global::LoginForm.Properties.Resources.chapeau1;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(136, 74);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // homeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(754, 586);
+            this.ClientSize = new System.Drawing.Size(1005, 721);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.navbar);
@@ -467,7 +462,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "homeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -478,7 +473,6 @@
             this.navbar.PerformLayout();
             this.pnlHome.ResumeLayout(false);
             this.pnlHome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCircle5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCircle4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCircle3)).EndInit();
@@ -489,6 +483,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
