@@ -317,7 +317,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(140, 62);
             this.label8.TabIndex = 45;
-            this.label8.Text = "order time >15 minutes";
+            this.label8.Text = "order time <15 minutes";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
@@ -327,7 +327,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(140, 70);
             this.label9.TabIndex = 46;
-            this.label9.Text = "order time <15 minutes";
+            this.label9.Text = "order time >15 minutes";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox6
@@ -563,7 +563,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(140, 70);
             this.label6.TabIndex = 47;
-            this.label6.Text = "order time <15 minutes";
+            this.label6.Text = "order time >15 minutes";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -573,7 +573,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 62);
             this.label5.TabIndex = 46;
-            this.label5.Text = "order time >15 minutes";
+            this.label5.Text = "order time <15 minutes";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnReadyKitchen
@@ -599,8 +599,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.navbar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel_Kitchen);
             this.Controls.Add(this.panel_Bar);
+            this.Controls.Add(this.panel_Kitchen);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);

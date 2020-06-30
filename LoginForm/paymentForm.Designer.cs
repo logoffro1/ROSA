@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tableViewForm));
             this.lbl_paymentMethodWarning = new System.Windows.Forms.Label();
             this.lbl_PaymentMethod = new System.Windows.Forms.Label();
             this.lbl_tip = new System.Windows.Forms.Label();
@@ -471,7 +470,6 @@
             this.Name = "paymentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chapeau - Payment";
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.paymentForm_FormClosing);
             this.pnl_payment_method.ResumeLayout(false);
             this.pnl_payment_method.PerformLayout();

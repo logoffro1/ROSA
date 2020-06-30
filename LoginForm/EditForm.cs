@@ -16,10 +16,10 @@ namespace LoginForm
             this.employee = employee;
             InitializeComponent();
             DinnerPanel.Hide();
-            LunchPanel.Hide();
+            LunchPanel.Show();
             DrinksPanel.Hide();
             Messagelabel.Text = "";
-            AddOrderItemFromListButton.Hide();
+            AddOrderItemFromListButton.Show();
             this.table = table;
             if (table.order != null)
             {
@@ -55,7 +55,7 @@ namespace LoginForm
             {
                 orderserv.DeleteOrderItem(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
                 Messagelabel.Text = "Deleted Order item with ID " + EditView.SelectedItems[0].SubItems[1].Text;
-                orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "+");
+                orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), int.Parse((EditView.SelectedItems[0].SubItems[3].Text)), "+");
                 FillOrderViewByOrderID(orderId);
             }
             else
@@ -107,22 +107,30 @@ namespace LoginForm
 
         private void DecreaseButton_Click(object sender, EventArgs e)
         {
+            RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();
             if (EditView.SelectedItems.Count > 0)
             {
-                RosaLogic.Order_Service orderserv = new RosaLogic.Order_Service();  // decreases selected order item amount
-                if (int.Parse(EditView.SelectedItems[0].SubItems[3].Text) > 0)
-                {
-                    orderserv.DecreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
-                    orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "+");
-                    FillOrderViewByOrderID(orderId);
-                }
-                else
-                    Messagelabel.Text = "You can't decrease the amount any further!";
+                
+                    // decreases selected order item amount
+                    if (int.Parse(EditView.SelectedItems[0].SubItems[3].Text) > 1)
+                    {
+                        orderserv.DecreaseAmount(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
+                        orderserv.AdjustStock(int.Parse(EditView.SelectedItems[0].SubItems[2].Text), 1, "+");
+                        FillOrderViewByOrderID(orderId);
+                    }
+                    else
+                    {
+                        orderserv.DeleteOrderItem(int.Parse(EditView.SelectedItems[0].SubItems[1].Text));
+                        Messagelabel.Text = "You can't decrease the amount any further so the item has been deleted!";
+                        FillOrderViewByOrderID(orderId);
+                    }
+                
             }
             else
             {
                 Messagelabel.Text = "No item selected!";
             }
+            
         }
         private void GetItems(int menuID, ListView listView)  // gets items for each part of the menu
         {
