@@ -107,8 +107,8 @@
             this.navbar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
-            this.navbar.Padding = new System.Windows.Forms.Padding(120, 15, 5, 10);
-            this.navbar.Size = new System.Drawing.Size(754, 60);
+            this.navbar.Padding = new System.Windows.Forms.Padding(160, 18, 7, 12);
+            this.navbar.Size = new System.Drawing.Size(1005, 74);
             this.navbar.TabIndex = 3;
             this.navbar.Text = "menuStrip1";
             // 
@@ -181,10 +181,10 @@
             this.panel_Bar.Controls.Add(this.listBarOrderView);
             this.panel_Bar.Controls.Add(this.label2);
             this.panel_Bar.Controls.Add(this.panel1);
-            this.panel_Bar.Location = new System.Drawing.Point(9, 73);
-            this.panel_Bar.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_Bar.Location = new System.Drawing.Point(12, 90);
+            this.panel_Bar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_Bar.Name = "panel_Bar";
-            this.panel_Bar.Size = new System.Drawing.Size(736, 506);
+            this.panel_Bar.Size = new System.Drawing.Size(981, 623);
             this.panel_Bar.TabIndex = 35;
             this.panel_Bar.Visible = false;
             // 
@@ -199,9 +199,10 @@
             this.listBarReadyView.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.listBarReadyView.FullRowSelect = true;
             this.listBarReadyView.HideSelection = false;
-            this.listBarReadyView.Location = new System.Drawing.Point(16, 295);
+            this.listBarReadyView.Location = new System.Drawing.Point(21, 363);
+            this.listBarReadyView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBarReadyView.Name = "listBarReadyView";
-            this.listBarReadyView.Size = new System.Drawing.Size(561, 199);
+            this.listBarReadyView.Size = new System.Drawing.Size(747, 244);
             this.listBarReadyView.TabIndex = 33;
             this.listBarReadyView.UseCompatibleStateImageBehavior = false;
             this.listBarReadyView.View = System.Windows.Forms.View.Details;
@@ -235,10 +236,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 259);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(17, 319);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 23);
+            this.label1.Size = new System.Drawing.Size(164, 28);
             this.label1.TabIndex = 32;
             this.label1.Text = "Ready Drinks";
             // 
@@ -253,9 +253,10 @@
             this.listBarOrderView.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBarOrderView.FullRowSelect = true;
             this.listBarOrderView.HideSelection = false;
-            this.listBarOrderView.Location = new System.Drawing.Point(16, 48);
+            this.listBarOrderView.Location = new System.Drawing.Point(21, 59);
+            this.listBarOrderView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBarOrderView.Name = "listBarOrderView";
-            this.listBarOrderView.Size = new System.Drawing.Size(561, 189);
+            this.listBarOrderView.Size = new System.Drawing.Size(747, 232);
             this.listBarOrderView.TabIndex = 27;
             this.listBarOrderView.UseCompatibleStateImageBehavior = false;
             this.listBarOrderView.View = System.Windows.Forms.View.Details;
@@ -289,10 +290,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 14);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(19, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 23);
+            this.label2.Size = new System.Drawing.Size(141, 28);
             this.label2.TabIndex = 25;
             this.label2.Text = "New Drinks";
             // 
@@ -304,19 +304,18 @@
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.btnReady);
             this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Location = new System.Drawing.Point(590, -8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(787, -10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(146, 514);
+            this.panel1.Size = new System.Drawing.Size(195, 633);
             this.panel1.TabIndex = 47;
             // 
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 401);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(25, 494);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 50);
+            this.label8.Size = new System.Drawing.Size(140, 62);
             this.label8.TabIndex = 45;
             this.label8.Text = "order time >15 minutes";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -324,10 +323,9 @@
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(19, 278);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(25, 342);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 57);
+            this.label9.Size = new System.Drawing.Size(140, 70);
             this.label9.TabIndex = 46;
             this.label9.Text = "order time <15 minutes";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -335,19 +333,20 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::LoginForm.Properties.Resources.Ellipse_493;
-            this.pictureBox6.Location = new System.Drawing.Point(55, 358);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox6.Location = new System.Drawing.Point(73, 441);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(38, 41);
+            this.pictureBox6.Size = new System.Drawing.Size(51, 50);
             this.pictureBox6.TabIndex = 44;
             this.pictureBox6.TabStop = false;
             // 
             // btnReady
             // 
             this.btnReady.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReady.Location = new System.Drawing.Point(22, 56);
+            this.btnReady.Location = new System.Drawing.Point(29, 69);
+            this.btnReady.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReady.Name = "btnReady";
-            this.btnReady.Size = new System.Drawing.Size(102, 112);
+            this.btnReady.Size = new System.Drawing.Size(136, 138);
             this.btnReady.TabIndex = 31;
             this.btnReady.Text = "MARK AS READY";
             this.btnReady.UseVisualStyleBackColor = true;
@@ -356,10 +355,10 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::LoginForm.Properties.Resources.Ellipse_50;
-            this.pictureBox5.Location = new System.Drawing.Point(55, 235);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Location = new System.Drawing.Point(73, 289);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(38, 41);
+            this.pictureBox5.Size = new System.Drawing.Size(51, 50);
             this.pictureBox5.TabIndex = 43;
             this.pictureBox5.TabStop = false;
             // 
@@ -370,11 +369,11 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
-            this.label4.Location = new System.Drawing.Point(678, 19);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.label4.Location = new System.Drawing.Point(904, 23);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(2);
-            this.label4.Size = new System.Drawing.Size(69, 22);
+            this.label4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.label4.Size = new System.Drawing.Size(87, 27);
             this.label4.TabIndex = 34;
             this.label4.Text = "Log Out";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -383,19 +382,20 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Orange;
             this.pictureBox3.Image = global::LoginForm.Properties.Resources.chapeau1;
-            this.pictureBox3.Location = new System.Drawing.Point(14, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(19, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(102, 60);
+            this.pictureBox3.Size = new System.Drawing.Size(136, 74);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 41;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(-23, -46);
+            this.pictureBox1.Location = new System.Drawing.Point(-31, -57);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(27, 62);
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
@@ -407,10 +407,10 @@
             this.panel_Kitchen.Controls.Add(this.listKitchenOrderView);
             this.panel_Kitchen.Controls.Add(this.label11);
             this.panel_Kitchen.Controls.Add(this.panel2);
-            this.panel_Kitchen.Location = new System.Drawing.Point(9, 73);
-            this.panel_Kitchen.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_Kitchen.Location = new System.Drawing.Point(12, 90);
+            this.panel_Kitchen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_Kitchen.Name = "panel_Kitchen";
-            this.panel_Kitchen.Size = new System.Drawing.Size(736, 506);
+            this.panel_Kitchen.Size = new System.Drawing.Size(981, 623);
             this.panel_Kitchen.TabIndex = 34;
             this.panel_Kitchen.Visible = false;
             // 
@@ -425,9 +425,10 @@
             this.listKitchenReadyView.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.listKitchenReadyView.FullRowSelect = true;
             this.listKitchenReadyView.HideSelection = false;
-            this.listKitchenReadyView.Location = new System.Drawing.Point(16, 295);
+            this.listKitchenReadyView.Location = new System.Drawing.Point(21, 363);
+            this.listKitchenReadyView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listKitchenReadyView.Name = "listKitchenReadyView";
-            this.listKitchenReadyView.Size = new System.Drawing.Size(561, 199);
+            this.listKitchenReadyView.Size = new System.Drawing.Size(747, 244);
             this.listKitchenReadyView.TabIndex = 33;
             this.listKitchenReadyView.UseCompatibleStateImageBehavior = false;
             this.listKitchenReadyView.View = System.Windows.Forms.View.Details;
@@ -461,10 +462,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(13, 259);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(17, 319);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 23);
+            this.label3.Size = new System.Drawing.Size(164, 28);
             this.label3.TabIndex = 32;
             this.label3.Text = "Ready Meals";
             // 
@@ -479,9 +479,10 @@
             this.listKitchenOrderView.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.listKitchenOrderView.FullRowSelect = true;
             this.listKitchenOrderView.HideSelection = false;
-            this.listKitchenOrderView.Location = new System.Drawing.Point(16, 48);
+            this.listKitchenOrderView.Location = new System.Drawing.Point(21, 59);
+            this.listKitchenOrderView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listKitchenOrderView.Name = "listKitchenOrderView";
-            this.listKitchenOrderView.Size = new System.Drawing.Size(561, 189);
+            this.listKitchenOrderView.Size = new System.Drawing.Size(747, 232);
             this.listKitchenOrderView.TabIndex = 27;
             this.listKitchenOrderView.UseCompatibleStateImageBehavior = false;
             this.listKitchenOrderView.View = System.Windows.Forms.View.Details;
@@ -515,10 +516,9 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(14, 14);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(19, 17);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 23);
+            this.label11.Size = new System.Drawing.Size(141, 28);
             this.label11.TabIndex = 25;
             this.label11.Text = "New Meals";
             // 
@@ -530,38 +530,38 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnReadyKitchen);
-            this.panel2.Location = new System.Drawing.Point(590, -8);
+            this.panel2.Location = new System.Drawing.Point(787, -10);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(146, 514);
+            this.panel2.Size = new System.Drawing.Size(195, 633);
             this.panel2.TabIndex = 34;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::LoginForm.Properties.Resources.Ellipse_50;
-            this.pictureBox4.Location = new System.Drawing.Point(55, 235);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Location = new System.Drawing.Point(73, 289);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(38, 41);
+            this.pictureBox4.Size = new System.Drawing.Size(51, 50);
             this.pictureBox4.TabIndex = 49;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::LoginForm.Properties.Resources.Ellipse_493;
-            this.pictureBox2.Location = new System.Drawing.Point(55, 358);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(73, 441);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 41);
+            this.pictureBox2.Size = new System.Drawing.Size(51, 50);
             this.pictureBox2.TabIndex = 48;
             this.pictureBox2.TabStop = false;
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 278);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(25, 342);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 57);
+            this.label6.Size = new System.Drawing.Size(140, 70);
             this.label6.TabIndex = 47;
             this.label6.Text = "order time <15 minutes";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -569,10 +569,9 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 401);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(25, 494);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 50);
+            this.label5.Size = new System.Drawing.Size(140, 62);
             this.label5.TabIndex = 46;
             this.label5.Text = "order time >15 minutes";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -580,9 +579,10 @@
             // btnReadyKitchen
             // 
             this.btnReadyKitchen.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btnReadyKitchen.Location = new System.Drawing.Point(22, 56);
+            this.btnReadyKitchen.Location = new System.Drawing.Point(29, 69);
+            this.btnReadyKitchen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReadyKitchen.Name = "btnReadyKitchen";
-            this.btnReadyKitchen.Size = new System.Drawing.Size(102, 112);
+            this.btnReadyKitchen.Size = new System.Drawing.Size(136, 138);
             this.btnReadyKitchen.TabIndex = 31;
             this.btnReadyKitchen.Text = "MARK AS READY";
             this.btnReadyKitchen.UseVisualStyleBackColor = true;
@@ -590,11 +590,11 @@
             // 
             // BarKitchenForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(233)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(754, 586);
+            this.ClientSize = new System.Drawing.Size(1005, 721);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.navbar);
@@ -603,6 +603,7 @@
             this.Controls.Add(this.panel_Bar);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "BarKitchenForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
